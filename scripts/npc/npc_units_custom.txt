@@ -98,7 +98,7 @@
     // General
     //
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
-    "Model"           "models/development/invisiblebox.vmdl"  // Model.
+    "Model"           "models/creeps/neutral_creeps/n_creep_harpy_b/n_creep_harpy_b.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "1"
     "UnitLabel"         "Harpy"
@@ -123,15 +123,15 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "0"     // Damage range min.
-    "AttackDamageMax"     "0"     // Damage range max.
+	"ProjectileModel"            "particles/addons_gameplay/fountain_tintable_radiance.vpcf"
+	"ProjectileSpeed"            "700"
+    "AttackDamageMin"     "15"     // Damage range min.
+    "AttackDamageMax"     "19"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
-    "AttackAcquisitionRange"  "800"   // Range within a target can be acquired.
+    "AttackAcquisitionRange"  "550"   // Range within a target can be acquired.
     "AttackRange"       "500"   // Range within a target can be attacked.
-    "ProjectileModel"     "" // Particle system model for projectile.
-    "ProjectileSpeed"     "900"   // Speed of projectile.
 
     // Attributes
     //----------------------------------------------------------------
@@ -151,7 +151,7 @@
 
     // Bounds
     //----------------------------------------------------------------
-    "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"      // Hull type used for navigation/locomotion.
+    "BoundsHullName"      "DOTA_HULL_SIZE_REGULAR"      // Hull type used for navigation/locomotion.
 
     // Movement
     //----------------------------------------------------------------
@@ -162,24 +162,23 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "1"     // Base health.
-    "StatusHealthRegen"     "0"     // Health regeneration rate.
-    "StatusMana"        "0"     // Base mana.
-    "StatusManaRegen"     "0"     // Mana regeneration rate.
+    "StatusHealth"        "140"     // Base health.
+    "StatusHealthRegen"     "5"     // Health regeneration rate.
+    "StatusMana"        "200"     // Base mana.
+    "StatusManaRegen"     "1"     // Mana regeneration rate.
 
     // Team
     //----------------------------------------------------------------
-    "TeamName"          "DOTA_TEAM_GOODGUYS"      // Team name.
-    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
     "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_SOFT"
-    "UnitRelationshipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
     
     // Vision
     //----------------------------------------------------------------
-    "VisionDaytimeRange"    "0"   // Range of vision during day light.
-    "VisionNighttimeRange"    "0"   // Range of vision at night time.
+    "VisionDaytimeRange"    "1200"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
 
     // Bots
     //----------------------------------------------------------------
-    "AttackDesire"        "1.5"   // How much bots want to attack them vs other non-hero things
+    "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
 }
