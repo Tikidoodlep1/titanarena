@@ -1,813 +1,171 @@
 "DOTAAbilities"
 {
-  "item_containers_lua_pack"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-    "ID"              "1835"
-    "BaseClass"         "item_lua"
-    "AbilityTextureName"        "item_present"
-    "ScriptFile"          "libraries/abilities/item_containers_lua_pack.lua"
-    "MaxLevel"            "1"
-
-    "ItemCost"            "0"
-    "ItemPurchasable"          "0"
-    "ItemKillable"             "0"
-    "ItemDroppable"            "0"
-    "ItemSellable"             "0"
-    "ItemCanChangeContainer"   "0"
-    
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"        "0"
-
-    // Time   
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "0"
-
-    // Cost
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "0 0 0 0"
-  }
-  
-  
-  "item_recipe_ring_of_aquila"
+	//Shield
+	"item_example_item"
 	{
-		// General
+		"ID"              			"1836"
+		"AbilityBehavior"       	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
+		"BaseClass"           		"item_datadriven"
+		"AbilityCastAnimation"      "ACT_DOTA_DISABLED"
+		"AbilityTextureName"		"item_example_item"
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"21001"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		
+		"AbilityCastRange"			"900"
+		"AbilityCastPoint"			"0.2"
+		"AbilityCooldown"			"13.0"
+
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"ItemPurchasable"				"0"
-		"IsObsolete"					"1"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_aquila"
-		"ItemRequirements"
+		"AbilityManaCost"			"100"
+		"ItemCost"					"750"
+
+		"ItemPurchasable" 			"1"
+		"ItemDroppable"				"1"
+		"ItemSellable"				"1"
+
+		"ItemShareability"			"ITEM_NOT_SHAREABLE"
+
+		"precache"
 		{
-			"01"						"item_ring_of_basilius;item_wraith_band"
+			"particle"				"particles/frostivus_herofx/queen_shadow_strike_linear_parent.vpcf"
+			"particle_folder"		"particles/test_particle"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
 		}
-	}
-	
-	
-  "item_aquila"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"21002"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityCastRange" 				"1200"
 
-		"Model"							"models/props_gameplay/red_box.vmdl"
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"EffectName"		"particles/frostivus_herofx/queen_shadow_strike_linear_parent.vpcf"
+				"MoveSpeed"			"%speed"
+				"FixedDistance"		"%distance"
+				"StartRadius"		"%radius"
+				"EndRadius"			"%radius"
+				"TargetTeams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"		"DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone"	"0"
+				"ProvidesVision"	"0"
+				"VisionRadius"		"0"
+			}
 
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"965"
-		"ItemShopTags"					""
-		"ItemQuality"					"rare"
-		"ItemAliases"					"roa;ring of aquila"
-		"ItemShareability"				""		
-		"ActiveDescriptionLine"			"2"
-		"ItemPurchasable"				"1"
-		"ShouldBeSuggested"				"1"
-		"ItemSellable"					"1"
+			"FireSound"
+			{
+				"EffectName"		"Hero_Abaddon.AphoticShield.Cast"
+				"Target"			"CASTER"
+			}
 
-		// Sound
-		//-------------------------------------------------------------------------------------------------------------			
-		"UIPickupSound"					"Item.PickUpRingShop"
-		"UIDropSound"					"Item.DropRingShop"
-		"WorldDropSound"				"Item.DropRingWorld"
+			"ApplyModifier"
+			{
+				"Target"			"CASTER"
+				"ModifierName"		"modifier_item_shield"
+			}
+		}
 		
-		// Special	
+		"OnProjectileHitUnit"
+		{     
+			"DeleteOnHit"			"0"
+
+			"Damage"
+			{
+				"Target"			"TARGET"
+				"Type"				"DAMAGE_TYPE_PURE"
+				"Damage"			"%damage"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_shield"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"1"
+
+				"EffectName"		"particles/test_particle/damage_immunity.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+			
+				"Duration"			"%duration"
+				"TextureName"		"abaddon_aphotic_shield"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%damage_reduction"
+				}
+			}
+
+			"modifier_item_example_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE" // This makes duplicate items stack their properties
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"    		"%bonus_agi"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    	"%bonus_damage"
+				}
+			}
+		}
+		
+		// Special  
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"7"
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"4"
 			}
+
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"3"
+				"var_type"			"FIELD_INTEGER"
+				"damage_reduction"	"-50"
 			}
+
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"9"
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"150"
 			}
+
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"3"
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1800"
 			}
+
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
+				"var_type"			"FIELD_INTEGER"
+				"distance"			"900"
 			}
+
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1200"
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"125"
 			}
+
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"1.25"
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"13"
 			}
+
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"2"
-			}			
-		}		
-	}
-	
-	
-	"item_recipe_iron_talon"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"23008"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"Model"							"models/props_gameplay/recipe.mdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"150"	
-		"ItemShopTags"					""
-		"ItemPurchasable"				"1"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_iron_talon"
-		"ItemRequirements"
-		{
-			"01"						"item_quelling_blade;item_ring_of_protection"
-		}
-	}
-	
-	
-	"item_iron_talon"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"23009"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_PREFER_ENEMIES"
-
-		"AbilityCastRange"				"450"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"25.0"
-
-		"Model"							"models/props_gameplay/red_box.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"ItemCost"						"450"
-		"ItemShopTags"					"damage" 
-		"ItemQuality"					"common"
-		"ItemAliases"					"quelling blade"
-		"ItemPurchasable"				"0"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"18"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"			"350"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_ward"			"450"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"40"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_armor"	"2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"alternative_cooldown"	"4"
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"33"
 			}
 		}
 	}
-	
-	"item_recipe_greater_crit_2"
-	{
-	"ID"							    "14021"
-	"Model"							"models/props_gameplay/recipe.mdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
-		"ItemShopTags"					""
-		"ItemPurchasable"				"1"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_greater_crit_2"
-		"ItemRequirements"
-		{
-			"01"						"item_javelin;item_greater_crit"
-		}
-	}
-	
-	
-	"item_greater_crit_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"14001"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"7430"
-		"ItemShopTags"					"damage;crit"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"daedalus"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"35"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"245"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_crit_damage"	"145"
-			}
-		}
-		"Modifiers"
-		{
-			"calculate_crit_modifier"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
-				}
-				"OnAttackStart"
-				{
-					"RunScript"
-					{
-						"ScriptFile" "GreaterCrit.lua"
-						"Function" "ApplyCrit"
-					}
-				}
-			}
-			"crit_hit"
-			{
-				"Passive"	"0"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
-				}
-			}
-		}
-	}
-	
-	"item_recipe_greater_crit_3"
-	{
-	"ID"							    "14021"
-	"Model"							"models/props_gameplay/recipe.mdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
-		"ItemShopTags"					""
-		"ItemPurchasable"				"0"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_greater_crit_3"
-		"ItemRequirements"
-		{
-			"01"						"item_greater_crit_2;item_demon_edge;item_lesser_crit"
-		}
-	}
-	
-	
-	"item_greater_crit_3"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"14031"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/props_gameplay/recipe.mdl"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"11760"
-		"ItemShopTags"					"damage;crit"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"daedalus"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"180"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"255"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_crit_damage"	"155"
-			}
-		}
-		"Modifiers"
-		{
-			"calculate_crit_modifier"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
-				}
-				"OnAttackStart"
-				{
-					"RunScript"
-					{
-						"ScriptFile" "GreaterCrit.lua"
-						"Function" "ApplyCrit"
-					}
-				}
-			}
-			"crit_hit"
-			{
-				"Passive"	"0"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
-				}
-			}
-		}
-	}
-	
-	
-	"item_recipe_greater_crit_4"
-	{
-	"ID"							    "14041"
-	"Model"							"models/props_gameplay/recipe.mdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
-		"ItemShopTags"					""
-		"ItemPurchasable"				"1"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_greater_crit_4"
-		"ItemRequirements"
-		{
-			"01"						"item_greater_crit_3;item_greater_crit;item_scarab_claw"
-		}
-	}
-	
-	
-	"item_greater_crit_4"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"14051"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/props_gameplay/recipe.mdl"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"17090"
-		"ItemShopTags"					"damage;crit"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"daedalus"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"180"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"255"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_crit_damage"	"155"
-			}
-		}
-		"Modifiers"
-		{
-			"calculate_crit_modifier"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
-				}
-				"OnAttackStart"
-				{
-					"RunScript"
-					{
-						"ScriptFile" "GreaterCrit.lua"
-						"Function" "ApplyCrit"
-					}
-				}
-			}
-			"crit_hit"
-			{
-				"Passive"	"0"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
-				}
-			}
-		}
-	}
-	
-	"item_scarab_claw"
-	{
-		//General
-		//-----------------------------------------------------------------------------------------------------------------
-		"ID"								"14002"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	
-		//Item Info
-		//-----------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"99999"
-		"ItemQuality"						"artifact"
-		"ItemAliases"						"Scarab Claw"
-		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemKillable"						"1"
-		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
-		"AbilityTextureName" 				"scarab_claw"
-	
-		//Special
-		//-----------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"80"
-			}
-		}
-		"Modifiers"
-		{
-			"Passive"	"1"
-			"IsHidden"	"0"
-			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
-			}
-		}
-	}
-	
-	"item_dragon_scale"
-	{
-		//General
-		//------------------------------------------------------------------------------------------------------------------
-		"ID"								"14003"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		//Item Info
-		//------------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"99999"
-		"ItemQuality"						"artifact"
-		"ItemAliases"						"Dragon Scale"
-		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemKillable"						"1"
-		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
-		"AbilityTextureName" 				"dragon_scale"
-		
-		//Special
-		//------------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"20"
-			}
-		}
-		"Modifiers"
-		{
-			"Passive"	"1"
-			"IsHidden"	"0"
-			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-			}
-		}
-	}
-	
-	"item_fire_forged_blade"
-	{
-		//General
-		//------------------------------------------------------------------------------------------------------------------
-		"ID"								"14004"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		//Item Info
-		//------------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"99999"
-		"ItemQuality"						"artifact"
-		"ItemAliases"						"Fire Forged Blade"
-		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemKillable"						"1"
-		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
-		"AbilityTextureName" 				"fire_blade"
-		
-		//Special
-		//------------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"40"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"burn_pct"					"2"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"burn_duration"				"2"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_rate"				"0.03"
-			}
-		}
-		"Modifiers"
-		{
-			"burn_modifier"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"ThinkInterval"	"%damage_rate"
-				{
-					"OnIntervalThink"
-					{
-						"OnAttackLanded"
-						{
-							"RunScript"
-							{
-								"ScriptFile" "FireBlade.lua"
-								"Function" "ApplyBurn"
-							}
-						}
-						"RunScript"
-						{								
-							"ScriptFile" "FireBlade.lua"
-							"Function" "ApplyDamage"
-						}
-					}
-				}
-			}
-			"burn_damage"
-			{
-				"Passive"	"0"
-				"IsHidden"	"0"
-			}
-		}
-	}
-	
-	"item_spectral_heart"
-	{
-		//General
-		//------------------------------------------------------------------------------------------------------------------
-		"ID"								"14005"
-		"AbilityBehavor"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		//Item Info
-		//------------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"99999"
-		"ItemQuality"						"artifact"
-		"ItemAliases"						"Spectral Heart"
-		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"						"1"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName" 				"spectral_heart"
-		
-		//Special
-		//------------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_pct"					"2"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_regen_pct"			"2"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"rate"						"0.03"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cooldown"					"5"
-			}
-		}
-		"Modifiers"
-		{
-			"spectral_heart_modifier"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"ThinkInterval"	"%rate"
-				{
-					"OnIntervalThink"
-					{
-						"RunScript"
-						{
-							"ScriptFile" "SpectralHeart.lua"
-							"Function" "ApplyHeal"
-						}
-					}
-				}
-				"OnTakeDamage"
-				{
-					"RunScript"
-					{
-						"ScriptFile" "SpectralHeart.lua"
-						"Function" "OnDamage"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile" "SpectralHeart.lua"
-						"Function" "OnDestroy"
-					}
-				}
-			}
-			"visible_regen_modifier"
-			{
-				"Passive"	"0"
-				"IsHIdden"	"0"
-			}
-		}
-	}
-	
-	"item_spectral_jelly"
-	{
-		//General
-		//------------------------------------------------------------------------------------------------------------------
-		"ID"								"14006"
-		"AbilityBehavor"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		//Item Info
-		//------------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"99999"
-		"ItemQuality"						"artifact"
-		"ItemAliases"						"Spectral Jelly"
-		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
-		"ItemKillable"						"1"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
-		"AbilityTextureName" 				"spectral_jelly"
-		
-		//Special
-		//------------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_night_vision"		"300"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_modifier"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"OnSpellStart"
-				{
-					"ApplyModifier"
-					{
-						"Target"		"CASTER"
-						"ModifierName"	"spectral_jelly_modifier"
-					}
-				}
-			}
-			"spectral_jelly_modifier"
-			{
-				"Passive"	"1"
-				"IsHidden"	"0"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION" "%bonus_night_vision"
-				}
-			}
-		}
-	}
-	
-	
 }

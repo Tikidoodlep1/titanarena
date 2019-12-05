@@ -60,9 +60,7 @@ ATTACHMENTS_VERSION = "1.00"
 
 ]]
 
---LinkLuaModifier( "modifier_animation_freeze", "libraries/modifiers/modifier_animation_freeze.lua", LUA_MODIFIER_MOTION_NONE )
-
-LinkLuaModifier( "modifier_animation_freeze_stun", "libraries/attachments.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_animation_freeze_stun", "libraries/attachments.lua", LUA_MODIFIER_MOTION_NONE )
 
 modifier_animation_freeze_stun = class({})
 
@@ -146,45 +144,21 @@ function Attachments:start()
 
   self.gameDir = ""
   self.addonName = ""
+  self.initialized = true
+  
+  self.activated = false
+  self.dbFilePath = nil
+  self.currentAttach = {}
+  self.hiddenCosmetics = {}
+  self.doAttach = true
+  self.doSphere = false
+  self.attachDB = LoadKeyValues("scripts/attachments.txt")
 
   if IsInToolsMode() then
-
-    if src:sub(2):find("(.*dota 2 beta[\\/]game[\\/]dota_addons[\\/])([^\\/]+)[\\/]") then
-
-      self.gameDir, self.addonName = string.match(src:sub(2), "(.*dota 2 beta[\\/]game[\\/]dota_addons[\\/])([^\\/]+)[\\/]")
-      --print('[attachments] ', self.gameDir)
-      --print('[attachments] ', self.addonName)
-
-      self.initialized = true
-
-      self.activated = false
-      self.dbFilePath = nil
-      self.currentAttach = {}
-      self.hiddenCosmetics = {}
-      self.doAttach = true
-      self.doSphere = false
-      self.attachDB = LoadKeyValues("scripts/attachments.txt")
-
-
-      if IsInToolsMode() then
-        print('[attachments] Tools Mode')
-        SendToServerConsole("dota_combine_models 0")
-        Convars:RegisterCommand( "attachment_configure", Dynamic_Wrap(Attachments, 'ActivateAttachmentSetup'), "Activate Attachment Setup", FCVAR_CHEAT )
-      end
-    else
-      print("[attachments] RELOADING")
-      SendToServerConsole("script_reload_code " .. src:sub(2))
-    end
-  else
-    self.initialized = true
-
-    self.activated = false
-    self.dbFilePath = nil
-    self.currentAttach = {}
-    self.hiddenCosmetics = {}
-    self.doAttach = true
-    self.doSphere = false
-    self.attachDB = LoadKeyValues("scripts/attachments.txt")
+    self.addonName = "barebones"
+    print('[attachments] Tools Mode')
+    SendToServerConsole("dota_combine_models 0")
+    Convars:RegisterCommand( "attachment_configure", Dynamic_Wrap(Attachments, 'ActivateAttachmentSetup'), "Activate Attachment Setup", FCVAR_CHEAT )
   end
 end
 
