@@ -133,7 +133,122 @@ end
 ]]
 function barebones:OnGameInProgress()
 	DebugPrint("[BAREBONES] The game has officially begun.")
-
+	Timers:CreateTimer(30, -- Start this timer 30 game-time seconds later
+	
+    function("SpawnCreeps")
+      return 120.0 -- Rerun this timer every 120 game-time seconds 
+    end)
+	
+	function SpawnCreeps(keys)
+	local e1 = "npc_easy_ghost_b"
+	local e2 = "npc_easy_forest_troll_berserker"
+	local e3 = "npc_easy_frost_kobold"
+	local e4 = "npc_easy_satyr_b"
+	local e5 = "npc_easy_beast"
+	local m1 = "npc_med_harpy_b"
+	local m2 = "npc_med_kobold_a"
+	local m3 = "npc_med_vulture_a"
+	local m4 = "npc_med_frost_gnoll"
+	local h1 = "npc_hard_ghost_a"
+	local h2 = "npc_hard_eimermole"
+	local h3 = "npc_hard_satyr_a"
+	local h4 = "npc_hard_gargoyle_jungle_stalker"
+	local a1 = "npc_ancient_troll_dark_frost"
+	local a2 = "npc_ancient_dragonspawn_b"
+	local a3 = "npc_ancient_frost_ghost"
+	local loc = Entities:FindByName(nil, "rad_n_easy"):GetAbsOrigin()
+	local badloc = Entities:FindByName(nil, "dire_n_easy"):GetAbsOrigin()
+	local mloc = Entities:FindByName(nil, "rad_n_medium"):GetAbsOrigin()
+	local mbadloc = Entities:FindByName(nil, "dire_n_medium"):GetAbsOrigin()
+	local hloc = Entities:FindByName(nil, "rad_n_hard"):GetAbsOrigin()
+	local hbadloc = Entities:FindByName(nil, "dire_n_hard"):GetAbsOrigin()
+	local aloc = Entities:FindByName(nil, "rad_n_ancient"):GetAbsOrigin()
+	local abadloc = Entities:FindByName(nil, "dire_n_ancient"):GetAbsOrigin()
+	for e=1, 7 do
+	local randint = RandomInt(1,5)
+	 if randint == 1 then
+		CreateUnitByName(e1, loc, true, nil, nil, 3)
+	elseif randint == 2 then
+		CreateUnitByName(e2, loc, true, nil, nil, 3)
+	elseif randint == 3 then
+		CreateUnitByName(e3, loc, true, nil, nil, 3)
+	elseif randint == 4 then
+		CreateUnitByName(e4, loc, true, nil, nil, 3)
+	elseif randint == 5 then
+		CreateUnitByName(e5, loc, true, nil, nil, 3)
+	end
+	if randint == 1 then
+		CreateUnitByName(e1, badloc, true, nil, nil, 3)
+	elseif randint == 2 then
+		CreateUnitByName(e2, badloc, true, nil, nil, 3)
+	elseif randint == 3 then
+		CreateUnitByName(e3, badloc, true, nil, nil, 3)
+	elseif randint == 4 then
+		CreateUnitByName(e4, badloc, true, nil, nil, 3)
+	elseif randint == 5 then
+		CreateUnitByName(e5, badloc, true, nil, nil, 3)
+	end
+	end
+	for m=1, 7 do
+	local randint = RandomInt(1,4)
+	 if randint == 1 then
+		CreateUnitByName(m1, mloc, true, nil, nil, 3)
+	elseif randint == 2 then
+		CreateUnitByName(m2, mloc, true, nil, nil, 3)
+	elseif randint == 3 then
+		CreateUnitByName(m3, mloc, true, nil, nil, 3)
+	elseif randint == 4 then
+		CreateUnitByName(m4, mloc, true, nil, nil, 3)
+	end
+	if randint == 1 then
+		CreateUnitByName(m1, mbadloc, true, nil, nil, 3)
+	elseif randint == 2 then
+		CreateUnitByName(m2, mbadloc, true, nil, nil, 3)
+	elseif randint == 3 then
+		CreateUnitByName(m3, mbadloc, true, nil, nil, 3)
+	elseif randint == 4 then
+		CreateUnitByName(m4, mbadloc, true, nil, nil, 3)
+	end
+	end
+	for h=1, 7 do
+	local randint = RandomInt(1,4)
+	 if randint == 1 then
+		CreateUnitByName(h1, hloc, true, nil, nil, 3)
+	elseif randint == 2 then
+		CreateUnitByName(h2, hloc, true, nil, nil, 3)
+	elseif randint == 3 then
+		CreateUnitByName(h3, hloc, true, nil, nil, 3)
+	elseif randint == 4 then
+		CreateUnitByName(h4, hloc, true, nil, nil, 3)
+	end
+	if randint == 1 then
+		CreateUnitByName(h1, hbadloc, true, nil, nil, 3)
+	elseif randint == 2 then
+		CreateUnitByName(h2, hbadloc, true, nil, nil, 3)
+	elseif randint == 3 then
+		CreateUnitByName(h3, hbadloc, true, nil, nil, 3)
+	elseif randint == 4 then
+		CreateUnitByName(h4, hbadloc, true, nil, nil, 3)
+	end
+	end
+	for a=1, 7 do
+	local randint = RandomInt(1,3)
+	 if randint == 1 then
+		CreateUnitByName(a1, aloc, true, nil, nil, 3)
+	elseif randint == 2 then
+		CreateUnitByName(a2, aloc, true, nil, nil, 3)
+	elseif randint == 3 then
+		CreateUnitByName(a3, aloc, true, nil, nil, 3)
+	end
+	if randint == 1 then
+		CreateUnitByName(a1, abadloc, true, nil, nil, 3)
+	elseif randint == 2 then
+		CreateUnitByName(a2, abadloc, true, nil, nil, 3)
+	elseif randint == 3 then
+		CreateUnitByName(a3, abadloc, true, nil, nil, 3)
+	end
+	end
+end
 end
 
 -- This function initializes the game mode and is called before anyone loads into the game

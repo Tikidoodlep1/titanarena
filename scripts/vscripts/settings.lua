@@ -2,21 +2,21 @@
 USE_DEBUG = false						-- Should we print statements on almost every function/event call? For debugging.
 
 ENABLE_HERO_RESPAWN = true				-- Should the heroes automatically respawn on a timer or stay dead until manually respawned
-UNIVERSAL_SHOP_MODE = false				-- Should the shops contain all items?
+UNIVERSAL_SHOP_MODE = true				-- Should the shops contain all items?
 ALLOW_SAME_HERO_SELECTION = false		-- Should we let people select the same hero as each other
 LOCK_TEAMS = false 						-- Should we Lock (true) or unlock (false) team assignemnt. If team assignment is locked players cannot change teams.
 
-CUSTOM_GAME_SETUP_TIME = 25.0			-- How long should custom game setup last - the screen where players pick a team?
+CUSTOM_GAME_SETUP_TIME = 20.0			-- How long should custom game setup last - the screen where players pick a team?
 HERO_SELECTION_TIME = 60.0				-- How long should we let people select their hero? Should be at least 5 seconds.
 HERO_SELECTION_PENALTY_TIME = 19.0      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
-BANNING_PHASE_TIME = 30.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
+BANNING_PHASE_TIME = 10.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
 STRATEGY_TIME = 20.0					-- How long should strategy time last? Bug: You can buy items during strategy time and it will not be spent!
 SHOWCASE_TIME = 12.0					-- How long should show case time be?
 PRE_GAME_TIME = 80.0					-- How long after showcase time should the horn blow and the game start?
 POST_GAME_TIME = 60.0					-- How long should we let people stay around before closing the server automatically?
 TREE_REGROW_TIME = 300.0				-- How long should it take individual trees to respawn after being cut down/destroyed?
 
-GOLD_PER_TICK = 2						-- How much gold should players get per tick?
+GOLD_PER_TICK = 1						-- How much gold should players get per tick?
 GOLD_TICK_TIME = 1.0					-- How long should we wait in seconds between gold ticks?
 
 NORMAL_START_GOLD = 600					-- Starting Gold if picked normally
@@ -35,7 +35,7 @@ CUSTOM_BUYBACK_COOLDOWN_ENABLED = false	-- Should we use a custom buyback time?
 CUSTOM_BUYBACK_COOLDOWN_TIME = 480.0	-- Custom buyback cooldown time (needed if CUSTOM_BUYBACK_COOLDOWN_ENABLED is true).
 BUYBACK_FIXED_GOLD_COST = 500			-- Fixed custom buyback gold cost (needed if CUSTOM_BUYBACK_COST_ENABLED is true).
 
-CUSTOM_SCAN_COOLDOWN = 210				-- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
+CUSTOM_SCAN_COOLDOWN = 120				-- Custom cooldown of Scan in seconds. Doesn't affect Scan's starting cooldown!
 
 DISABLE_FOG_OF_WAR_ENTIRELY = false		-- Should we disable fog of war entirely for both teams?
 USE_UNSEEN_FOG_OF_WAR = false			-- Should we make unseen and fogged areas of the map completely black until uncovered by each team? 
@@ -58,11 +58,11 @@ ENABLE_TOWER_BACKDOOR_PROTECTION = true	-- Should we enable backdoor protection 
 REMOVE_ILLUSIONS_ON_DEATH = false		-- Should we remove all illusions if the main hero dies? BUGGED!?
 DISABLE_GOLD_SOUNDS = false				-- Should we disable the gold sound when players get gold?
 
-END_GAME_ON_KILLS = false				-- Should the game end after a certain number of kills?
+END_GAME_ON_KILLS = true				-- Should the game end after a certain number of kills?
 KILLS_TO_END_GAME_FOR_TEAM = 100		-- How many kills for a team should signify an end of game?
 
-USE_CUSTOM_XP_VALUES = false			-- Should we use custom XP values to level up heroes, or the default Dota numbers?
-MAX_LEVEL = 30							-- What level should we let heroes get to? (USE_CUSTOM_XP_VALUES must be true).
+USE_CUSTOM_XP_VALUES = true			-- Should we use custom XP values to level up heroes, or the default Dota numbers?
+MAX_LEVEL = 50							-- What level should we let heroes get to? (USE_CUSTOM_XP_VALUES must be true).
 -- NOTE: MAX_LEVEL and XP_PER_LEVEL_TABLE will not work if USE_CUSTOM_XP_VALUES is false or nil.
 
 -- Fill this table up with the required XP per level if you want to change it
@@ -74,7 +74,7 @@ end
 
 ENABLE_FIRST_BLOOD = true				-- Should we enable first blood for the first kill in this game?
 HIDE_KILL_BANNERS = false               -- Should we hide the kill banners that show when a player is killed?
-LOSE_GOLD_ON_DEATH = false              -- Should we have players lose the normal amount of dota gold on death?
+LOSE_GOLD_ON_DEATH = true              -- Should we have players lose the normal amount of dota gold on death?
 SHOW_ONLY_PLAYER_INVENTORY = false      -- Should we only allow players to see their own inventory even when selecting other units?
 DISABLE_STASH_PURCHASING = false        -- Should we prevent players from being able to buy items into their stash when not at a shop?
 DISABLE_ANNOUNCER = false               -- Should we disable the announcer from working in the game?
@@ -128,7 +128,7 @@ FOUNTAIN_CONSTANT_MANA_REGEN = -1       -- What should we use for the constant f
 FOUNTAIN_PERCENTAGE_MANA_REGEN = -1     -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_HEALTH_REGEN = -1   -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
 MAXIMUM_ATTACK_SPEED = 700              -- What should we use for the maximum attack speed?
-MINIMUM_ATTACK_SPEED = 10               -- What should we use for the minimum attack speed?
+MINIMUM_ATTACK_SPEED = 30               -- What should we use for the minimum attack speed?
 
 DISABLE_DAY_NIGHT_CYCLE = false               -- Should we disable the day night cycle from naturally occurring? (Manual adjustment still possible)
 DISABLE_KILLING_SPREE_ANNOUNCER = false       -- Shuold we disable the killing spree announcer?
@@ -164,11 +164,11 @@ TEAM_COLORS[DOTA_TEAM_CUSTOM_6] = { 27, 192, 216 }  --    Cyan
 TEAM_COLORS[DOTA_TEAM_CUSTOM_7] = { 199, 228, 13 }  --    Olive
 TEAM_COLORS[DOTA_TEAM_CUSTOM_8] = { 140, 42, 244 }  --    Purple
 
-USE_AUTOMATIC_PLAYERS_PER_TEAM = true   -- Should we set the number of players to 10 / MAX_NUMBER_OF_TEAMS?
+USE_AUTOMATIC_PLAYERS_PER_TEAM = false   -- Should we set the number of players to 10 / MAX_NUMBER_OF_TEAMS?
 
 CUSTOM_TEAM_PLAYER_COUNT = {}           -- If we're not automatically setting the number of players per team, use this table
-CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 5
-CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS]  = 5
+CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 10
+CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS]  = 10
 CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_1] = 0
 CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_2] = 0
 CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_CUSTOM_3] = 0

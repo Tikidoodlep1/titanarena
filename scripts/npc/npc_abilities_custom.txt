@@ -193,4 +193,110 @@
 			}
 		}
 	}
+	"frost_attack_neutral"
+  {
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"ghost_frost_attack"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"attack_slow"	"-100"
+		}
+	}
+	"Modifiers"
+	{
+		"ghost_frost_attack_modifier"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+			"IsDebuff"	"1"
+			"Duration"	"2"
+			"IsPurgable""1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_slow"
+			}
+		}
+		"ghost_orb_modifier"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"Orb"
+			{
+				"Priority"	"DOTA_ORB_PRIORITY_ABILITY"
+				"ProjectileName"	"particles/neutral_fx/ghost_base_attack_trail.vpcf"
+				"CastAttack"	"1"
+			}
+			"OnOrbImpact"
+			{
+				"ApplyModifer"
+				{
+					"Target"	"TARGET"
+					"ModifierName"	"ghost_frost_attack_modifier"
+				}
+			}
+		}
+	}
+  }
+  "satyr_b_mana_break"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"ghost_frost_attack"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"mana_break"	"-2"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"damage_per_mana"	"2"		
+		}
+	}
+	"Modifiers"
+	{
+		"satyr_mana_burn"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"Orb"
+			{
+				"Priority"	"DOTA_ORB_PRIORITY_ABILITY"
+				"ProjectileName"	"particles/generic_gameplay/generic_manaburn_b.vpcf"
+				"CastAttack"	"1"
+			}
+			"OnOrbImpact"
+			{
+				"Damage"
+				{
+					"Type"		"DAMAGE_TYPE_PURE"
+					"Damage"	"%damage_per_mana"
+					"Target"	"TARGET"
+				}
+				"ApplyModifier"
+				{
+					"Target"	"TARGET"
+					"ModifierName"	"satyr_mana_burn_modifier"
+				}
+			}
+		}
+		"satyr_mana_burn_modifier"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MANA_BONUS"	"%mana_break"
+			}
+		}
+	}
+  }
 }
