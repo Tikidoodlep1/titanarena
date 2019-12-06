@@ -345,6 +345,7 @@
 		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -364,6 +365,7 @@
 		"ID"							"14001"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -433,8 +435,8 @@
 	
 	"item_recipe_greater_crit_3"
 	{
-	"ID"							    "14021"
-	"Model"							"models/props_gameplay/recipe.mdl"
+		"ID"							"14021"
+		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -460,6 +462,7 @@
 		"ID"							"14031"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_datadriven"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -530,14 +533,15 @@
 	
 	"item_recipe_greater_crit_4"
 	{
-	"ID"							    "14041"
-	"Model"							"models/props_gameplay/recipe.mdl"
+		"ID"							"14041"
+		"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -556,7 +560,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"14051"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_datadriven"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -630,6 +634,8 @@
 		//-----------------------------------------------------------------------------------------------------------------
 		"ID"								"14002"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		
 	
 		//Item Info
 		//-----------------------------------------------------------------------------------------------------------------
@@ -669,6 +675,7 @@
 		//------------------------------------------------------------------------------------------------------------------
 		"ID"								"14003"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
@@ -708,6 +715,7 @@
 		//------------------------------------------------------------------------------------------------------------------
 		"ID"								"14004"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
@@ -784,6 +792,7 @@
 		//------------------------------------------------------------------------------------------------------------------
 		"ID"								"14005"
 		"AbilityBehavor"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
@@ -869,6 +878,7 @@
 		//------------------------------------------------------------------------------------------------------------------
 		"ID"								"14006"
 		"AbilityBehavor"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
