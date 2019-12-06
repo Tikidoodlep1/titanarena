@@ -52,8 +52,22 @@ function Precache(context)
 
 	-- Entire heroes (sound effects/voice/models/particles) can be precached with PrecacheUnitByNameSync
 	-- Custom units from npc_units_custom.txt can also have all of their abilities and precache{} blocks precached in this way
-	PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
-	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
+	PrecacheUnitByNameSync("npc_ancient_dragonspawn_b", context)
+	PrecacheUnitByNameSync("npc_ancient_frost_ghost", context)
+	PrecacheUnitByNameSync("npc_ancient_troll_dark_frost", context)
+	PrecacheUnitByNameSync("npc_hard_gargoyle_jungle_stalker", context)
+	PrecacheUnitByNameSync("npc_hard_satyr_a", context)
+	PrecacheUnitByNameSync("npc_hard_eimermole", context)
+	PrecacheUnitByNameSync("npc_hard_ghost_a", context)
+	PrecacheUnitByNameSync("npc_med_frost_gnoll", context)
+	PrecacheUnitByNameSync("npc_med_vulture_a", context)
+	PrecacheUnitByNameSync("npc_med_kobold_a", context)
+	PrecacheUnitByNameSync("npc_med_harpy_b", context)
+	PrecacheUnitByNameSync("npc_easy_beast", context)
+	PrecacheUnitByNameSync("npc_easy_satyr_b", context)
+	PrecacheUnitByNameSync("npc_easy_frost_kobold", context)
+	PrecacheUnitByNameSync("npc_easy_forest_troll_berserker", context)
+	PrecacheUnitByNameSync("npc_easy_ghost_b", context)
 end
 
 -- Create the game mode when we activate

@@ -12,7 +12,7 @@ HERO_SELECTION_PENALTY_TIME = 19.0      -- How long should the penalty time for 
 BANNING_PHASE_TIME = 10.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
 STRATEGY_TIME = 20.0					-- How long should strategy time last? Bug: You can buy items during strategy time and it will not be spent!
 SHOWCASE_TIME = 12.0					-- How long should show case time be?
-PRE_GAME_TIME = 80.0					-- How long after showcase time should the horn blow and the game start?
+PRE_GAME_TIME = 60.0					-- How long after showcase time should the horn blow and the game start?
 POST_GAME_TIME = 60.0					-- How long should we let people stay around before closing the server automatically?
 TREE_REGROW_TIME = 300.0				-- How long should it take individual trees to respawn after being cut down/destroyed?
 
@@ -87,7 +87,7 @@ SKILL_POINTS_AT_EVERY_LEVEL = false		-- Should we allow heroes to gain skill poi
 
 FIXED_RESPAWN_TIME = -1                 -- What time should we use for a fixed respawn timer?  Use -1 to keep the default dota behavior.
 -- NOTE: use FIXED_RESPAWN_TIME if you want the same respawn time on every level.
-MAX_RESPAWN_TIME = 125					-- Default Dota doesn't have a limit (it can go above 125). Fast game modes should have 20 seconds.
+MAX_RESPAWN_TIME = 100     				-- Default Dota doesn't have a limit (it can go above 125). Fast game modes should have 20 seconds.
 USE_CUSTOM_RESPAWN_TIMES = false		-- Should we use custom respawn times (true) or dota default (false)?
 
 -- Fill this table with respawn times on each level if USE_CUSTOM_RESPAWN_TIMES is true.

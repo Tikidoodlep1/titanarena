@@ -168,6 +168,30 @@
 			}
 		}
 	}
+	
+	"item_recipe_aquila"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"21001"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_recipe_ring_of_aquila"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemPurchasable"				"0"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aquila"
+		"ItemRequirements"
+		{
+			"01"						"item_wraith_band;item_ring_of_basilius"
+		}
+	}
+	
 	 "item_aquila"
 	{
 		// General
@@ -175,6 +199,7 @@
 		"ID"							"21002"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityCastRange" 				"1200"
+		"BaseClass"						"item_ring_of_aquila"
 
 		"Model"							"models/props_gameplay/red_box.vmdl"
 
@@ -244,12 +269,13 @@
 	}
 	
 	
-	"item_recipe_iron_talon"
+	"item_recipe_iron_talon_new"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"23008"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_recipe_iron_talon"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -260,7 +286,7 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_iron_talon"
+		"ItemResult"					"item_iron_talon_new"
 		"ItemRequirements"
 		{
 			"01"						"item_quelling_blade;item_ring_of_protection"
@@ -268,7 +294,7 @@
 	}
 	
 	
-	"item_iron_talon"
+	"item_iron_talon_new"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -277,6 +303,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_PREFER_ENEMIES"
+		"BaseClass"						"item_iron_talon"
 
 		"AbilityCastRange"				"450"
 		"AbilityCastPoint"				"0.0"
