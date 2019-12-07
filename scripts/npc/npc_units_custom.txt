@@ -73,7 +73,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "160"     // Base health.
+    "StatusHealth"        "280"     // Base health.
     "StatusHealthRegen"     "3"     // Health regeneration rate.
     "StatusMana"        "50"     // Base mana.
     "StatusManaRegen"     "1"     // Mana regeneration rate.
@@ -92,6 +92,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "2.8"
+                        "DamageGain"                            "0.9"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.25"
+                        "XPGain"                                        "0.25"
+                }
 }
 "npc_easy_forest_troll_berserker"
   {
@@ -161,7 +174,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "140"     // Base health.
+    "StatusHealth"        "260"     // Base health.
     "StatusHealthRegen"     "3"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -180,6 +193,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "2.6"
+                        "DamageGain"                            "0.93"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.25"
+                        "XPGain"                                        "0.25"
+                }
 }
 "npc_easy_frost_kobold"
   {
@@ -247,7 +273,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "150"     // Base health.
+    "StatusHealth"        "270"     // Base health.
     "StatusHealthRegen"     "3"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -266,6 +292,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "2.7"
+                        "DamageGain"                            "0.92"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.25"
+                        "XPGain"                                        "0.25"
+                }
 }
 	"npc_easy_satyr_b"
   {
@@ -335,7 +374,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "135"     // Base health.
+    "StatusHealth"        "255"     // Base health.
     "StatusHealthRegen"     "3"     // Health regeneration rate.
     "StatusMana"        "100"     // Base mana.
     "StatusManaRegen"     "2"     // Mana regeneration rate.
@@ -354,6 +393,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "2.525"
+                        "DamageGain"                            "0.92"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.25"
+                        "XPGain"                                        "0.25"
+                }
 }
 	"npc_easy_beast"
   {
@@ -421,7 +473,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "165"     // Base health.
+    "StatusHealth"        "285"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -440,6 +492,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "2.825"
+                        "DamageGain"                            "0.92"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.25"
+                        "XPGain"                                        "0.25"
+                }
 }
     "npc_med_harpy_b"
   {
@@ -448,7 +513,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_harpy_b/n_creep_harpy_b.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "1"
+    "Level"           "0"
     "UnitLabel"         "Harpy"
     
     // Abilities
@@ -509,7 +574,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "185"     // Base health.
+    "StatusHealth"        "325"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "200"     // Base mana.
     "StatusManaRegen"     "1"     // Mana regeneration rate.
@@ -528,6 +593,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "3.225"
+                        "DamageGain"                            "1.2"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.35"
+                        "XPGain"                                        "0.35"
+                }
 }
 "npc_med_kobold_a"
   {
@@ -536,7 +614,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "1"
+    "Level"           "0"
     "UnitLabel"         "Kobold Master"
     
     // Abilities
@@ -596,7 +674,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "190"     // Base health.
+    "StatusHealth"        "330"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -615,6 +693,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "3.3"
+                        "DamageGain"                            "1.25"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.35"
+                        "XPGain"                                        "0.35"
+                }
 }
 "npc_med_vulture_a"
   {
@@ -623,7 +714,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_vulture_a/n_creep_vulture_a.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Melee"          // Name of sound set.
-    "Level"           "1"
+    "Level"           "0"
     "UnitLabel"         "Wildwing Kin"
     
     // Abilities
@@ -682,7 +773,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "195"     // Base health.
+    "StatusHealth"        "335"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -701,6 +792,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "3.325"
+                        "DamageGain"                            "1.22"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.35"
+                        "XPGain"                                        "0.35"
+                }
 }
 "npc_med_frost_gnoll"
   {
@@ -709,7 +813,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll_frost.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "1"
+    "Level"           "0"
     "UnitLabel"         "Frost Gnoll"
     
     // Abilities
@@ -770,7 +874,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "205"     // Base health.
+    "StatusHealth"        "345"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "50"     // Base mana.
     "StatusManaRegen"     "1"     // Mana regeneration rate.
@@ -789,6 +893,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "3.425"
+                        "DamageGain"                            "1.23"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.35"
+                        "XPGain"                                        "0.35"
+                }
 }
 "npc_hard_ghost_a"
   {
@@ -797,7 +914,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "2"
+    "Level"           "0"
     "UnitLabel"         "Greater Ghost"
     
     // Abilities
@@ -858,7 +975,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "235"     // Base health.
+    "StatusHealth"        "395"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "200"     // Base mana.
     "StatusManaRegen"     "5"     // Mana regeneration rate.
@@ -877,6 +994,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "3.925"
+                        "DamageGain"                            "1.89"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.45"
+                        "XPGain"                                        "0.45"
+                }
 }
 "npc_hard_eimermole"
   {
@@ -885,7 +1015,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole_lamp.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "2"
+    "Level"           "0"
     "UnitLabel"         "Eimermole"
     
     // Abilities
@@ -944,7 +1074,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "260"     // Base health.
+    "StatusHealth"        "421"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -963,6 +1093,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "4.21"
+                        "DamageGain"                            "1.94"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.45"
+                        "XPGain"                                        "0.45"
+                }
 }
 "npc_hard_satyr_a"
   {
@@ -971,7 +1114,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "2"
+    "Level"           "0"
     "UnitLabel"         "Satyr Punisher"
     
     // Abilities
@@ -1030,7 +1173,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "265"     // Base health.
+    "StatusHealth"        "425"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "50"     // Base mana.
     "StatusManaRegen"     "1"     // Mana regeneration rate.
@@ -1049,6 +1192,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "4.225"
+                        "DamageGain"                            "2.4"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.45"
+                        "XPGain"                                        "0.45"
+                }
 }
 "npc_hard_gargoyle_jungle_stalker"
   {
@@ -1057,7 +1213,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "2"
+    "Level"           "0"
     "UnitLabel"         "Jungle Bat"
     
     // Abilities
@@ -1118,7 +1274,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "255"     // Base health.
+    "StatusHealth"        "415"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "100"     // Base mana.
     "StatusManaRegen"     "3"     // Mana regeneration rate.
@@ -1145,7 +1301,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_troll_dark_b/n_creep_troll_dark_frost.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "3"
+    "Level"           "0"
     "UnitLabel"         "Dark Frost Troll"
     
     // Abilities
@@ -1201,12 +1357,12 @@
     // Movement
     //----------------------------------------------------------------
     "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
-    "MovementSpeed"       "325"   // Speed
+    "MovementSpeed"       "425"   // Speed
     "MovementTurnRate"      "1.0"   // Turning rate.
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "435"     // Base health.
+    "StatusHealth"        "515"     // Base health.
     "StatusHealthRegen"     "10"     // Health regeneration rate.
     "StatusMana"        "300"     // Base mana.
     "StatusManaRegen"     "7"     // Mana regeneration rate.
@@ -1225,6 +1381,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "5.125"
+                        "DamageGain"                            "2.63"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.55"
+                        "XPGain"                                        "0.55"
+                }
 }
 "npc_ancient_dragonspawn_b"
   {
@@ -1233,7 +1402,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/creeps/neutral_creeps/n_creep_dragonspawn_b/n_creep_dragonspawn_b.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Melee"          // Name of sound set.
-    "Level"           "3"
+    "Level"           "0"
     "UnitLabel"         "Dragoon Warrior"
     
     // Abilities
@@ -1292,7 +1461,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "430"     // Base health.
+    "StatusHealth"        "610"     // Base health.
     "StatusHealthRegen"     "10"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -1311,6 +1480,19 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "6.1"
+                        "DamageGain"                            "2.67"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.55"
+                        "XPGain"                                        "0.55"
+                }
 }
 "npc_ancient_frost_ghost"
   {
@@ -1320,7 +1502,7 @@
     "Model"           "models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_frost.vmdl"  // Model.
 	"ModelScale"		"1.4"
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
-    "Level"           "3"
+    "Level"           "0"
     "UnitLabel"         "Frost Ghost"
     
     // Abilities
@@ -1381,7 +1563,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "460"     // Base health.
+    "StatusHealth"        "640"     // Base health.
     "StatusHealthRegen"     "10"     // Health regeneration rate.
     "StatusMana"        "500"     // Base mana.
     "StatusManaRegen"     "15"     // Mana regeneration rate.
@@ -1400,5 +1582,18 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
-}
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "6.4"
+                        "DamageGain"                            "2.66"
+                        "ArmorGain"                                     "0.25"
+                        "MagicResistGain"                       "0.1"
+                        "BountyGain"                            "0.55"
+                        "XPGain"                                        "0.55"
+                }
+  }
 }
