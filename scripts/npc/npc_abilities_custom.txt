@@ -212,11 +212,11 @@
 	{
 		"ghost_frost_attack_modifier"
 		{
-			"Passive"	"1"
+			"Passive"	"0"
 			"IsHidden"	"0"
 			"IsDebuff"	"1"
-			"Duration"	"2"
 			"IsPurgable""1"
+			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_slow"
@@ -225,19 +225,13 @@
 		"ghost_orb_modifier"
 		{
 			"Passive"	"1"
-			"IsHidden"	"1"
-			"Orb"
+			"IsHidden"	"0"
+			"OnAttackLanded"
 			{
-				"Priority"	"DOTA_ORB_PRIORITY_ABILITY"
-				"ProjectileName"	"particles/neutral_fx/ghost_base_attack_trail.vpcf"
-				"CastAttack"	"1"
-			}
-			"OnOrbImpact"
-			{
-				"ApplyModifer"
+				"RunScript"
 				{
-					"Target"	"TARGET"
-					"ModifierName"	"ghost_frost_attack_modifier"
+					"ScriptFile"	"neutral_abilities"
+					"Function"		"FrostAttack"
 				}
 			}
 		}
@@ -247,13 +241,14 @@
   {
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"	"ghost_frost_attack"
+	"AbilityTextureName"	"satyr_mana_break"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"		"FIELD_INTEGER"
-			"mana_break"	"-2"
+			"mana_break"	"5"
 		}
 		"02"
 		{
@@ -266,35 +261,14 @@
 		"satyr_mana_burn"
 		{
 			"Passive"	"1"
-			"IsHidden"	"1"
-			"Orb"
+			"IsHidden"	"0"
+			"OnAttackLanded"
 			{
-				"Priority"	"DOTA_ORB_PRIORITY_ABILITY"
-				"ProjectileName"	"particles/generic_gameplay/generic_manaburn_b.vpcf"
-				"CastAttack"	"1"
-			}
-			"OnOrbImpact"
-			{
-				"Damage"
+				"RunScript"
 				{
-					"Type"		"DAMAGE_TYPE_PURE"
-					"Damage"	"%damage_per_mana"
-					"Target"	"TARGET"
+					"ScriptFile"	"neutral_abilities"
+					"Function"		"ManaBurn"
 				}
-				"ApplyModifier"
-				{
-					"Target"	"TARGET"
-					"ModifierName"	"satyr_mana_burn_modifier"
-				}
-			}
-		}
-		"satyr_mana_burn_modifier"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MANA_BONUS"	"%mana_break"
 			}
 		}
 	}
