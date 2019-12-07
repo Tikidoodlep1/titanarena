@@ -37,8 +37,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "particles/neutral_fx/ghost_ambient.vpcf"
 	"ProjectileSpeed"            "550"
-    "AttackDamageMin"     "8"     // Damage range min.
-    "AttackDamageMax"     "10"     // Damage range max.
+    "AttackDamageMin"     "10"     // Damage range min.
+    "AttackDamageMax"     "12"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -138,8 +138,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_berserker_axe.vmdl"
 	"ProjectileSpeed"            "500"
-    "AttackDamageMin"     "12"     // Damage range min.
-    "AttackDamageMax"     "14"     // Damage range max.
+    "AttackDamageMin"     "14"     // Damage range min.
+    "AttackDamageMax"     "16"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -237,8 +237,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "7"     // Damage range min.
-    "AttackDamageMax"     "9"     // Damage range max.
+    "AttackDamageMin"     "9"     // Damage range min.
+    "AttackDamageMax"     "11"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -338,8 +338,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "particles/neutral_fx/satyr_trickster_projectile.vpcf"
 	"ProjectileSpeed"            "650"
-    "AttackDamageMin"     "12"     // Damage range min.
-    "AttackDamageMax"     "14"     // Damage range max.
+    "AttackDamageMin"     "14"     // Damage range min.
+    "AttackDamageMax"     "16"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -437,8 +437,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "10"     // Damage range min.
-    "AttackDamageMax"     "12"     // Damage range max.
+    "AttackDamageMin"     "12"     // Damage range min.
+    "AttackDamageMax"     "14"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -538,8 +538,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "particles/addons_gameplay/fountain_tintable_radiance.vpcf"
 	"ProjectileSpeed"            "700"
-    "AttackDamageMin"     "18"     // Damage range min.
-    "AttackDamageMax"     "22"     // Damage range max.
+    "AttackDamageMin"     "22"     // Damage range min.
+    "AttackDamageMax"     "26"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -637,8 +637,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "24"     // Damage range min.
-    "AttackDamageMax"     "26"     // Damage range max.
+    "AttackDamageMin"     "28"     // Damage range min.
+    "AttackDamageMax"     "30"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -737,8 +737,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "21"     // Damage range min.
-    "AttackDamageMax"     "23"     // Damage range max.
+    "AttackDamageMin"     "25"     // Damage range min.
+    "AttackDamageMax"     "28"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -838,8 +838,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll_spear.vmdl"
 	"ProjectileSpeed"            "750"
-    "AttackDamageMin"     "22"     // Damage range min.
-    "AttackDamageMax"     "24"     // Damage range max.
+    "AttackDamageMin"     "26"     // Damage range min.
+    "AttackDamageMax"     "28"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -939,8 +939,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "particles/neutral_fx/ghost_frost_attack.vpcf"
 	"ProjectileSpeed"            "675"
-    "AttackDamageMin"     "38"     // Damage range min.
-    "AttackDamageMax"     "40"     // Damage range max.
+    "AttackDamageMin"     "42"     // Damage range min.
+    "AttackDamageMax"     "44"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -1038,8 +1038,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "42"     // Damage range min.
-    "AttackDamageMax"     "44"     // Damage range max.
+    "AttackDamageMin"     "46"     // Damage range min.
+    "AttackDamageMax"     "48"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -1137,8 +1137,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "39"     // Damage range min.
-    "AttackDamageMax"     "41"     // Damage range max.
+    "AttackDamageMin"     "43"     // Damage range min.
+    "AttackDamageMax"     "45"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -1238,8 +1238,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "particles/neutral_fx/harpy_chain_lightning_head.vpcf"
 	"ProjectileSpeed"            "700"
-    "AttackDamageMin"     "41"     // Damage range min.
-    "AttackDamageMax"     "43"     // Damage range max.
+    "AttackDamageMin"     "45"     // Damage range min.
+    "AttackDamageMax"     "48"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -1326,8 +1326,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "particles/units/heroes/hero_troll_warlord/troll_warlord_net_cast_glow.vpcf"
 	"ProjectileSpeed"            "700"
-    "AttackDamageMin"     "62"     // Damage range min.
-    "AttackDamageMax"     "64"     // Damage range max.
+    "AttackDamageMin"     "66"     // Damage range min.
+    "AttackDamageMax"     "68"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -1425,8 +1425,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "66"     // Damage range min.
-    "AttackDamageMax"     "68"     // Damage range max.
+    "AttackDamageMin"     "70"     // Damage range min.
+    "AttackDamageMax"     "72"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -1527,8 +1527,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"            "particles/neutral_fx/ghost_base_attack_trail.vpcf"
 	"ProjectileSpeed"            "600"
-    "AttackDamageMin"     "65"     // Damage range min.
-    "AttackDamageMax"     "67"     // Damage range max.
+    "AttackDamageMin"     "69"     // Damage range min.
+    "AttackDamageMax"     "71"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
