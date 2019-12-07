@@ -4,6 +4,7 @@
 
 "DOTAUnits"
 {
+	//KV CHECKER http://arhowk.github.io/
 	"Version" 	"1"
 	"npc_easy_ghost_b"
   {
@@ -1211,7 +1212,7 @@
     // General
     //
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
-    "Model"           "models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"  // Model.
+    "Model"           "models/creeps/neutral_creeps/n_creep_gargoyle/n_creep_gargoyle.vmdl"  // Model.
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Jungle Bat"
@@ -1608,6 +1609,112 @@
                         "MagicResistGain"                       "0.1"
                         "BountyGain"                            "0.55"
                         "XPGain"                                        "0.55"
+                }
+  }
+  
+  //----------------------------------------------------------------------------------------------------
+  //TITANS
+  //----------------------------------------------------------------------------------------------------
+  "npc_radiant_titan"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           "models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_frost.vmdl"  // Model.
+	"ModelScale"		"3.2"
+    "SoundSet"          "Creep_Good_Range"          // Name of sound set.
+    "Level"           "0"
+    "UnitLabel"         "Radiant Titan"
+    
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          "titan_split_shot"     // Ability 1.
+    "Ability2"          ""      // Ability 2.
+    "Ability3"          ""      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          ""      // Ability 5.
+    "Ability6"          ""      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "10"     // Physical protection.
+    "MagicalResistance"       "25"     // Magical protection.
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
+	"ProjectileModel"            "particles/neutral_fx/ghost_base_attack_trail.vpcf"
+	"ProjectileSpeed"            "600"
+    "AttackDamageMin"     "225"     // Damage range min.
+    "AttackDamageMax"     "225"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "0.9"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "750"   // Range within a target can be acquired.
+    "AttackRange"       "650"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"   "50"     // Base strength
+    "AttributeStrengthGain"   "1"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "50"     // Base intelligence
+    "AttributeIntelligenceGain" "1"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "50"     // Base agility
+    "AttributeAgilityGain"    "1"     // Agility bonus per level.
+	"CanBeDominated"               "0"
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "0"     // Experience earn.
+    "BountyGoldMin"       "0"     // Gold earned min.
+    "BountyGoldMax"       "0"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_HUGE"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "345"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "8000"     // Base health.
+    "StatusHealthRegen"     "15"     // Health regeneration rate.
+    "StatusMana"        "500"     // Base mana.
+    "StatusManaRegen"     "15"     // Mana regeneration rate.
+	"ConsideredHero"		"1"
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_GOODGUYS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
+    
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "2000"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "200"
+                        "DamageGain"                            "5"
+                        "ArmorGain"                                     "2"
+                        "MagicResistGain"                       "0.5"
                 }
   }
 }

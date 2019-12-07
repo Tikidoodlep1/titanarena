@@ -1,24 +1,9 @@
 function ManaBurn(keys)
 local caster = keys.caster
 local target = keys.target
-local manaBurn = keys.ability:GetLevelSpecialValueFor("mana_break")
-local manaDamage = keys.ability:GetLevelSpecialValueFor("damage_per_mana")
+local mana = target:GetMana()
 
-local damageTable = {}
-damageTable.attacker = caster
-damageTable.victim = target
-damageTable.damage_type = keys.ability:GetAbilityDamageType()
-damageTable.ability = ability
-
-	if target:GetMana() >= manaBurn then
-		damageTable.damage = manaBurn * manaDamage
-		target:ReduceMana(manaBurn)
-	else
-		damageTable.damage = target:GetMana() * manaDamage
-		target:ReduceMana(manaBurn)
-	end
-
-	ApplyDamage(damageTable)
+target:SetMana(mana - 10)
 end
 
 function FrostAttack(keys)

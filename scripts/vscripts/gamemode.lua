@@ -145,7 +145,7 @@ function barebones:OnGameInProgress()
       return 120 -- Rerun this timer every 120 game-time seconds 
 	  
     end)
-
+	level = 0
 function SpawnCreeps(keys)
 	local e1 = "npc_easy_ghost_b"
 	local e2 = "npc_easy_forest_troll_berserker"
@@ -163,7 +163,6 @@ function SpawnCreeps(keys)
 	local a1 = "npc_ancient_troll_dark_frost"
 	local a2 = "npc_ancient_dragonspawn_b"
 	local a3 = "npc_ancient_frost_ghost"
-	local level = 0
 	local loc = Entities:FindByName(nil, "rad_n_easy"):GetAbsOrigin()
 	local loc1 = Entities:FindByName(nil, "rad_n_easy1"):GetAbsOrigin()
 	local badloc = Entities:FindByName(nil, "dire_n_easy"):GetAbsOrigin()

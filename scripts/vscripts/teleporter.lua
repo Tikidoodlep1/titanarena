@@ -1,15 +1,14 @@
-TELEPORTERS = {trigger_teleporter = "teleporter_exit", trigger_teleporter2 = "teleporter_exit1"}
+TELEPORTERS = {trigger_teleporter2 = "teleporter_exit1", trigger_teleporter3 = "teleporter_exit"}
 
-function teleport(trigger)
+function teleport3(trigger)
 local point = Entities:FindByName(nil, TELEPORTERS[trigger.caller:GetName()]):GetAbsOrigin()
 FindClearSpaceForUnit(trigger.activator, point, false)
-trigger.activarot:stop()
 SendToConsole("dota_camera_center")
 end
 
 function teleport2(trigger)
 local point = Entities:FindByName(nil, TELEPORTERS[trigger.caller:GetName()]):GetAbsOrigin()
 FindClearSpaceForUnit(trigger.activator, point, false)
-trigger.activarot:stop()
 SendToConsole("dota_camera_center")
 end
+
