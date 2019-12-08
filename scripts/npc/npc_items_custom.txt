@@ -706,18 +706,18 @@
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"burn_pct"					"1.1"
+				"var_type"					"FIELD_FLOAT"
+				"burn_pct"					"1"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"burn_duration"				"2"
+				"burn_duration"				"1"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_rate"				"0.03"
+				"damage_rate"				"0.111111111"
 			}
 		}
 		"Modifiers"
@@ -726,15 +726,11 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				"ThinkInterval"	"%damage_rate"
-				//"OnIntervalThink"
-				//{
-					//"RunScript"
-					//{								
-					//	"ScriptFile" "FireBlade.lua"
-					//	"Function" "ApplyDamage"
-					//}
-				//}
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+				}
 				"OnAttackLanded"
 					{
 						"ApplyModifier"
@@ -748,7 +744,7 @@
 			{
 				"Passive"	"0"
 				"IsHidden"	"0"
-				"Duration"	"2"
+				"Duration"	"%burn_duration"
 				"ThinkInterval"	"%damage_rate"
 				"OnIntervalThink"
 				{
@@ -757,7 +753,7 @@
 						"Target"	"TARGET"
 						"Type"		"DAMAGE_TYPE_MAGICAL"
 						"Damage"	"%burn_pct"
-						"MaxHealthPercentBasedDamage"	"1"
+						"CurrentHealthPercentBasedDamage"	"1"
 					}
 				}
 			}

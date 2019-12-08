@@ -6,7 +6,6 @@ local mana_regen = ability:GetSpecialValueFor("mana_regen_pct")
 local rate = ability:GetSpecialValueFor("rate")
 
 	if ability:IsCooldownReady() and caster:IsRealHero() then
-	print("Off cooldown")
 		caster:Heal(caster:GetMaxHealth() * (regen / 100) * rate, caster)
 		caster:GiveMana(caster:GetMaxMana() * (mana_regen / 100) * rate)
 			if not caster:HasModifier("visible_regen_modifier") then
