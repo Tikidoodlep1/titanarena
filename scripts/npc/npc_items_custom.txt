@@ -28,8 +28,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"21002"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityCastRange" 				"1200"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AURA"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"aquila"
 
@@ -41,8 +40,6 @@
 		"ItemShopTags"					""
 		"ItemQuality"					"rare"
 		"ItemAliases"					"roa;ring of aquila"
-		"ItemShareability"				""		
-		"ActiveDescriptionLine"			"2"
 		"ItemPurchasable"				"1"
 		"ShouldBeSuggested"				"1"
 		"ItemSellable"					"1"
@@ -93,11 +90,14 @@
 				"aura_bonus_armor"		"2"
 			}	
 		}
-		"CreateThinker"
-        {
-            "ModifierName" "aquila_aura_thinker"
-            "Target" "CASTER"
-        }
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"aquila.lua"
+				"Function"		"ApplyAura"
+			}
+		}
 		"Modifiers"
 		{
 			"aquila_aura_modifier"
@@ -106,36 +106,20 @@
 				"IsHidden"	"0"
 				"IsBuff"	"1"
 				"IsPurgable"	"0"
-				"Aura"	"aquila_aura_modifier"
-				"Arua_Radius"	"%aura_radius"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%aura_mana_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%aura_bonus_armor"
 				}
 			}
-			"OnToggleOn"
-			{
-				"ApplyModifier"
-				{
-					"Target"	"CASTER"
-					"ModifierName"	"aquila_aura_modifier"
-				}
-			}
-			"OnToggleOff"
-			{
-				"RemoveModifier"
-				{
-					"Target"	"CASTER"
-					"ModifierName"	"aquila_aura_modifier"
-				}
-			}
 			"aquila_stats"
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
+				"Aura"			"aquila_aura_modifier"
+				"Arua_Radius"	"%aura_radius"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
@@ -265,7 +249,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"iron_talon"
+						"ScriptFile"	"iron_talon.lua"
 						"Function"		"BonusStats"
 					}
 				}
@@ -851,7 +835,9 @@
 		//General
 		//------------------------------------------------------------------------------------------------------------------
 		"ID"								"14006"
-		"AbilityBehavor"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"							"item_datadriven"
 		
 		//Item Info
@@ -862,12 +848,13 @@
 		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
 		"ItemKillable"						"1"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName" 				"spectral_jelly"
-		"AbilityCastRange"					"600"
 		"SecretShop"						"1"
+		"ItemInitialCharges" "1"
+		"ItemDisplayCharges" "0"
+		"ItemRequiresCharges" "1"
+		"ItemStackable" "0"
+		"ItemPermanent" "0"
 		
 		//Special
 		//------------------------------------------------------------------------------------------------------------------
@@ -879,21 +866,22 @@
 				"bonus_night_vision"		"300"
 			}
 		}
+		"OnSpellStart"
+		{
+			"SpendCharge"	{}
+			"ApplyModifier"
+			{
+				"Target"		"TARGET"
+				"ModifierName"	"spectral_jelly_modifier"
+			}
+			"FireSound"
+			{
+				"EffectName"	"moon_shard.vsnd_c"
+				"Target"		"TARGET"
+			}
+		}
 		"Modifiers"
 		{
-			"modifier_modifier"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"OnSpellStart"
-				{
-					"ApplyModifier"
-					{
-						"Target"		"CASTER"
-						"ModifierName"	"spectral_jelly_modifier"
-					}
-				}
-			}
 			"spectral_jelly_modifier"
 			{
 				"Passive"	"1"
@@ -902,6 +890,109 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION" "%bonus_night_vision"
+				}
+			}
+		}
+	}
+	"item_recipe_titan_platemail"
+	{
+	"ID"							    "14007"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_titan_platemail"
+		"ItemRequirements"
+		{
+			"01"						"item_buckler;item_reaver;item_platemail"
+		}
+	}
+	"item_titan_platemail"
+	{
+		//General
+		//------------------------------------------------------------------------------------------------------------------
+		"ID"								"14008"
+		"BaseClass"							"item_datadriven"
+		
+		//Item Info
+		//------------------------------------------------------------------------------------------------------------------
+		"ItemCost"							"4900"
+		"ItemQuality"						"epic"
+		"ItemAliases"						"Titan Platemail"
+		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"					"ITEM_NOT_SHAREABLE"
+		"AbilityTextureName" 				"titan_platemail"
+		
+		//Special
+		//------------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_str"					"30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"			"15"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"1200"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_armor"				"10"
+			}
+		}
+		"Modifiers"
+		{
+			"stats_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"45"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+				}
+			}
+			"titan_platemail_aura"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Aura"			"aura_properties"
+				"Arua_Radius"	"%aura_radius"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO"
+			}
+			"aura_properties"
+			{
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+				"IsBuff"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%aura_bonus_armor"
 				}
 			}
 		}

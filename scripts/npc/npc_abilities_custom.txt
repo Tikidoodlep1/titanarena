@@ -47,7 +47,6 @@
 					"Target"	"TARGET"
 					"ModifierName"	"ghost_frost_attack_modifier"
 				}
-				
 			}
 		}
 	}
