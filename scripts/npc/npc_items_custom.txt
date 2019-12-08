@@ -402,9 +402,9 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"1000"
 		"ItemShopTags"					""
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -423,13 +423,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"14031"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"Model"							"models/props_gameplay/recipe.mdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 				"greater_crit_3"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"11760"
+		"ItemCost"						"12760"
 		"ItemShopTags"					"damage;crit"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"daedalus"
@@ -525,11 +524,11 @@
 		"ID"							"14051"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 				"greater_crit_4"
+		"AbilityTextureName" 			"greater_crit_4"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"17090"
+		"ItemCost"						"18090"
 		"ItemShopTags"					"damage;crit"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"daedalus"
@@ -627,7 +626,7 @@
 		"Modifiers"
 		{
 			"Passive"	"1"
-			"IsHidden"	"0"
+			"IsHidden"	"1"
 			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"Properties"
 			{
@@ -668,7 +667,7 @@
 		"Modifiers"
 		{
 			"Passive"	"1"
-			"IsHidden"	"0"
+			"IsHidden"	"1"
 			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"Properties"
 			{
@@ -843,8 +842,8 @@
 		//General
 		//------------------------------------------------------------------------------------------------------------------
 		"ID"								"14006"
-		"AbilityBehavor"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"item_datadriven"
+		"AbilityBehavor"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"BaseClass"							"item_datadriven"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
@@ -858,6 +857,7 @@
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName" 				"spectral_jelly"
+		"AbilityCastRange"					"600"
 		"SecretShop"						"1"
 		
 		//Special

@@ -18,12 +18,15 @@ end
 function OnDamage(keys)
 local caster = keys.caster
 local ability = keys.ability
+local attacker = EntIndexToHScript(keys.entindex_attacker)
 local cd = ability:GetSpecialValueFor("cooldown")
 
-ability:StartCooldown(cd)
+	if attacker:IsRealHero() = true then
+	ability:StartCooldown(cd)
 
-	if caster:HasModifier("visible_regen_modifier") then
-		caster:RemoveModifierByNameAndCaster("visible_regen_modifier", caster)
+		if caster:HasModifier("visible_regen_modifier") then
+			caster:RemoveModifierByNameAndCaster("visible_regen_modifier", caster)
+		end
 	end
 end
 
@@ -31,3 +34,4 @@ function OnDestroy(keys)
 local caster = keys.caster
 
 caster:RemoveModifierByNameAndCaster("visible_regen_modifier", caster)
+end
