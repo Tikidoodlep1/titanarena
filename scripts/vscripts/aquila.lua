@@ -1,9 +1,9 @@
 function ApplyAura(keys)
 local caster = keys.caster
 local ability = keys.abilty
-	if caster:HasModifier("aquila_aura_modifier") == false then
-		caster:ApplyDataDrivenModifier(caster, caster, "aquila_aura_modifier", {duration = -1})
+	if caster:HasModifier("apply_aquila_modifier") == false then
+		ability:ApplyDataDrivenModifier(caster, caster, "apply_aquila_modifier", {duration = -1})
 	else
-		caster:RemoveModifierByNameAndCaster("aquila_aura_modifier", caster)
+		ability:RemoveModifierByNameAndCaster("apply_aquila_modifier", caster)
 	end
 end

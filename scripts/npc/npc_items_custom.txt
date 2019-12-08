@@ -106,6 +106,7 @@
 				"IsHidden"	"0"
 				"IsBuff"	"1"
 				"IsPurgable"	"0"
+				"TextureName"	"aquila"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%aura_mana_regen"
@@ -116,11 +117,6 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				"Aura"			"aquila_aura_modifier"
-				"Arua_Radius"	"%aura_radius"
-				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
@@ -128,6 +124,16 @@
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_intellect"
 				}
+			}
+			"apply_aquila_modifier"
+			{
+				"Passive"	"0"
+				"IsHidden"	"1"
+				"Aura"			"aquila_aura_modifier"
+				"Arua_Radius"	"%aura_radius"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 	}
@@ -164,8 +170,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"23009"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_PREFER_ENEMIES"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 				"iron_talon_new"
@@ -224,18 +230,28 @@
 				"var_type"				"FIELD_INTEGER"
 				"alternative_cooldown"	"4"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"modifier_check"		"0.5"
+			}
 		}
 		"OnSpellStart"
 		{
-			"Damage"
-			{
-				"Target"	"TARGET"
-				"Damage"	"%creep_damage_pct"
-				"CurrentHealthPercentBasedDamage"	"1"
-			}
 			"DestroyTrees"
 			{
+				"Target"	"POINT"
+				"Radius"	"125"
+			}
+			//"RunScript"
+			//{
+				//"ScriptFile"	"iron_talon.lua"
+				//"Function"		"Quell"
+			//}
+			"ApplyModifier"
+			{
 				"Target"	"TARGET"
+				"ModifierName"	"iron_talon_damage"
 			}
 		}
 		"Modifiers"
@@ -254,9 +270,29 @@
 					}
 				}
 			}
+			"iron_talon_damage"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"ThinkInterval"	"%modifier_check"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Damage"	"%creep_damage_pct"
+						"CurrentHealthPercentBasedDamage"	"1"
+					}
+					"RemoveModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"iron_talon_damage"
+					}
+				}
+			}
 			"iron_talon_stats_ranged"
 			{
-				"Passive"	"1"
+				"Passive"	"0"
 				"IsHidden"	"1"
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
@@ -267,7 +303,7 @@
 			}
 			"iron_talon_stats_melee"
 			{
-				"Passive"	"1"
+				"Passive"	"0"
 				"IsHidden"	"1"
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
@@ -703,6 +739,11 @@
 				"var_type"					"FIELD_FLOAT"
 				"damage_rate"				"0.111111111"
 			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_extra"				"3"
+			}
 		}
 		"Modifiers"
 		{
@@ -728,6 +769,7 @@
 			{
 				"Passive"	"0"
 				"IsHidden"	"0"
+				"TextureName"	"fire_blade"
 				"Duration"	"%burn_duration"
 				"ThinkInterval"	"%damage_rate"
 				"OnIntervalThink"
@@ -738,6 +780,12 @@
 						"Type"		"DAMAGE_TYPE_MAGICAL"
 						"Damage"	"%burn_pct"
 						"CurrentHealthPercentBasedDamage"	"1"
+					}
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"damage_extra"
 					}
 				}
 			}
@@ -826,6 +874,7 @@
 			{
 				"Passive"	"0"
 				"IsHIdden"	"0"
+				"TextureName"	"spectral_heart"
 			}
 		}
 	}
@@ -886,7 +935,9 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"0"
+				"IsBuff"	"1"
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"TextureName"	"spectral_jelly"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION" "%bonus_night_vision"
@@ -929,6 +980,7 @@
 		"ItemAliases"						"Titan Platemail"
 		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShareability"					"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName" 				"titan_platemail"
 		
 		//Special
@@ -990,9 +1042,10 @@
 				"IsHidden"		"0"
 				"IsPurgable"	"0"
 				"IsBuff"		"1"
+				"TextureName"	"titan_platemail"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%aura_bonus_armor"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%aura_armor"
 				}
 			}
 		}
