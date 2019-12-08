@@ -1,0 +1,77 @@
+<root>
+
+	<styles>
+		<include src="file://{resources}/styles/custom_game/kill_selector.css"/>
+	</styles>
+	
+	<scripts>
+		<include src="file://{resources}/scipts/custom_game/kill_selector.js"/>
+	</scripts>
+	
+	<snippets>
+		<snippet name="numKills">
+		
+			<Panel class="numKills">
+			
+				<Panel id="Left">
+				
+					<Panel id="LeftTop">
+					
+						<Button id="25Kills" onactivate="KillsPressed25()">
+	
+							<Label id="KillCount25" text="25 Kills"/>
+		
+						</Button>
+						
+					</Panel>
+					
+					<Panel id="LeftBottom">
+					
+						<Button id="50Kills" onactivate="KillsPressed50()">
+	
+							<Label id="KillCount50" text="50 Kills"/>
+		
+						</Button>
+					
+					</Panel>
+				
+				</Panel>
+				
+				<Panel id="Right">
+				
+					<Panel id="RightTop">
+					
+						<Button id="75Kills" onactivate="KillsPressed75()">
+	
+							<Label id="KillCount75" text="75 Kills"/>
+		
+						</Button>
+					
+					</Panel>
+					
+					<Panel id="RightBottom">
+					
+						<Button id="100Kills" onactivate="KillsPressed100()">
+	
+							<Label id="KillCount100" text="100 Kills"/>
+		
+						</Button>
+					
+					</Panel>
+				
+				</Panel>
+				
+			</Panel>
+			
+		</snippet>
+		
+	</snippets>
+	
+	<Panel class="KillSelector">
+	
+		<Label id="KillCount" text="How Many Kills To Win?"/>
+		<image src="file://{resources}/images/custom_game/background.png"/>
+		
+	</Panel>
+
+</root>

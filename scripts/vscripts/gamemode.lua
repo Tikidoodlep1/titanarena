@@ -138,6 +138,10 @@ end
 ]]
 function barebones:OnGameInProgress()
 	DebugPrint("[BAREBONES] The game has officially begun.")
+	
+	CustomGameEventManager:Send_ServerToAllClients("setKillsToWin", {})
+	
+	
 	Timers:CreateTimer(30, function() -- Start this timer 30 game-time seconds later
     
 	SpawnCreeps()

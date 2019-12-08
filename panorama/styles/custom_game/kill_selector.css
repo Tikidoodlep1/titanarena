@@ -1,0 +1,132 @@
+.KillSelector
+{
+	width: 400px;
+	height: 200px;
+	
+	horizontal-align: right;
+	vertical-align: center;
+	
+	margin-right: 300px;
+	
+	opacity: 0.8;
+	
+}
+
+@KillCount
+{
+	horizontal-align: center;
+	vertical-align: center;
+	font-size: 20px;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-overflow: shrink;
+}
+
+.numKills
+{
+	opacity: 0.8;
+	flow-children: right;
+	
+}
+
+@LeftTop
+{
+	flow-children: down;
+	width: 100px;
+	height: 50px;
+	margin: 20px 20px 20px 20px;
+}
+
+@LeftBottom
+{
+	width: 100px;
+	height: 50px;
+	margin: 20px 20px 20px 20px;
+}
+
+@RightTop
+{
+	flow-children: down;
+	width: 100px;
+	height: 50px;
+	margin: 20px 20px 20px 20px;
+}
+
+@RightBottom
+{
+	width: 100px;
+	height: 50px;
+	margin: 20px 20px 20px 20px;
+}
+
+@25Kills
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 75px;
+	height: 25px;
+}
+
+@50Klls
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 75px;
+	height: 25px;
+}
+
+@75Kills
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 75px;
+	height: 25px;
+}
+
+@100Kills
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 75px;
+	height: 25px;
+}
+
+@KillCount25
+{
+	color: black;
+	font-size: 16px;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+@KillCount50
+{
+	color: black;
+	font-size: 16px;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+@KillCount50
+{
+	color: black;
+	font-size: 16px;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+@KillCount75
+{
+	color: black;
+	font-size: 16px;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+@KillCount100
+{
+	color: black;
+	font-size: 16px;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
