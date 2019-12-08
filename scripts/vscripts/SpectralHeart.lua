@@ -6,7 +6,9 @@ local mana_regen = ability:GetSpecialValueFor("mana_regen_pct")
 local rate = ability:GetSpecialValueFor("rate")
 
 	if ability:IsCooldownReady() and caster:IsRealHero() then
+	print("Off cooldown")
 		caster:Heal(caster:GetMaxHealth() * (regen / 100) * rate, caster)
+		caster:GiveMana(caster:GetMaxMana() * (mana_regen / 100) * rate)
 			if not caster:HasModifier("visible_regen_modifier") then
 				ability:ApplyDataDrivenModifier(caster, caster, "visible_regen_modifier", {duration = -1})
 			end
@@ -18,10 +20,10 @@ end
 function OnDamage(keys)
 local caster = keys.caster
 local ability = keys.ability
-local attacker = EntIndexToHScript(keys.entindex_attacker)
+local attacker = keys.attacker
 local cd = ability:GetSpecialValueFor("cooldown")
 
-	if attacker:IsRealHero() = true then
+	if attacker:IsRealHero() == true then
 	ability:StartCooldown(cd)
 
 		if caster:HasModifier("visible_regen_modifier") then
