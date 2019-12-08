@@ -243,11 +243,6 @@
 				"Target"	"POINT"
 				"Radius"	"125"
 			}
-			//"RunScript"
-			//{
-				//"ScriptFile"	"iron_talon.lua"
-				//"Function"		"Quell"
-			//}
 			"ApplyModifier"
 			{
 				"Target"	"TARGET"
@@ -280,6 +275,7 @@
 					"Damage"
 					{
 						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_PHYSICAL"
 						"Damage"	"%creep_damage_pct"
 						"CurrentHealthPercentBasedDamage"	"1"
 					}
