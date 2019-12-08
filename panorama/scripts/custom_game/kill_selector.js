@@ -60,7 +60,6 @@ function VoteTotals(Vote25, Vote50, Vote75, Vote100)
 	var Total50Votes = Vote50;
 	var Total75Votes = Vote75;
 	var Total100Votes = Vote100;
-	return 
 }
 
 function SetKills(dat)
