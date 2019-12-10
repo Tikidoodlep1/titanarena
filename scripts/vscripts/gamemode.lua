@@ -194,153 +194,153 @@ function SpawnCreeps(keys)
 	for e=1, 7 do
 	local randint = RandomInt(1,5)
 	 if randint == 1 then
-		CreateUnitByName(e1, loc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e1, loc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e1, loc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e1, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 2 then
-		CreateUnitByName(e2, loc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e2, loc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e2, loc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e2, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
-		CreateUnitByName(e3, loc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e3, loc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e3, loc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e3, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 4 then
-		CreateUnitByName(e4, loc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e4, loc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e4, loc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e4, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 5 then
-		CreateUnitByName(e5, loc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e5, loc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e5, loc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e5, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if randint == 1 then
-		CreateUnitByName(e1, badloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e1, badloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e1, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e1, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 2 then
-		CreateUnitByName(e2, badloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e2, badloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e2, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e2, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
-		CreateUnitByName(e3, badloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e3, badloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e3, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e3, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 4 then
-		CreateUnitByName(e4, badloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e4, badloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e4, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e4, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 5 then
-		CreateUnitByName(e5, badloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(e5, badloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(e5, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e5, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
 	for m=1, 7 do
 	local randint = RandomInt(1,4)
 	 if randint == 1 then
-		CreateUnitByName(m1, mloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m1, mloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m1, mloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m1, mloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(m1, mloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m1, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m1, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m1, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 2 then
-		CreateUnitByName(m2, mloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m2, mloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m2, mloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m2, mloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(m2, mloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m2, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m2, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m2, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
-		CreateUnitByName(m3, mloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m3, mloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m3, mloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m3, mloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(m3, mloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m3, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m3, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m3, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 4 then
-		CreateUnitByName(m4, mloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m4, mloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m4, mloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m4, mloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(m4, mloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m4, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m4, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m4, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if randint == 1 then
-		CreateUnitByName(m1, mbadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m1, mbadloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m1, mbadloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m1, mbadloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(m1, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m1, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m1, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m1, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 		
 	elseif randint == 2 then
-		CreateUnitByName(m2, mbadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m2, mbadloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m2, mbadloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m2, mbadloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(m2, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m2, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m2, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m2, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 		
 	elseif randint == 3 then
-		CreateUnitByName(m3, mbadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m3, mbadloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m3, mbadloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m3, mbadloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(m3, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m3, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m3, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m3, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 		
 	elseif randint == 4 then
-		CreateUnitByName(m4, mbadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m4, mbadloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m4, mbadloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(m4, mbadloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(m4, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m4, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m4, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(m4, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 		
 	end
 	end
 	for h=1, 7 do
 	local randint = RandomInt(1,4)
 	 if randint == 1 then
-		CreateUnitByName(h1, hloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h1, hloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h1, hloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h1, hloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(h1, hloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h1, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h1, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h1, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 2 then
-		CreateUnitByName(h2, hloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h2, hloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h2, hloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h2, hloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(h2, hloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h2, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h2, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h2, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
-		CreateUnitByName(h3, hloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h3, hloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h3, hloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h3, hloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(h3, hloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h3, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h3, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h3, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 4 then
-		CreateUnitByName(h4, hloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h4, hloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h4, hloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h4, hloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(h4, hloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h4, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h4, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h4, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if randint == 1 then
-		CreateUnitByName(h1, hbadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h1, hbadloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h1, hbadloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h1, hbadloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(h1, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h1, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h1, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h1, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 2 then
-		CreateUnitByName(h2, hbadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h2, hbadloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h2, hbadloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h2, hbadloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(h2, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h2, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h2, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h2, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
-		CreateUnitByName(h3, hbadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h3, hbadloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h3, hbadloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h3, hbadloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(h3, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h3, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h3, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h3, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 4 then
-		CreateUnitByName(h4, hbadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h4, hbadloc1, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h4, hbadloc2, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(h4, hbadloc3, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(h4, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h4, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h4, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(h4, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
 	for a=1, 7 do
 	local randint = RandomInt(1,3)
 	 if randint == 1 then
-		CreateUnitByName(a1, aloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(a1, aloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(a1, aloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(a1, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 2 then
-		CreateUnitByName(a2, aloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(a2, aloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(a2, aloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(a2, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
-		CreateUnitByName(a3, aloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(a3, aloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(a3, aloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(a3, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if randint == 1 then
-		CreateUnitByName(a1, abadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(a1, abadloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(a1, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(a1, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 2 then
-		CreateUnitByName(a2, abadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(a2, abadloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(a2, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(a2, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
-		CreateUnitByName(a3, abadloc, true, nil, nil, 3):CreatureLevelUp(level)
-		CreateUnitByName(a3, abadloc1, true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName(a3, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(a3, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
 	level = level + 1
