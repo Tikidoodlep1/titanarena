@@ -142,10 +142,24 @@ function barebones:OnGameInProgress()
 	CustomGameEventManager:Send_ServerToAllClients("setKillsToWin", {})
 	
 	
+	Timers:CreateTimer(0, function()
+	
+	SpawnTitans()
+		return 600
+		
+	end)
+	
+function SpawnTitans(keys)
+	if Entities:FindByName(nil, "npc_radiant_titan") == nil then
+		CreateUnitByName("npc_radiant_titan", Entities:FindByName(nil, "rad_titan"):GetAbsOrigin(), true, nil, nil, 2)
+	end
+	if Entities:FindByName(nil, "npc_dire_titan") == nil then
+		CreateUnitByName("npc_dire_titan", Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), true, nil, nil, 3)
+	end
+end
 	Timers:CreateTimer(30, function() -- Start this timer 30 game-time seconds later
     
 	SpawnCreeps()
-	
       return 120 -- Rerun this timer every 120 game-time seconds 
 	  
     end)

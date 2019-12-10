@@ -56,6 +56,7 @@
 	"weapons_armor"
 	{
 		"item"		"item_ring_of_protection"
+		"item"		"item_grove_bow"
 		"item"		"item_stout_shield"
 		"item"		"item_quelling_blade"
 		"item"		"item_infused_raindrop"
@@ -201,12 +202,7 @@
 		"item"		"item_rapier"
 		"item"		"item_abyssal_blade"
 		"item"		"item_bloodthorn"
-		"item"		"item_greater_crit2"
-		"item"		"item_greater_crit3"
-		"item"		"item_greater_crit4"
 		"item"		"item_ethereal_desolator"
-		"item"		"item_ethereal_desolator2"
-		"item"		"item_ethereal_desolator3"
 	}
 
 	// Level 4 - Orange / Orb / Artifacts				

@@ -99,4 +99,90 @@
 		}
 	}
   }
+  "titan_split_shot_omni"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"omni_split_shot"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"targets"		"1 2 3 4"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"radius"		"150 200 250 300"
+		}
+	}
+	"Modifiers"
+	{
+		"split_shot_apply"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"IsPurgable"	"0"
+			"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_6"
+			"OnAttack"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"titan_split_shot"
+					"Function"		"Damage"
+				}
+				"AttachEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+					"Target"		"TARGET"
+				}
+			}
+		}
+	}
+  }
+  "titan_split_shot_necro"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"omni_split_shot"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"targets"		"1 2 3 4"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"radius"		"150 200 250 300"
+		}
+	}
+	"Modifiers"
+	{
+		"split_shot_apply"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"IsPurgable"	"0"
+			"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_6"
+			"OnAttack"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"titan_split_shot"
+					"Function"		"Damage"
+				}
+				"AttachEffect"
+				{
+					"EffectName"	"particles/econ/items/necrolyte/necronub_scythe/necrolyte_scythe_ka_start.vpcf"
+					"Target"		"TARGET"
+				}
+			}
+		}
+	}
+  }
 }
