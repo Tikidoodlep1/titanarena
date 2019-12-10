@@ -279,18 +279,11 @@
 }
 	
 	
-"item_recipe_iron_talon"
+	"item_recipe_iron_talon"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"23008"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"BaseClass"						"item_datadriven"
-		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"150"	
-		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		
 		// Recipe
@@ -305,11 +298,8 @@
 	
 	"item_iron_talon"
 	{
-
-"ItemPurchasable" "1"
-"ItemCost" "450"
-
-
+		"ItemPurchasable" "1"
+		"ItemCost" "450"
 	}
 
 
@@ -1048,6 +1038,27 @@
 			}
 		}
 	}
+	"item_recipe_auto_mekanism_datadriven"
+	{
+	"ID"							    "140011"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"950"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_auto_mekanism_datadriven"
+		"ItemRequirements"
+		{
+			"01"						"item_mekansm;item_headdress"
+		}
+	}
 		"item_auto_mekansm_datadriven"
 	{
 		// General
@@ -1065,7 +1076,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2300"
+		"ItemCost"						"3350"
 		"ItemShopTags"					"agi;int;str;armor;boost_health"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"mechanism;mekansm:auto"
@@ -1171,5 +1182,392 @@
 			}
 		}
 	}
-	
+	"item_grove_bow"
+	{
+		"ItemPurchasable" "1"
+		"ItemCost" "600"
+	}
+	"item_recipe_ethereal_desolator"
+	{
+	"ID"							    "140012"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_desolator"
+		"ItemRequirements"
+		{
+			"01"						"item_oblivion_staff;item_oblivion_staff;item_grove_bow"
+		}
+	}
+	"item_ethereal_desolator"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"140010"  //Valve's version of 		this item uses the ID "79".
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"Edeso"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3750"
+		"ItemShopTags"					"int"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"Edeso; Ethereal Desolator"
+		"ItemAlertable"					"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_bonus_pct""-12"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"14"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen"			"3"
+			}
+		}
+		"Modifiers"
+		{
+			"stats_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"edeso.lua"
+						"Function"		"CheckRanged"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"edeso_debuff"
+					}
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%mana_regen"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+			"ranged_modifier"
+			{
+				"Passive"	"0"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_range"
+				}
+			}
+			"edeso_debuff"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsDebuff"	"1"
+				"Purgable"	"1"
+				"Duration"	"%duration"
+				"TextureName"	"Edeso"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_bonus_pct"
+				}
+			}
+		}
+	}
+	"item_recipe_ethereal_desolator2"
+	{
+	"ID"							    "140013"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1500"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_desolator"
+		"ItemRequirements"
+		{
+			"01"						"item_ethereal_desolator"
+		}
+	}
+	"item_ethereal_desolator2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"140014"  //Valve's version of 		this item uses the ID "79".
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"Edeso"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5250"
+		"ItemShopTags"					"int"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"Edeso2; Ethereal Desolator 2"
+		"ItemAlertable"					"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_bonus_pct""-15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"14"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen"			"3"
+			}
+		}
+		"Modifiers"
+		{
+			"stats_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"edeso.lua"
+						"Function"		"CheckRanged"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"edeso_debuff"
+					}
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%mana_regen"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+			"ranged_modifier"
+			{
+				"Passive"	"0"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_range"
+				}
+			}
+			"edeso_debuff"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsDebuff"	"1"
+				"Purgable"	"1"
+				"Duration"	"%duration"
+				"TextureName"	"Edeso2"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_bonus_pct"
+				}
+			}
+		}
+	}
+	"item_recipe_ethereal_desolator3"
+	{
+	"ID"							    "140015"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ethereal_desolator"
+		"ItemRequirements"
+		{
+			"01"						"item_ethereal_desolator2"
+		}
+	}
+	"item_ethereal_desolator3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"140016"  //Valve's version of 		this item uses the ID "79".
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"Edeso"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"7250"
+		"ItemShopTags"					"int"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"Edeso; Ethereal Desolator"
+		"ItemAlertable"					"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" "3"
+		"ItemBaseLevel" "1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_bonus_pct""-18"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"14"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen"			"3"
+			}
+		}
+		"Modifiers"
+		{
+			"stats_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"edeso.lua"
+						"Function"		"CheckRanged"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target"	"TARGET"
+						"ModifierName"	"edeso_debuff"
+					}
+				}
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%mana_regen"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			}
+			"ranged_modifier"
+			{
+				"Passive"	"0"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_range"
+				}
+			}
+			"edeso_debuff"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsDebuff"	"1"
+				"Purgable"	"1"
+				"Duration"	"%duration"
+				"TextureName"	"Edeso3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resist_bonus_pct"
+				}
+			}
+		}
+	}
 }

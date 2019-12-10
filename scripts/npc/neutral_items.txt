@@ -40,7 +40,6 @@
 
 		"items"
 		{
-			"item_grove_bow"				  "1"
 			"item_vampire_fangs"			  "1"
 			"item_ring_of_aquila"			  "1"
 			"item_pupils_gift"				  "1"
