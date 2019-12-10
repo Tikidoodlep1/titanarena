@@ -22,7 +22,6 @@
 			"01"						"item_wraith_band;item_ring_of_basilius"
 		}
 	}
-	
 "item_dummy_datadriven"
 {
 	// General

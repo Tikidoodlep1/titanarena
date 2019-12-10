@@ -20,6 +20,7 @@
 		//"item"    "item_blinders"
 		//"item"    "item_red_mist"
 		//"item"    "item_bounty_pact"
+		"item" "item_elixer"
 	}
 
 	"attributes"
