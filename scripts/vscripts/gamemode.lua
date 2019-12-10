@@ -387,27 +387,9 @@ function barebones:InitGameMode()
 	GameRules:LockCustomGameSetupTeamAssignment(LOCK_TEAMS)
 
 	-- This is multi-team configuration stuff
-	if USE_AUTOMATIC_PLAYERS_PER_TEAM then
-		local num = math.floor(10/MAX_NUMBER_OF_TEAMS)
-		local count = 0
-		for team,number in pairs(TEAM_COLORS) do
-			if count >= MAX_NUMBER_OF_TEAMS then
-				GameRules:SetCustomGameTeamMaxPlayers(team, 0)
-			else
-				GameRules:SetCustomGameTeamMaxPlayers(team, num)
-			end
-			count = count + 1
-		end
-	else
-		local count = 0
-		for team,number in pairs(CUSTOM_TEAM_PLAYER_COUNT) do
-			if count >= MAX_NUMBER_OF_TEAMS then
-				GameRules:SetCustomGameTeamMaxPlayers(team, 0)
-			else
-				GameRules:SetCustomGameTeamMaxPlayers(team, number)
-			end
-			count = count + 1
-		end
+	if GetMapName() == "5v5" then
+		SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
+		SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 5)
 	end
 
 	if USE_CUSTOM_TEAM_COLORS then
