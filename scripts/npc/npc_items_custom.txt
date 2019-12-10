@@ -281,9 +281,15 @@
 	
 	"item_recipe_iron_talon"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"238"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"150"	
+		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		
 		// Recipe
@@ -1038,9 +1044,10 @@
 			}
 		}
 	}
+	
 	"item_recipe_auto_mekanism_datadriven"
 	{
-	"ID"							    "140011"
+	"ID"							    "140018"
 	"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
@@ -1059,6 +1066,7 @@
 			"01"						"item_mekansm;item_headdress"
 		}
 	}
+	
 		"item_auto_mekansm_datadriven"
 	{
 		// General
@@ -1329,7 +1337,7 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_ethereal_desolator"
+		"ItemResult"					"item_ethereal_desolator2"
 		"ItemRequirements"
 		{
 			"01"						"item_ethereal_desolator"
@@ -1342,7 +1350,7 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"Edeso"
+		"AbilityTextureName"			"Edeso2"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1456,7 +1464,7 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_ethereal_desolator"
+		"ItemResult"					"item_ethereal_desolator3"
 		"ItemRequirements"
 		{
 			"01"						"item_ethereal_desolator2"
@@ -1469,7 +1477,7 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"Edeso"
+		"AbilityTextureName"			"Edeso3"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1479,8 +1487,6 @@
 		"ItemAliases"					"Edeso; Ethereal Desolator"
 		"ItemAlertable"					"0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"MaxUpgradeLevel" "3"
-		"ItemBaseLevel" "1"
 		
 		"AbilitySpecial"
 		{

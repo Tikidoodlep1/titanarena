@@ -20,7 +20,7 @@
 		//"item"    "item_blinders"
 		//"item"    "item_red_mist"
 		//"item"    "item_bounty_pact"
-		"item" "item_elixer"
+		//"item" 	"item_elixer"
 	}
 
 	"attributes"
@@ -109,7 +109,7 @@
 		"item"		"item_mask_of_madness"
 		"item"		"item_helm_of_the_dominator"
 		"item"		"item_hand_of_midas"
-		"item"          "item_iron_talon"
+		"item"      "item_iron_talon"
 		"item"		"item_travel_boots"
 		"item"		"item_moon_shard"
 		"item"		"item_soul_booster"
@@ -157,6 +157,7 @@
 		"item"		"item_octarine_core"
 		//"item"	"item_rune_breaker"
 		//"item"	"item_aether_staff"
+		"item"		"item_auto_mekansm_datadriven"
 	}
 		
 	// Level 3 - Purple Recipes	
@@ -179,6 +180,7 @@
 		"item"		"item_assault"
 		//"item"	"item_skybreaker"
 		//"item"	"item_spirit_helix"
+		"item"		"item_titan_platemail"
 	}
 
 	// Weapon Recipes
@@ -199,6 +201,12 @@
 		"item"		"item_rapier"
 		"item"		"item_abyssal_blade"
 		"item"		"item_bloodthorn"
+		"item"		"item_greater_crit2"
+		"item"		"item_greater_crit3"
+		"item"		"item_greater_crit4"
+		"item"		"item_ethereal_desolator"
+		"item"		"item_ethereal_desolator2"
+		"item"		"item_ethereal_desolator3"
 	}
 
 	// Level 4 - Orange / Orb / Artifacts				
@@ -306,5 +314,8 @@
 		"item"		"item_null_talisman"
 		"item"		"item_bracer"
 		"item"		"item_blades_of_attack"
+		"item"		"item_grove_bow"
+		"item"		"item_iron_talon"
+		"item"		"item_ring_of_aquila"
 	}
 }
