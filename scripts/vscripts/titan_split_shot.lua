@@ -20,14 +20,15 @@ local damageTable = {
 	
 local units = FindUnitsInRadius(teamnum,Vector(targetpos),nil,range,DOTA_UNIT_TARGET_TEAM_ENEMY,DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_MECHANICAL,DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NOT_NIGHTMARED,FIND_ANY_ORDER,false)
 		
-	for x=1, max_targets do
+local x = 1
 		for number,entity in pairs(units) do
-			if entity:IsHero()
-				local foundhero = entity
-				foundhero:ApplyDamage(damageTable)
+			if x <= max_targets and entity:IsHero()
+				entity:ApplyDamage(damageTable)
 			else
 				for number,entity in pairs(units) do
+				if x <= max_targets
 				entity:ApplyDamage(damageTable)
+				end
 			end
 		end
 		x=x+1
