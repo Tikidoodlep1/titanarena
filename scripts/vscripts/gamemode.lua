@@ -388,8 +388,8 @@ function barebones:InitGameMode()
 
 	-- This is multi-team configuration stuff
 	if GetMapName() == "5v5" then
-		SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
-		SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 5)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 5)
 	end
 
 	if USE_CUSTOM_TEAM_COLORS then
