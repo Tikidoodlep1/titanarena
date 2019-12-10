@@ -22,6 +22,7 @@
 			"01"						"item_wraith_band;item_ring_of_basilius"
 		}
 	}
+	
 "item_dummy_datadriven"
 {
 	// General
@@ -278,7 +279,7 @@
 }
 	
 	
-	"item_recipe_iron_talon_new"
+"item_recipe_iron_talon"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -295,161 +296,23 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_iron_talon_new"
+		"ItemResult"					"item_iron_talon"
 		"ItemRequirements"
 		{
 			"01"						"item_quelling_blade;item_ring_of_protection"
 		}
 	}
 	
-	
-	"item_iron_talon_new"
+	"item_iron_talon"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"23009"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_PREFER_ENEMIES"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 				"iron_talon_new"
 
-		"AbilityCastRange"				"450"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"25.0"
+"ItemPurchasable" "1"
+"ItemCost" "450"
 
-		"Model"							"models/props_gameplay/red_box.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"ItemCost"						"450"
-		"ItemShopTags"					"damage" 
-		"ItemQuality"					"common"
-		"ItemAliases"					"iron talon"
-		"ItemPurchasable"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus"			"18"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_bonus_ranged"	"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quelling_range_tooltip"			"350"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_ward"			"450"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"			"40"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_armor"	"2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"alternative_cooldown"	"4"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"modifier_check"		"0.5"
-			}
-		}
-		"OnSpellStart"
-		{
-			"DestroyTrees"
-			{
-				"Target"	"POINT"
-				"Radius"	"125"
-			}
-			"ApplyModifier"
-			{
-				"Target"	"TARGET"
-				"ModifierName"	"iron_talon_damage"
-			}
-		}
-		"Modifiers"
-		{
-			"iron_talon_stats"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"iron_talon.lua"
-						"Function"		"BonusStats"
-					}
-				}
-			}
-			"iron_talon_damage"
-			{
-				"Passive"	"0"
-				"IsHidden"	"0"
-				"ThinkInterval"	"%modifier_check"
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"	"TARGET"
-						"Type"		"DAMAGE_TYPE_PHYSICAL"
-						"Damage"	"%creep_damage_pct"
-						"CurrentHealthPercentBasedDamage"	"1"
-					}
-					"RemoveModifier"
-					{
-						"Target"	"TARGET"
-						"ModifierName"	"iron_talon_damage"
-					}
-				}
-			}
-			"iron_talon_stats_ranged"
-			{
-				"Passive"	"0"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%damage_bonus_ranged"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-				}
-			}
-			"iron_talon_stats_melee"
-			{
-				"Passive"	"0"
-				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%damage_bonus"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-				}
-			}
-		}
+
 	}
-	
+
+
 	"item_recipe_greater_crit_2"
 	{
 	"ID"							    "14011"
@@ -1190,7 +1053,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"14009"  //Valve's version of this item uses the ID "79".
+		"ID"							"14009"  //Valve's version of 		this item uses the ID "79".
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
