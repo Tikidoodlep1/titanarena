@@ -351,7 +351,7 @@ end
 -- It can be used to pre-initialize any values/tables that will be needed later
 function barebones:InitGameMode()
 	DebugPrint("[BAREBONES] Starting to load Game Rules.")
-
+	GameRules.DropTable = LoadKeyValues("scripts/vscripts/droptables.kv")
 	-- Setup rules
 	GameRules:SetHeroRespawnEnabled(ENABLE_HERO_RESPAWN)
 	GameRules:SetUseUniversalShopMode(UNIVERSAL_SHOP_MODE)

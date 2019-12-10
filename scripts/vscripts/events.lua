@@ -372,7 +372,26 @@ function barebones:OnEntityKilled(keys)
 
 	-- The Killing entity
 	local killer_unit = nil
-
+	
+	if killed_unit:IsCreature() then
+		RollDrops(killed_unit)
+	end
+	
+	function RollDrops(unit)
+		local dropinfo = GameRules.DropTable[unit:GetUnitName()]
+		if dropinfo then
+			for item_name, chance in pairs(dropinfo) do
+				if RollPercentage(chance) then
+					local item = CreateItem(item_name, nil, nil)
+					local pos = unit:GetAbsOrigin()
+					local drop = CreateItemOnPositionSync(pos, item)
+					local pos_launch = pos+RandomVector(RandomFloat(150,200))
+					item:LaunchLoot(false, 200, 0.75, pos_launch)
+				end
+			end
+		end
+	end
+	
 	if keys.entindex_attacker ~= nil then
 		killer_unit = EntIndexToHScript(keys.entindex_attacker)
 	end

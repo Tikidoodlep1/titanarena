@@ -1260,7 +1260,7 @@
 		
 		"Modifiers"
 		{
-	"stats_modifier"
+			"stats_modifier"
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
@@ -1308,4 +1308,5 @@
 			}
 		}
 	}
+	
 }
