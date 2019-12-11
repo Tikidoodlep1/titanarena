@@ -9,8 +9,5 @@ local random_int = RandomInt(1,100)
 	if random_int <= critchance then
 		target:EmitSound("DOTA_Item.Greater_Crit")
 		ability:ApplyDataDrivenModifier(caster, caster, "crit_hit", {duration = -1})
-		if caster:AttackReady() == true then
-			caster:RemoveModifierByName("crit_hit")
-		end
 	end
 end

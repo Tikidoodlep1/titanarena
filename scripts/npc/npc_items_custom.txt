@@ -404,6 +404,14 @@
 				{
 					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
 				}
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"crit_hit"
+					}
+				}
 			}
 		}
 	}
@@ -502,6 +510,14 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
+				}
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"crit_hit"
+					}
 				}
 			}
 		}
@@ -602,6 +618,14 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
+				}
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"Target"	"CASTER"
+						"ModifierName"	"crit_hit"
+					}
 				}
 			}
 		}

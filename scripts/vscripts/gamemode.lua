@@ -150,13 +150,25 @@ function barebones:OnGameInProgress()
 	end)
 	level = 0
 function SpawnTitans(keys)
-
-	local radunit = Entities:FindByName(nil, "npc_radiant_titan")
-	local badunit = Entities:FindByName(nil, "npc_dire_titan")
-	if Entities:FindByName(nil, "npc_radiant_titan") == nil then
+	local Creatures = Entities:FindAllByClassname("npc_dota_creature")
+	local radtitan = false
+	for _, unit in ipairs(Creatures) do
+		if unit:GetUnitName() == "npc_radiant_titan" then
+			radtitan = true
+			break
+		end
+	end
+	local badtitan = false
+	for _, unit in ipairs(Creatures) do
+		if unit:GetUnitName() == "npc_dire_titan" then
+			radtitan = true
+			break
+		end
+	end
+	if radtitan == false then
 		CreateUnitByName("npc_radiant_titan", Entities:FindByName(nil, "rad_titan"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(level)
 	end
-	if Entities:FindByName(nil, "npc_dire_titan") == nil then
+	if badtitan == false then
 		CreateUnitByName("npc_dire_titan", Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(level)
 	end
 end
@@ -208,8 +220,6 @@ function SpawnCreeps(keys)
 	local aloc1 = Entities:FindByName(nil, "rad_n_ancient1"):GetAbsOrigin()
 	local abadloc = Entities:FindByName(nil, "dire_n_ancient"):GetAbsOrigin()
 	local abadloc1 = Entities:FindByName(nil, "dire_n_ancient1"):GetAbsOrigin()
-	Entities:FindByName(nil, "npc_radiant_titan"):CreatureLevelUp(1)
-	Entities:FindByName(nil, "npc_dire_titan"):CreatureLevelUp(1)
 	
 	for e=1, 7 do
 	local randint = RandomInt(1,5)
