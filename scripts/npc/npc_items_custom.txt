@@ -291,6 +291,7 @@
 		"ItemCost"						"150"	
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
+		"AbilityTextureName"			"item_recipe"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -320,6 +321,8 @@
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -427,6 +430,7 @@
 		"ItemCost"						"1000"
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
+		"AbilityTextureName"			"item_recipe"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -535,6 +539,7 @@
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -984,6 +989,7 @@
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -1079,7 +1085,7 @@
 		}
 	}
 	
-	"item_recipe_auto_mekanism_datadriven"
+	"item_recipe_auto_mekansm_datadriven"
 	{
 	"ID"							    "140018"
 	"Model"							"models/props_gameplay/recipe.mdl"
@@ -1090,6 +1096,7 @@
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -1240,6 +1247,7 @@
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -1367,6 +1375,7 @@
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -1494,6 +1503,7 @@
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
