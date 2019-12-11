@@ -148,9 +148,9 @@ function barebones:OnGameInProgress()
 		return 600
 		
 	end)
-	
+	level = 0
 function SpawnTitans(keys)
-	level = 1
+
 	local radunit = Entities:FindByName(nil, "npc_radiant_titan")
 	local badunit = Entities:FindByName(nil, "npc_dire_titan")
 	if Entities:FindByName(nil, "npc_radiant_titan") == nil then
@@ -159,9 +159,6 @@ function SpawnTitans(keys)
 	if Entities:FindByName(nil, "npc_dire_titan") == nil then
 		CreateUnitByName("npc_dire_titan", Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(level)
 	end
-	Entities:FindByName(nil, "npc_radiant_titan"):CreatureLevelUp(level)
-	Entities:FindByName(nil, "npc_dire_titan"):CreatureLevelUp(level)
-	level = level + 1
 end
 	Timers:CreateTimer(30, function() -- Start this timer 30 game-time seconds later
     
@@ -169,7 +166,7 @@ end
       return 120 -- Rerun this timer every 120 game-time seconds 
 	  
     end)
-	level = 0
+	
 function SpawnCreeps(keys)
 	local e1 = "npc_easy_ghost_b"
 	local e2 = "npc_easy_forest_troll_berserker"
@@ -211,6 +208,9 @@ function SpawnCreeps(keys)
 	local aloc1 = Entities:FindByName(nil, "rad_n_ancient1"):GetAbsOrigin()
 	local abadloc = Entities:FindByName(nil, "dire_n_ancient"):GetAbsOrigin()
 	local abadloc1 = Entities:FindByName(nil, "dire_n_ancient1"):GetAbsOrigin()
+	Entities:FindByName(nil, "npc_radiant_titan"):CreatureLevelUp(level)
+	Entities:FindByName(nil, "npc_dire_titan"):CreatureLevelUp(level)
+	
 	for e=1, 7 do
 	local randint = RandomInt(1,5)
 	 if randint == 1 then
