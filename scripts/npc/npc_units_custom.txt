@@ -1620,10 +1620,10 @@
     // General
     //
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
-    "Model"           "models/heroes/omniknight/omniknight.vmdl"  // Model.
-	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+    "Model"           "models/heroes/kunkka/kunkka.vmdl"  // Model.
+	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 	"ModelScale"		"3.2"
-    "SoundSet"          "Hero_Omniknight"          // Name of sound set.
+    "SoundSet"          "Hero_Kunkka"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Radiant Titan"
     
@@ -1646,9 +1646,7 @@
 
     // Attack
     //----------------------------------------------------------------
-    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
-	"ProjectileModel"            "particles/neutral_fx/ghost_base_attack_trail.vpcf"
-	"ProjectileSpeed"            "600"
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
     "AttackDamageMin"     "225"     // Damage range min.
     "AttackDamageMax"     "225"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
@@ -1711,13 +1709,24 @@
 	//Creature Data
 	//----------------------------------------------------------------
 	"Creature"
-                {
-                        //Level Up
-                        "HPGain"                                        "200"
-                        "DamageGain"                            "5"
-                        "ArmorGain"                                     "2"
-                        "MagicResistGain"                       "0.5"
-                }
+    {
+        //Level Up
+        "HPGain"                                        "200"
+        "DamageGain"                            "5"
+        "ArmorGain"                                     "2"
+        "MagicResistGain"                       "0.5"
+		"AttachWearables"
+		{
+		"1" { "ItemDef"	"8412" }
+		"2" { "ItemDef"	"8413" }
+		"3" { "ItemDef"	"8415" }
+		"4" { "ItemDef"	"8417" }
+		"5" { "ItemDef"	"8419" }
+		"6" { "ItemDef"	"8421" }
+		"7" { "ItemDef"	"8423" }
+		"8" { "ItemDef"	"8426" }
+		}
+    }
   }
   "npc_dire_titan"
   {
@@ -1819,10 +1828,13 @@
         "DamageGain"                            "5"
         "ArmorGain"                                     "2"
 		"MagicResistGain"                       "0.5"
+		"AttachWearables"
+		{
+		"1" { "ItemDef"	"9089" }
+		"2" { "ItemDef"	"12932" }
+		"3" { "ItemDef"	"7427" }
+		"4" { "ItemDef"	"20676" }
+		}
     }
-	"AttachWearables"
-	{
-		
-	}
   }
 }

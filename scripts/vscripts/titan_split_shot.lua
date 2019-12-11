@@ -23,7 +23,7 @@ local x = 1
 			damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			if teamnum == 2 then
-				ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
+				ParticleManager:CreateParticle("particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_splash_fxset.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 			else
 				ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 			end
@@ -42,7 +42,7 @@ local x = 1
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 				}
 				if teamnum == 2 then
-					ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
+					ParticleManager:CreateParticle("particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_splash_fxset.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 				else
 					ParticleManager:CreateParticle("particles/units/heroes/hero_necrolyte/necrolyte_scythe_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 				end
