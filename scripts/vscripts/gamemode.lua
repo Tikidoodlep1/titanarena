@@ -208,8 +208,8 @@ function SpawnCreeps(keys)
 	local aloc1 = Entities:FindByName(nil, "rad_n_ancient1"):GetAbsOrigin()
 	local abadloc = Entities:FindByName(nil, "dire_n_ancient"):GetAbsOrigin()
 	local abadloc1 = Entities:FindByName(nil, "dire_n_ancient1"):GetAbsOrigin()
-	Entities:FindByName(nil, "npc_radiant_titan"):CreatureLevelUp(level)
-	Entities:FindByName(nil, "npc_dire_titan"):CreatureLevelUp(level)
+	Entities:FindByName(nil, "npc_radiant_titan"):CreatureLevelUp(1)
+	Entities:FindByName(nil, "npc_dire_titan"):CreatureLevelUp(1)
 	
 	for e=1, 7 do
 	local randint = RandomInt(1,5)

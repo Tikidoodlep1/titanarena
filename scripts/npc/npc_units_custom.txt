@@ -1690,7 +1690,7 @@
     "StatusHealthRegen"     "15"     // Health regeneration rate.
     "StatusMana"        "500"     // Base mana.
     "StatusManaRegen"     "15"     // Mana regeneration rate.
-	"IsHero"		"1"
+	"ConsideredHero"		"1"
 
     // Team
     //----------------------------------------------------------------
@@ -1792,7 +1792,7 @@
     "StatusHealthRegen"     "15"     // Health regeneration rate.
     "StatusMana"        "500"     // Base mana.
     "StatusManaRegen"     "15"     // Mana regeneration rate.
-	"IsHero"		"1"
+	"ConsideredHero"		"1"
 
     // Team
     //----------------------------------------------------------------
