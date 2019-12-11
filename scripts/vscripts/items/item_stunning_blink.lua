@@ -10,6 +10,7 @@ function item_blink_datadriven_on_spell_start(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local stun_duration = ability:GetSpecialValueFor("stun_duration")
+	local stun_range = ability:GetSpecialValueFor("stun_range")
 	
 	if difference_vector:Length2D() > keys.MaxBlinkRange then  --Clamp the target point to the BlinkRangeClamp range in the same direction.
 		target_point = origin_point + (target_point - origin_point):Normalized() * keys.BlinkRangeClamp
@@ -19,7 +20,7 @@ function item_blink_datadriven_on_spell_start(keys)
 	FindClearSpaceForUnit(keys.caster, target_point, false)
 	
 	ParticleManager:CreateParticle("particles/items_fx/blink_dagger_end.vpcf", PATTACH_ABSORIGIN, keys.caster)
-	local units = FindUnitsInRadius(caster:GetTeamNumber(), target_point, nil, 300 , DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+	local units = FindUnitsInRadius(caster:GetTeamNumber(), target_point, nil, stun_range , DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 	for number,entity in pairs(units) do
 			if entity:IsHero() then
 				print(entity)
