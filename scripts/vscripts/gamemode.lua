@@ -150,12 +150,18 @@ function barebones:OnGameInProgress()
 	end)
 	
 function SpawnTitans(keys)
+	level = 1
+	local radunit = Entities:FindByName(nil, "npc_radiant_titan")
+	local badunit = Entities:FindByName(nil, "npc_dire_titan")
 	if Entities:FindByName(nil, "npc_radiant_titan") == nil then
-		CreateUnitByName("npc_radiant_titan", Entities:FindByName(nil, "rad_titan"):GetAbsOrigin(), true, nil, nil, 2)
+		CreateUnitByName("npc_radiant_titan", Entities:FindByName(nil, "rad_titan"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(level)
 	end
 	if Entities:FindByName(nil, "npc_dire_titan") == nil then
-		CreateUnitByName("npc_dire_titan", Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), true, nil, nil, 3)
+		CreateUnitByName("npc_dire_titan", Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(level)
 	end
+	Entities:FindByName(nil, "npc_radiant_titan"):CreatureLevelUp(level)
+	Entities:FindByName(nil, "npc_dire_titan"):CreatureLevelUp(level)
+	level = level + 1
 end
 	Timers:CreateTimer(30, function() -- Start this timer 30 game-time seconds later
     

@@ -556,7 +556,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"180"
+				"bonus_damage"			"300"
 			}
 			"02"
 			{
@@ -566,12 +566,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"255"
+				"crit_multiplier"		"265"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_crit_damage"	"155"
+				"tooltip_crit_damage"	"165"
 			}
 		}
 		"Modifiers"
@@ -831,6 +831,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"cooldown"					"5"
 			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intelligence"		"40"
+			}
 		}
 		"Modifiers"
 		{
@@ -838,6 +843,11 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_intelligence"
+				}
 				"ThinkInterval"	"%rate"
 					"OnIntervalThink"
 					{

@@ -1690,7 +1690,7 @@
     "StatusHealthRegen"     "15"     // Health regeneration rate.
     "StatusMana"        "500"     // Base mana.
     "StatusManaRegen"     "15"     // Mana regeneration rate.
-	"ConsideredHero"		"1"
+	"IsHero"		"1"
 
     // Team
     //----------------------------------------------------------------
@@ -1706,6 +1706,7 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	"UseNeutralCreepBehavior" 	"1"
 	
 	//Creature Data
 	//----------------------------------------------------------------
@@ -1791,7 +1792,7 @@
     "StatusHealthRegen"     "15"     // Health regeneration rate.
     "StatusMana"        "500"     // Base mana.
     "StatusManaRegen"     "15"     // Mana regeneration rate.
-	"ConsideredHero"		"1"
+	"IsHero"		"1"
 
     // Team
     //----------------------------------------------------------------
@@ -1799,7 +1800,7 @@
     "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
     "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
     
-    // Vision
+    // Visionw
     //----------------------------------------------------------------
     "VisionDaytimeRange"    "2000"   // Range of vision during day light.
     "VisionNighttimeRange"    "1800"   // Range of vision at night time.
@@ -1807,16 +1808,21 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	"UseNeutralCreepBehavior" 	"1"
 	
 	//Creature Data
 	//----------------------------------------------------------------
 	"Creature"
-                {
-                        //Level Up
-                        "HPGain"                                        "200"
-                        "DamageGain"                            "5"
-                        "ArmorGain"                                     "2"
-                        "MagicResistGain"                       "0.5"
-                }
+    {
+        //Level Up
+        "HPGain"                                        "200"
+        "DamageGain"                            "5"
+        "ArmorGain"                                     "2"
+		"MagicResistGain"                       "0.5"
+    }
+	"AttachWearables"
+	{
+		
+	}
   }
 }

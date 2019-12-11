@@ -123,20 +123,14 @@
 		"split_shot_apply"
 		{
 			"Passive"	"1"
-			"IsHidden"	"1"
+			"IsHidden"	"0"
 			"IsPurgable"	"0"
-			"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_6"
-			"OnAttack"
+			"OnAttackStart"
 			{
 				"RunScript"
 				{
 					"ScriptFile"	"titan_split_shot"
 					"Function"		"Damage"
-				}
-				"AttachEffect"
-				{
-					"EffectName"	"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
-					"Target"		"TARGET"
 				}
 			}
 		}
@@ -166,20 +160,14 @@
 		"split_shot_apply"
 		{
 			"Passive"	"1"
-			"IsHidden"	"1"
+			"IsHidden"	"0"
 			"IsPurgable"	"0"
-			"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_6"
-			"OnAttack"
+			"OnAttackStart"
 			{
 				"RunScript"
 				{
 					"ScriptFile"	"titan_split_shot"
 					"Function"		"Damage"
-				}
-				"AttachEffect"
-				{
-					"EffectName"	"particles/econ/items/necrolyte/necronub_scythe/necrolyte_scythe_ka_start.vpcf"
-					"Target"		"TARGET"
 				}
 			}
 		}
