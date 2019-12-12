@@ -393,7 +393,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "items/GreaterCrit.lua"
+						"ScriptFile" "GreaterCrit.lua"
 						"Function" "ApplyCrit"
 					}
 				}
@@ -501,7 +501,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "items/GreaterCrit.lua"
+						"ScriptFile" "GreaterCrit.lua"
 						"Function" "ApplyCrit"
 					}
 				}
@@ -610,7 +610,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "items/GreaterCrit.lua"
+						"ScriptFile" "GreaterCrit.lua"
 						"Function" "ApplyCrit"
 					}
 				}
@@ -882,7 +882,7 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile" "items/SpectralHeart.lua"
+							"ScriptFile" "SpectralHeart.lua"
 							"Function" "ApplyHeal"
 						}
 					}
@@ -890,7 +890,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "items/SpectralHeart.lua"
+						"ScriptFile" "SpectralHeart.lua"
 						"Function" "OnDamage"
 					}
 				}
@@ -898,7 +898,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "items/SpectralHeart.lua"
+						"ScriptFile" "SpectralHeart.lua"
 						"Function" "OnDestroy"
 					}
 				}
@@ -1194,7 +1194,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "items/auto_mek.lua"
+						"ScriptFile" "auto_mek.lua"
 						"Function" "burstHeal"
 					}
 				}
@@ -1319,7 +1319,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"items/edeso.lua"
+						"ScriptFile"	"edeso.lua"
 						"Function"		"CheckRanged"
 					}
 				}
@@ -1447,7 +1447,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"items/edeso.lua"
+						"ScriptFile"	"edeso.lua"
 						"Function"		"CheckRanged"
 					}
 				}
@@ -1575,7 +1575,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"items/edeso.lua"
+						"ScriptFile"	"edeso.lua"
 						"Function"		"CheckRanged"
 					}
 				}
@@ -1656,7 +1656,7 @@
 	
 	// Stats		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"2400"
+	"AbilityCastRange"				"0"
 	"AbilityCastPoint"				"0.0"
 	"AbilityCooldown"				"12.0"
 	"AbilityManaCost"				"0"
@@ -1698,41 +1698,6 @@
 		{
 			"var_type"						"FIELD_INTEGER"
 			"stun_range"			"400"
-		}
-		"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"25"
-		}
-		"07"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_health"					"250"
-		}
-		"08"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_regen"					"10"
-		}
-		"09"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_str"						"10"
-		}
-		"10"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"bash_duration"					"1.5"
-		}
-		"11"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bash_damage"					"100"
-		}
-		"12"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_block"					"70"
 		}
 	}
 	
@@ -1781,112 +1746,91 @@
 			"EffectName"		"particles\items\sunning_blink_stunned.vpcf"
 			"EffectAttachType"	"follow_overhead"
 		}
-		"modifier_attributes"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage"
-				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_regen"
-				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_str"
-			}
-		}
-		"modifier_damage_block"
-		{
-			"OnAttacked"
-			{
-				"Random"
-				{
-					"Chance"		"50"
-					"PseudoRandom"	"1"
-					"OnSuccess"
-					{
-						"ApplyModifier"
-						{
-							"Target"		"CASTER"
-							"ModifierName"	"block_damage"
-						}
-					}
-				}
-			}
-		}
-		"block_damage"
-		{
-			"Passive"	"0"
-			"IsHidden"	"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"	"%damage_block"
-			}
-			"OnTakeDamage"
-			{
-				"RemoveModifier"
-				{
-					"Target"		"CASTER"
-					"ModifierName"	"block_damage"
-				}
-			}
-		}
-		"bash_chance"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackStart"
-			{
-				"Random"
-				{
-					"Chance"	"25"
-					"PseudoRandom"	"0"
-					"OnSuccess"
-					{
-						"ApplyModifier"
-						{
-							"Target"		"CASTER"
-							"ModifierName"	"bash_success"
-						}
-					}
-				}
-			}
-		}
-		"bash_success"
-		{
-			"Passive"	"0"
-			"IsHidden"	"1"
-			"OnAttackLanded"
-			{
-				"ApplyModifier"
-				{
-					"Target"		"TARGET"
-					"ModifierName"	"modifier_bash"
-				}
-				"RemoveModifier"
-				{
-					"Target"		"CASTER"
-					"ModifierName"	"bash_success"
-				}
-			}
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bash_damage"
-			}
-			
-		}
-		"modifier_bash"
-		{
-			"IsDebuff"	"1"
-			"TextureName" "stunning_blink"
-			"Duration"	"%bash_duration"
-
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
-			}
-			"OverrideAnimation"	"ACT_DOTA_DISABLED"
-			"EffectName"		"particles\items\sunning_blink_stunned.vpcf"
-			"EffectAttachType"	"follow_overhead"
-		}
 	}
 }
+
+	"item_bkb_potion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140019"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"Model"							"models/props_gameplay/salve.vmdl"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"            "bkb_potion"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"110"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"BKB potion;magic immunity"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_threshold_pct"			"35"
+			}
+						"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_immune_duration"			"5"
+			}
+		}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/bkb_potion.lua"
+			"Function"				"apply_passive"
+		}
+	}
+
+		"Modifiers"
+	{
+
+		"modifier_item_bkb_potion_passive"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"TextureName"       "bkb_potion"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"             "FIELD_INTEGER"
+					"magic_immune_duration"   "5"
+
+				}
+
+			}
+			
+			"OnTakeDamage"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"items/bkb_potion.lua"
+					"Function"				"check_health"
+				}
+			}
+		}
+
+	}
+	}
 }
