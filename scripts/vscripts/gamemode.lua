@@ -152,6 +152,7 @@ function barebones:OnGameInProgress()
 function SpawnTitans(keys)
 	local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	local radtitan = false
+	local badtitan = false
 	for _, unit in ipairs(Creatures) do
 		if unit:GetUnitName() == "npc_radiant_titan" then
 			radtitan = true
@@ -161,7 +162,7 @@ function SpawnTitans(keys)
 	local badtitan = false
 	for _, unit in ipairs(Creatures) do
 		if unit:GetUnitName() == "npc_dire_titan" then
-			radtitan = true
+			badtitan = true
 			break
 		end
 	end
@@ -180,6 +181,21 @@ end
     end)
 	
 function SpawnCreeps(keys)
+
+local Creatures = Entities:FindAllByClassname("npc_dota_creature")
+	for _, unit in ipairs(Creatures) do
+		if unit:GetUnitName() == "npc_radiant_titan" then
+			unit:CreatureLevelUp(1)
+			break
+		end
+	end
+	for _, unit in ipairs(Creatures) do
+		if unit:GetUnitName() == "npc_dire_titan" then
+			unit:CreatureLevelUp(1)
+			break
+		end
+	end
+	
 	local e1 = "npc_easy_ghost_b"
 	local e2 = "npc_easy_forest_troll_berserker"
 	local e3 = "npc_easy_frost_kobold"
