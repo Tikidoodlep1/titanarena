@@ -393,7 +393,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "GreaterCrit.lua"
+						"ScriptFile" "items/GreaterCrit.lua"
 						"Function" "ApplyCrit"
 					}
 				}
@@ -501,7 +501,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "GreaterCrit.lua"
+						"ScriptFile" "items/GreaterCrit.lua"
 						"Function" "ApplyCrit"
 					}
 				}
@@ -610,7 +610,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "GreaterCrit.lua"
+						"ScriptFile" "items/GreaterCrit.lua"
 						"Function" "ApplyCrit"
 					}
 				}
@@ -882,7 +882,7 @@
 					{
 						"RunScript"
 						{
-							"ScriptFile" "SpectralHeart.lua"
+							"ScriptFile" "items/SpectralHeart.lua"
 							"Function" "ApplyHeal"
 						}
 					}
@@ -890,7 +890,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "SpectralHeart.lua"
+						"ScriptFile" "items/SpectralHeart.lua"
 						"Function" "OnDamage"
 					}
 				}
@@ -898,7 +898,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "SpectralHeart.lua"
+						"ScriptFile" "items/SpectralHeart.lua"
 						"Function" "OnDestroy"
 					}
 				}
@@ -1194,7 +1194,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile" "auto_mek.lua"
+						"ScriptFile" "items/auto_mek.lua"
 						"Function" "burstHeal"
 					}
 				}
@@ -1319,7 +1319,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"edeso.lua"
+						"ScriptFile"	"items/edeso.lua"
 						"Function"		"CheckRanged"
 					}
 				}
@@ -1447,7 +1447,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"edeso.lua"
+						"ScriptFile"	"items/edeso.lua"
 						"Function"		"CheckRanged"
 					}
 				}
@@ -1575,7 +1575,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"edeso.lua"
+						"ScriptFile"	"items/edeso.lua"
 						"Function"		"CheckRanged"
 					}
 				}
