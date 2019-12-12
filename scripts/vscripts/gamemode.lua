@@ -179,9 +179,9 @@ end
       return 120 -- Rerun this timer every 120 game-time seconds 
 	  
     end)
-	
-function SpawnCreeps(keys)
 
+function SpawnCreeps(keys)
+	
 local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for _, unit in ipairs(Creatures) do
 		if unit:GetUnitName() == "npc_radiant_titan" then
@@ -195,7 +195,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 			break
 		end
 	end
-	
+
 	local e1 = "npc_easy_ghost_b"
 	local e2 = "npc_easy_forest_troll_berserker"
 	local e3 = "npc_easy_frost_kobold"
