@@ -141,6 +141,176 @@ function barebones:OnGameInProgress()
 	
 	CustomGameEventManager:Send_ServerToAllClients("setKillsToWin", {})
 	
+	Timers:CreateTimer(60, function()
+	
+	EnterDual()
+		return 600
+	end)
+	
+	Timers:CreateTimer(180, function()
+	
+	ExitDual()
+		return 600
+	end)
+	
+	function EnterDual()
+	_G.IsDual = true
+	local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
+	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
+	trigger_out:Disable()
+	rad_trigger_out:Disable()
+	local players = HeroList:GetAllHeroes()
+	local HeroIncrementer = 1
+	local GetTotalDualPlayers = RandomInt(1,10)
+	local GetArena = RandomInt(1,4)
+	local arena1
+	local arena1titan
+	local arena1vs
+	local arena1titanvs
+	local arena2
+	local arena2vs
+		if GetArena == 1 then
+			arena1 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
+			arena1titan = Entities:FindByName(nil, "dire_dual_titan"):GetAbsOrigin()
+			arena1vs = Entities:FindByName(nil, "dire_dual1"):GetAbsOrigin()
+			arena1titanvs = Entities:FindByName(nil, "dire_dual_titan1"):GetAbsOrigin()
+			arena2 = Entities:FindByName(nil, "dire_dual2"):GetAbsOrigin()
+			arena2vs = Entities:FindByName(nil, "dire_dual3"):GetAbsOrigin()
+		elseif GetArena == 2 then
+			arena1 = Entities:FindByName(nil, "dire_dual2"):GetAbsOrigin()
+			arena1titan = Entities:FindByName(nil, "dire_dual_titan2"):GetAbsOrigin()
+			arena1vs = Entities:FindByName(nil, "dire_dual3"):GetAbsOrigin()
+			arena1titanvs = Entities:FindByName(nil, "dire_dual_titan3"):GetAbsOrigin()
+			arena2 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
+			arena2vs = Entities:FindByName(nil, "dire_dual1"):GetAbsOrigin()
+		elseif GetArena == 3 then
+			arena1 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
+			arena1titan = Entities:FindByName(nil, "rad_dual_titan"):GetAbsOrigin()
+			arena1vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
+			arena1titanvs = Entities:FindByName(nil, "rad_dual_titan1"):GetAbsOrigin()
+			arena2 = Entities:FindByName(nil, "rad_dual2"):GetAbsOrigin()
+			arena2vs = Entities:FindByName(nil, "rad_dual3"):GetAbsOrigin()
+		else
+			arena1 = Entities:FindByName(nil, "rad_dual2"):GetAbsOrigin()
+			arena1titan = Entities:FindByName(nil, "rad_dual_titan2"):GetAbsOrigin()
+			arena1vs = Entities:FindByName(nil, "rad_dual3"):GetAbsOrigin()
+			arena1titanvs = Entities:FindByName(nil, "rad_dual_titan3"):GetAbsOrigin()
+			arena2 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
+			arena2vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
+		end
+
+		for _, hero in pairs(players) do
+			if HeroIncrementer <= GetTotalDualPlayers then
+			hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+				if hero:GetTeamNumber() == 2 then
+					FindClearSpaceForUnit(hero, arena1, false)
+					SendToConsole("dota_camera_center")
+				end
+				if hero:GetTeamNumber() == 3 then
+					FindClearSpaceForUnit(hero, arena1vs, false)
+					SendToConsole("dota_camera_center")
+				end
+					HeroIncrementer = HeroIncrementer + 1
+			end
+			if HeroIncrementer > GetTotalDualPlayers then
+				if hero:GetTeamNumber() == 2 then
+					FindClearSpaceForUnit(hero, arena2, false)
+					SendToConsole("dota_camera_center")
+				end
+				if hero:GetTeamNumber() == 3 then
+					FindClearSpaceForUnit(hero, arena2vs, false)
+					SendToConsole("dota_camera_center")
+				end
+			end
+		end
+		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
+		for _, unit in ipairs(Creatures) do
+			if unit:GetUnitName() == "npc_radiant_titan" then
+				FindClearSpaceForUnit(unit, arena1titan, false)
+				unit:MoveToPositionAggressive(arena1titanvs)
+				break
+			end
+		end
+		for _, unit in ipairs(Creatures) do
+			if unit:GetUnitName() == "npc_dire_titan" then
+				FindClearSpaceForUnit(unit, arena1titanvs, false)
+				unit:MoveToPositionAggressive(arena1titan)
+				break
+			end
+		end
+	end
+	
+	function ExitDual()
+	_G.IsDual = false
+
+	local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
+	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
+	
+	local players = HeroList:GetAllHeroes()
+		for _, hero in pairs(players) do
+			hero:RemoveModifierByName("modifier_truesight")
+			if hero:GetTeamNumber() == 2 then
+				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+				SendToConsole("dota_camera_center")
+			end
+			if hero:GetTeamNumber() == 3 then
+				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+				SendToConsole("dota_camera_center")
+			end
+		end
+		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
+		local radiant_titan_return = Entities:FindByName(nil, "rad_titan"):GetAbsOrigin()
+		local dire_titan_return = Entities:FindByName(nil, "dire_titan"):GetAbsOrigin()
+		for _, unit in ipairs(Creatures) do
+			if unit:GetUnitName() == "npc_radiant_titan" then
+				FindClearSpaceForUnit(unit, radiant_titan_return, false)
+				unit:Stop()
+				break
+			end
+		end
+		for _, unit in ipairs(Creatures) do
+			if unit:GetUnitName() == "npc_dire_titan" then
+				FindClearSpaceForUnit(unit, dire_titan_return, false)
+				unit:Stop()
+				break
+			end
+		end
+		trigger_out:Enable()
+		rad_trigger_out:Enable()
+	end
+	
+	function CheckDualStatus()
+		local players = HeroList:GetAllHeroes()
+		local deadradiant = 0
+		local deaddire = 0
+		local IsDireDead = false
+		local IsRadiantDead = false
+		for _, hero in pairs(players) do
+			hero:RemoveModifierByName("modifier_truesight")
+			if hero:GetTeamNumber() == 2 and hero:IsAlive() == false then
+				deadradiant = deadradiant + 1
+				if deadradiant == hero:GetTeamPlayerCount() then
+					IsRadiantDead = true
+				end
+				if IsDireDead == true then
+					local amount = 750 * (GetGameTime()/650)
+					hero:ModifyGold(amount, 0, 16)
+					ExitDual()
+				end
+			end
+			if hero:GetTeamNumber() == 3 and hero:IsAlive() == false then
+				deaddire = deaddire + 1
+				if deaddire == hero:GetTeamPlayerCount() then
+					IsDireDead = true
+				end
+				if IsRadiantDead == true then
+					local amount = 750 * (GetGameTime()/650)
+					hero:ModifyGold(amount, 0, 16)
+					ExitDual()
+				end
+			end
+		end
+	end
 	
 	Timers:CreateTimer(0, function()
 	
@@ -159,7 +329,6 @@ function SpawnTitans(keys)
 			break
 		end
 	end
-	local badtitan = false
 	for _, unit in ipairs(Creatures) do
 		if unit:GetUnitName() == "npc_dire_titan" then
 			badtitan = true

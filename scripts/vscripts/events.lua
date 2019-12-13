@@ -380,7 +380,11 @@ function barebones:OnEntityKilled(keys)
 	if keys.entindex_attacker ~= nil then
 		killer_unit = EntIndexToHScript(keys.entindex_attacker)
 	end
-
+	
+	require('gamemode')
+	local checkFunction = gamemode.CheckDualStatus()
+	checkFunction()
+	
 	-- The ability/item used to kill, or nil if not killed by an item/ability
 	local killing_ability = nil
 
