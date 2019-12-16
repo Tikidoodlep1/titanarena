@@ -32,6 +32,8 @@ function barebones:OnGameRulesStateChange(keys)
 		DebugPrint("[BAREBONES] Game State changed to: DOTA_GAMERULES_STATE_HERO_SELECTION")
 		self:PostLoadPrecache()
 		self:OnAllPlayersLoaded()
+		_G.radiant_kills = 0
+		_G.dire_kills = 0
 		Timers:CreateTimer(HERO_SELECTION_TIME+STRATEGY_TIME-1, function()
 			for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 				if PlayerResource:IsValidPlayerID(playerID) then
@@ -381,9 +383,10 @@ function barebones:OnEntityKilled(keys)
 		killer_unit = EntIndexToHScript(keys.entindex_attacker)
 	end
 	
-	require('gamemode')
+	--[[require('gamemode')
 	local checkFunction = gamemode.CheckDualStatus()
 	checkFunction()
+	--]]
 	
 	-- The ability/item used to kill, or nil if not killed by an item/ability
 	local killing_ability = nil
@@ -401,6 +404,15 @@ function barebones:OnEntityKilled(keys)
 
 	-- Killed Unit is a hero (not an illusion) and he is not reincarnating
 	if killed_unit:IsRealHero() and (not killed_unit:IsReincarnating()) then
+
+
+		--Handles scripts for end game and setting and checking current team kills
+	if killer_unit:IsRealHero() then
+		print("awarded a team a kill!")
+		getkills(killed_unit)
+	end
+
+
 		-- Hero gold bounty update for the killer
 		if USE_CUSTOM_HERO_GOLD_BOUNTY then
 			if killer_unit:IsRealHero() then
@@ -420,6 +432,7 @@ function barebones:OnEntityKilled(keys)
 				killer_unit:SetMaximumGoldBounty(gold_bounty)
 			end
 		end
+
 
 		-- Hero Respawn time configuration
 		if ENABLE_HERO_RESPAWN then
@@ -534,6 +547,28 @@ function barebones:OnEntityKilled(keys)
 			PlayerResource:RemoveFromSelection(playerID, killed_unit)
 		end
 	end
+end
+
+function getkills(unit)
+local team = unit:GetTeamNumber()
+
+if team == 2 then
+_G.dire_kills = (_G.dire_kills + 1)
+print("Dire has been awarded a kill!")
+--checks to see if a team has hit the minimum number of kills to win
+if _G.dire_kills == 50 then
+	GameRules:SetGameWinner(3)
+	end
+end
+
+if team == 3 then
+_G.radiant_kills = (_G.radiant_kills + 1)
+print("Radiant has been awarded a kill!")
+--checks to see if a team has hit the minimum number of kills to win
+if _G.radiant_kills == 50 then
+	GameRules:SetGameWinner(2)
+end
+end
 end
 
 function RollDrops(unit)
