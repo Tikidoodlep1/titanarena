@@ -547,7 +547,45 @@ function barebones:OnEntityKilled(keys)
 			PlayerResource:RemoveFromSelection(playerID, killed_unit)
 		end
 	end
+	
+	
+	function CheckDualStatus()
+		local players = HeroList:GetAllHeroes()
+		local deadradiant = 0
+		local deaddire = 0
+		local IsDireDead = false
+		local IsRadiantDead = false
+		for _, hero in pairs(players) do
+			if hero:GetTeamNumber() == 2 and hero:IsAlive() == false then
+				deadradiant = deadradiant + 1
+				if deadradiant == hero:GetTeamPlayerCount() then
+					IsRadiantDead = true
+				end
+				if IsDireDead == true then
+					local amount = 750 * (GetGameTime()/650)
+					hero:ModifyGold(amount, 0, 16)
+					ExitDual()
+				end
+			end
+			if hero:GetTeamNumber() == 3 and hero:IsAlive() == false then
+				deaddire = deaddire + 1
+				if deaddire == hero:GetTeamPlayerCount() then
+					IsDireDead = true
+				end
+				if IsRadiantDead == true then
+					local amount = 750 * (GetGameTime()/650)
+					hero:ModifyGold(amount, 0, 16)
+					ExitDual()
+				end
+			end
+		end
+		CheckDuals(IsDireDead, IsRadiantDead)
+	end
+	
+	
 end
+
+
 
 function getkills(unit)
 local team = unit:GetTeamNumber()

@@ -160,8 +160,9 @@ function barebones:OnGameInProgress()
 	trigger_out:Disable()
 	rad_trigger_out:Disable()
 	local players = HeroList:GetAllHeroes()
-	local HeroIncrementer = 1
-	local GetTotalDualPlayers = RandomInt(1,10)
+	local dHeroIncrementer = 0
+	local rHeroIncrementer = 0
+	local GetTotalDualPlayers = RandomInt(1,5)
 	local GetArena = RandomInt(1,4)
 	local arena1
 	local arena1titan
@@ -198,31 +199,40 @@ function barebones:OnGameInProgress()
 			arena2 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
 			arena2vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
 		end
-
-		for _, hero in pairs(players) do
-			if HeroIncrementer <= GetTotalDualPlayers then
-			hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-				if hero:GetTeamNumber() == 2 then
-					FindClearSpaceForUnit(hero, arena1, false)
-					SendToConsole("dota_camera_center")
+		print(GetTotalDualPlayers)
+			for _, hero in pairs(players) do
+				if rHeroIncrementer <= GetTotalDualPlayers then
+				print("rHeroIncrementer is "..rHeroIncrementer)
+				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+					if hero:GetTeamNumber() == 2 then
+						FindClearSpaceForUnit(hero, arena1, false)
+						SendToConsole("dota_camera_center")
+						rHeroIncrementer = rHeroIncrementer + 1
+					end
 				end
-				if hero:GetTeamNumber() == 3 then
-					FindClearSpaceForUnit(hero, arena1vs, false)
-					SendToConsole("dota_camera_center")
+				if dHeroIncrementer <= GetTotalDualPlayers then
+				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+					if hero:GetTeamNumber() == 3 then
+						FindClearSpaceForUnit(hero, arena1vs, false)
+						SendToConsole("dota_camera_center")
+						dHeroIncrementer = dHeroIncrementer + 1
+					end
 				end
-					HeroIncrementer = HeroIncrementer + 1
-			end
-			if HeroIncrementer > GetTotalDualPlayers then
-				if hero:GetTeamNumber() == 2 then
-					FindClearSpaceForUnit(hero, arena2, false)
-					SendToConsole("dota_camera_center")
+					if dHeroIncrementer > GetTotalDualPlayers then
+					hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+						if hero:GetTeamNumber() == 3 then
+							FindClearSpaceForUnit(hero, arena2vs, false)
+							SendToConsole("dota_camera_center")
+						end
+					end
+					if rHeroIncrementer > GetTotalDualPlayers then
+					hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+						if hero:GetTeamNumber() == 2 then
+							FindClearSpaceForUnit(hero, arena2, false)
+							SendToConsole("dota_camera_center")
+						end
+					end
 				end
-				if hero:GetTeamNumber() == 3 then
-					FindClearSpaceForUnit(hero, arena2vs, false)
-					SendToConsole("dota_camera_center")
-				end
-			end
-		end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then
@@ -243,7 +253,7 @@ function barebones:OnGameInProgress()
 	function ExitDual()
 	_G.IsDual = false
 
-	local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
+	local trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), 10000)
 	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
 	
 	local players = HeroList:GetAllHeroes()
@@ -251,12 +261,13 @@ function barebones:OnGameInProgress()
 			hero:RemoveModifierByName("modifier_truesight")
 			if hero:GetTeamNumber() == 2 then
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+				print(Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin())
 				SendToConsole("dota_camera_center")
-			end
-			if hero:GetTeamNumber() == 3 then
+			elseif hero:GetTeamNumber() == 3 then
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
 				SendToConsole("dota_camera_center")
 			end
+			print(hero:GetAbsOrigin())
 		end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		local radiant_titan_return = Entities:FindByName(nil, "rad_titan"):GetAbsOrigin()
@@ -279,38 +290,12 @@ function barebones:OnGameInProgress()
 		rad_trigger_out:Enable()
 	end
 	
-	function CheckDualStatus()
-		local players = HeroList:GetAllHeroes()
-		local deadradiant = 0
-		local deaddire = 0
-		local IsDireDead = false
-		local IsRadiantDead = false
-		for _, hero in pairs(players) do
-			hero:RemoveModifierByName("modifier_truesight")
-			if hero:GetTeamNumber() == 2 and hero:IsAlive() == false then
-				deadradiant = deadradiant + 1
-				if deadradiant == hero:GetTeamPlayerCount() then
-					IsRadiantDead = true
-				end
-				if IsDireDead == true then
-					local amount = 750 * (GetGameTime()/650)
-					hero:ModifyGold(amount, 0, 16)
-					ExitDual()
-				end
-			end
-			if hero:GetTeamNumber() == 3 and hero:IsAlive() == false then
-				deaddire = deaddire + 1
-				if deaddire == hero:GetTeamPlayerCount() then
-					IsDireDead = true
-				end
-				if IsRadiantDead == true then
-					local amount = 750 * (GetGameTime()/650)
-					hero:ModifyGold(amount, 0, 16)
-					ExitDual()
-				end
-			end
+	function CheckDuals(IsDireDead, IsRadiantDead)
+		if IsDireDead == true or IsRadiantDead == true then
+			ExitDual()
 		end
 	end
+	
 	
 	Timers:CreateTimer(0, function()
 	
