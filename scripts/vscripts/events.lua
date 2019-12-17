@@ -360,7 +360,6 @@ function barebones:OnTeamKillCredit(keys)
 	local victim_userID = keys.victim_userid
 	local streak = keys.herokills
 	local killer_team = keys.teamnumber
-
 	-- If you want to change assist gold or assist experience on hero death use OnEntityKilled or Damage Filter, not this
 end
 
@@ -411,7 +410,21 @@ function barebones:OnEntityKilled(keys)
 		print("awarded a team a kill!")
 		getkills(killed_unit)
 	end
-
+	local DireDead = 0
+	local RadiantDead = 0
+	if  killer_unit:IsRealHero() and _G.IsDual == true then
+		if killer_unit:GetTeamNumber() == 2 then
+			DireDead = DireDead + 1
+			if DireDead >= killed_unit:GetPlayerCountForTeam(2) then
+				ExitDual(2)
+			end
+		elseif killer_unit:GetTeamNumber() == 3 then
+			RadiantDead = RadiantDead + 1
+			if RadiantDead >= killed_unit:GetPlayerCountForTeam(3) then
+				ExitDual(3)
+			end
+		end
+	end
 
 		-- Hero gold bounty update for the killer
 		if USE_CUSTOM_HERO_GOLD_BOUNTY then
@@ -547,45 +560,7 @@ function barebones:OnEntityKilled(keys)
 			PlayerResource:RemoveFromSelection(playerID, killed_unit)
 		end
 	end
-	
-	
-	function CheckDualStatus()
-		local players = HeroList:GetAllHeroes()
-		local deadradiant = 0
-		local deaddire = 0
-		local IsDireDead = false
-		local IsRadiantDead = false
-		for _, hero in pairs(players) do
-			if hero:GetTeamNumber() == 2 and hero:IsAlive() == false then
-				deadradiant = deadradiant + 1
-				if deadradiant == hero:GetTeamPlayerCount() then
-					IsRadiantDead = true
-				end
-				if IsDireDead == true then
-					local amount = 750 * (GetGameTime()/650)
-					hero:ModifyGold(amount, 0, 16)
-					ExitDual()
-				end
-			end
-			if hero:GetTeamNumber() == 3 and hero:IsAlive() == false then
-				deaddire = deaddire + 1
-				if deaddire == hero:GetTeamPlayerCount() then
-					IsDireDead = true
-				end
-				if IsRadiantDead == true then
-					local amount = 750 * (GetGameTime()/650)
-					hero:ModifyGold(amount, 0, 16)
-					ExitDual()
-				end
-			end
-		end
-		CheckDuals(IsDireDead, IsRadiantDead)
-	end
-	
-	
 end
-
-
 
 function getkills(unit)
 local team = unit:GetTeamNumber()
@@ -598,6 +573,64 @@ if _G.dire_kills == 50 then
 	GameRules:SetGameWinner(3)
 	end
 end
+
+function ExitDual(WinningTeam)
+	_G.IsDual = false
+
+	local trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), 10000)
+	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
+	
+	local players = HeroList:GetAllHeroes()
+		for _, hero in pairs(players) do
+			hero:RemoveModifierByName("modifier_truesight")
+			if hero:GetTeamNumber() == 2 then
+				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+				print(Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin())
+				SendToConsole("dota_camera_center")
+			elseif hero:GetTeamNumber() == 3 then
+				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+				SendToConsole("dota_camera_center")
+			end
+			print(hero:GetAbsOrigin())
+		end
+		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
+		local radiant_titan_return = Entities:FindByName(nil, "rad_titan"):GetAbsOrigin()
+		local dire_titan_return = Entities:FindByName(nil, "dire_titan"):GetAbsOrigin()
+		for _, unit in ipairs(Creatures) do
+			if unit:GetUnitName() == "npc_radiant_titan" then
+				FindClearSpaceForUnit(unit, radiant_titan_return, false)
+				unit:Stop()
+				break
+			end
+		end
+		for _, unit in ipairs(Creatures) do
+			if unit:GetUnitName() == "npc_dire_titan" then
+				FindClearSpaceForUnit(unit, dire_titan_return, false)
+				unit:Stop()
+				break
+			end
+		end
+		
+		local Heroes = HeroList:GetAllHeroes()
+		local team_networth = 0
+		local player_networth = 0
+		local amount = 99999
+		for _, player in ipairs(Heroes) do
+			if player:GetTeamNumber() == WinningTeam then
+				local ID = Heroes:GetPlayerID()
+				local player_networth = Heroes:GetGoldPerMinute(ID) * (GetGameTime() / 60)
+				team_networth = team_networth + player_networth
+			end
+		end
+		for _, players in ipairs(Heroes) do
+			if players:GetTeamNumber() == WinningTeam then
+				amount = team_networth / (GetGameTime()/ 60)
+				ModifyGold(ID, amount, false, 12)
+			end
+		end
+		trigger_out:Enable()
+		rad_trigger_out:Enable()
+	end
 
 if team == 3 then
 _G.radiant_kills = (_G.radiant_kills + 1)

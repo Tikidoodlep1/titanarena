@@ -136,6 +136,7 @@ end
   gold will begin to go up in ticks if configured, creeps will spawn, towers will become damageable etc.  This function
   is useful for starting any game logic timers/thinkers, beginning the first round, etc.
 ]]
+
 function barebones:OnGameInProgress()
 	DebugPrint("[BAREBONES] The game has officially begun.")
 	
@@ -199,10 +200,8 @@ function barebones:OnGameInProgress()
 			arena2 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
 			arena2vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
 		end
-		print(GetTotalDualPlayers)
 			for _, hero in pairs(players) do
 				if rHeroIncrementer <= GetTotalDualPlayers then
-				print("rHeroIncrementer is "..rHeroIncrementer)
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 2 then
 						FindClearSpaceForUnit(hero, arena1, false)
@@ -286,14 +285,9 @@ function barebones:OnGameInProgress()
 				break
 			end
 		end
+		
 		trigger_out:Enable()
 		rad_trigger_out:Enable()
-	end
-	
-	function CheckDuals(IsDireDead, IsRadiantDead)
-		if IsDireDead == true or IsRadiantDead == true then
-			ExitDual()
-		end
 	end
 	
 	

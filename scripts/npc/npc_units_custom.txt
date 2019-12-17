@@ -1626,7 +1626,7 @@
     "SoundSet"          "Hero_Kunkka"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Radiant Titan"
-    
+	
     // Abilities
     //----------------------------------------------------------------
     
@@ -1739,7 +1739,7 @@
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
     "Level"           "0"
     "UnitLabel"         "Dire Titan"
-    
+	
     // Abilities
     //----------------------------------------------------------------
     
