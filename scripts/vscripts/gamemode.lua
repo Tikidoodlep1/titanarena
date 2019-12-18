@@ -200,11 +200,16 @@ function barebones:OnGameInProgress()
 			arena2 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
 			arena2vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
 		end
+			GameRules:SetHeroRespawnEnabled(false)
 			for _, hero in pairs(players) do
+				hero:SetBuyBackDisabledByReapersScythe(true)
 				if rHeroIncrementer <= GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 2 then
 						FindClearSpaceForUnit(hero, arena1, false)
+						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+						hero:SetMana(hero:GetMaxMana())
+						hero:SetHealth(hero:GetMaxHealth())
 						SendToConsole("dota_camera_center")
 						rHeroIncrementer = rHeroIncrementer + 1
 					end
@@ -213,6 +218,9 @@ function barebones:OnGameInProgress()
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 3 then
 						FindClearSpaceForUnit(hero, arena1vs, false)
+						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+						hero:SetMana(hero:GetMaxMana())
+						hero:SetHealth(hero:GetMaxHealth())
 						SendToConsole("dota_camera_center")
 						dHeroIncrementer = dHeroIncrementer + 1
 					end
@@ -220,6 +228,9 @@ function barebones:OnGameInProgress()
 					if dHeroIncrementer > GetTotalDualPlayers then
 					hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 						if hero:GetTeamNumber() == 3 then
+							hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+							hero:SetHealth(hero:GetMaxHealth())
+							hero:SetMana(hero:GetMaxMana())
 							FindClearSpaceForUnit(hero, arena2vs, false)
 							SendToConsole("dota_camera_center")
 						end
@@ -227,6 +238,9 @@ function barebones:OnGameInProgress()
 					if rHeroIncrementer > GetTotalDualPlayers then
 					hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 						if hero:GetTeamNumber() == 2 then
+							hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+							hero:SetHealth(hero:GetMaxHealth())
+							hero:SetMana(hero:GetMaxMana())
 							FindClearSpaceForUnit(hero, arena2, false)
 							SendToConsole("dota_camera_center")
 						end
@@ -254,19 +268,26 @@ function barebones:OnGameInProgress()
 
 	local trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), 10000)
 	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
-	
+	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
+			hero:SetBuyBackDisabledByReapersScythe(false)
 			hero:RemoveModifierByName("modifier_truesight")
 			if hero:GetTeamNumber() == 2 then
+				hero:Kill(nil, nil)
+				hero:RespawnUnit()
+				hero:RemoveModifierByName("modifier_truesight")
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
 				print(Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin())
+				print(hero:GetAbsOrigin())
 				SendToConsole("dota_camera_center")
 			elseif hero:GetTeamNumber() == 3 then
+				hero:Kill(nil, nil)
+				hero:RespawnUnit()
+				hero:RemoveModifierByName("modifier_truesight")
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
 				SendToConsole("dota_camera_center")
 			end
-			print(hero:GetAbsOrigin())
 		end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		local radiant_titan_return = Entities:FindByName(nil, "rad_titan"):GetAbsOrigin()

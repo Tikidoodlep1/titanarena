@@ -404,23 +404,39 @@ function barebones:OnEntityKilled(keys)
 	-- Killed Unit is a hero (not an illusion) and he is not reincarnating
 	if killed_unit:IsRealHero() and (not killed_unit:IsReincarnating()) then
 
-
 		--Handles scripts for end game and setting and checking current team kills
 	if killer_unit:IsRealHero() then
 		print("awarded a team a kill!")
 		getkills(killed_unit)
 	end
-	local DireDead = 0
-	local RadiantDead = 0
+	local DireDead = false
+	local RadiantDead = false
+	local players = HeroList:GetAllHeroes()
 	if  killer_unit:IsRealHero() and _G.IsDual == true then
+	print("Entity was killed by a real hero and _G.IsDual is true!")
 		if killer_unit:GetTeamNumber() == 2 then
-			DireDead = DireDead + 1
-			if DireDead >= killed_unit:GetPlayerCountForTeam(2) then
+			
+			for _, hero in pairs(players) do
+				if hero:IsAlive() == false and hero:GetTeamNumber() == 3 then
+					DireDead = true
+					print("all heroes are dead on dire")
+				else
+					DireDead = false
+					print("This hero is still alive")
+				end
+			end
+			if DireDead == true then
 				ExitDual(2)
 			end
 		elseif killer_unit:GetTeamNumber() == 3 then
-			RadiantDead = RadiantDead + 1
-			if RadiantDead >= killed_unit:GetPlayerCountForTeam(3) then
+			for _, hero in pairs(players) do
+				if hero:IsAlive() == false and hero:GetTeamNumber() == 2 then
+					RadiantDead = true
+				else
+					RadiantDead = false
+				end
+			end
+			if RadiantDead == true then
 				ExitDual(3)
 			end
 		end
@@ -567,7 +583,6 @@ local team = unit:GetTeamNumber()
 
 if team == 2 then
 _G.dire_kills = (_G.dire_kills + 1)
-print("Dire has been awarded a kill!")
 --checks to see if a team has hit the minimum number of kills to win
 if _G.dire_kills == 50 then
 	GameRules:SetGameWinner(3)
@@ -579,19 +594,25 @@ function ExitDual(WinningTeam)
 
 	local trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), 10000)
 	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
-	
+	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
-			hero:RemoveModifierByName("modifier_truesight")
+			hero:SetBuyBackDisabledByReapersScythe(false)
 			if hero:GetTeamNumber() == 2 then
+				hero:Kill(nil, nil)
+				hero:RespawnUnit()
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
-				print(Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin())
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
 				SendToConsole("dota_camera_center")
 			elseif hero:GetTeamNumber() == 3 then
+				hero:Kill(nil, nil)
+				hero:RespawnUnit()
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
 				SendToConsole("dota_camera_center")
 			end
-			print(hero:GetAbsOrigin())
 		end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		local radiant_titan_return = Entities:FindByName(nil, "rad_titan"):GetAbsOrigin()
@@ -614,20 +635,18 @@ function ExitDual(WinningTeam)
 		local Heroes = HeroList:GetAllHeroes()
 		local team_networth = 0
 		local player_networth = 0
-		local amount = 99999
-		for _, player in ipairs(Heroes) do
-			if player:GetTeamNumber() == WinningTeam then
-				local ID = Heroes:GetPlayerID()
-				local player_networth = Heroes:GetGoldPerMinute(ID) * (GetGameTime() / 60)
-				team_networth = team_networth + player_networth
-			end
-		end
+		local amount = 0
+		local ID
+		local game_time = GameRules:GetGameTime()
+		local current_gold
 		for _, players in ipairs(Heroes) do
 			if players:GetTeamNumber() == WinningTeam then
-				amount = team_networth / (GetGameTime()/ 60)
-				ModifyGold(ID, amount, false, 12)
+			ID = players:GetPlayerID()
+				amount = 750 * 1.85^(game_time/600)
+				current_gold = PlayerResource:GetGold(ID)
+				players:SetGold(current_gold + amount + 1, false)
 			end
-		end
+		end 
 		trigger_out:Enable()
 		rad_trigger_out:Enable()
 	end
