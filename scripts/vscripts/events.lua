@@ -34,6 +34,11 @@ function barebones:OnGameRulesStateChange(keys)
 		self:OnAllPlayersLoaded()
 		_G.radiant_kills = 0
 		_G.dire_kills = 0
+		_G.vote_to_concede_dire = false
+		_G.vote_to_concede_radiant = false
+		_G.radiant_can_concede = true
+		_G.dire_can_concede = true
+
 		Timers:CreateTimer(HERO_SELECTION_TIME+STRATEGY_TIME-1, function()
 			for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 				if PlayerResource:IsValidPlayerID(playerID) then
@@ -781,5 +786,62 @@ function barebones:OnPlayerChat(keys)
 
 	local team_only = keys.teamonly
 	local userID = keys.userid
+	local team = keys.team
 	local text = keys.text
+	print(text)
+	local team_num = PlayerResource:GetTeam(userID)
+	print("Team "..team_num.. " typed a message")
+
+	if team_num == 2 then 
+		if (text == "no" or text == "NO" or text == "No") and _G.vote_to_concede_radiant == true then
+		_G.vote_to_concede_radiant = false
+		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
+		end
+		if (text == "gg" or text == "GG" or text == "Good Game") and _G.radiant_can_concede == false then
+		GameRules:SendCustomMessage("<font color='#dc143c'>You can only attempt to surrender 1 time per 2 minutes!</font>", 0, 0)
+		end
+		if (text == "gg" or text == "GG" or text == "Good Game") and _G.radiant_can_concede == true then
+			GameRules:SendCustomMessage("<font color='#dc143c'>Radiant is Voting to Surrender! To cancel the vote type no (radiant only!)</font>", 0, 0)
+			_G.vote_to_concede_radiant = true
+			_G.radiant_can_concede = false
+					Timers:CreateTimer(120, function()
+      						_G.radiant_can_concede = true    
+    				end)
+		
+    Timers:CreateTimer(10, function()
+        if _G.vote_to_concede_radiant == true then
+        	GameRules:SetGameWinner(3)
+        end
+        
+    end)
+end
+end
+	if team_num == 3 then 
+		if (text == "no" or text == "NO" or text == "No") and _G.vote_to_concede_dire == true then
+		_G.vote_to_concede_dire = false
+		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
+		end
+		if (text == "gg" or text == "GG" or text == "Good Game") and _G.dire_can_concede == false then
+		GameRules:SendCustomMessage("<font color='#dc143c'>You can only attempt to surrender 1 time per 2 minutes!</font>", 0, 0)
+		end
+		if (text == "gg" or text == "GG" or text == "Good Game") and _G.dire_can_concede == true then
+			GameRules:SendCustomMessage("<font color='#dc143c'>Dire is Voting to Surrender! To cancel the vote type no (radiant only!)</font>", 0, 0)
+			_G.vote_to_concede_dire = true
+			_G.dire_can_concede = false
+					Timers:CreateTimer(120, function()
+      						_G.dire_can_concede = true    
+    				end)
+			
+		
+    Timers:CreateTimer(10, function()
+        if _G.vote_to_concede_dire == true then
+        	GameRules:SetGameWinner(2)
+        end
+        
+    end)
+
+
+
+end
+end
 end
