@@ -15,6 +15,7 @@ require('libraries/attachments')
 require('libraries/playertables')
 -- Selection library (by Noya) provides player selection inspection and management from server lua
 require('libraries/selection')
+require('libraries/notifications')
 
 -- settings.lua is where you can specify many different properties for your game mode and is one of the core barebones files.
 require('settings')
@@ -141,6 +142,16 @@ function barebones:OnGameInProgress()
 	DebugPrint("[BAREBONES] The game has officially begun.")
 	
 	CustomGameEventManager:Send_ServerToAllClients("setKillsToWin", {})
+	Timers:CreateTimer(30, function()
+	
+	notifyDual30()
+		return 600
+	end)
+		Timers:CreateTimer(45, function()
+	
+	notifyDual15()
+		return 600
+	end)
 	
 	Timers:CreateTimer(60, function()
 	
@@ -154,6 +165,18 @@ function barebones:OnGameInProgress()
 		return 600
 	end)
 	
+
+
+function notifyDual30()
+Notifications:TopToAll({text = "A duel will begin in 30 seconds!", duration=5.0})
+EmitGlobalSound("ui.contract_complete")
+end
+
+function notifyDual15()
+Notifications:TopToAll({text = "A duel will begin in 15 seconds!", duration=5.0})
+EmitGlobalSound("ui.contract_complete")
+end
+
 	function EnterDual()
 	_G.IsDual = true
 	local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
