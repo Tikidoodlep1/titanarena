@@ -152,6 +152,12 @@ function barebones:OnGameInProgress()
 	notifyDual15()
 		return 600
 	end)
+
+	Timers:CreateTimer(55, function()
+	
+	notifyDual5()
+		return 600
+	end)
 	
 	Timers:CreateTimer(60, function()
 	
@@ -177,8 +183,14 @@ Notifications:TopToAll({text = "A duel will begin in 15 seconds!", duration=5.0}
 EmitGlobalSound("ui.contract_complete")
 end
 
+function notifyDual5()
+Notifications:TopToAll({text = "A duel will begin in 5 seconds!", duration=5.0})
+EmitGlobalSound("ui.contract_complete")
+end
 	function EnterDual()
 	_G.IsDual = true
+	Notifications:TopToAll({text = "The duel has begun!", duration=5.0})
+EmitGlobalSound("ui.contract_complete"
 	local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
 	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
 	trigger_out:Disable()
