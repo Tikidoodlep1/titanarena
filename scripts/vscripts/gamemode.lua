@@ -190,74 +190,83 @@ end
 	function EnterDual()
 	_G.IsDual = true
 	Notifications:TopToAll({text = "The duel has begun!", duration=5.0})
-EmitGlobalSound("ui.contract_complete"
+	EmitGlobalSound("ui.contract_complete")
 	local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
+	local trigger_in = Entities:FindByName(nil, "dual_keepin_trigger")
 	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
 	trigger_out:Disable()
+	trigger_in:Enable()
 	rad_trigger_out:Disable()
 	local players = HeroList:GetAllHeroes()
 	local dHeroIncrementer = 0
 	local rHeroIncrementer = 0
 	local GetTotalDualPlayers = RandomInt(1,5)
 	local GetArena = RandomInt(1,4)
-	local arena1
+	_G.arena1 = nil
 	local arena1titan
-	local arena1vs
+	_G.arena1vs = nil
 	local arena1titanvs
-	local arena2
-	local arena2vs
+	_G.arena2 = nil
+	_G.arena2vs = nil
+	_G.DualArena1 = {}
+	_G.DualArena2 = {}
+	_G.DualArenavs1 = {}
+	_G.DualArenavs2 = {}
+
 		if GetArena == 1 then
-			arena1 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
+			_G.arena1 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
 			arena1titan = Entities:FindByName(nil, "dire_dual_titan"):GetAbsOrigin()
-			arena1vs = Entities:FindByName(nil, "dire_dual1"):GetAbsOrigin()
+			_G.arena1vs = Entities:FindByName(nil, "dire_dual1"):GetAbsOrigin()
 			arena1titanvs = Entities:FindByName(nil, "dire_dual_titan1"):GetAbsOrigin()
-			arena2 = Entities:FindByName(nil, "dire_dual2"):GetAbsOrigin()
-			arena2vs = Entities:FindByName(nil, "dire_dual3"):GetAbsOrigin()
+			_G.arena2 = Entities:FindByName(nil, "dire_dual2"):GetAbsOrigin()
+			_G.arena2vs = Entities:FindByName(nil, "dire_dual3"):GetAbsOrigin()
 		elseif GetArena == 2 then
-			arena1 = Entities:FindByName(nil, "dire_dual2"):GetAbsOrigin()
+			_G.arena1 = Entities:FindByName(nil, "dire_dual2"):GetAbsOrigin()
 			arena1titan = Entities:FindByName(nil, "dire_dual_titan2"):GetAbsOrigin()
-			arena1vs = Entities:FindByName(nil, "dire_dual3"):GetAbsOrigin()
+			_G.arena1vs = Entities:FindByName(nil, "dire_dual3"):GetAbsOrigin()
 			arena1titanvs = Entities:FindByName(nil, "dire_dual_titan3"):GetAbsOrigin()
-			arena2 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
-			arena2vs = Entities:FindByName(nil, "dire_dual1"):GetAbsOrigin()
+			_G.arena2 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
+			_G.arena2vs = Entities:FindByName(nil, "dire_dual1"):GetAbsOrigin()
 		elseif GetArena == 3 then
-			arena1 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
+			_G.arena1 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
 			arena1titan = Entities:FindByName(nil, "rad_dual_titan"):GetAbsOrigin()
-			arena1vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
+			_G.arena1vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
 			arena1titanvs = Entities:FindByName(nil, "rad_dual_titan1"):GetAbsOrigin()
-			arena2 = Entities:FindByName(nil, "rad_dual2"):GetAbsOrigin()
-			arena2vs = Entities:FindByName(nil, "rad_dual3"):GetAbsOrigin()
+			_G.arena2 = Entities:FindByName(nil, "rad_dual2"):GetAbsOrigin()
+			_G.arena2vs = Entities:FindByName(nil, "rad_dual3"):GetAbsOrigin()
 		else
-			arena1 = Entities:FindByName(nil, "rad_dual2"):GetAbsOrigin()
+			_G.arena1 = Entities:FindByName(nil, "rad_dual2"):GetAbsOrigin()
 			arena1titan = Entities:FindByName(nil, "rad_dual_titan2"):GetAbsOrigin()
-			arena1vs = Entities:FindByName(nil, "rad_dual3"):GetAbsOrigin()
+			_G.arena1vs = Entities:FindByName(nil, "rad_dual3"):GetAbsOrigin()
 			arena1titanvs = Entities:FindByName(nil, "rad_dual_titan3"):GetAbsOrigin()
-			arena2 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
-			arena2vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
+			_G.arena2 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
+			_G.arena2vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()
 		end
 			GameRules:SetHeroRespawnEnabled(false)
-			for _, hero in pairs(players) do
+			for i, hero in pairs(players) do
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if rHeroIncrementer <= GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 2 then
-						FindClearSpaceForUnit(hero, arena1, false)
+						FindClearSpaceForUnit(hero, _G.arena1, false)
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						hero:SetMana(hero:GetMaxMana())
 						hero:SetHealth(hero:GetMaxHealth())
 						SendToConsole("dota_camera_center")
 						rHeroIncrementer = rHeroIncrementer + 1
+						_G.DualArena1[i] = hero
 					end
 				end
 				if dHeroIncrementer <= GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 3 then
-						FindClearSpaceForUnit(hero, arena1vs, false)
+						FindClearSpaceForUnit(hero, _G.arena1vs, false)
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						hero:SetMana(hero:GetMaxMana())
 						hero:SetHealth(hero:GetMaxHealth())
 						SendToConsole("dota_camera_center")
 						dHeroIncrementer = dHeroIncrementer + 1
+						_G.DualArenavs1[i] = hero
 					end
 				end
 					if dHeroIncrementer > GetTotalDualPlayers then
@@ -266,8 +275,9 @@ EmitGlobalSound("ui.contract_complete"
 							hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 							hero:SetHealth(hero:GetMaxHealth())
 							hero:SetMana(hero:GetMaxMana())
-							FindClearSpaceForUnit(hero, arena2vs, false)
+							FindClearSpaceForUnit(hero, _G.arena2vs, false)
 							SendToConsole("dota_camera_center")
+							_G.DualArena2[i] = hero
 						end
 					end
 					if rHeroIncrementer > GetTotalDualPlayers then
@@ -276,8 +286,9 @@ EmitGlobalSound("ui.contract_complete"
 							hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 							hero:SetHealth(hero:GetMaxHealth())
 							hero:SetMana(hero:GetMaxMana())
-							FindClearSpaceForUnit(hero, arena2, false)
+							FindClearSpaceForUnit(hero, _G.arena2, false)
 							SendToConsole("dota_camera_center")
+							_G.DualArenavs2[i] = hero
 						end
 					end
 				end
@@ -300,9 +311,15 @@ EmitGlobalSound("ui.contract_complete"
 	
 	function ExitDual()
 	_G.IsDual = false
-
+	for x=1, 11 do
+		_G.DualArena1[x] = nil
+		_G.DualArena2[x] = nil
+		_G.DualArenavs1[x] = nil
+		_G.DualArenavs2[x] = nil
+	end
 	local trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), 10000)
 	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
+	local trigger_in = Entities:FindByName(nil, "dual_keepin_trigger")
 	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
@@ -344,6 +361,7 @@ EmitGlobalSound("ui.contract_complete"
 		
 		trigger_out:Enable()
 		rad_trigger_out:Enable()
+		trigger_in:Disable()
 	end
 	
 	
@@ -389,13 +407,21 @@ function SpawnCreeps(keys)
 local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for _, unit in ipairs(Creatures) do
 		if unit:GetUnitName() == "npc_radiant_titan" then
+			local hp = unit:GetHealth()
+			local mp = unit:GetMana()
 			unit:CreatureLevelUp(1)
+			unit:SetHealth(hp)
+			unit:SetMana(mp)
 			break
 		end
 	end
 	for _, unit in ipairs(Creatures) do
 		if unit:GetUnitName() == "npc_dire_titan" then
+			local hp = unit:GetHealth()
+			local mp = unit:GetMana()
 			unit:CreatureLevelUp(1)
+			unit:SetHealth(hp)
+			unit:SetMana(mp)
 			break
 		end
 	end
