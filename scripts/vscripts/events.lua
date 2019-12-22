@@ -649,12 +649,25 @@ function ExitDual(WinningTeam)
 				current_gold = PlayerResource:GetGold(ID)
 				players:SetGold(current_gold + amount + 1, false)
 			end
-		end 
-		local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
-		local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
-		for _, trigger in pairs(trigger_out) do
-			trigger:Enable()
 		end
+		if WinningTeam == 2 then
+		Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+		EmitGlobalSound("ui.contract_complete")
+		end
+		if WinningTeam == 3 then
+		Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+		EmitGlobalSound("ui.contract_complete")
+		end
+		local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
+		local trigger_out1 = Entities:FindByName(nil, "dual_keepout1_trigger")
+			trigger_out:Disable()
+			trigger_out1:Disable()
+		local trigger_in = {}
+		trigger_in[1] = Entities:FindByName(nil, "dual_keepin_trigger")
+		trigger_in[2] = Entities:FindByName(nil, "dual_keepin1_trigger")
+		trigger_in[3] = Entities:FindByName(nil, "dual_keepin2_trigger")
+		trigger_in[4] = Entities:FindByName(nil, "dual_keepin3_trigger")
+		trigger_in[5] = Entities:FindByName(nil, "dual_keepin4_trigger")
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end

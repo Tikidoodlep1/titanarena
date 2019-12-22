@@ -172,20 +172,11 @@ function barebones:OnGameInProgress()
 	end)
 	
 	Timers:CreateTimer(59, function()
-		local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
-		
-		for _, trigger in pairs(trigger_out) do
-			trigger:Disable()
-		end
-		return 600
-	end)
-	
-	Timers:CreateTimer(61, function()
-		local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
-		
-		for _, trigger in pairs(trigger_in) do
-			trigger:Disable()
-		end
+		local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
+		local trigger_out1 = Entities:FindByName(nil, "dual_keepout1_trigger")
+			
+			trigger_out:Disable()
+			trigger_out1:Disable()
 		return 600
 	end)
 
@@ -205,7 +196,12 @@ EmitGlobalSound("ui.contract_complete")
 end
 	function EnterDual()
 	_G.IsDual = true
-	local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
+	local trigger_in = {}
+	trigger_in[1] = Entities:FindByName(nil, "dual_keepin_trigger")
+	trigger_in[2] = Entities:FindByName(nil, "dual_keepin1_trigger")
+	trigger_in[3] = Entities:FindByName(nil, "dual_keepin2_trigger")
+	trigger_in[4] = Entities:FindByName(nil, "dual_keepin3_trigger")
+	trigger_in[5] = Entities:FindByName(nil, "dual_keepin4_trigger")
 	for _, trigger in pairs(trigger_in) do
 			trigger:Enable()
 		end
@@ -328,6 +324,7 @@ end
 	end
 	
 	function ExitDual()
+	if _G.IsDual == true then
 	_G.IsDual = false
 	for x=1, 11 do
 		_G.DualArena1[x] = nil
@@ -371,11 +368,21 @@ end
 				break
 			end
 		end
-		local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
-		for _, trigger in pairs(trigger_out) do
-			trigger:Enable()
+		local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
+		local trigger_out1 = Entities:FindByName(nil, "dual_keepout1_trigger")
+			trigger_out:Disable()
+			trigger_out1:Disable()
+		local trigger_in = {}
+		trigger_in[1] = Entities:FindByName("dual_keepin_trigger")
+		trigger_in[2] = Entities:FindByName("dual_keepin1_trigger")
+		trigger_in[3] = Entities:FindByName("dual_keepin2_trigger")
+		trigger_in[4] = Entities:FindByName("dual_keepin3_trigger")
+		trigger_in[5] = Entities:FindByName("dual_keepin4_trigger")
+		for _, trigger in pairs(trigger_in) do
+			trigger:Disable()
 		end
 		
+	end
 	end
 	
 	
