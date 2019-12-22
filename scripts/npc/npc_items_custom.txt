@@ -1275,6 +1275,7 @@
 		"ItemAliases"					"Edeso; Ethereal Desolator"
 		"ItemAlertable"					"0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemSellable" 					"1"
 		
 		"AbilitySpecial"
 		{
@@ -1403,6 +1404,7 @@
 		"ItemAliases"					"Edeso2; Ethereal Desolator 2"
 		"ItemAlertable"					"0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemSellable" 					"1"
 		
 		"AbilitySpecial"
 		{
@@ -1531,6 +1533,7 @@
 		"ItemAliases"					"Edeso; Ethereal Desolator"
 		"ItemAlertable"					"0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemSellable" 					"1"
 		
 		"AbilitySpecial"
 		{

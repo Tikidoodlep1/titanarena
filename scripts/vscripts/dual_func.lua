@@ -3,24 +3,24 @@ local point = Entities:FindByName(nil, trigger.caller:GetName()):GetAbsOrigin()
 
 
 
-_G.DualTeleportTargetManaOut = trigger.activator:GetMana()
+local DualTeleportTargetMana = trigger.activator:GetMana()
 
 trigger.activator:SetMana(0)
 trigger.activator:Stop()
 trigger.activator:Interrupt()
-
+trigger.activator:SetMana(DualTeleportTargetMana)
 end
 
 function InDuals(trigger)
 local point = Entities:FindByName(nil, trigger.caller:GetName()):GetAbsOrigin()
 local playerloc = trigger.activator:GetAbsOrigin()
 
-_G.DualTeleportTargetMana = trigger.activator:GetMana()
+local DualTeleportTargetMana = trigger.activator:GetMana()
 
 trigger.activator:SetMana(0)
 trigger.activator:Stop()
 trigger.activator:Interrupt()
-
+trigger.activator:SetMana(DualTeleportTargetMana)
 end
 
 function TeleportIn(trigger)
@@ -47,7 +47,6 @@ for i, hero in pairs(_G.DualArenavs1) do
 end
 
 FindClearSpaceForUnit(trigger.activator, closest, false)
-trigger.activator:SetMana(_G.DualTeleportTargetMana)
 SendToConsole("dota_camera_center")
 
 end
@@ -57,7 +56,5 @@ local playerloc = trigger.activator:GetAbsOrigin()
 local closest = Entities:FindByNameNearest("dual_keepout", playerloc, 5000):GetAbsOrigin()
 
 FindClearSpaceForUnit(trigger.activator, closest, false)
-trigger.activator:SetMana(_G.DualTeleportTargetManaOut)
 SendToConsole("dota_camera_center")
-
 end
