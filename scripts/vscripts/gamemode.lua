@@ -190,13 +190,15 @@ end
 	function EnterDual()
 	_G.IsDual = true
 	Notifications:TopToAll({text = "The duel has begun!", duration=5.0})
-EmitGlobalSound("ui.contract_complete")
-	local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
-	local trigger_in = Entities:FindByName(nil, "dual_keepin_trigger")
-	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
-	trigger_out:Disable()
-	trigger_in:Enable()
-	rad_trigger_out:Disable()
+	EmitGlobalSound("ui.contract_complete")
+	local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
+	local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
+	for _, trigger in pairs(trigger_out) do
+		trigger:Disable()
+	end
+	for _, trigger in pairs(trigger_in) do
+		trigger:Enable()
+	end
 	local players = HeroList:GetAllHeroes()
 	local dHeroIncrementer = 0
 	local rHeroIncrementer = 0
@@ -254,6 +256,7 @@ EmitGlobalSound("ui.contract_complete")
 						hero:SetHealth(hero:GetMaxHealth())
 						SendToConsole("dota_camera_center")
 						rHeroIncrementer = rHeroIncrementer + 1
+						print("teleported player to arena1")
 						_G.DualArena1[i] = hero
 					end
 				end
@@ -266,6 +269,7 @@ EmitGlobalSound("ui.contract_complete")
 						hero:SetHealth(hero:GetMaxHealth())
 						SendToConsole("dota_camera_center")
 						dHeroIncrementer = dHeroIncrementer + 1
+						print("teleported player to arena1vs")
 						_G.DualArenavs1[i] = hero
 					end
 				end
@@ -275,8 +279,9 @@ EmitGlobalSound("ui.contract_complete")
 							hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 							hero:SetHealth(hero:GetMaxHealth())
 							hero:SetMana(hero:GetMaxMana())
-							FindClearSpaceForUnit(hero, _G.arena2vs, false)
+							FindClearSpaceForUnit(hero, _G.arena2, false)
 							SendToConsole("dota_camera_center")
+							print("teleported player to arena2")
 							_G.DualArena2[i] = hero
 						end
 					end
@@ -286,8 +291,9 @@ EmitGlobalSound("ui.contract_complete")
 							hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 							hero:SetHealth(hero:GetMaxHealth())
 							hero:SetMana(hero:GetMaxMana())
-							FindClearSpaceForUnit(hero, _G.arena2, false)
+							FindClearSpaceForUnit(hero, _G.arena2vs, false)
 							SendToConsole("dota_camera_center")
+							print("teleported player to arena2vs")
 							_G.DualArenavs2[i] = hero
 						end
 					end
@@ -296,14 +302,14 @@ EmitGlobalSound("ui.contract_complete")
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then
 				FindClearSpaceForUnit(unit, arena1titan, false)
-				unit:MoveToPositionAggressive(arena1titanvs)
+				unit:MoveToPosition(arena1titanvs)
 				break
 			end
 		end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_dire_titan" then
 				FindClearSpaceForUnit(unit, arena1titanvs, false)
-				unit:MoveToPositionAggressive(arena1titan)
+				unit:MoveToPosition(arena1titan)
 				break
 			end
 		end
@@ -317,9 +323,6 @@ EmitGlobalSound("ui.contract_complete")
 		_G.DualArenavs1[x] = nil
 		_G.DualArenavs2[x] = nil
 	end
-	local trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), 10000)
-	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
-	local trigger_in = Entities:FindByName(nil, "dual_keepin_trigger")
 	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
@@ -330,8 +333,6 @@ EmitGlobalSound("ui.contract_complete")
 				hero:RespawnUnit()
 				hero:RemoveModifierByName("modifier_truesight")
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
-				print(Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin())
-				print(hero:GetAbsOrigin())
 				SendToConsole("dota_camera_center")
 			elseif hero:GetTeamNumber() == 3 then
 				hero:Kill(nil, nil)
@@ -358,10 +359,14 @@ EmitGlobalSound("ui.contract_complete")
 				break
 			end
 		end
-		
-		trigger_out:Enable()
-		rad_trigger_out:Enable()
-		trigger_in:Disable()
+		local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
+		local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
+		for _, trigger in pairs(trigger_out) do
+			trigger:Enable()
+		end
+		for _, trigger in pairs(trigger_in) do
+			trigger:Disable()
+		end
 	end
 	
 	

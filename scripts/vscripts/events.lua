@@ -597,9 +597,6 @@ end
 function ExitDual(WinningTeam)
 	_G.IsDual = false
 
-	local trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), 10000)
-	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
-	local trigger_in = Entities:FindByName(nil, "dual_keepin_trigger")
 	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
@@ -653,9 +650,14 @@ function ExitDual(WinningTeam)
 				players:SetGold(current_gold + amount + 1, false)
 			end
 		end 
-		trigger_out:Enable()
-		rad_trigger_out:Enable()
-		trigger_in:Disable()
+		local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
+		local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
+		for _, trigger in pairs(trigger_out) do
+			trigger:Enable()
+		end
+		for _, trigger in pairs(trigger_in) do
+			trigger:Disable()
+		end
 	end
 
 if team == 3 then

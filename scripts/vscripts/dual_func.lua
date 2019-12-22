@@ -1,26 +1,25 @@
 function OutOfDuals(trigger)
 local point = Entities:FindByName(nil, trigger.caller:GetName()):GetAbsOrigin()
+	_G.DualTeleportTargetManaOut = trigger.activator:GetMana()
+	print("current mana is ".._G.DualTeleportTargetManaOut)
+	trigger.activator:SetMana(0)
+end
 
-
-
-local DualTeleportTargetMana = trigger.activator:GetMana()
-
-trigger.activator:SetMana(0)
-trigger.activator:Stop()
-trigger.activator:Interrupt()
-trigger.activator:SetMana(DualTeleportTargetMana)
+function TeleportOut(trigger)
+local playerloc = trigger.activator:GetAbsOrigin()
+local closest = Entities:FindByNameNearest("dual_keepout", playerloc, 5000):GetAbsOrigin()
+	trigger.activator:SetMana(_G.DualTeleportTargetManaOut)
+	print("setting mana to ".._G.DualTeleportTargetMana)
+	FindClearSpaceForUnit(trigger.activator, closest, false)
+	SendToConsole("dota_camera_center")
 end
 
 function InDuals(trigger)
 local point = Entities:FindByName(nil, trigger.caller:GetName()):GetAbsOrigin()
-local playerloc = trigger.activator:GetAbsOrigin()
 
-local DualTeleportTargetMana = trigger.activator:GetMana()
-
+_G.DualTeleportTargetMana = trigger.activator:GetMana()
+print("current mana is ".._G.DualTeleportTargetMana)
 trigger.activator:SetMana(0)
-trigger.activator:Stop()
-trigger.activator:Interrupt()
-trigger.activator:SetMana(DualTeleportTargetMana)
 end
 
 function TeleportIn(trigger)
@@ -35,26 +34,18 @@ for i, hero in pairs(_G.DualArenavs1) do
 	closest = _G.arena1vs
 	end
 end
-for i, hero in pairs(_G.DualArena1) do
+for i, hero in pairs(_G.DualArena2) do
 	if trigger.activator == hero then
 	closest = _G.arena2
 	end
 end
-for i, hero in pairs(_G.DualArenavs1) do
+for i, hero in pairs(_G.DualArenavs2) do
 	if trigger.activator == hero then
 	closest = _G.arena2vs
 	end
 end
-
-FindClearSpaceForUnit(trigger.activator, closest, false)
-SendToConsole("dota_camera_center")
-
-end
-
-function TeleportOut(trigger)
-local playerloc = trigger.activator:GetAbsOrigin()
-local closest = Entities:FindByNameNearest("dual_keepout", playerloc, 5000):GetAbsOrigin()
-
+trigger.activator:SetMana(_G.DualTeleportTargetMana)
+print("setting mana to ".._G.DualTeleportTargetMana)
 FindClearSpaceForUnit(trigger.activator, closest, false)
 SendToConsole("dota_camera_center")
 end
