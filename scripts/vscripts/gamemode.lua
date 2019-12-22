@@ -171,7 +171,23 @@ function barebones:OnGameInProgress()
 		return 600
 	end)
 	
-
+	Timers:CreateTimer(59, function()
+		local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
+		
+		for _, trigger in pairs(trigger_out) do
+			trigger:Disable()
+		end
+		return 600
+	end)
+	
+	Timers:CreateTimer(61, function()
+		local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
+		
+		for _, trigger in pairs(trigger_in) do
+			trigger:Disable()
+		end
+		return 600
+	end)
 
 function notifyDual30()
 Notifications:TopToAll({text = "A duel will begin in 30 seconds!", duration=5.0})
@@ -189,16 +205,12 @@ EmitGlobalSound("ui.contract_complete")
 end
 	function EnterDual()
 	_G.IsDual = true
+	local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
+	for _, trigger in pairs(trigger_in) do
+			trigger:Enable()
+		end
 	Notifications:TopToAll({text = "The duel has begun!", duration=5.0})
 	EmitGlobalSound("ui.contract_complete")
-	local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
-	local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
-	for _, trigger in pairs(trigger_out) do
-		trigger:Disable()
-	end
-	for _, trigger in pairs(trigger_in) do
-		trigger:Enable()
-	end
 	local players = HeroList:GetAllHeroes()
 	local dHeroIncrementer = 0
 	local rHeroIncrementer = 0
@@ -360,13 +372,10 @@ end
 			end
 		end
 		local trigger_out = Entities:FindAllByName("dual_keepout_trigger")
-		local trigger_in = Entities:FindAllByName("dual_keepin_trigger")
 		for _, trigger in pairs(trigger_out) do
 			trigger:Enable()
 		end
-		for _, trigger in pairs(trigger_in) do
-			trigger:Disable()
-		end
+		
 	end
 	
 	
