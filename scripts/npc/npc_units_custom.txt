@@ -2079,4 +2079,451 @@
 			"MagicResistGain"                       "0.5"
 		}
 	}
+	//----------------------------------------------------------------------------------------------------
+	//BOSSES - set custom team gold gain per kill like rosh
+	//----------------------------------------------------------------------------------------------------
+	"npc_boss_wanderer"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           "models/heroes/blood_seeker/blood_seeker.vmdl"  // Model.
+	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_blood_seeker.vsndevts"
+	"ModelScale"		"3.2"
+    "SoundSet"          "Hero_BloodSeeker"          // Name of sound set.
+    "Level"           "0"
+    "UnitLabel"         "The Wanderer"
+	
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          "wanderer_insatiable_rage"     // Ability 1.
+    "Ability2"          "wanderer_natures_attunement"      // Ability 2.
+    "Ability3"          "Unplanned"      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          "boss_resistance"      // Ability 5.
+    "Ability6"          "wanderer_blood_pact"      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "50"     // Physical protection.
+    "MagicalResistance"       "25"     // Magical protection.
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
+    "AttackDamageMin"     "1750"     // Damage range min.
+    "AttackDamageMax"     "1750"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "0.7"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "400"   // Range within a target can be acquired.
+    "AttackRange"       "350"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"   "150"     // Base strength
+    "AttributeStrengthGain"   "1"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "150"     // Base intelligence
+    "AttributeIntelligenceGain" "1"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "150"     // Base agility
+    "AttributeAgilityGain"    "1"     // Agility bonus per level.
+	"CanBeDominated"               "0"
+	"IsAncient"					"1"
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "0"     // Experience earn.
+    "BountyGoldMin"       "0"     // Gold earned min.
+    "BountyGoldMax"       "0"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_HUGE"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "365"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "17000"     // Base health.
+    "StatusHealthRegen"     "100"     // Health regeneration rate.
+    "StatusMana"        "5000"     // Base mana.
+    "StatusManaRegen"     "100"     // Mana regeneration rate.
+	"ConsideredHero"		"1"
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
+    
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "2000"   // Range of vision during day light.
+    "VisionNighttimeRange"    "2000"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	//Need to make the wandering AI for this boss
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+    {
+        //Level Up
+        "HPGain"                                        "3000"
+        "DamageGain"                            "250"
+        "ArmorGain"                                     "10"
+        "MagicResistGain"                       "7.5"
+		"AttachWearables"
+		{
+		"1" { "ItemDef"	"6650" }
+		"2" { "ItemDef"	"6651" }
+		"3" { "ItemDef"	"6652" }
+		"4" { "ItemDef"	"6653" }
+		"5" { "ItemDef"	"6654" }
+		"6" { "ItemDef"	"6655" }
+		"7" { "ItemDef"	"6656" }
+		}
+    }
+  }
+  "npc_boss_scarab"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           	"models/heroes/sand_king/sand_king.vmdl"  // Model.
+	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_sand_king.vsndevts"
+	"ModelScale"		"3.2"
+    "SoundSet"          "Hero_SandKing"          // Name of sound set.
+    "Level"           "0"
+    "UnitLabel"         "The Scarab"
+	
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          "scarab_sandstorm"     // Ability 1.
+    "Ability2"          "scarab_cursed_sand"      // Ability 2.
+    "Ability3"          "Unplanned"      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          "boss_resistance"      // Ability 5.
+    "Ability6"          "scarab_epicenter"      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "30"     // Physical protection.
+    "MagicalResistance"       "25"     // Magical protection.
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
+    "AttackDamageMin"     "1200"     // Damage range min.
+    "AttackDamageMax"     "1200"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "1"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "500"   // Range within a target can be acquired.
+    "AttackRange"       "350"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"   "125"     // Base strength
+    "AttributeStrengthGain"   "1"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "125"     // Base intelligence
+    "AttributeIntelligenceGain" "1"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "125"     // Base agility
+    "AttributeAgilityGain"    "1"     // Agility bonus per level.
+	"CanBeDominated"               "0"
+	"IsAncient"					"1"
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "0"     // Experience earn.
+    "BountyGoldMin"       "0"     // Gold earned min.
+    "BountyGoldMax"       "0"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_HUGE"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "345"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "16000"     // Base health.
+    "StatusHealthRegen"     "100"     // Health regeneration rate.
+    "StatusMana"        "5000"     // Base mana.
+    "StatusManaRegen"     "100"     // Mana regeneration rate.
+	"ConsideredHero"		"1"
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
+    
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "2000"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	"UseNeutralCreepBehavior" 	"1"
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+    {
+        //Level Up
+        "HPGain"                                        "2000"
+        "DamageGain"                            "100"
+        "ArmorGain"                                     "10"
+        "MagicResistGain"                       "5"
+		"AttachWearables"
+		{
+		"1" { "ItemDef"	"7351" }
+		"2" { "ItemDef"	"7352" }
+		"3" { "ItemDef"	"7353" }
+		"4" { "ItemDef"	"7354" }
+		"5" { "ItemDef"	"7355" }
+		}
+    }
+  }
+  "npc_boss_dragon_knight_1"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           	"models/heroes/dragon_knight/dragon_knight.vmdl"  // Model.
+	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	"ModelScale"		"3.2"
+    "SoundSet"          "Hero_DragonKnight"          // Name of sound set.
+    "Level"           "0"
+    "UnitLabel"         "Ophidian Executioner"
+	
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          "dk_fire_forged_blade"     // Ability 1.
+    "Ability2"          "dk_undaunted"      // Ability 2.
+    "Ability3"          "Unplanned"      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          "boss_resistance"      // Ability 5.
+    "Ability6"          "dk_reincarnation"      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "45"     // Physical protection.
+    "MagicalResistance"       "25"     // Magical protection.
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
+    "AttackDamageMin"     "1500"     // Damage range min.
+    "AttackDamageMax"     "1500"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "0.9"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "500"   // Range within a target can be acquired.
+    "AttackRange"       "350"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"   "100"     // Base strength
+    "AttributeStrengthGain"   "1"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "100"     // Base intelligence
+    "AttributeIntelligenceGain" "1"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "100"     // Base agility
+    "AttributeAgilityGain"    "1"     // Agility bonus per level.
+	"CanBeDominated"               "0"
+	"IsAncient"					"1"
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "0"     // Experience earn.
+    "BountyGoldMin"       "0"     // Gold earned min.
+    "BountyGoldMax"       "0"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_HUGE"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "350"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "13500"     // Base health.
+    "StatusHealthRegen"     "100"     // Health regeneration rate.
+    "StatusMana"        "1500"     // Base mana.
+    "StatusManaRegen"     "100"     // Mana regeneration rate.
+	"ConsideredHero"		"1"
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
+    
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "2000"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	"UseNeutralCreepBehavior" 	"1"
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+    {
+        //Level Up
+        "HPGain"                                        "1500"
+        "DamageGain"                            "100"
+        "ArmorGain"                                     "5"
+        "MagicResistGain"                       "5"
+		"AttachWearables"
+		{
+		"1" { "ItemDef"	"9135" }
+		"2" { "ItemDef"	"9638" }
+		"3" { "ItemDef"	"9639" }
+		"4" { "ItemDef"	"9640" }
+		"5" { "ItemDef"	"9641" }
+		"6" { "ItemDef"	"9642" }
+		"7" { "ItemDef"	"8423" }
+		"8" { "ItemDef"	"8426" }
+		}
+    }
+  }
+  "npc_boss_dragon_knight_2"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           	"models/items/dragon_knight/legacy_of_the_winterwyrm_form_of_the_winterwyrm/legacy_of_the_winterwyrm_form_of_the_winterwyrm.vmdl"  // Model.
+	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	"ModelScale"		"3.2"
+    "SoundSet"          "Hero_DragonKnight"          // Name of sound set.
+    "Level"           "0"
+    "UnitLabel"         "Ophidian Executioner"
+	
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          "dk_fireball"     // Ability 1.
+    "Ability2"          "Unplanned"      // Ability 2.
+    "Ability3"          "Unplanned"      // Ability 3.
+    "Ability4"          "dk_revert"      // Ability 4.
+    "Ability5"          "boss_resistance"      // Ability 5.
+    "Ability6"          "Unplanned"      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+	//dk_revert should be hidden and give him a 2 minute modifier that, if he takes no damage from heroes, he reverts back to his original form
+	
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "45"     // Physical protection.
+    "MagicalResistance"       "25"     // Magical protection.
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
+	"ProjectileModel"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_fire.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"550"		// Speed of projectile.
+    "AttackDamageMin"     "1500"     // Damage range min.
+    "AttackDamageMax"     "1500"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "0.9"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "750"   // Range within a target can be acquired.
+    "AttackRange"       "600"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"   "125"     // Base strength
+    "AttributeStrengthGain"   "1"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "125"     // Base intelligence
+    "AttributeIntelligenceGain" "1"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "125"     // Base agility
+    "AttributeAgilityGain"    "1"     // Agility bonus per level.
+	"CanBeDominated"               "0"
+	"IsAncient"					"1"
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "0"     // Experience earn.
+    "BountyGoldMin"       "0"     // Gold earned min.
+    "BountyGoldMax"       "0"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_HUGE"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "350"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "13500"     // Base health.
+    "StatusHealthRegen"     "30"     // Health regeneration rate.
+    "StatusMana"        "1500"     // Base mana.
+    "StatusManaRegen"     "30"     // Mana regeneration rate.
+	"ConsideredHero"		"1"
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
+    
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "2000"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	"UseNeutralCreepBehavior" 	"1"
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+    {
+        //Level Up
+        "HPGain"                                        "1500"
+        "DamageGain"                            "100"
+        "ArmorGain"                                     "5"
+        "MagicResistGain"                       "5"
+    }
+  }
 }

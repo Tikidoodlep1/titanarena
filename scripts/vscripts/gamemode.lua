@@ -179,6 +179,12 @@ function barebones:OnGameInProgress()
 			trigger_out1:Disable()
 		return 600
 	end)
+	
+	Timers:CreateTimer(300, function()
+	
+	SpawnBosses()
+		return 600
+	end)
 
 function notifyDual30()
 Notifications:TopToAll({text = "A duel will begin in 30 seconds!", duration=5.0})
@@ -194,6 +200,59 @@ function notifyDual5()
 Notifications:TopToAll({text = "A duel will begin in 5 seconds!", duration=5.0})
 EmitGlobalSound("ui.contract_complete")
 end
+
+	function SpawnBosses()
+	local rad_dk_spawn = Entities:FindByName(nil, "rad_boss_dk"):GetAbsOrigin()
+	local rad_sk_spawn = Entities:FindByName(nil, "rad_boss_sk"):GetAbsOrigin()
+	local dire_dk_spawn = Entities:FindByName(nil, "dire_boss_dk"):GetAbsOrigin()
+	local dire_sk_spawn = Entities:FindByName(nil, "dire_boss_sk"):GetAbsOrigin()
+	local w_spawn = Entities:FindByName(nil, "wanderer_spawn"):GetAbsOrigin()
+	local walive = false
+	local rsalive = false
+	local rdalive = false
+	local dsalive = false
+	local ddalive = false
+	local entities = Entities:FindAllByClassname("npc_dota_creature")
+		for _, ent in ipairs(entities) do
+			if ent:GetUnitName() == "npc_boss_wanderer" then
+				walive = true
+			end
+		end
+		if walive == false then
+			CreateUnitByName("npc_boss_wanderer", w_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+		end
+	local radbosses = FindUnitsInRadius(4, rad_dk_spawn, nil, 7500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+	local direbosses = FindUnitsInRadius(4, dire_dk_spawn, nil, 7500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+		for _, boss in pairs(radbosses) do
+			if boss:GetUnitName() == "npc_boss_scarab" then
+				rsalive = true
+			end
+			if boss:GetUnitName() == "npc_boss_dragon_knight_1" or boss:GetUnitName() == "npc_boss_dragon_knight_2" then
+				rdalive = true
+			end
+		end
+		for _, boss in pairs(radbosses) do
+			if boss:GetUnitName() == "npc_boss_scarab" then
+				dsalive = true
+			end
+			if boss:GetUnitName() == "npc_boss_dragon_knight_1" or boss:GetUnitName() == "npc_boss_dragon_knight_2" then
+				ddalive = true
+			end
+		end
+		if rsalive == false then
+			CreateUnitByName("npc_boss_scarab", rad_sk_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+		end
+		if rdalive == false then
+			CreateUnitByName("npc_boss_dragon_knight_1", rad_dk_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+		end
+		if dsalive == false then
+			CreateUnitByName("npc_boss_scarab", dire_sk_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+		end
+		if ddalive == false then
+			CreateUnitByName("npc_boss_dragon_knight_1", dire_dk_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+		end
+	end
+	
 	function EnterDual()
 	_G.IsDual = true
 	local trigger_in = {}
@@ -264,7 +323,6 @@ end
 						hero:SetHealth(hero:GetMaxHealth())
 						SendToConsole("dota_camera_center")
 						rHeroIncrementer = rHeroIncrementer + 1
-						print("teleported player to arena1")
 						_G.DualArena1[i] = hero
 					end
 				end
@@ -277,7 +335,6 @@ end
 						hero:SetHealth(hero:GetMaxHealth())
 						SendToConsole("dota_camera_center")
 						dHeroIncrementer = dHeroIncrementer + 1
-						print("teleported player to arena1vs")
 						_G.DualArenavs1[i] = hero
 					end
 				end
@@ -289,7 +346,6 @@ end
 							hero:SetMana(hero:GetMaxMana())
 							FindClearSpaceForUnit(hero, _G.arena2, false)
 							SendToConsole("dota_camera_center")
-							print("teleported player to arena2")
 							_G.DualArena2[i] = hero
 						end
 					end
@@ -301,7 +357,6 @@ end
 							hero:SetMana(hero:GetMaxMana())
 							FindClearSpaceForUnit(hero, _G.arena2vs, false)
 							SendToConsole("dota_camera_center")
-							print("teleported player to arena2vs")
 							_G.DualArenavs2[i] = hero
 						end
 					end
@@ -325,6 +380,7 @@ end
 	
 	function ExitDual()
 	if _G.IsDual == true then
+	print("_G.IsDual is true, setting it to false")
 	_G.IsDual = false
 	for x=1, 11 do
 		_G.DualArena1[x] = nil
@@ -373,11 +429,11 @@ end
 			trigger_out:Disable()
 			trigger_out1:Disable()
 		local trigger_in = {}
-		trigger_in[1] = Entities:FindByName("dual_keepin_trigger")
-		trigger_in[2] = Entities:FindByName("dual_keepin1_trigger")
-		trigger_in[3] = Entities:FindByName("dual_keepin2_trigger")
-		trigger_in[4] = Entities:FindByName("dual_keepin3_trigger")
-		trigger_in[5] = Entities:FindByName("dual_keepin4_trigger")
+		trigger_in[1] = Entities:FindByName(nil, "dual_keepin_trigger")
+		trigger_in[2] = Entities:FindByName(nil, "dual_keepin1_trigger")
+		trigger_in[3] = Entities:FindByName(nil, "dual_keepin2_trigger")
+		trigger_in[4] = Entities:FindByName(nil, "dual_keepin3_trigger")
+		trigger_in[5] = Entities:FindByName(nil, "dual_keepin4_trigger")
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
