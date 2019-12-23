@@ -2099,9 +2099,9 @@
     
     "Ability1"          "wanderer_insatiable_rage"     // Ability 1.
     "Ability2"          "wanderer_natures_attunement"      // Ability 2.
-    "Ability3"          "Unplanned"      // Ability 3.
+    "Ability3"          "boss_resistance"      // Ability 3.
     "Ability4"          ""      // Ability 4.
-    "Ability5"          "boss_resistance"      // Ability 5.
+    "Ability5"          ""      // Ability 5.
     "Ability6"          "wanderer_blood_pact"      // Ability 6 - Extra.
     "Ability7"          ""      // Ability 7 - Extra.
     "Ability8"          ""      // Ability 8 - Extra.
@@ -2212,9 +2212,9 @@
     
     "Ability1"          "scarab_sandstorm"     // Ability 1.
     "Ability2"          "scarab_cursed_sand"      // Ability 2.
-    "Ability3"          "Unplanned"      // Ability 3.
+    "Ability3"          "boss_resistance"      // Ability 3.
     "Ability4"          ""      // Ability 4.
-    "Ability5"          "boss_resistance"      // Ability 5.
+    "Ability5"          ""      // Ability 5.
     "Ability6"          "scarab_epicenter"      // Ability 6 - Extra.
     "Ability7"          ""      // Ability 7 - Extra.
     "Ability8"          ""      // Ability 8 - Extra.
@@ -2323,9 +2323,9 @@
     
     "Ability1"          "dk_fire_forged_blade"     // Ability 1.
     "Ability2"          "dk_undaunted"      // Ability 2.
-    "Ability3"          "Unplanned"      // Ability 3.
+    "Ability3"          "boss_resistance"      // Ability 3.
     "Ability4"          ""      // Ability 4.
-    "Ability5"          "boss_resistance"      // Ability 5.
+    "Ability5"          ""      // Ability 5.
     "Ability6"          "dk_reincarnation"      // Ability 6 - Extra.
     "Ability7"          ""      // Ability 7 - Extra.
     "Ability8"          ""      // Ability 8 - Extra.
@@ -2437,9 +2437,9 @@
     
     "Ability1"          "dk_fireball"     // Ability 1.
     "Ability2"          "Unplanned"      // Ability 2.
-    "Ability3"          "Unplanned"      // Ability 3.
+    "Ability3"          "boss_resistance"      // Ability 3.
     "Ability4"          "dk_revert"      // Ability 4.
-    "Ability5"          "boss_resistance"      // Ability 5.
+    "Ability5"          ""      // Ability 5.
     "Ability6"          "Unplanned"      // Ability 6 - Extra.
     "Ability7"          ""      // Ability 7 - Extra.
     "Ability8"          ""      // Ability 8 - Extra.
