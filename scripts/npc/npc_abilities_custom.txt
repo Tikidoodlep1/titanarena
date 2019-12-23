@@ -13775,6 +13775,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_DragonKnight.BreathFire"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -13783,15 +13784,15 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 13 12 11"
+		"AbilityCooldown"				"14 13 12 11 10 9"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"90 170 240 300"
+		"AbilityDamage"					"90 212.5 300 450 525 780"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"100 110 120 132 140 150"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -13800,7 +13801,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"start_radius"			"150 150 150 150"
+				"start_radius"			"150 150 150 150 150 150"
 			}
 			"02"
 			{
@@ -13848,6 +13849,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_DragonKnight.DragonTail.Target"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -13856,15 +13858,15 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 11 10 9"
+		"AbilityCooldown"				"12 11 10 9 8 7"
 	
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"25 50 75 100"
+		"AbilityDamage"					"25 62.5 87.5 150 187.5 300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 100 100 100"
+		"AbilityManaCost"				"100 100 100 100 100 100"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -13907,14 +13909,14 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"4 8 12 16"
+				"bonus_health_regen"			"4 10 15 24 30 28"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"3 6 9 12"
+				"bonus_armor"					"3 7 11 18 22 36"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -13937,6 +13939,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_DragonKnight.ElderDragonForm"
+		"MaxLevel"                      "4"
         "HasScepterUpgrade"			"1"
 
 		// Casting
@@ -13949,7 +13952,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 50 50"		
+		"AbilityManaCost"				"50 60 70 80 90"		
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13967,12 +13970,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"30"
+				"bonus_movement_speed"		"30 30 30 40 40"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"350 350 350 450"
+				"bonus_attack_range"		"350 350 350 400 450"
 			}
 			"04"
 			{
@@ -13982,7 +13985,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corrosive_breath_damage"	"20 20 20 30"
+				"corrosive_breath_damage"	"20 25 30 35 10"
 			}
 			"06"
 			{
@@ -13997,19 +14000,19 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"splash_damage_percent"		"75 75 75 115"
+				"splash_damage_percent"		"75 80 85 90 100"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_6"
 			}
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"frost_bonus_movement_speed"	"-40 -40 -40 -60"
+				"frost_bonus_movement_speed"	"-40 -50 -60 -70 -80"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_5"
 			}
 			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"frost_bonus_attack_speed"		"-40 -40 -40 -60"
+				"frost_bonus_attack_speed"		"-40 -50 -60 -70 -80"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_5"
 			}
 			"11"
@@ -14025,12 +14028,12 @@
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magic_resistance"			"0 0 0 40"
+				"magic_resistance"			"0 0 0 40 40"
 			}
 			"14"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"model_scale"				"0 0 0 30"
+				"model_scale"				"0 0 0 30 35"
 			}
 			
 		}
@@ -14053,12 +14056,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"-30"
+				"bonus_movement_speed"		"-30 -30 -30 -40 -40"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"-20"
+				"bonus_attack_speed"		"-40 -50 -60 -70 -80"
 			}
 			"03"
 			{
