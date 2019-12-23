@@ -190,7 +190,7 @@ end
 	function EnterDual()
 	_G.IsDual = true
 	Notifications:TopToAll({text = "The duel has begun!", duration=5.0})
-	EmitGlobalSound("ui.contract_complete")
+EmitGlobalSound("ui.contract_complete")
 	local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
 	local trigger_in = Entities:FindByName(nil, "dual_keepin_trigger")
 	local rad_trigger_out = Entities:FindByNameNearest("dual_keepout_trigger", Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), 10000)
