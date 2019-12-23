@@ -11418,6 +11418,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"                      "6"
 
 
 		// Casting
@@ -11426,12 +11427,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1200"
+				"radius"				"1200 1200 1200 1300 1300 1400"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"10 20 30 40"
+				"bonus_attack_speed"	"10 25 37.5 60 75 120"
 				"LinkedSpecialBonus"		"special_bonus_unique_beastmaster_4"
 			}
 			"03"
@@ -11480,6 +11481,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Beastmaster.Primal_Roar"
+		"MaxLevel"                      "4"
 	
 
 		// Casting
@@ -11489,11 +11491,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90.0 80.0 70.0"
+		"AbilityCooldown"				"90 80 70 60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 175 200"		
+		"AbilityManaCost"				"150 175 200 225"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -11511,17 +11513,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0 3.5 4.0"
+				"duration"					"3 3.5 4 4.5"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"150 225 300"
+				"damage"					"187.5 281 450 750"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"side_damage"				"150 225 300"
+				"side_damage"				"187.5 281 450 750"
 			}
 			"04"
 			{
@@ -11536,7 +11538,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_attack_speed_pct"		"-60"
+				"slow_attack_speed_pct"		"-60 -60 -70 -80"
 			}
 			"07"
 			{
@@ -11551,7 +11553,7 @@
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"3 3.5 4"
+				"slow_duration"				"3 3.5 4 4.5"
 			}
 			"10"
 			{
@@ -23398,10 +23400,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Brewmaster.ThunderClap"
+		"MaxLevel"                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13"
+		"AbilityCooldown"				"13 13 13 12 12 11"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -23409,7 +23412,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 100 110 120"		
+		"AbilityManaCost"				"90 100 110 120 120 140"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -23418,33 +23421,33 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"400 400 400 400"
+				"radius"					"400 400 400 500 500 600"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"90 160 230 300"
+				"damage"					"90 200 287.5 450 555 900"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"25 35 45 55"
+				"movement_slow"				"25 35 45 55 65 75"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_slow"			"25 35 45 55"
+				"attack_speed_slow"			"25 43.75 56.25 82.5 97.5 150"
 			}			
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"4.0"
+				"duration"					"4 4 4 5 5 6"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration_creeps"			"8.0 8.0 8.0 8.0"
+				"duration_creeps"			"8 8 8 9 9 10"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
 			}			
 		}
@@ -23467,6 +23470,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Brewmaster.DrunkenHaze.Cast"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -23517,19 +23521,20 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Brewmaster.DrunkenHaze.Cast"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"850 850 850 850"
+		"AbilityCastRange"				"850"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 17 14 11"
+		"AbilityCooldown"				"20 17 14 11 11 11"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80"		
+		"AbilityManaCost"				"80 90 100 110 120 130"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -23538,17 +23543,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5"
+				"duration"					"5 5 5 6 6 7"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"total_damage"				"100 160 220 280"
+				"total_damage"				"100 200 275 420 510 800"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"24 28 32 36"
+				"movement_slow"				"24 28 32 36 40 44"
 			}
 			"04"
 			{
@@ -23578,15 +23583,16 @@
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
+		"MaxLevel"                      "6"
 		
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"23 21 19 17"
+		"AbilityCooldown"				"23 21 19 17 15 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"		
+		"AbilityManaCost"				"35 40 45 50 55 60"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -23605,7 +23611,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier"			"140 180 220 260"
+				"crit_multiplier"			"140 180 220 260 300 340"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
 			}
 			"04"
@@ -23640,6 +23646,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Brewmaster.PrimalSplit.Spawn"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"MaxLevel"                      "4"
 
 		"HasScepterUpgrade"			"1"
 
@@ -23663,7 +23670,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"16 18 20"
+				"duration"					"16 18 20 "
 			}
 			"02"
 			{
@@ -30159,6 +30166,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Bristleback.ViscousGoo.Cast"
+		"MaxLevel"                      "6"
 
 		"HasScepterUpgrade"			"1"
 
@@ -30169,11 +30177,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1.5 1.5 1.5 1.5"
+		"AbilityCooldown"				"1.5 1.5 1.5 1.25 1.25 1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"12 16 20 24"
+		"AbilityManaCost"				"12 16 20 24 28 32"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -30187,17 +30195,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"goo_duration"			"5.0"
+				"goo_duration"			"5 5 5 6 6 7"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"base_armor"		"2"
+				"base_armor"		"2 2 2 3 3 4"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_per_stack"		"1.4 1.9 2.4 2.9"
+				"armor_per_stack"		"1.4 2.375 3 4.35 5.1 7.8"
 			}
 			"05"
 			{
@@ -30207,7 +30215,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_slow_per_stack"	"3 6 9 12"
+				"move_slow_per_stack"	"3 6 9 12 15 18"
 			}
 			"07"
 			{
@@ -30244,6 +30252,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Bristleback.QuillSpray"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -30253,11 +30262,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
+		"AbilityCooldown"				"3 3 3 2 2 1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 35 35 35"
+		"AbilityManaCost"				"35 35 35 40 40 45"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -30271,12 +30280,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"quill_base_damage"		"20.0 40.0 60.0 80.0"
+				"quill_base_damage"		"20 40 60 80 100 120"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"quill_stack_damage"	"30.0 32.0 34.0 36.0"
+				"quill_stack_damage"	"30 32 34 36 38 40"
 				"LinkedSpecialBonus"	"special_bonus_unique_bristleback_2"
 			}
 			"04"
@@ -30307,6 +30316,7 @@
 		"ID"							"5550"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"					"Hero_Bristleback.Bristleback"
+		"MaxLevel"                      "6"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -30315,12 +30325,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"side_damage_reduction"			"8 12 16 20"
+				"side_damage_reduction"			"8 12 16 20 24 28"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"back_damage_reduction"			"16 24 32 40"
+				"back_damage_reduction"			"16 24 32 40 48 56"
 			}
 			"03"
 			{
@@ -30353,6 +30363,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -30365,23 +30376,23 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_stack"					"22 28 34"
+				"damage_per_stack"					"27.5 35 51 80"
 				"LinkedSpecialBonus"	"special_bonus_unique_bristleback_3"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"move_speed_per_stack"				"3 4 5"
+				"move_speed_per_stack"				"3 4 5 6"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"stack_duration"				"14.0"
+				"stack_duration"				"14.0 14 17 20"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"max_stacks"					"5 7 9"
+				"max_stacks"					"5 7 9 11"
 			}
 		}
 	}
