@@ -14461,10 +14461,11 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Rattletrap.Battery_Assault_Impact"
+		"MaxLevel"                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 22 20 18"
+		"AbilityCooldown"				"24 22 20 18 16 14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -14472,7 +14473,7 @@
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		//"AbilityDamage"					"20 45 70 95"
+		//"AbilityDamage"					"20 56.25 87.5 142.5 165 200"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14485,12 +14486,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"275 275 275 275"
+				"radius"			"275 275 275 275 275 275"
 			}
 			"02"
 			{	
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"10.5 10.5 10.5 10.5"
+				"duration"					"10.5 10.5 11 11.5 12 12.5"
 			}
 			"03"
 			{	
@@ -14501,7 +14502,7 @@
 			"04"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"20 45 70 95"
+				"damage"			"20 56.25 87.5 142.5 165 200"
 				"LinkedSpecialBonus"		"special_bonus_unique_clockwerk_3"
 			}
 		}
@@ -14520,6 +14521,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Rattletrap.Power_Cogs"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -14540,17 +14542,17 @@
 			"01"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"5.0 6.0 7.0 8.0"
+				"duration"			"5 6 7 8 9 10"
 			}
 			"02"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"50 125 200 275"
+				"damage"		"50 156 250 405 525 850"
 			}
 			"03"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"mana_burn"		"50 80 110 140"
+				"mana_burn"		"50 100 137.5 210 255 400"
 			}
 			"04"
 			{	
@@ -14599,6 +14601,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Rattletrap.Rocket_Flare.Fire"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -14607,15 +14610,15 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 18.0 16.0 14.0"
+		"AbilityCooldown"				"20 18 16 14 12 10"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"
+		"AbilityManaCost"				"35 40 45 50 55 60"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		//"AbilityDamage"					"80 120 160 200"
+		//"AbilityDamage"					"80 150 200 300 360 560"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -14644,7 +14647,7 @@
 			"05"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"80 120 160 200"
+				"damage"			"80 150 200 300 360 560"
 				"LinkedSpecialBonus"	"special_bonus_unique_clockwerk_2"
 			}
 			
@@ -14667,22 +14670,24 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Rattletrap.Hookshot.Fire"
+		"MaxLevel"                      "4"
+
 
 		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCastRange"				"2000 2500 3000"
+		"AbilityCastRange"				"2500 3000 3500 4000"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0 45.0 30.0"
+		"AbilityCooldown"				"70 45 30 15"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 150 150"
+		"AbilityManaCost"				"150 200 250 300"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -14691,12 +14696,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"latch_radius"		"125 125 125"
+				"latch_radius"		"125 125 125 125"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stun_radius"		"175 175 175"
+				"stun_radius"		"175 175 175 200"
 			}
 			"03"
 			{	
@@ -14707,17 +14712,17 @@
 			"04"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"speed"				"4000 5000 6000"
+				"speed"				"4000 5000 6000 6000"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"75 175 275"
+				"damage"			"93.75 218.75 412.5 750"
 			}
 			"06"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"cooldown_scepter"	"12.0 12.0 12.0"
+				"cooldown_scepter"	"12.0 12.0 12.0 12.0"
 				"RequiresScepter"			"1"
 			}
 		}
@@ -19263,6 +19268,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_DoomBringer.Devour"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -19270,12 +19276,12 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"300 300 300 300"
+		"AbilityCastRange"				"300 300 300 300 300 300"
 		"AbilityCooldown"				"70"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70"
+		"AbilityManaCost"				"40 50 60 70 80 90"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -19284,18 +19290,18 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 80 140 200"
+				"bonus_gold"			"20 80 140 200 260 320"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"regen"					"3 8 13 18"
+				"regen"					"3 8 13 18 23 28"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_level"			"4 5 6 6"
+				"creep_level"			"4 5 6 7 8 9"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -19315,6 +19321,8 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_DoomBringer.ScorchedEarthAura"
+		"MaxLevel"                      "6"
+
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -19323,11 +19331,11 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 600 600 600"
-		"AbilityCooldown"				"50 45 40 35"
+		"AbilityCooldown"				"50 45 40 35 30 25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 65 70 75"
+		"AbilityManaCost"				"60 65 70 75 80 85"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -19336,24 +19344,24 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"20 35 50 65"
+				"damage_per_second"		"20 43.75 62.5 97.5 120 190"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_4"				
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"600 600 600 600"
+				"radius"				"600 600 600 700 700 800"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed_pct"	"12 13 14 15"
+				"bonus_movement_speed_pct"	"12 13 14 15 16 17"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_6"	
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"16.0"
+				"duration"				"16 16 16 17 17 18"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -19378,8 +19386,8 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 12 8 4"
-		"AbilityManaCost"				"40"
+		"AbilityCooldown"				"16 14 12 10 8 6"
+		"AbilityManaCost"				"40 50 60 70 80 90"
 		"AbilityCastRange"				"175"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
@@ -19390,12 +19398,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"burn_damage"			"16 20 24 28"
+				"burn_damage"			"16 25 30 42 48 72"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_damage_pct"		"1.25 2.5 3.75 5"
+				"burn_damage_pct"		"1.25 2.5 3.75 5 6.25 7.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_1"
 			}
 			"03"
@@ -19441,6 +19449,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"FightRecapLevel"				"2"
+		"MaxLevel"                      "4"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -19454,7 +19463,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 200 250"
+		"AbilityManaCost"				"150 200 250 300"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -19463,18 +19472,18 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"16.0"
+				"duration"				"16 16 17 18"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"25 40 55"
+				"damage"				"31.25 50 82.5 120"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_5"				
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"deniable_pct"			"25 25 25"
+				"deniable_pct"			"25 25 25 25"
 			}
 		}
 	}
