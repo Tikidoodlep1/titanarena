@@ -1087,7 +1087,7 @@
 	
 	"item_recipe_auto_mekansm_datadriven"
 	{
-	"ID"							    "140018"
+	"ID"							    "140020"
 	"Model"							"models/props_gameplay/recipe.mdl"
 		
 		// Item Info
