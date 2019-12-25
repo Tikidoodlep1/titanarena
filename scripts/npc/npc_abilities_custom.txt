@@ -65877,4 +65877,174 @@
 		}
 	}
   }
+  "wanderer_blood_pact"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityTextureName"	"blood_pact"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"AbilityChannelTime"			"20"
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+    "AbilityCooldown"           "50"
+    "AbilityManaCost"           "250"
+	"MaxLevel"					"3"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"health_cost_pct"	"5"
+		}
+		"02"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"damage_per_second"	"100 150 200"
+		}
+		"03"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"invincibility_duration"	"5"
+		}
+		"04"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"channel_duration"	"20"
+		}
+		"05"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"radius"	"750"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_active"
+		{
+			"Passive"	"0"
+			"IsHidden"	"1"
+			"Damage"
+				{
+					"Target"	"CASTER"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"5"
+					"CurrentHealthPercentBasedDamage"	"1"
+				}
+			"ThinkInterval"	"1"
+			"OnIntervalThink"
+			{
+				"AttachEffect"
+				{
+					"EffectName"	"particles/econ/items/clinkz/clinkz_ti9_immortal/clinkz_ti9_strafe_lava_start.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"ExcludeTypes"	"DOTA_UNIT_TARGET_COURIER"
+						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_DEAD | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+					}
+				}
+				"Damage"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"ExcludeTypes"	"DOTA_UNIT_TARGET_COURIER"
+						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_DEAD | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+					}
+					"Type"	"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%damage_per_second"
+				}
+			}
+		}
+		"modifier_invincible"
+		{
+			"Passive"	"0"
+			"IsHidden"	"1"
+			"Duration"	"5"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_life_stealer/life_stealer_rage_bkb01.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+				}
+			}
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
+				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
+				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"		"1"
+			}
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_interrupt"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnChannelInterrupetd"
+			{
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_active"
+				}
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invincible"
+				}
+			}
+		}
+		"modifier_finish"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnChannelFinish"
+			{
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_active"
+				}
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invincible"
+				}
+			}
+		}
+		"modifier_start"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnSpellStart"
+			{
+				"ApplyModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_active"
+				}
+				"ApplyModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invincible"
+				}
+			}
+		}
+	}
+  }
 }

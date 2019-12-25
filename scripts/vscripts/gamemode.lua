@@ -218,11 +218,11 @@ end
 	local dsalive = false
 	local ddalive = false
 	local entities = Entities:FindAllByClassname("npc_dota_creature")
-	local bosslevel = 0
-	local rad_sk_level = 0
-	local dire_sk_level = 0
-	local rad_dk_level = 0
-	local dire_dk_level = 0
+	local bosslevel = 1
+	local rad_sk_level = 1
+	local dire_sk_level = 1
+	local rad_dk_level = 1
+	local dire_dk_level = 1
 		for _, ent in ipairs(entities) do
 			if ent:GetUnitName() == "npc_boss_wanderer" then
 				walive = true
