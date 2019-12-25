@@ -1,6 +1,7 @@
 // https://moddota.com/forums/discussion/1415/combining-kv-files-using-base
 #base "abilities/dummy_unit_ability.txt"
 
+//https://github.com/search?q=path%3Avscripts+IsTouching to search github for good stuff
 "DOTAAbilities"
 {
 	"Version"   "1"
@@ -65814,7 +65815,7 @@
 		{
 			"Passive"	"1"
 			"IsHidden"	"1"
-			"OnAttackStart"
+			"OnAttackLanded"
 			{
 				"RunScript"
 				{
@@ -65833,8 +65834,46 @@
 		"modifier_stack_enemy"
 		{
 			"Passive"	"0"
-			"IsHidden"	"0"
+			"IsHidden"	"1"
 			"Duration"	"25"
+		}
+	}
+  }
+  "boss_resistance"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"boss_resistance"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"	"FIELD_INTEGER"
+			"lifesteal_pct"			"15"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_boss_resist"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+			"OnAttackLanded"
+			{
+				"Lifesteal"
+				{
+					"Target"	"CASTER"
+					"LifestealPercent"	"%lifesteal_pct"
+				}
+			}
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"boss_resist.lua"
+					"Function"		"resist"
+				}
+			}
 		}
 	}
   }

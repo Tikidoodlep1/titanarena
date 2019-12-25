@@ -86,7 +86,8 @@ function barebones:OnHeroInGame(hero)
 			DebugPrint("[BAREBONES] Bot hero "..hero:GetUnitName().." (re)spawned in the game.")
 			-- Set starting gold for bots
 			hero:SetGold(NORMAL_START_GOLD, false)
-			local cour = CreateUnitByName("npc_dota_courier", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeam()):SetControllableByPlayer(playerid, false)
+			CreateUnitByName("npc_dota_courier", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeam()):SetControllableByPlayer(playerID, false)
+			local cour = Entities:FindByName(nil, "npc_dota_courier")
 			cour:UpgradeToFlyingCourier(true)
 		else
 			DebugPrint("[BAREBONES] OnHeroInGame running for a non-bot player!")
@@ -123,7 +124,8 @@ function barebones:OnHeroInGame(hero)
 				local player = cmdplayer:GetAssignedHero()
 				local playerlocation = player:GetAbsOrigin()
 				local playerid = player:GetPlayerID()
-				local cour = CreateUnitByName("npc_dota_courier", playerlocation, true, player, player, player:GetTeam()):SetControllableByPlayer(playerid, false)
+				CreateUnitByName("npc_dota_courier", playerlocation, true, player, player, player:GetTeam()):SetControllableByPlayer(playerid, false)
+				local cour = Entities:FindByName(nil, "npc_dota_courier")
 				cour:UpgradeToFlyingCourier(true)
 				-- Make sure that stuff above will not happen again for the player if some other hero spawns
 				-- for him for the first time during the game 
@@ -216,13 +218,19 @@ end
 	local dsalive = false
 	local ddalive = false
 	local entities = Entities:FindAllByClassname("npc_dota_creature")
+	local bosslevel = 0
+	local rad_sk_level = 0
+	local dire_sk_level = 0
+	local rad_dk_level = 0
+	local dire_dk_level = 0
 		for _, ent in ipairs(entities) do
 			if ent:GetUnitName() == "npc_boss_wanderer" then
 				walive = true
 			end
 		end
 		if walive == false then
-			CreateUnitByName("npc_boss_wanderer", w_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+			CreateUnitByName("npc_boss_wanderer", w_spawn, true, nil, nil, 4):CreatureLevelUp(bosslevel)
+			bosslevel = bosslevel + 1
 		end
 	local radbosses = FindUnitsInRadius(4, rad_dk_spawn, nil, 7500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 	local direbosses = FindUnitsInRadius(4, dire_dk_spawn, nil, 7500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
@@ -243,16 +251,20 @@ end
 			end
 		end
 		if rsalive == false then
-			CreateUnitByName("npc_boss_scarab", rad_sk_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+			CreateUnitByName("npc_boss_scarab", rad_sk_spawn, true, nil, nil, 4):CreatureLevelUp(rad_sk_level)
+			rad_sk_level = rad_sk_level + 1
 		end
 		if rdalive == false then
-			CreateUnitByName("npc_boss_dragon_knight_1", rad_dk_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+			CreateUnitByName("npc_boss_dragon_knight_1", rad_dk_spawn, true, nil, nil, 4):CreatureLevelUp(rad_dk_level)
+			rad_dk_level = rad_dk_level + 1
 		end
 		if dsalive == false then
-			CreateUnitByName("npc_boss_scarab", dire_sk_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+			CreateUnitByName("npc_boss_scarab", dire_sk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_sk_level)
+			dire_sk_level = dire_sk_level + 1
 		end
 		if ddalive == false then
-			CreateUnitByName("npc_boss_dragon_knight_1", dire_dk_spawn, true, nil, nil, 4):CreatureLevelUp(1)
+			CreateUnitByName("npc_boss_dragon_knight_1", dire_dk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_dk_level)
+			dire_dk_level = dire_dk_level + 1
 		end
 	end
 	
@@ -440,7 +452,6 @@ end
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
-		
 	end
 	end
 	
@@ -829,6 +840,7 @@ function barebones:InitGameMode()
 
 	-- Global Lua Modifiers
 	LinkLuaModifier("modifier_custom_invulnerable", "modifiers/modifier_custom_invulnerable", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_status_resistance", "modifiers/modifier_status_resistance", LUA_MODIFIER_MOTION_NONE)
 
 	-- Talent modifiers (this can be done in ability scripts, but it can be done here as well)
 	LinkLuaModifier("modifier_ability_name_talent_name_1", "modifiers/talents/modifier_ability_name_talent_name_1", LUA_MODIFIER_MOTION_NONE)

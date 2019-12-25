@@ -2099,7 +2099,7 @@
     
     "Ability1"          "wanderer_insatiable_rage"     // Ability 1.
     "Ability2"          ""      // Ability 2.
-    "Ability3"          ""      // Ability 3.
+    "Ability3"          "boss_resistance"      // Ability 3.
     "Ability4"          ""      // Ability 4.
     "Ability5"          ""      // Ability 5.
     "Ability6"          ""      // Ability 6 - Extra.
@@ -2110,6 +2110,7 @@
     //----------------------------------------------------------------
     "ArmorPhysical"       "50"     // Physical protection.
     "MagicalResistance"       "25"     // Magical protection.
+	"DisableResistance"            "75"
 
     // Attack
     //----------------------------------------------------------------
@@ -2223,6 +2224,7 @@
     //----------------------------------------------------------------
     "ArmorPhysical"       "30"     // Physical protection.
     "MagicalResistance"       "25"     // Magical protection.
+	"DisableResistance"            "75"
 
     // Attack
     //----------------------------------------------------------------
@@ -2334,6 +2336,7 @@
     //----------------------------------------------------------------
     "ArmorPhysical"       "45"     // Physical protection.
     "MagicalResistance"       "25"     // Magical protection.
+	"DisableResistance"            "75"
 
     // Attack
     //----------------------------------------------------------------
@@ -2449,6 +2452,7 @@
     //----------------------------------------------------------------
     "ArmorPhysical"       "45"     // Physical protection.
     "MagicalResistance"       "25"     // Magical protection.
+	"DisableResistance"            "75"
 
     // Attack
     //----------------------------------------------------------------
