@@ -86,6 +86,8 @@ function barebones:OnHeroInGame(hero)
 			DebugPrint("[BAREBONES] Bot hero "..hero:GetUnitName().." (re)spawned in the game.")
 			-- Set starting gold for bots
 			hero:SetGold(NORMAL_START_GOLD, false)
+			local cour = CreateUnitByName("npc_dota_courier", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeam()):SetControllableByPlayer(playerid, false)
+			cour:UpgradeToFlyingCourier(true)
 		else
 			DebugPrint("[BAREBONES] OnHeroInGame running for a non-bot player!")
 			if not PlayerResource.PlayerData[playerID] then
@@ -121,8 +123,8 @@ function barebones:OnHeroInGame(hero)
 				local player = cmdplayer:GetAssignedHero()
 				local playerlocation = player:GetAbsOrigin()
 				local playerid = player:GetPlayerID()
-				CreateUnitByName("npc_dota_courier", playerlocation, true, player, player, player:GetTeam()):SetControllableByPlayer(playerid, false)
-
+				local cour = CreateUnitByName("npc_dota_courier", playerlocation, true, player, player, player:GetTeam()):SetControllableByPlayer(playerid, false)
+				cour:UpgradeToFlyingCourier(true)
 				-- Make sure that stuff above will not happen again for the player if some other hero spawns
 				-- for him for the first time during the game 
 				PlayerResource.PlayerData[playerID].already_set_hero = true
@@ -130,6 +132,7 @@ function barebones:OnHeroInGame(hero)
 			end
 		end
 	end)
+	
 end
 
 --[[
@@ -270,7 +273,7 @@ end
 	local dHeroIncrementer = 0
 	local rHeroIncrementer = 0
 	local GetTotalDualPlayers = RandomInt(1,5)
-	local GetArena = RandomInt(1,4)
+	_G.GetArena = RandomInt(1,4)
 	_G.arena1 = nil
 	local arena1titan
 	_G.arena1vs = nil
@@ -282,21 +285,21 @@ end
 	_G.DualArenavs1 = {}
 	_G.DualArenavs2 = {}
 
-		if GetArena == 1 then
+		if _G.GetArena == 1 then
 			_G.arena1 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
 			arena1titan = Entities:FindByName(nil, "dire_dual_titan"):GetAbsOrigin()
 			_G.arena1vs = Entities:FindByName(nil, "dire_dual1"):GetAbsOrigin()
 			arena1titanvs = Entities:FindByName(nil, "dire_dual_titan1"):GetAbsOrigin()
 			_G.arena2 = Entities:FindByName(nil, "dire_dual2"):GetAbsOrigin()
 			_G.arena2vs = Entities:FindByName(nil, "dire_dual3"):GetAbsOrigin()
-		elseif GetArena == 2 then
+		elseif _G.GetArena == 2 then
 			_G.arena1 = Entities:FindByName(nil, "dire_dual2"):GetAbsOrigin()
 			arena1titan = Entities:FindByName(nil, "dire_dual_titan2"):GetAbsOrigin()
 			_G.arena1vs = Entities:FindByName(nil, "dire_dual3"):GetAbsOrigin()
 			arena1titanvs = Entities:FindByName(nil, "dire_dual_titan3"):GetAbsOrigin()
 			_G.arena2 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
 			_G.arena2vs = Entities:FindByName(nil, "dire_dual1"):GetAbsOrigin()
-		elseif GetArena == 3 then
+		elseif _G.GetArena == 3 then
 			_G.arena1 = Entities:FindByName(nil, "rad_dual"):GetAbsOrigin()
 			arena1titan = Entities:FindByName(nil, "rad_dual_titan"):GetAbsOrigin()
 			_G.arena1vs = Entities:FindByName(nil, "rad_dual1"):GetAbsOrigin()

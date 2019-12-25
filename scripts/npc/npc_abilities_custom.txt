@@ -6097,7 +6097,8 @@
 				"var_type"			"FIELD_INTEGER"
 				"gods_strength_bonus_str"		"10 20 30"		
 				"LinkedSpecialBonus"		"special_bonus_unique_sven_2"
-			}		}
+			}
+		}
 	}
 
 	//=================================================================================================================
@@ -29227,7 +29228,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5"
 		"AbilityCooldown"				"22 19 16 13 10 7"
 		"AbilityManaCost"				"115 120 125 130 135 140"
 		
@@ -29319,6 +29320,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
+		"MaxLevel"                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -65784,6 +65786,55 @@
 					"Function"		"Damage"
 				}
 			}
+		}
+	}
+  }
+  "wanderer_insatiable_rage"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"insatiable_rage"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"damage_stack"	"1.5"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"max_stacks"	"75"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_apply_stacks"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"wanderer_insatiable_rage.lua"
+					"Function"		"modifier_dablage"
+				}
+			}
+		}
+		"modifier_stack"
+		{
+			"Passive"	"0"
+			"IsHidden"	"0"
+			"TextureName"	"insatiable_rage"
+			"Duration"	"25"
+		}
+		"modifier_stack_enemy"
+		{
+			"Passive"	"0"
+			"IsHidden"	"0"
+			"Duration"	"25"
 		}
 	}
   }

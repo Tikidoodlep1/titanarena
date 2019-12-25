@@ -263,6 +263,10 @@ function barebones:OnPlayerLevelUp(keys)
 			hero:SetMinimumGoldBounty(gold_bounty)
 			hero:SetMaximumGoldBounty(gold_bounty)
 		end
+		
+		if hero:GetLevel() == 35 or hero:GetLevel() == 45  or hero:GetLevel() == 50 then
+			hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
+		end
 
 		-- Add a skill point when a hero levels
 		if SKILL_POINTS_AT_EVERY_LEVEL then
@@ -634,7 +638,6 @@ function ExitDual(WinningTeam)
 				break
 			end
 		end
-		
 		local Heroes = HeroList:GetAllHeroes()
 		local team_networth = 0
 		local player_networth = 0
@@ -675,7 +678,7 @@ function ExitDual(WinningTeam)
 
 if team == 3 then
 _G.radiant_kills = (_G.radiant_kills + 1)
-print("Radiant has been awarded a kill!")
+
 --checks to see if a team has hit the minimum number of kills to win
 if _G.radiant_kills == 50 then
 	GameRules:SetGameWinner(2)
