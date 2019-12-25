@@ -6,7 +6,7 @@ local stacks = caster:GetModifierStackCount("modifier_stack", caster)
 local basedamage = caster:GetBaseDamageMax()
 local ability = keys.ability
 local stackdamage = ability:GetSpecialValueFor("damage_stack")
-local appdamage = basedamage + (basedamage * ((stacks * stackdamage)/100))
+local appdamage = (basedamage * ((stacks * stackdamage)/100))
 local damage_table = {victim = target, attacker = caster, damage = appdamage, damage_type = DAMAGE_TYPE_PHYSICAL}
 ability:ApplyDataDrivenModifier(caster, target, "modifier_stack_enemy", {})
 target:SetModifierStackCount("modifier_stack_enemy", caster, estacks + 1)
