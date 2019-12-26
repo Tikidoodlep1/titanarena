@@ -144,6 +144,7 @@ end
 ]]
 
 function barebones:OnGameInProgress()
+		_G.IsDual = false
 	DebugPrint("[BAREBONES] The game has officially begun.")
 	
 	CustomGameEventManager:Send_ServerToAllClients("setKillsToWin", {})
@@ -207,6 +208,7 @@ EmitGlobalSound("ui.contract_complete")
 end
 
 	function SpawnBosses()
+
 	local rad_dk_spawn = Entities:FindByName(nil, "rad_boss_dk"):GetAbsOrigin()
 	local rad_sk_spawn = Entities:FindByName(nil, "rad_boss_sk"):GetAbsOrigin()
 	local dire_dk_spawn = Entities:FindByName(nil, "dire_boss_dk"):GetAbsOrigin()

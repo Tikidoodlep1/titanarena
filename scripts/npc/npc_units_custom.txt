@@ -1626,6 +1626,7 @@
     "SoundSet"          "Hero_Kunkka"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Radiant Titan"
+    "vscripts"                    "titan_ai.lua"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -1705,7 +1706,7 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
-	"UseNeutralCreepBehavior" 	"1"
+	"UseNeutralCreepBehavior" 	"0"
 	
 	//Creature Data
 	//----------------------------------------------------------------
@@ -1740,6 +1741,7 @@
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
     "Level"           "0"
     "UnitLabel"         "Dire Titan"
+    "vscripts"                    "titan_ai.lua"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -1819,7 +1821,7 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
-	"UseNeutralCreepBehavior" 	"1"
+	"UseNeutralCreepBehavior" 	"0"
 	
 	//Creature Data
 	//----------------------------------------------------------------
