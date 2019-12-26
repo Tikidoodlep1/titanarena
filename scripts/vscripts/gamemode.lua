@@ -382,14 +382,14 @@ end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then
 				FindClearSpaceForUnit(unit, arena1titan, false)
-				unit:MoveToPosition(arena1titanvs)
+				unit:MoveToPositionAggressive(arena1titanvs)
 				break
 			end
 		end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_dire_titan" then
 				FindClearSpaceForUnit(unit, arena1titanvs, false)
-				unit:MoveToPosition(arena1titan)
+				unit:MoveToPositionAggressive(arena1titan)
 				break
 			end
 		end
