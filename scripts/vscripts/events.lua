@@ -391,6 +391,23 @@ function barebones:OnEntityKilled(keys)
 		killer_unit = EntIndexToHScript(keys.entindex_attacker)
 	end
 	
+	local players = HeroList:GetAllHeroes()
+	if killed_unit:GetUnitName() == "npc_dire_titan" then
+		Notifications:TopToAll({text = "The Dire Titan Has Been Slain!", duration=5.0})
+		for _, hero in ipairs(players) do
+			if hero:GetTeamNumber() == 2 then
+				hero:AddNewModifier("modifier_titan_slain")
+			end
+		end
+	elseif killed_unit:GetUnitName() == "npc_radiant_titan" then
+		Notifications:TopToAll({text = "The Radiant Titan Has Been Slain!", duration=5.0})
+		for _, hero in ipairs(players) do
+			if hero:GetTeamNumber() == 3 then
+				hero:AddNewModifier("modifier_titan_slain")
+			end
+		end
+	end
+	
 	--[[require('gamemode')
 	local checkFunction = gamemode.CheckDualStatus()
 	checkFunction()
