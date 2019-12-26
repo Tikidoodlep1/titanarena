@@ -396,14 +396,14 @@ function barebones:OnEntityKilled(keys)
 		Notifications:TopToAll({text = "The Dire Titan Has Been Slain!", duration=5.0})
 		for _, hero in ipairs(players) do
 			if hero:GetTeamNumber() == 2 then
-				hero:AddNewModifier("modifier_titan_slain")
+				hero:AddNewModifier(hero, nil, "modifier_titan_slain", {duration=600})
 			end
 		end
 	elseif killed_unit:GetUnitName() == "npc_radiant_titan" then
 		Notifications:TopToAll({text = "The Radiant Titan Has Been Slain!", duration=5.0})
 		for _, hero in ipairs(players) do
 			if hero:GetTeamNumber() == 3 then
-				hero:AddNewModifier("modifier_titan_slain")
+				hero:AddNewModifier(hero, nil, "modifier_titan_slain", {duration=600})
 			end
 		end
 	end

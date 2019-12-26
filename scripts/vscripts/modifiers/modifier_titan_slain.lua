@@ -10,7 +10,7 @@ function modifier_titan_slain:DeclareFunctions()
 end
 
 function modifier_titan_slain:IsHidden()
-	return true
+	return false
 end
 
 function modifier_titan_slain:IsBuff()
@@ -22,16 +22,9 @@ function modifier_titan_slain:Duration()
 end
 
 function modifier_titan_slain:TextureName()
-	return "titan_slain_buff"
+	return "resource/flash3/images/spellicons/titan_slain_buff"
 end
 
 function modifier_titan_slain:OnTooltip(keys)
-	local parent = self:GetParent()
-	local net_worth = parent:GetTotalEarnedGold(parent:GetPlayerID())
-	local gpm = parent:GetGoldPerMin(parent:GetPlayerID())
-	parent:SetGoldPerTick(net_worth/100 + 1)
-	Timers:CreateTimer(600, function()
-	parent:SetGoldPerTick(gpm)
-	end)
 	return "Gaining Bonus Gold Per Minute, Along With Increased Invader Strength!"
 end

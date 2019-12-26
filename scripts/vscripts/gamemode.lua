@@ -148,6 +148,16 @@ function barebones:OnGameInProgress()
 	DebugPrint("[BAREBONES] The game has officially begun.")
 	
 	CustomGameEventManager:Send_ServerToAllClients("setKillsToWin", {})
+	Timers:CreateTimer(0, function()
+	local players = HeroList:GetAllHeroes()
+		for _, hero in ipairs(players) do
+			if hero:HasModifier("modifier_titan_slain") == true then
+				hero:SetGold(hero:GetGold()+(math.sqrt(GameRules:GetGameTime()/600)), true)
+				print(hero:GetGold().." + "..math.sqrt(GameRules:GetGameTime()/600).." = "..hero:GetGold()+(math.sqrt(GameRules:GetGameTime()/600)))
+			end
+		end
+		return 1
+	end)
 	Timers:CreateTimer(30, function()
 	
 	notifyDual30()
@@ -843,6 +853,7 @@ function barebones:InitGameMode()
 	-- Global Lua Modifiers
 	LinkLuaModifier("modifier_custom_invulnerable", "modifiers/modifier_custom_invulnerable", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_status_resistance", "modifiers/modifier_status_resistance", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_titan_slain", "modifiers/modifier_titan_slain", LUA_MODIFIER_MOTION_NONE)
 
 	-- Talent modifiers (this can be done in ability scripts, but it can be done here as well)
 	LinkLuaModifier("modifier_ability_name_talent_name_1", "modifiers/talents/modifier_ability_name_talent_name_1", LUA_MODIFIER_MOTION_NONE)
