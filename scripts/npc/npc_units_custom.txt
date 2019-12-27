@@ -2095,6 +2095,7 @@
     "SoundSet"          "Hero_BloodSeeker"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "The Wanderer"
+    "vscripts"                    "wanderer_ai.lua"
 	
     // Abilities
     //----------------------------------------------------------------
