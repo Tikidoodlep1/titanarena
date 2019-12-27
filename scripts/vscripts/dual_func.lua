@@ -95,36 +95,39 @@ else
 	arena2 = Entities:FindByName(nil, "dual_keepin1_trigger")
 end
 for i, hero in pairs(_G.DualArena1) do
-	if trigger.activator == hero and arena:IsTouching(hero) == true then
-	else
-		trigger.activator:SetMana(_G.DualTeleportTargetMana)
-		FindClearSpaceForUnit(trigger.activator, closest, false)
-		SendToConsole("dota_camera_center")
-	end
+	 if trigger.activator == hero and arena:IsTouching(hero) == true then
+ elseif trigger.activator == hero and arena:IsTouching(hero) == false then
+ 
+    trigger.activator:SetMana(_G.DualTeleportTargetMana)
+    FindClearSpaceForUnit(trigger.activator, closest, false)
+    SendToConsole("dota_camera_center")
+end
 end
 for i, hero in pairs(_G.DualArenavs1) do
-	if trigger.activator == hero and arena:IsTouching(hero) == true then
-	else
-		trigger.activator:SetMana(_G.DualTeleportTargetMana)
-		FindClearSpaceForUnit(trigger.activator, closest, false)
-		SendToConsole("dota_camera_center")
-	end
+	 if trigger.activator == hero and arena:IsTouching(hero) == true then
+ elseif trigger.activator == hero and arena:IsTouching(hero) == false then
+ 
+    trigger.activator:SetMana(_G.DualTeleportTargetMana)
+    FindClearSpaceForUnit(trigger.activator, closest, false)
+    SendToConsole("dota_camera_center")
+end
 end
 for i, hero in pairs(_G.DualArena2) do
-	if trigger.activator == hero and arena2:IsTouching(hero) == true then
-	else
-		trigger.activator:SetMana(_G.DualTeleportTargetMana)
-		FindClearSpaceForUnit(trigger.activator, closest, false)
-		SendToConsole("dota_camera_center")
-	end
+	 if trigger.activator == hero and arena2:IsTouching(hero) == true then
+ elseif trigger.activator == hero and arena2:IsTouching(hero) == false then
+ 
+    trigger.activator:SetMana(_G.DualTeleportTargetMana)
+    FindClearSpaceForUnit(trigger.activator, closest, false)
+    SendToConsole("dota_camera_center")
+end
 end
 for i, hero in pairs(_G.DualArenavs2) do
-	if trigger.activator == hero and arena2:IsTouching(hero) == true then
-	else
-		trigger.activator:SetMana(_G.DualTeleportTargetMana)
-		FindClearSpaceForUnit(trigger.activator, closest, false)
-		SendToConsole("dota_camera_center")
-	end
+	 if trigger.activator == hero and arena2:IsTouching(hero) == true then
+ elseif trigger.activator == hero and arena2:IsTouching(hero) == false then
+ 
+    trigger.activator:SetMana(_G.DualTeleportTargetMana)
+    FindClearSpaceForUnit(trigger.activator, closest, false)
+    SendToConsole("dota_camera_center")
 end
 end
-
+end
