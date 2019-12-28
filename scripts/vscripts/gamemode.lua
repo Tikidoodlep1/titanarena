@@ -151,7 +151,7 @@ function barebones:OnGameInProgress()
 	Timers:CreateTimer(0, function()
 	local players = HeroList:GetAllHeroes()
 		for _, hero in ipairs(players) do
-			if hero:HasModifier("modifier_titan_slain") == true then
+			if hero:HasModifier("modifier_titan_slain") == true and hero:IsClone() == false then
 				hero:SetGold(hero:GetGold()+(math.sqrt(GameRules:GetGameTime()/600)), true)
 				print(hero:GetGold().." + "..math.sqrt(GameRules:GetGameTime()/600).." = "..hero:GetGold()+(math.sqrt(GameRules:GetGameTime()/600)))
 			end
