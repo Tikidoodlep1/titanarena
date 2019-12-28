@@ -152,8 +152,8 @@ function barebones:OnGameInProgress()
 	local players = HeroList:GetAllHeroes()
 		for _, hero in ipairs(players) do
 			if hero:HasModifier("modifier_titan_slain") == true and hero:IsClone() == false then
-				hero:SetGold(hero:GetGold()+(math.sqrt(GameRules:GetGameTime()/600)), true)
-				print(hero:GetGold().." + "..math.sqrt(GameRules:GetGameTime()/600).." = "..hero:GetGold()+(math.sqrt(GameRules:GetGameTime()/600)))
+				PlayerResource:ModifyGold(hero:GetPlayerID(), (math.sqrt(GameRules:GetGameTime()/600)), true, 16)
+				print(hero:GetGold().." + "..math.sqrt(GameRules:GetGameTime()/600).." = "..hero:GetGold()+(math.sqrt(GameRules:GetGameTime()/600))*5)
 			end
 		end
 		return 1
@@ -243,6 +243,18 @@ end
 		if walive == false then
 			CreateUnitByName("npc_boss_wanderer", w_spawn, true, nil, nil, 4):CreatureLevelUp(bosslevel)
 			bosslevel = bosslevel + 1
+			for _, ent in pairs(entities) do
+				if ent:GetUnitName() == "npc_boss_wanderer" then
+					local wanderer = ent
+				end
+			end
+			local bplevel = 0
+			if bosslevel <= 3 then
+				bplevel = bosslevel
+			else
+				bplevel = 3
+			end
+			wanderer:GetAbilityByIndex(3):SetLevel(bplevel)
 		end
 	local radbosses = FindUnitsInRadius(4, rad_dk_spawn, nil, 7500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 	local direbosses = FindUnitsInRadius(4, dire_dk_spawn, nil, 7500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)

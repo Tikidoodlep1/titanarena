@@ -65887,10 +65887,11 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-	"AbilityChannelTime"			"20"
+	"AbilityChannelTime"			"15"
 	"AbilityCastPoint"				"0.3 0.3 0.3"
     "AbilityCooldown"           "50"
     "AbilityManaCost"           "250"
+	"AbilityCastRange"			"750"
 	"MaxLevel"					"3"
 	"AbilitySpecial"
 	{
@@ -65902,7 +65903,7 @@
 		"02"
 		{
 			"var_type"	"FIELD_INTEGER"
-			"damage_per_second"	"100 150 200"
+			"damage_per_second"	"500 550 600"
 		}
 		"03"
 		{
@@ -65912,7 +65913,7 @@
 		"04"
 		{
 			"var_type"	"FIELD_INTEGER"
-			"channel_duration"	"20"
+			"channel_duration"	"15"
 		}
 		"05"
 		{
@@ -65922,15 +65923,17 @@
 	}
 	"Modifiers"
 	{
+		
 		"modifier_active"
 		{
 			"Passive"	"0"
 			"IsHidden"	"1"
+			"Duration"	"%channel_duration"
 			"Damage"
 				{
 					"Target"	"CASTER"
 					"Type"		"DAMAGE_TYPE_MAGICAL"
-					"Damage"	"5"
+					"Damage"	"10"
 					"CurrentHealthPercentBasedDamage"	"1"
 				}
 			"ThinkInterval"	"1"
@@ -65938,7 +65941,7 @@
 			{
 				"AttachEffect"
 				{
-					"EffectName"	"particles/econ/items/clinkz/clinkz_ti9_immortal/clinkz_ti9_strafe_lava_start.vpcf"
+					"EffectName"	"particles/econ/items/clinkz/clinkz_ti9_immortal/clinkz_ti9_summon_start_lava_burst.vpcf"
 					"EffectAttachType"	"follow_origin"
 					"Target"
 					{
@@ -65946,8 +65949,7 @@
 						"Radius"	"%radius"
 						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 						"ExcludeTypes"	"DOTA_UNIT_TARGET_COURIER"
-						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_DEAD | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
-						"Flags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+						"Flags"			"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_DEAD | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
 					}
 				}
 				"Damage"
@@ -65958,8 +65960,7 @@
 						"Radius"	"%radius"
 						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 						"ExcludeTypes"	"DOTA_UNIT_TARGET_COURIER"
-						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_DEAD | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
-						"Flags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+						"Flags"			"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_DEAD | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
 					}
 					"Type"	"DAMAGE_TYPE_MAGICAL"
 					"Damage"	"%damage_per_second"
@@ -65969,15 +65970,16 @@
 		"modifier_invincible"
 		{
 			"Passive"	"0"
-			"IsHidden"	"1"
+			"IsHidden"	"0"
 			"Duration"	"5"
 			"OnCreated"
 			{
 				"AttachEffect"
 				{
-					"EffectName"	"particles/units/heroes/hero_life_stealer/life_stealer_rage_bkb01.vpcf"
+					"EffectName"	"particles/econ/items/lifestealer/lifestealer_immortal_backbone/lifestealer_immortal_backbone_rage.vpcf"
 					"EffectAttachType"	"follow_origin"
 					"Target"	"CASTER"
+					"EffectRadius"	"400"
 				}
 			}
 			"Properties"
@@ -66031,7 +66033,7 @@
 		{
 			"Passive"	"1"
 			"IsHidden"	"1"
-			"OnSpellStart"
+			"OnSpentMana"
 			{
 				"ApplyModifier"
 				{
