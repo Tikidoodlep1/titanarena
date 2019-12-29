@@ -21,7 +21,7 @@ thisEntity:MoveToPositionAggressive(Vector(go_to_x,go_to_y,281))
 return 2
 	end 
 if thisEntity:GetAggroTarget() ~= nil then
-	if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .99 then
+	if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .50 then
 print("casting ult")
 	thisEntity:Stop()
 	thisEntity:CastAbilityOnTarget(thisEntity:GetAggroTarget(), ABILITY_blood_pact , -1)
