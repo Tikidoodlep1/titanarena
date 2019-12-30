@@ -453,6 +453,7 @@ end
 			if unit:GetUnitName() == "npc_radiant_titan" then
 				FindClearSpaceForUnit(unit, radiant_titan_return, false)
 				unit:SetHealth(unit:GetMaxHealth())
+				unit:SetMana(unit:GetMaxMana())
 				unit:Stop()
 				break
 			end
@@ -461,6 +462,7 @@ end
 			if unit:GetUnitName() == "npc_dire_titan" then
 				FindClearSpaceForUnit(unit, dire_titan_return, false)
 				unit:SetHealth(unit:GetMaxHealth())
+				unit:SetMana(unit:GetMaxMana())
 				unit:Stop()
 				break
 			end
