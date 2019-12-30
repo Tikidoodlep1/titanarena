@@ -452,6 +452,7 @@ end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then
 				FindClearSpaceForUnit(unit, radiant_titan_return, false)
+				unit:SetHealth(unit:GetMaxHealth())
 				unit:Stop()
 				break
 			end
@@ -459,6 +460,7 @@ end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_dire_titan" then
 				FindClearSpaceForUnit(unit, dire_titan_return, false)
+				unit:SetHealth(unit:GetMaxHealth())
 				unit:Stop()
 				break
 			end
