@@ -153,7 +153,6 @@ function barebones:OnGameInProgress()
 		for _, hero in ipairs(players) do
 			if hero:HasModifier("modifier_titan_slain") == true and hero:IsClone() == false then
 				PlayerResource:ModifyGold(hero:GetPlayerID(), (math.sqrt(GameRules:GetGameTime()/600)), true, 16)
-				print(hero:GetGold().." + "..math.sqrt(GameRules:GetGameTime()/600).." = "..hero:GetGold()+(math.sqrt(GameRules:GetGameTime()/600))*5)
 			end
 		end
 		return 1
