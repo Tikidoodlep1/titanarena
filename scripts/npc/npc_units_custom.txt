@@ -2214,12 +2214,12 @@
     // Abilities
     //----------------------------------------------------------------
     
-    "Ability1"          "scarab_sandstorm"     // Ability 1.
-    "Ability2"          "scarab_cursed_sand"      // Ability 2.
+    "Ability1"          "sk_sandstorm"     // Ability 1.
+    "Ability2"          "sk_cursed_sand"      // Ability 2.
     "Ability3"          "boss_resistance"      // Ability 3.
     "Ability4"          ""      // Ability 4.
     "Ability5"          ""      // Ability 5.
-    "Ability6"          "scarab_epicenter"      // Ability 6 - Extra.
+    "Ability6"          "sk_epicenter"      // Ability 6 - Extra.
     "Ability7"          ""      // Ability 7 - Extra.
     "Ability8"          ""      // Ability 8 - Extra.
 
