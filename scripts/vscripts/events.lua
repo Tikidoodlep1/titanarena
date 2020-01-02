@@ -623,16 +623,18 @@ function ExitDual(WinningTeam)
 		for _, hero in pairs(players) do
 			hero:SetBuyBackDisabledByReapersScythe(false)
 			if hero:GetTeamNumber() == 2 then
-				hero:Kill(nil, nil)
-				hero:RespawnUnit()
-				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+				if hero:IsAlive() == true then
+					hero:Kill(nil, nil)
+					hero:RespawnUnit()
+				end
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				SendToConsole("dota_camera_center")
 			elseif hero:GetTeamNumber() == 3 then
-				hero:Kill(nil, nil)
-				hero:RespawnUnit()
-				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+				if hero:IsAlive() == true then
+					hero:Kill(nil, nil)
+					hero:RespawnUnit()
+				end
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				SendToConsole("dota_camera_center")
@@ -691,6 +693,15 @@ function ExitDual(WinningTeam)
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
+		for r=1,5 do
+		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
+		r = r + 1
+		end
+		for d=1,5 do
+		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
+		d = d + 1
+		end
+		_G.invaderlevel = _G.invaderlevel + 1
 	end
 
 if team == 3 then

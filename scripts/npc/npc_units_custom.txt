@@ -1842,11 +1842,6 @@
     }
   }
   //----------------------------------------------------------------------------------------------------
-  //INVASION CREEPS
-  //----------------------------------------------------------------------------------------------------
-  
-  
-  //----------------------------------------------------------------------------------------------------
   //BREWMASTER UNITS
   //----------------------------------------------------------------------------------------------------
   "npc_dota_brewmaster_earth"
@@ -2533,4 +2528,106 @@
         "MagicResistGain"                       "5"
     }
   }
+  "npc_invader"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           "models/items/enigma/eidolon/absolute_zero_updated_eidolon/absolute_zero_updated_eidolon.vmdl"  // Model.
+    "SoundSet"          "Creep_Good_Range"          // Name of sound set.
+    "Level"           "0"
+    "UnitLabel"         "Invader"
+    
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          ""     // Ability 1.
+    "Ability2"          ""      // Ability 2.
+    "Ability3"          ""      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          ""      // Ability 5.
+    "Ability6"          ""      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "4"     // Physical protection.
+    "MagicalResistance"       "25"     // Magical protection.
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
+	"ProjectileModel"            "particles/neutral_fx/harpy_chain_lightning_head.vpcf"
+	"ProjectileSpeed"            "700"
+    "AttackDamageMin"     "50"     // Damage range min.
+    "AttackDamageMax"     "55"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "0.9"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "500"   // Range within a target can be acquired.
+    "AttackRange"       "450"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"     // Base strength
+    "AttributeStrengthGain"   "0"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"     // Base intelligence
+    "AttributeIntelligenceGain" "0"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"     // Base agility
+    "AttributeAgilityGain"    "0"     // Agility bonus per level.
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "50"     // Experience earn.
+    "BountyGoldMin"       "35"     // Gold earned min.
+    "BountyGoldMax"       "40"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_REGULAR"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "550"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "450"     // Base health.
+    "StatusHealthRegen"     "7"     // Health regeneration rate.
+    "StatusMana"        "150"     // Base mana.
+    "StatusManaRegen"     "5"     // Mana regeneration rate.
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UseNeutralCreepBehavior" 	"0"
+	
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "1200"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+                {
+                        //Level Up
+                        "HPGain"                                        "20"
+                        "DamageGain"                            "5"
+                        "ArmorGain"                                     "1"
+                        "MagicResistGain"                       "2"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
+                }
+}
 }

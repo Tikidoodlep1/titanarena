@@ -157,6 +157,7 @@ function barebones:OnGameInProgress()
 		end
 		return 1
 	end)
+	_G.invaderlevel = 0
 	Timers:CreateTimer(30, function()
 	
 	notifyDual30()
@@ -245,15 +246,16 @@ end
 			for _, ent in pairs(entities) do
 				if ent:GetUnitName() == "npc_boss_wanderer" then
 					local wanderer = ent
+					local bplevel = 0
+					if bosslevel <= 3 then
+						bplevel = bosslevel
+					else
+						bplevel = 3
+					end
+					wanderer:GetAbilityByIndex(3):SetLevel(bplevel)
 				end
 			end
-			local bplevel = 0
-			if bosslevel <= 3 then
-				bplevel = bosslevel
-			else
-				bplevel = 3
-			end
-			wanderer:GetAbilityByIndex(3):SetLevel(bplevel)
+			
 		end
 	local radbosses = FindUnitsInRadius(4, rad_dk_spawn, nil, 7500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 	local direbosses = FindUnitsInRadius(4, dire_dk_spawn, nil, 7500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
@@ -432,16 +434,20 @@ end
 			hero:SetBuyBackDisabledByReapersScythe(false)
 			hero:RemoveModifierByName("modifier_truesight")
 			if hero:GetTeamNumber() == 2 then
-				hero:Kill(nil, nil)
-				hero:RespawnUnit()
+				if hero:IsAlive() == true then
+					hero:Kill(nil, nil)
+					hero:RespawnUnit()
+				end
+				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
 				hero:RemoveModifierByName("modifier_truesight")
-				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
 				SendToConsole("dota_camera_center")
 			elseif hero:GetTeamNumber() == 3 then
-				hero:Kill(nil, nil)
-				hero:RespawnUnit()
+				if hero:IsAlive() == true then
+					hero:Kill(nil, nil)
+					hero:RespawnUnit()
+				end
+				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
 				hero:RemoveModifierByName("modifier_truesight")
-				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
 				SendToConsole("dota_camera_center")
 			end
 		end
@@ -479,6 +485,16 @@ end
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
+		
+		for r=1,5 do
+		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
+		r = r + 1
+		end
+		for d=1,5 do
+		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
+		d = d + 1
+		end
+		_G.invaderlevel = _G.invaderlevel + 1
 	end
 	end
 	
