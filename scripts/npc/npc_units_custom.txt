@@ -2203,8 +2203,9 @@
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_sand_king.vsndevts"
 	"ModelScale"		"3.2"
     "SoundSet"          "Hero_SandKing"          // Name of sound set.
-    "Level"           "0"
+    "Level"           "1"
     "UnitLabel"         "The Scarab"
+	"vscripts"           "sk_ai.lua"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -2537,6 +2538,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Invader"
+	"vscripts"           "invader_ai.lua"
     
     // Abilities
     //----------------------------------------------------------------
@@ -2596,10 +2598,10 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "450"     // Base health.
-    "StatusHealthRegen"     "7"     // Health regeneration rate.
-    "StatusMana"        "150"     // Base mana.
-    "StatusManaRegen"     "5"     // Mana regeneration rate.
+    "StatusHealth"        "1000"     // Base health.
+    "StatusHealthRegen"     "10"     // Health regeneration rate.
+    "StatusMana"        "300"     // Base mana.
+    "StatusManaRegen"     "10"     // Mana regeneration rate.
 
     // Team
     //----------------------------------------------------------------

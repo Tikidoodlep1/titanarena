@@ -278,6 +278,7 @@ end
 		if rsalive == false then
 			CreateUnitByName("npc_boss_scarab", rad_sk_spawn, true, nil, nil, 4):CreatureLevelUp(rad_sk_level)
 			rad_sk_level = rad_sk_level + 1
+			print(rad_sk_level.."Is SK's current level")
 		end
 		if rdalive == false then
 			CreateUnitByName("npc_boss_dragon_knight_1", rad_dk_spawn, true, nil, nil, 4):CreatureLevelUp(rad_dk_level)
@@ -485,14 +486,17 @@ end
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
-		
-		for r=1,5 do
-		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
-		r = r + 1
+		if badtitan == true then
+			for r=1,5 do
+			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
+			r = r + 1
+			end
 		end
-		for d=1,5 do
-		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
-		d = d + 1
+		if radtitan == true then
+			for d=1,5 do
+			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
+			d = d + 1
+			end
 		end
 		_G.invaderlevel = _G.invaderlevel + 1
 	end
