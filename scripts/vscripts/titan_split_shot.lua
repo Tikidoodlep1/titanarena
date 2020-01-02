@@ -25,7 +25,7 @@ local x = 1
 			if teamnum == 2 then
 				ParticleManager:CreateParticle("particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_splash_water_base_fxset.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 			else
-				ParticleManager:CreateParticle("particles/econ/items/necrolyte/necro_sullen_harvest/necro_sullen_harvest_scythe_model.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
+				ParticleManager:CreateParticle("particles/necro_split_shot_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 			end
 			ApplyDamage(damageTable)
 	x = x + 1
@@ -44,7 +44,7 @@ local x = 1
 				if teamnum == 2 then
 					ParticleManager:CreateParticle("particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_splash_water_base_fxset.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 				else
-					ParticleManager:CreateParticle("particles/econ/items/necrolyte/necro_sullen_harvest/necro_sullen_harvest_scythe_model.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
+					ParticleManager:CreateParticle("particles/necro_split_shot_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 				end
 				ApplyDamage(damageTable)
 				y = y + 1
