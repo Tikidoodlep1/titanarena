@@ -438,6 +438,8 @@ end
 				if hero:IsAlive() == true then
 					hero:Kill(nil, nil)
 					hero:RespawnUnit()
+				else
+					hero:RespawnUnit()
 				end
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
 				hero:RemoveModifierByName("modifier_truesight")
@@ -445,6 +447,8 @@ end
 			elseif hero:GetTeamNumber() == 3 then
 				if hero:IsAlive() == true then
 					hero:Kill(nil, nil)
+					hero:RespawnUnit()
+				else
 					hero:RespawnUnit()
 				end
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)

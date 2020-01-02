@@ -18,7 +18,7 @@ end
 return 1
 end 
 if thisEntity:GetAggroTarget() ~= nil then
-	if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .99 then
+	if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .75 then
 print("casting epicenter")
 	thisEntity:Stop()
 	thisEntity:CastAbilityOnTarget(thisEntity:GetAggroTarget(), ABILITY_epicenter , -1)
