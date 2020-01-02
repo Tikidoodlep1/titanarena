@@ -66008,7 +66008,7 @@
   {
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"	"insatiable_rage"
+	"AbilityTextureName"	"natures_attunement"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilitySpecial"
 	{
@@ -66052,7 +66052,7 @@
 		{
 			"Passive"	"1"
 			"IsHidden"	"0"
-			"TextureName"	"insatiable_rage"
+			"TextureName"	"natures_attunement"
 
 			"Properties"
 			{
@@ -66063,7 +66063,7 @@
 		{
 			"Passive"	"1"
 			"IsHidden"	"0"
-
+			"TextureName"	"natures_attunement_burned"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_stack" 
