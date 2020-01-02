@@ -65859,7 +65859,7 @@
 		"02"
 		{
 			"var_type"		"FIELD_INTEGER"
-			"radius"		"150 200 250 300"
+			"radius"		"250 300 350 400"
 		}
 	}
 	"Modifiers"
@@ -65896,7 +65896,7 @@
 		"02"
 		{
 			"var_type"		"FIELD_INTEGER"
-			"radius"		"150 200 250 300"
+			"radius"		"250 300 350 400"
 		}
 	}
 	"Modifiers"
