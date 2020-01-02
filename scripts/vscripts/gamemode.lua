@@ -86,9 +86,9 @@ function barebones:OnHeroInGame(hero)
 			DebugPrint("[BAREBONES] Bot hero "..hero:GetUnitName().." (re)spawned in the game.")
 			-- Set starting gold for bots
 			hero:SetGold(NORMAL_START_GOLD, false)
-			CreateUnitByName("npc_dota_courier", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeam()):SetControllableByPlayer(playerID, false)
-			local cour = Entities:FindByName(nil, "npc_dota_courier")
-			cour:UpgradeToFlyingCourier(true)
+			if hero:IsClone() == false then
+				CreateUnitByName("npc_dota_courier", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeam()):SetControllableByPlayer(playerID, false)
+			end
 		else
 			DebugPrint("[BAREBONES] OnHeroInGame running for a non-bot player!")
 			if not PlayerResource.PlayerData[playerID] then
@@ -124,9 +124,9 @@ function barebones:OnHeroInGame(hero)
 				local player = cmdplayer:GetAssignedHero()
 				local playerlocation = player:GetAbsOrigin()
 				local playerid = player:GetPlayerID()
-				CreateUnitByName("npc_dota_courier", playerlocation, true, player, player, player:GetTeam()):SetControllableByPlayer(playerid, false)
-				local cour = Entities:FindByName(nil, "npc_dota_courier")
-				cour:UpgradeToFlyingCourier(true)
+				if hero:IsClone() == false then
+					CreateUnitByName("npc_dota_courier", playerlocation, true, player, player, player:GetTeam()):SetControllableByPlayer(playerid, false)
+				end
 				-- Make sure that stuff above will not happen again for the player if some other hero spawns
 				-- for him for the first time during the game 
 				PlayerResource.PlayerData[playerID].already_set_hero = true
@@ -157,6 +157,11 @@ function barebones:OnGameInProgress()
 		end
 		return 1
 	end)
+	local couriers = Entities:FindAllByName("npc_dota_courier")
+	for _, cour in pairs(couriers) do
+		cour:AddNewModifier(cour, nil, "modifier_courier_flying", {duration=-1})
+		cour:SetBaseMoveSpeed(600)
+	end
 	_G.invaderlevel = 0
 	Timers:CreateTimer(30, function()
 	
@@ -357,11 +362,11 @@ end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if rHeroIncrementer <= GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 2 then
-						FindClearSpaceForUnit(hero, _G.arena1, false)
+					if hero:GetTeamNumber() == 2 and hero:IsClone() == false then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						hero:SetMana(hero:GetMaxMana())
 						hero:SetHealth(hero:GetMaxHealth())
+						FindClearSpaceForUnit(hero, _G.arena1, false)
 						SendToConsole("dota_camera_center")
 						rHeroIncrementer = rHeroIncrementer + 1
 						_G.DualArena1[i] = hero
@@ -369,39 +374,50 @@ end
 				end
 				if dHeroIncrementer <= GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 3 then
-						FindClearSpaceForUnit(hero, _G.arena1vs, false)
+					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						hero:SetMana(hero:GetMaxMana())
 						hero:SetHealth(hero:GetMaxHealth())
+						FindClearSpaceForUnit(hero, _G.arena1vs, false)
 						SendToConsole("dota_camera_center")
 						dHeroIncrementer = dHeroIncrementer + 1
 						_G.DualArenavs1[i] = hero
 					end
 				end
-					if dHeroIncrementer > GetTotalDualPlayers then
-					hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-						if hero:GetTeamNumber() == 3 then
-							hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
-							hero:SetHealth(hero:GetMaxHealth())
-							hero:SetMana(hero:GetMaxMana())
-							FindClearSpaceForUnit(hero, _G.arena2, false)
-							SendToConsole("dota_camera_center")
-							_G.DualArena2[i] = hero
-						end
+				if dHeroIncrementer > GetTotalDualPlayers then
+				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
+						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+						hero:SetHealth(hero:GetMaxHealth())
+						hero:SetMana(hero:GetMaxMana())
+						FindClearSpaceForUnit(hero, _G.arena2, false)
+						SendToConsole("dota_camera_center")
+						_G.DualArena2[i] = hero
 					end
-					if rHeroIncrementer > GetTotalDualPlayers then
-					hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-						if hero:GetTeamNumber() == 2 then
-							hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+				end
+				if rHeroIncrementer > GetTotalDualPlayers then
+				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+					if hero:GetTeamNumber() == 2 and hero:IsClone() == false then
+						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+						hero:SetHealth(hero:GetMaxHealth())
+						hero:SetMana(hero:GetMaxMana())
+						FindClearSpaceForUnit(hero, _G.arena2vs, false)
+						SendToConsole("dota_camera_center")
+						_G.DualArenavs2[i] = hero
+					end
+				end
+				if hero:IsRealHero() == true then
+					local clonename = hero:GetUnitName()
+					local originalclone = hero:GetAbsOrigin()
+					for i, hero in pairs(players) do
+						if hero:IsClone() == true and hero:GetUnitName() == clonename then
+							FindClearSpaceForUnit(hero, originalclone, false)
 							hero:SetHealth(hero:GetMaxHealth())
 							hero:SetMana(hero:GetMaxMana())
-							FindClearSpaceForUnit(hero, _G.arena2vs, false)
-							SendToConsole("dota_camera_center")
-							_G.DualArenavs2[i] = hero
 						end
 					end
 				end
+			end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then

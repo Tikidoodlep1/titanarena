@@ -66321,4 +66321,111 @@
 		}
 	}
   }
+  "dk_fire_forged_blade"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityTextureName"	"fire_blade_ability"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"burn_pct"					"2"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"burn_duration"				"1"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_rate"				"0.111111111"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_extra"				"10"
+		}
+	}
+	"Modifiers"
+		{
+			"burn_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackLanded"
+					{
+						"ApplyModifier"
+						{
+							"Target"	"TARGET"
+							"ModifierName"	"burn_damage"
+						}
+					}
+			}
+			"burn_damage"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"TextureName"	"fire_blade_ability"
+				"Duration"	"%burn_duration"
+				"ThinkInterval"	"%damage_rate"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%burn_pct"
+						"CurrentHealthPercentBasedDamage"	"1"
+					}
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"damage_extra"
+					}
+				}
+			}
+		}
+  }
+  "dk_undaunted"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"dk_undaunted"
+	"AbilityCastRange"		"2000"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"bonus_damage"	"70"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"bonus_armor"	"20"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_apply"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+			"TextureName"	"dk_undaunted"
+			"ThinkInterval"	"1"
+			"OnIntervalThink"
+			{
+				"RunScript"	
+				{
+					"ScriptFile"	"dk_undaunted"
+					"Function"	"Apply"
+				}
+			}
+		}
+	}
+  }
 }

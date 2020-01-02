@@ -665,7 +665,7 @@ function ExitDual(WinningTeam)
 		local game_time = GameRules:GetGameTime()
 		local current_gold
 		for _, players in ipairs(Heroes) do
-			if players:GetTeamNumber() == WinningTeam then
+			if players:GetTeamNumber() == WinningTeam and players:IsClone() == false then
 			ID = players:GetPlayerID()
 				amount = 750 * 1.85^(game_time/600)
 				current_gold = PlayerResource:GetGold(ID)
