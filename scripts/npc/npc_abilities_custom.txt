@@ -66066,7 +66066,7 @@
 
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%armor_stack" 
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_stack" 
 			}
 		}
 

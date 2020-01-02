@@ -9,19 +9,18 @@ local basedamage = caster:GetBaseDamageMax()
 local ability = keys.ability
 local trees = GridNav:GetAllTreesAroundPoint(caster:GetAbsOrigin(), 1000, true)
 
-for number,entity in pairs(trees) do
-
-if entity:IsStanding() == true then 
-		trees_alive = trees_alive + 1
-	print(trees_alive)
-	print(trees_dead)
-end
-if entity:IsStanding() == false then
-		trees_dead = trees_dead + 1
-
-end
-end
+	for _,entity in pairs(trees) do
+		if entity:IsStanding() == true then 
+			trees_alive = trees_alive + 1
+		end
+		trees_dead = 75 - trees_alive
+		if trees_dead <= 0 then
+			trees_dead = 0
+		end
+		if trees_alive >= 75 then
+			trees_alive = 75
+		end
+	end
 caster:SetModifierStackCount("modifier_natures_attunement_damage_stack", caster, trees_alive)
 caster:SetModifierStackCount("modifier_natures_attunement_armor_stack", caster, trees_dead)
-
 end
