@@ -3809,6 +3809,7 @@
 		"OnCastbar"					"0"
 		"HasScepterUpgrade"			"1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"MaxLevel"                      "6"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3824,7 +3825,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls"	"12 20 28 36"
+				"necromastery_max_souls"	"12 20 28 36 46"
 				"LinkedSpecialBonus"			"special_bonus_unique_nevermore_4"
 			}
 			"03"
@@ -3840,7 +3841,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls_scepter" "22 30 38 46"
+				"necromastery_max_souls_scepter" "22 30 38 46 56"
 				"RequiresScepter"			"1"
 			}			
 		}
@@ -3858,6 +3859,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"OnCastbar"					"0"
+		"MaxLevel"                      "6"
 		
 		
 		// Casting
@@ -3872,7 +3874,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"presence_armor_reduction"		"-4 -5 -6 -7"
+				"presence_armor_reduction"		"-4 -5 -6 -7 -8 -9"
 				"LinkedSpecialBonus"			"special_bonus_unique_nevermore_5"
 			}
 			"02"
@@ -3899,23 +3901,23 @@
 		"FightRecapLevel"				"2"
 		"HasScepterUpgrade"			"1"
 		"AbilitySound"					"Hero_Nevermore.RequiemOfSouls"
-
+		"MaxLevel"                      "4"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"1.67 1.67 1.67"
+		"AbilityCastPoint"				"1.67 1.67 1.67 1.67"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120 110 100"
+		"AbilityCooldown"				"120 110 100 90"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"80 120 160"
+		"AbilityDamage"					"80 120 160 220"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 175 200"
+		"AbilityManaCost"				"150 175 200 225"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3948,12 +3950,12 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"requiem_reduction_radius"	"700 700 700"
+				"requiem_reduction_radius"	"700 700 700 700"
 			}
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"requiem_soul_conversion"	"2 2 2"
+				"requiem_soul_conversion"	"2 2 2 2"
 			}
 			"07"
 			{
@@ -3968,7 +3970,7 @@
 			"09"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"requiem_line_speed"	"700 700 700"
+				"requiem_line_speed"	"700 700 700 700"
 			}
 			"10"
 			{
