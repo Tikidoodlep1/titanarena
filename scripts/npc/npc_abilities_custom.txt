@@ -138,6 +138,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"		
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Antimage.ManaBreak"
+		"MaxLevel"                      "6"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -151,12 +152,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_per_hit"			"28 40 52 64"
+				"mana_per_hit"			"28 40 52 64 78 90"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_per_hit_pct"		"1 2 3 4"
+				"mana_per_hit_pct"		"1 2 3 4 5 6"
 			}
 			"04"
 			{
@@ -186,6 +187,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5004"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -193,7 +195,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 12 9 6"
+		"AbilityCooldown"				"15 12 9 6 6 6"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -208,7 +210,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"925 1000 1075 1150"
+				"blink_range"			"925 1000 1075 1150 1300 1450"
 				"LinkedSpecialBonus"		"special_bonus_unique_antimage_3"
 			}
 			"02"
@@ -229,6 +231,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5005"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "6"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -237,7 +240,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spell_shield_resistance"		"20 30 40 50"
+				"spell_shield_resistance"		"20 30 40 50 60 75"
 				"LinkedSpecialBonus"		"special_bonus_unique_antimage_4"
 			}
 			"02"
@@ -261,6 +264,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                      "6"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -269,11 +273,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 11 7 3"
+		"AbilityCooldown"				"15 11 7 3 3 3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"45 50 55 60"		
+		"AbilityManaCost"				"45 50 55 60 55 50"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -313,6 +317,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Antimage.ManaVoid"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -322,11 +327,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70.0 70.0 70.0"
+		"AbilityCooldown"				"70.0 70.0 70.0 65.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 200 275"
+		"AbilityManaCost"				"125 200 275 325"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -339,7 +344,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"mana_void_damage_per_mana"		"0.8 0.95 1.1"
+				"mana_void_damage_per_mana"		"0.8 0.95 1.1 1.3"
 			}			
 			"02"
 			{
@@ -644,6 +649,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Bane.Enfeeble"
+		"MaxLevel"                      "6"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -652,12 +658,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"status_resistance_reduction"	"15 20 25 30"
+				"status_resistance_reduction"	"15 20 25 30 33 36"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"magic_resistance_reduction"	"4 8 12 16"
+				"magic_resistance_reduction"	"4 8 12 16 18 22"
 			}
 			"03"
 			{
@@ -683,6 +689,7 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Bane.BrainSap"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -691,12 +698,12 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 13 12 11"
+		"AbilityCooldown"				"14 13 12 11 10 9"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 115 140 165"
+		"AbilityManaCost"				"90 115 140 165 180 215"
 
 		
 		"AbilitySpecial"
@@ -704,7 +711,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"brain_sap_damage"				"100 200 300 400"
+				"brain_sap_damage"				"100 200 300 400 500 650"
 				"LinkedSpecialBonus"			"special_bonus_unique_bane_2"
 			}
 			"02"
@@ -741,6 +748,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Bane.FiendsGrip"
+		"MaxLevel"                      "4"
 
 
 		// Casting
@@ -752,12 +760,12 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"6.0 6.0 6.0"
-		"AbilityCooldown"				"120 110 100"
+		"AbilityCooldown"				"120 110 100 90"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 300 400"		
+		"AbilityManaCost"				"200 300 400 500"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -782,7 +790,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fiend_grip_damage"				"100 155 215"
+				"fiend_grip_damage"				"100 155 215 260"
 			}
 		}
 	}
@@ -802,20 +810,21 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Bane.Nightmare"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"425 500 575 650"
+		"AbilityCastRange"				"425 500 575 650 700"
 		"AbilityCastPoint"				"0.4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 19 16 13"
+		"AbilityCooldown"				"22 19 16 13 12 11"
 		"AbilityDuration"				"4.0 5.0 6.0 7.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"165 165 165 165"	
+		"AbilityManaCost"				"165 165 165 165 170 185"	
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -833,12 +842,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"4.0 5.0 6.0 7.0"
+				"duration"					"4.0 5.0 6.0 7.0 7.5 8"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"animation_rate"			"0.2 0.2 0.2 0.2"
+				"animation_rate"			"0.2 0.2 0.2 0.2 .2 .2"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -872,6 +881,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"hero_bloodseeker.bloodRage"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -879,7 +889,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9 8 7 6"
+		"AbilityCooldown"				"9 8 7 6 5 5"
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -896,29 +906,29 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"9 10 11 12"
+				"duration"					"9 10 11 12 13 14"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_increase_outgoing_pct"		"12 18 24 30"
+				"damage_increase_outgoing_pct"		"12 18 24 30 38 44"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_increase_incoming_pct"		"10 14 18 22"
+				"damage_increase_incoming_pct"		"10 14 18 22 26 32"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"health_bonus_pct"			"13 17 21 25"
+				"health_bonus_pct"			"13 17 21 25 30 36"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"health_bonus_creep_pct"	"13 17 21 25"
+				"health_bonus_creep_pct"	"13 17 21 25 30 35"
 			}
 			"06"
 			{
@@ -947,6 +957,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"hero_bloodseeker.bloodRite"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -959,7 +970,7 @@
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"70 80 90 100 110 130"
 
 
 		// Special
@@ -974,12 +985,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"3 4 5 6"
+				"silence_duration"			"3 4 5 6 6.5 7"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"125 175 225 275"
+				"damage"					"125 175 225 275 315 370"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_2"
 			}
 			"04"
@@ -1006,6 +1017,7 @@
 		"ID"					"5017"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"                      "6"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -1019,13 +1031,13 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"12 24 36 48"
+				"bonus_movement_speed"		"12 24 36 48 55"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"30 45 60 75"
+				"bonus_attack_speed"		"30 45 60 75 80 84"
 			}		
 			"04"
 			{
@@ -1069,6 +1081,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"hero_bloodseeker.rupture"
+		"MaxLevel"                      "4"
 
 		"HasScepterUpgrade"			"1"
 
@@ -1083,7 +1096,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 225 250"		
+		"AbilityManaCost"				"200 225 250 300"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -1100,12 +1113,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"10 11 12"
+				"duration"					"10 11 12 14"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_damage_pct"		"30 45 60"
+				"movement_damage_pct"		"30 45 60 75"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
