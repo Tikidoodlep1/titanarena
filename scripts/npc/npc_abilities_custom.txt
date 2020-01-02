@@ -3123,24 +3123,25 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Morphling.Waveform"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCastRange"				"700 800 900 1000 1100 1250"
 		"AbilityCastPoint"				"0.25"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 17 14 11"
+		"AbilityCooldown"				"20 17 14 11 11 10"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"75 150 225 300"
+		"AbilityDamage"					"75 150 225 300 375 500"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 155 160 165"
+		"AbilityManaCost"				"150 155 160 165 175 200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3159,7 +3160,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"20 17 14 11"
+				"charge_restore_time"	"20 17 14 11 10 9"
 			}
 			"04"
 			{
@@ -3187,10 +3188,11 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Morphling.AdaptiveStrike"
 		"LinkedAbility"					"morphling_adaptive_strike_str"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900"
+		"AbilityCastRange"				"600 700 800 900 1100 1250"
 		"AbilityCastPoint"				"0.25"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
@@ -3213,7 +3215,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_base"					"70 80 90 100"
+				"damage_base"					"70 80 90 100 120 150"
 			}
 			"02"
 			{
@@ -3224,7 +3226,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_max"					"1.0 1.5 2.0 2.5"
+				"damage_max"					"1.0 1.5 2.0 2.5 3 3.7"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
@@ -3257,10 +3259,11 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Morphling.AdaptiveStrike"
 		"LinkedAbility"					"morphling_adaptive_strike_agi"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900"
+		"AbilityCastRange"				"600 700 800 900 1000 1100"
 		"AbilityCastPoint"				"0.25"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
@@ -3288,7 +3291,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"stun_max"						"1.5 2.0 2.5 3.0"
+				"stun_max"						"1.5 2.0 2.5 3.0 3.5 4"
 			}
 			"03"
 			{
@@ -3322,6 +3325,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5054"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"                      "6"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3330,7 +3334,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attributes"		"3 5 7 9"
+				"bonus_attributes"		"3 5 7 9 10 11"
 			}
 		}
 	}
@@ -3346,6 +3350,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"LinkedAbility"					"morphling_morph_str"
 		"AbilityCastAnimation"			"ACT_INVALID"
+		"MaxLevel"                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -3363,17 +3368,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"morph_cooldown"		"1.0 0.25 0.1 0.04"
+				"morph_cooldown"		"1.0 0.25 0.15 0.1 0.05 .03"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attributes"		"3 5 7 9"
+				"bonus_attributes"		"3 5 7 9 10 11"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"morph_rate_tooltip"	"1 4 10 25"
+				"morph_rate_tooltip"	"1 4 10 25 40 55"
 			}
 		}
 	}
@@ -3389,6 +3394,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"LinkedAbility"					"morphling_morph_agi"
  		"AbilityCastAnimation"			"ACT_INVALID"
+ 		"MaxLevel"                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -3406,17 +3412,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"morph_cooldown"		"1.0 0.25 0.1 0.04"
+				"morph_cooldown"		"1.0 0.25 0.15 0.1 .05 .03"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attributes"		"3 5 7 9"
+				"bonus_attributes"		"3 5 7 9 10 11"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"morph_rate_tooltip"	"1 4 10 25"
+				"morph_rate_tooltip"	"1 4 10 25 40 55"
 			}
 		}
 	}
@@ -3436,6 +3442,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Morphling.Replicate"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                      "4"
 
         "HasScepterUpgrade"			"1"
 
@@ -3447,11 +3454,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"160 100 40"
+		"AbilityCooldown"				"160 100 40 35"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"		
+		"AbilityManaCost"				"50 50 50 75"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3496,6 +3503,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                      "4"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -3520,6 +3528,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3542,24 +3551,24 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"illusion_damage_out_pct"		"-50 -50 -50"
+				"illusion_damage_out_pct"		"-50 -50 -50 -50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"tooltip_illusion_damage_out_pct"		"50 50 50"
+				"tooltip_illusion_damage_out_pct"		"50 50 50 50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"illusion_incoming_dmg_pct_tooltip"		"100 100 100"
+				"illusion_incoming_dmg_pct_tooltip"		"100 100 100 100"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"illusion_damage_in_pct"		"0 0 0"
+				"illusion_damage_in_pct"		"0 0 0 0"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"05"
@@ -3591,6 +3600,7 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Nevermore.Shadowraze"
 		"LinkedAbility"					"nevermore_shadowraze2"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3614,7 +3624,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"shadowraze_damage"	"90 160 230 300"	
+				"shadowraze_damage"	"90 160 230 300 370 470"	
 				"LinkedSpecialBonus"	"special_bonus_unique_nevermore_2"	
 			}
 			"02"
@@ -3635,7 +3645,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stack_bonus_damage" "50 60 70 80"
+				"stack_bonus_damage" "50 60 70 80 90 100"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
@@ -3661,6 +3671,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"LinkedAbility"					"nevermore_shadowraze3"
+		"MaxLevel"                      "6"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3684,7 +3695,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"shadowraze_damage"		"90 160 230 300"	
+				"shadowraze_damage"		"90 160 230 300 370 470"	
 				"LinkedSpecialBonus" "special_bonus_unique_nevermore_2"	
 			}
 			"02"
@@ -3705,7 +3716,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stack_bonus_damage" "50 60 70 80"
+				"stack_bonus_damage" "50 60 70 80 90 100"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
@@ -3731,6 +3742,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"LinkedAbility"					"nevermore_shadowraze1"
+		"MaxLevel"                      "6"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3753,7 +3765,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"shadowraze_damage"	"90 160 230 300"		
+				"shadowraze_damage"	"90 160 230 300 370 470"		
 				"LinkedSpecialBonus" "special_bonus_unique_nevermore_2"	
 			}
 			"02"
@@ -3774,7 +3786,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stack_bonus_damage" "50 60 70 80"
+				"stack_bonus_damage" "50 60 70 80 90 100"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"06"
