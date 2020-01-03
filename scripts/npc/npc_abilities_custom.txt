@@ -66004,6 +66004,74 @@
 		}
 	}
   }
+    "wanderer_natures_attunement"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"insatiable_rage"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"damage_stack"	"1.5"
+		}
+
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"max_stacks"	"75"
+		}
+		"03"
+		{
+			"var_type"     "FIELD_FLOAT"
+			"armor_stack" "1.5"
+
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_apply_natures_attunement_damage_stacks"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"ThinkInterval"   "2"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"wanderer_natures_attunement.lua"
+					"Function"		"modifier_apply_natures_attunement_stacks"
+				}
+			}
+
+		}
+
+		"modifier_natures_attunement_damage_stack"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+			"TextureName"	"insatiable_rage"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%damage_stack" 
+			}
+		}
+		"modifier_natures_attunement_armor_stack"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%armor_stack" 
+			}
+		}
+
+	}
+}
   "wanderer_blood_pact"
   {
 	"BaseClass"				"ability_datadriven"

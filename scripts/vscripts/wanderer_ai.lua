@@ -14,7 +14,6 @@ local low_x =  -13113.2
 local high_x = 13227.8
 local low_y = -4551.04
 local high_y = 4272.83
-print("wander has no target")
 local go_to_x = RandomInt(low_x,high_x)
 local go_to_y = RandomInt(low_y,high_y)
 thisEntity:MoveToPositionAggressive(Vector(go_to_x,go_to_y,281))
@@ -22,7 +21,7 @@ return 2
 	end 
 if thisEntity:GetAggroTarget() ~= nil then
 	if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .50 then
-print("casting ult")
+
 	thisEntity:Stop()
 	thisEntity:CastAbilityOnTarget(thisEntity:GetAggroTarget(), ABILITY_blood_pact , -1)
 

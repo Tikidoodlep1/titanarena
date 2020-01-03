@@ -2088,7 +2088,7 @@
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_blood_seeker.vsndevts"
 	"ModelScale"		"3.2"
     "SoundSet"          "Hero_BloodSeeker"          // Name of sound set.
-    "Level"           "0"
+    "Level"           "1"
     "UnitLabel"         "The Wanderer"
     "vscripts"                    "wanderer_ai.lua"
 	
@@ -2101,7 +2101,7 @@
     "Ability4"          ""      // Ability 4.
     "Ability5"          ""      // Ability 5.
     "Ability6"          "wanderer_blood_pact"      // Ability 6 - Extra.
-    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability7"          "wanderer_natures_attunement"      // Ability 7 - Extra.
     "Ability8"          ""      // Ability 8 - Extra.
 
     // Armor
