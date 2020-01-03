@@ -14295,19 +14295,20 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Dazzle.Poison_Touch"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 600 700 800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"27 24 21 18"
+		"AbilityCooldown"				"27 24 21 18 15 15"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 120 130 140"
+		"AbilityManaCost"				"110 120 130 140 150 180"
 				
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -14320,33 +14321,33 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"start_radius"				"200 200 200 200"
+				"start_radius"				"200 200 200 200 200 200"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"end_radius"				"300 300 300 300"
+				"end_radius"				"300 300 300 300 300 300"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"end_distance"				"600 700 800 900"
+				"end_distance"				"600 700 800 900 1000 1200"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"targets"					"2 4 6 8"
+				"targets"					"2 4 6 8 10 13"
 			}
 			"05"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"16 28 40 52"
+				"damage"			"16 28 40 52 64 80"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_3"
 			}
 			"06"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"slow"			"-14 -16 -18 -20"
+				"slow"			"-14 -16 -18 -20 -22 -25"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_1"
 			}
 			"07"
@@ -14357,7 +14358,7 @@
 			"08"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"duration"		"4 5 6 7"
+				"duration"		"4 5 6 7 8 9"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -14378,18 +14379,19 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Dazzle.Shallow_Grave"
+		"MaxLevel"                      "6"
 
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_SHALLOW_GRAVE"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"550 700 850 1000"
+		"AbilityCastRange"				"550 700 850 1000 1150 1450"
 		"AbilityCastPoint"				"0.4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 46 32 18"
+		"AbilityCooldown"				"60 46 32 18 18 18"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -14422,19 +14424,20 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Dazzle.Shadow_Wave"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 12 10 8"
+		"AbilityCooldown"				"14 12 10 8 8 8"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 100 110 120"
+		"AbilityManaCost"				"90 100 110 120 130 160"
 		
 			
 		// Special
@@ -14454,18 +14457,18 @@
 			"03"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"max_targets"		"3 4 5 6"
+				"max_targets"		"3 4 5 6 7 8"
 			}
 			"04"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"max_targets_scepter"		"6 7 8 9"
+				"max_targets_scepter"		"6 7 8 9 10 11"
 				"RequiresScepter"			"1"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"80 100 120 140"
+				"damage"				"80 100 120 140 160 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_2"
 			}
 			"06"
@@ -14492,21 +14495,22 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Dazzle.Weave"
+		"MaxLevel"                      "4"
 
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"2000"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40 40 40"
+		"AbilityCooldown"				"40 40 40 40"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 100 100"
+		"AbilityManaCost"				"100 100 100 100"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -14515,7 +14519,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"575 575 575"
+				"radius"					"575 575 575 575"
 			}
 			"02"
 			{	
@@ -14525,7 +14529,7 @@
 			"03"
 			{	
 				"var_type"					"FIELD_FLOAT"
-				"armor_per_second"			"0.75 1 1.25"
+				"armor_per_second"			"0.75 1 1.25 1.75"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_4"
 			}
 			"04"
@@ -14550,6 +14554,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Dazzle.Weave"
+		"MaxLevel"                      "4"
 
 		
 		// Casting
@@ -14564,12 +14569,12 @@
 			"01"
 			{	
 				"var_type"					"FIELD_INTEGER"
-				"cooldown_reduction"		"26 38 50"
+				"cooldown_reduction"		"26 38 50 60"
 			}
 			"02"
 			{	
 				"var_type"					"FIELD_FLOAT"
-				"armor_reduction"			"2 2.25 2.5"
+				"armor_reduction"			"2 2.25 2.5 3"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_4"
 			}
 			"03"
