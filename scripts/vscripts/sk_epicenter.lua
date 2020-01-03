@@ -4,7 +4,8 @@ Timers:CreateTimer(0, function()
 local caster = keys.caster
 local cability = keys.ability
 local team = caster:GetTeamNumber()
-local targets = FindUnitsInRadius(team, caster:GetAbsOrigin(), nil, 800, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+print("casters team number is "..team)
+local targets = FindUnitsInRadius(team, caster:GetAbsOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 for _,target in pairs(targets) do
 	local position = RandomVector(150)
 	local slocation = target:GetAbsOrigin() + position
@@ -13,7 +14,7 @@ for _,target in pairs(targets) do
 	ParticleManager:SetParticleControl(effectIndex,0,slocation)
 	ParticleManager:SetParticleControl(effectIndex,1,slocation)
 	print("Set epicenter particles")
-	local e = FindUnitsInRadius(team, slocation, nil, 200, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+	local e = FindUnitsInRadius(team, slocation, nil, 200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		for _,ent in pairs(e) do
 			if ent:IsRealHero() == true then
 				local dtable = {victim = ent, attacker = caster, damage = 175, damage_type = DAMAGE_TYPE_MAGICAL, ability = cability}
