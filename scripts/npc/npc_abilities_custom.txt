@@ -10602,23 +10602,24 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Necrolyte.DeathPulse"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8 7 6 5"
+		"AbilityCooldown"				"8 7 6 5 4 4"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 150 200 250"
+		"AbilityDamage"					"100 150 200 250 300 375"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 130 160 190"
+		"AbilityManaCost"				"100 130 160 190 220 265"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -10632,7 +10633,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal"					"60 80 100 120"
+				"heal"					"60 80 100 120 140 170"
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
 			}
 			"03"
@@ -10655,7 +10656,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"                      "6"	
 
 		"HasScepterUpgrade"			"1"	
 		
@@ -10670,18 +10672,18 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"aura_damage"		"0.6 1.2 1.8 2.4" 
+				"aura_damage"		"0.6 1.2 1.8 2.4 3 4" 
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_2"
 			} 	
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"health_regen"	"3.5 4.5 5.5 6.5"
+				"health_regen"	"3.5 4.5 5.5 6.5 7.5 9"
 			}		
 			"04"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"mana_regen"	"3.5 4.5 5.5 6.5"
+				"mana_regen"	"3.5 4.5 5.5 6.5 6.5 9"
 			}	
 			"05"
 			{
@@ -10716,6 +10718,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Necrolyte.SpiritForm.Cast"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"                      "6"
 
 		"HasScepterUpgrade"			"1"
 
@@ -10725,7 +10728,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28 24 20 16"
+		"AbilityCooldown"				"28 24 20 16 14 12"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -10737,7 +10740,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"duration"		"3 3.5 4 4.5"
+				"duration"		"3 3.5 4 4.5 5 5.75"
 			}				
 			"02"
 			{
@@ -10747,7 +10750,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_INTEGER"
-				"movement_speed"			"6 12 18 24"
+				"movement_speed"			"6 12 18 24 30 36"
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_3"
 			}			
 			"04"
@@ -10782,7 +10785,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0"
 	}
 
 
@@ -10803,6 +10806,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Necrolyte.ReapersScythe.Target"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -10815,7 +10819,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 350 500"		
+		"AbilityManaCost"				"200 350 500 750"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -10832,17 +10836,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_per_health"			"0.7 0.8 0.9"
+				"damage_per_health"			"0.7 0.8 0.9 1.1"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.5 1.5 1.5"
+				"stun_duration"				"1.5 1.5 1.5 1.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"respawn_constant"		"15 25 35"
+				"respawn_constant"		"15 25 35 40"
 			}
 		}
 	}
@@ -10862,6 +10866,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Warlock.FatalBonds"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -10872,11 +10877,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"36 30 24 18"
+		"AbilityCooldown"				"36 30 24 18 16 14"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
+		"AbilityDamage"					"0 0 0 0 0 0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -10898,7 +10903,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_share_percentage"	"12 16 20 24"
+				"damage_share_percentage"	"12 16 20 24 28 36"
 				"LinkedSpecialBonus"		"special_bonus_unique_warlock_5"
 			}
 			"03"
@@ -10930,10 +10935,11 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Warlock.ShadowWordCastGood"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -10941,15 +10947,15 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"15 25 35 45"
+		"AbilityDamage"					"15 25 35 45 55 75"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 130 140 150"		
+		"AbilityManaCost"				"120 130 140 150 160 175"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"450 550 650 750"
+		"AbilityCastRange"				"450 550 650 750 850 975"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -10985,23 +10991,24 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Warlock.Upheaval"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.5"
 		"AbilityChannelTime"			"16.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"50 46 42 38"
+		"AbilityCooldown"				"50 46 42 38 34 30"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
+		"AbilityDamage"					"0 0 0 0 0 0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 90 110 130"		
+		"AbilityManaCost"				"70 90 110 130 150 175"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -11014,12 +11021,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"650 650 650 650"
+				"aoe"					"650 650 650 650 700 750"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_rate_duration"	"12.5 6.5 4.5 3.5"
+				"slow_rate_duration"	"12.5 6.5 4.5 3.5 3 2.5"
 			}
 			"03"
 			{
@@ -11051,10 +11058,11 @@
 		"FightRecapLevel"				"2"
 		"HasScepterUpgrade"			"1"
 		"AbilitySound"					"Hero_Warlock.RainOfChaos"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -11063,7 +11071,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250 375 500"		
+		"AbilityManaCost"				"250 375 500 650"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -11080,7 +11088,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"golem_duration"			"60 60 60"
+				"golem_duration"			"60 60 60 60"
 			}
 			"02"
 			{
@@ -11095,23 +11103,23 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_hp_tooltip"			"1000 2000 3000"
+				"golem_hp_tooltip"			"1000 2000 3000 4500"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_dmg_tooltip"			"100 150 200"
+				"golem_dmg_tooltip"			"100 150 200 275"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_armor_tooltip"		"6 9 12"
+				"golem_armor_tooltip"		"6 9 12 15 18"
 				"LinkedSpecialBonus"		"special_bonus_unique_warlock_2"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_regen_tooltip"		"25 50 75"
+				"golem_regen_tooltip"		"25 50 75 115"
 			}
 			"08"
 			{
@@ -11122,13 +11130,13 @@
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_hp_tooltip_scepter"	"750 1500 2250"
+				"golem_hp_tooltip_scepter"	"750 1500 2250 2700"
 				"RequiresScepter"		"1"
 			}
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"golem_dmg_tooltip_scepter"	"75 110 150"
+				"golem_dmg_tooltip_scepter"	"75 110 150 175"
 				"RequiresScepter"		"1"
 			}
 			"11"
@@ -11159,6 +11167,7 @@
 		"MaxLevel"						"3"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"                      "4"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -11167,12 +11176,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 50 60"
+				"damage"				"40 50 60 75"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"			"300 300 300"
+				"radius"			"300 300 300 300"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -11191,6 +11200,7 @@
 		"MaxLevel"						"3"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"                      "4"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -11204,7 +11214,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"30 50 70"
+				"aura_damage"			"30 50 70 95"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
