@@ -12765,11 +12765,12 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_PhantomAssassin.Dagger.Cast"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"525 750 975 1200"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"525 750 975 1200 1400 1600"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -12796,7 +12797,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.75 2.5 3.25 4"
+				"duration"				"1.75 2.5 3.25 4 4.5 5"
 			}
 			"04"
 			{
@@ -12806,12 +12807,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_factor"			"-75 -60 -45 -30"
+				"attack_factor"			"-75 -60 -45 -30 -20 -15"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_factor_tooltip"	"25 40 55 70"
+				"attack_factor_tooltip"	"25 40 55 70 85 95"
 			}
 
 		}
@@ -12832,19 +12833,20 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_PhantomAssassin.Strike.Start"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000 1000 1000 1000"
+		"AbilityCastRange"				"1000 1000 1000 1000 1000 1000"
 		"AbilityCastPoint"				"0.25"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11 9 7 5"
+		"AbilityCooldown"				"11 9 7 5 4 4"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"
+		"AbilityManaCost"				"35 40 45 50 55 60"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -12853,7 +12855,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"100 125 150 175"
+				"bonus_attack_speed"	"100 125 150 175 200 240"
 			}
 			
 			"02"
@@ -12878,10 +12880,11 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 55 50 45"
+		"AbilityCooldown"				"60 55 50 45 40 35"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -12902,7 +12905,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_evasion"				"20 30 40 50"
+				"bonus_evasion"				"20 30 40 50 60 75"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_3"
 			}
 			"02"
@@ -12944,6 +12947,7 @@
 		"AbilitySound"					"Hero_PhantomAssassin.CoupDeGrace"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"MaxLevel"                      "4"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -12958,7 +12962,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"200 325 450"
+				"crit_bonus"				"200 325 450 575"
 			}
 		}
 	}
@@ -12976,14 +12980,15 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_TemplarAssassin.Refraction"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17.0 17.0 17.0 17.0"
+		"AbilityCooldown"				"17.0 17.0 17.0 17.0 17.0 17.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -12996,23 +13001,23 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"instances"					"3 4 5 6"
+				"instances"					"3 4 5 6 7 8"
 				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"25 50 75 100"
+				"bonus_damage"				"25 50 75 100 125 150"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_threshold"			"5 5 5 5"
+				"damage_threshold"			"5 5 5 5 5 5"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"17.0 17.0 17.0 17.0"
+				"duration"					"17.0 17.0 17.0 17.0 17.0 17.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -13031,10 +13036,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_TemplarAssassin.Meld"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -13043,7 +13049,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 50 50 50"
+		"AbilityManaCost"				"50 50 50 50 50 50"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -13052,12 +13058,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"50 100 150 200"
+				"bonus_damage"				"50 100 150 200 250 325"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"-2 -4 -6 -8"
+				"bonus_armor"				"-2 -4 -6 -8 -10 -12"
 				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_2"
 			}
 		}
@@ -13075,6 +13081,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"                      "6"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -13083,12 +13090,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_range"		"60 120 180 240"
+				"bonus_attack_range"		"60 120 180 240 300 360"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_spill_range"		"590 630 670 710"
+				"attack_spill_range"		"590 630 670 710 760 830"
 			}
 			"03"
 			{
@@ -13118,6 +13125,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_TemplarAssassin.Trap"
 		"HasScepterUpgrade"				"1"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -13127,11 +13135,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11.0 8.0 5.0"
+		"AbilityCooldown"				"11.0 8.0 5.0 5.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"15 15 15"
+		"AbilityManaCost"				"15 15 15 15"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -13140,13 +13148,13 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_traps"					"5 8 11"
+				"max_traps"					"5 8 11 15"
 				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_6"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"trap_fade_time"			"2.0 2.0 2.0"
+				"trap_fade_time"			"2.0 2.0 2.0 2.0"
 			}
 			"03"
 			{
@@ -13166,7 +13174,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350"
+				"trap_bonus_damage"			"250 300 350 450"
 				"LinkedSpecialBonus"	"special_bonus_unique_templar_assassin_3"
 			}
 			"07"
@@ -13191,6 +13199,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"3"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -13226,7 +13235,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350"
+				"trap_bonus_damage"			"250 300 350 450"
 			}
 			"04"
 			{
@@ -13259,6 +13268,7 @@
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -13293,7 +13303,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350"
+				"trap_bonus_damage"			"250 300 350 450"
 				"RequiresScepter"		"1"
 			}
 			"04"
@@ -13343,6 +13353,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"3"
+		"MaxLevel"                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -13373,7 +13384,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trap_bonus_damage"			"250 300 350"
+				"trap_bonus_damage"			"250 300 350 450"
 			}
 			"04"
 			{
@@ -13409,10 +13420,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"hero_viper.poisonAttack.Cast"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 640 680 720"
+		"AbilityCastRange"				"600 640 680 720 800 900"
 		"AbilityCastPoint"				"0"
 
 		// Time		
@@ -13421,7 +13433,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
+		"AbilityDamage"					"0 0 0 0 0 0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -13439,17 +13451,17 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage"						"4 8 12 16"
+				"damage"						"4 8 12 16 20 26"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed"			"6 8 10 12"
+				"movement_speed"			"6 8 10 12 14 16"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"magic_resistance"			"3 5 7 9"
+				"magic_resistance"			"3 5 7 9 11 15"
 			}
 			"05"
 			{
@@ -13459,7 +13471,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_range"			"25 65 105 145"
+				"bonus_range"			"25 65 105 145 185 235"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -13476,6 +13488,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -13488,7 +13501,7 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"70 80 90 100 110 135"
 		
 	
 		// Special
@@ -13498,12 +13511,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"min_damage"			"15 20 25 30"
+				"min_damage"			"15 20 25 30 35 50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"60 80 100 120"
+				"max_damage"			"60 80 100 120 140 175"
 			}
 			"03"
 			{
@@ -13542,6 +13555,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"hero_viper.CorrosiveSkin"
+		"MaxLevel"                      "6"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -13559,19 +13573,19 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"8 16 24 32"
+				"bonus_attack_speed"		"8 16 24 32 40 52"
 				"LinkedSpecialBonus"	"special_bonus_unique_viper_1"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_magic_resistance"	"10 15 20 25"
+				"bonus_magic_resistance"	"10 15 20 25 30 35"
 				"LinkedSpecialBonus"	"special_bonus_unique_viper_1"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"8 16 24 32"
+				"damage"					"8 16 24 32 40 52"
 				"LinkedSpecialBonus"	"special_bonus_unique_viper_1"
 			}
 			"05"
@@ -13601,22 +13615,23 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"hero_viper.viperStrike"
+		"MaxLevel"                      "4"
 
 		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"50 40 30"
+		"AbilityCooldown"				"50 40 30 25"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 175 250"
+		"AbilityManaCost"				"125 175 250 325"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -13630,23 +13645,23 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 100 145"
+				"damage"				"60 100 145 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_viper_2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"-40 -60 -80"
+				"bonus_movement_speed"	"-40 -60 -80 -90"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"-40 -60 -80"
+				"bonus_attack_speed"	"-40 -60 -80 -90"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_scepter"		"125 125 125"
+				"mana_cost_scepter"		"125 125 125 125"
 				"RequiresScepter"		"1"
 			}
 			"06"
