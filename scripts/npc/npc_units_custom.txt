@@ -2203,7 +2203,7 @@
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_sand_king.vsndevts"
 	"ModelScale"		"3.2"
     "SoundSet"          "Hero_SandKing"          // Name of sound set.
-    "Level"           "1"
+    "Level"           "0"
     "UnitLabel"         "The Scarab"
 	"vscripts"           "sk_ai.lua"
 	
@@ -2286,7 +2286,7 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
-	"UseNeutralCreepBehavior" 	"1"
+	"UseNeutralCreepBehavior" 	"0"
 	
 	//Creature Data
 	//----------------------------------------------------------------

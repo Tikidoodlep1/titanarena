@@ -34,6 +34,6 @@ if distance_from_target >= 750 then
 	thisEntity:SetAggoTarget(nil)
 return .1
 end
-
+return .1
 end
 end
