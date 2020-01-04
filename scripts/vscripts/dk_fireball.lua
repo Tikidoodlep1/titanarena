@@ -10,7 +10,7 @@ ParticleManager:SetParticleControl(effectIndex,5,target:GetAbsOrigin() + Vector(
 ParticleManager:SetParticleControl(effectIndex,6,target:GetAbsOrigin() + Vector(100, 0, 0))
 ParticleManager:SetParticleControl(effectIndex,7,target:GetAbsOrigin() + Vector(0, 100, 0))
 ParticleManager:SetParticleControl(effectIndex,8,target:GetAbsOrigin() + Vector(-100, 0, 0))
-print("Particles Set")
+Timers:CreateTimer(1, function()
 local pos1 = Vector(200, 0, 0)
 local pos2 = Vector(-200, 0, 0)
 local pos3 = Vector(0, 200, 0)
@@ -20,7 +20,7 @@ local hits = FindUnitsInRadius(2, pos, nil, 150, 3, 63, 0, 0, false)
 for _, targets in ipairs(hits) do
 local damagetable = {victim = targets,
 	attacker = caster,
-	damage = caster:GetAttackDamage(),
+	damage = (caster:GetAttackDamage()/2),
 	damage_type = DAMAGE_TYPE_PHYSICAL,}
 ApplyDamage(damagetable)
 end
@@ -29,7 +29,7 @@ hits = FindUnitsInRadius(2, pos, nil, 150, 3, 63, 0, 0, false)
 for _, targets in ipairs(hits) do
 local damagetable = {victim = targets,
 	attacker = caster,
-	damage = caster:GetAttackDamage(),
+	damage = caster:(GetAttackDamage()/2),
 	damage_type = DAMAGE_TYPE_PHYSICAL,}
 ApplyDamage(damagetable)
 end
@@ -38,7 +38,7 @@ hits = FindUnitsInRadius(2, pos, nil, 150, 3, 63, 0, 0, false)
 for _, targets in ipairs(hits) do
 local damagetable = {victim = targets,
 	attacker = caster,
-	damage = caster:GetAttackDamage(),
+	damage = (caster:GetAttackDamage()/2),
 	damage_type = DAMAGE_TYPE_PHYSICAL,}
 ApplyDamage(damagetable)
 end
@@ -47,8 +47,10 @@ hits = FindUnitsInRadius(2, pos, nil, 150, 3, 63, 0, 0, false)
 for _, targets in ipairs(hits) do
 local damagetable = {victim = targets,
 	attacker = caster,
-	damage = caster:GetAttackDamage(),
+	damage = (caster:GetAttackDamage()/2),
 	damage_type = DAMAGE_TYPE_PHYSICAL,}
 ApplyDamage(damagetable)
 end
+ParticleManager:DestroyParticle(effectIndex, true)
+end)
 end

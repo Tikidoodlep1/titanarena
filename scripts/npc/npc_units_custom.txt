@@ -2316,7 +2316,7 @@
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
 	"ModelScale"		"3.2"
     "SoundSet"          "Hero_DragonKnight"          // Name of sound set.
-    "Level"           "0"
+    "Level"           "1"
     "UnitLabel"         "Ophidian Executioner"
 	
     // Abilities
@@ -2429,7 +2429,7 @@
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
 	"ModelScale"		"2"
     "SoundSet"          "Hero_DragonKnight"          // Name of sound set.
-    "Level"           "0"
+    "Level"           "1"
     "UnitLabel"         "Ophidian Executioner"
 	
     // Abilities
