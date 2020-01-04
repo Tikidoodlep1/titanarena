@@ -2427,7 +2427,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           	"models/items/dragon_knight/legacy_of_the_winterwyrm_form_of_the_winterwyrm/legacy_of_the_winterwyrm_form_of_the_winterwyrm.vmdl"  // Model.
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
-	"ModelScale"		"3.2"
+	"ModelScale"		"2"
     "SoundSet"          "Hero_DragonKnight"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Ophidian Executioner"
@@ -2438,12 +2438,12 @@
     "Ability1"          "dk_fireball"     // Ability 1.
     "Ability2"          "Unplanned"      // Ability 2.
     "Ability3"          "boss_resistance"      // Ability 3.
-    "Ability4"          "dk_revert"      // Ability 4.
+    "Ability4"          ""      // Ability 4.
     "Ability5"          ""      // Ability 5.
     "Ability6"          "Unplanned"      // Ability 6 - Extra.
     "Ability7"          ""      // Ability 7 - Extra.
     "Ability8"          ""      // Ability 8 - Extra.
-	//dk_revert should be hidden and give him a 2 minute modifier that, if he takes no damage from heroes, he reverts back to his original form
+	
 	
     // Armor
     //----------------------------------------------------------------
@@ -2514,7 +2514,7 @@
     // Bots
     //----------------------------------------------------------------
     "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
-	"UseNeutralCreepBehavior" 	"1"
+	"UseNeutralCreepBehavior" 	"0"
 	
 	//Creature Data
 	//----------------------------------------------------------------

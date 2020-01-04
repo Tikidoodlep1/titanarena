@@ -10,12 +10,12 @@ end
 
 function cast()
 
-    if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .99 then
+    if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .75 then
 print("casting epicenter")
     thisEntity:Stop()
     thisEntity:CastAbilityOnTarget(thisEntity:GetAggroTarget(), ABILITY_epicenter , -1)
 
-return 21 
+return 21
     end
     if thisEntity:GetAggroTarget() ~= nil then
 local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()

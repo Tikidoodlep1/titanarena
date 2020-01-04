@@ -66496,4 +66496,111 @@
 		}
 	}
   }
+  "dk_reincarnation"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"dk_reincarnation"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"stun_duration"	"4"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"reincarnation_delay"	"2"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_transform"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"dk_reincarnation.lua"
+					"Function"		"TransformDK"
+				}
+				"AttachEffect"
+				{
+					"EffectName"            "generic_stunned"
+					"EffectAttachType"      "follow_overhead"
+					"Duration"              "%stun_duration"
+					"OverrideAnimation"     "ACT_DOTA_DISABLED"
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"800"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_BOTH"
+						"Types"		"DOTA_UNIT_TARGET_HERO"
+					}
+					"States"
+					{
+						"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+					}  
+				}
+			}
+		}
+	}
+  }
+  "dk_fireball"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"dk_reincarnation"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"extra_attacks"	"5"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"splash_radius"	"150"
+		}
+		"03"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"damage_pct"	"50"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_fireball"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"dk_fireball.lua"
+					"Function"		"FireProj"
+				}
+			}
+		}
+		"modifier_reset"
+		{
+			"Passive"	"0"
+			"IsHidden"	"1"
+			"Duration"	"180"
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"dk_reincarnation.lua"
+					"Function"		"ResetDK"
+				}
+			}
+		}
+	}
+  }
 }
