@@ -19,7 +19,7 @@ local go_to_y = RandomInt(low_y,high_y)
 thisEntity:MoveToPositionAggressive(Vector(go_to_x,go_to_y,281))
 return 2
 	end 
-if thisEntity:GetAggroTarget() ~= nil then
+
 	if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .50 then
 
 	thisEntity:Stop()
@@ -31,9 +31,9 @@ return 21
 	end
 local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
 if distance_from_target >= 750 then
-	thisEntity:SetAggoTarget(nil)
+	thisEntity:SetAggroTarget(nil)
 return .1
 end
 return .1
 end
-end
+
