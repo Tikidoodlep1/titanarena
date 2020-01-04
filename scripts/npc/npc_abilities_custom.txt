@@ -56053,7 +56053,7 @@
   {
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"	"dk_reincarnation"
+	"AbilityTextureName"	"dk_fireball"
 	"AbilitySpecial"
 	{
 		"01"
@@ -56077,7 +56077,7 @@
 		"modifier_fireball"
 		{
 			"Passive"	"1"
-			"IsHidden"	"1"
+			"IsHidden"	"0"
 			"OnAttackLanded"
 			{
 				"RunScript"
@@ -56089,8 +56089,8 @@
 		}
 		"modifier_reset"
 		{
-			"Passive"	"0"
-			"IsHidden"	"1"
+			"Passive"	"1"
+			"IsHidden"	"0"
 			"Duration"	"180"
 			"OnDestroy"
 			{
