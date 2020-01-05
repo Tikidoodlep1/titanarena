@@ -29,7 +29,7 @@ hits = FindUnitsInRadius(2, pos, nil, 150, 3, 63, 0, 0, false)
 for _, targets in ipairs(hits) do
 local damagetable = {victim = targets,
 	attacker = caster,
-	damage = caster:(GetAttackDamage()/2),
+	damage = (caster:GetAttackDamage()/2),
 	damage_type = DAMAGE_TYPE_PHYSICAL,}
 ApplyDamage(damagetable)
 end

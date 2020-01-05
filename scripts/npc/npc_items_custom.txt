@@ -678,7 +678,7 @@
 		}
 	}
 	
-	"item_dragon_scale"
+	"item_dragon_scale_custom"
 	{
 		//General
 		//------------------------------------------------------------------------------------------------------------------
@@ -694,7 +694,7 @@
 		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemKillable"						"1"
 		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
-		"AbilityTextureName" 				"dragon_scale"
+		"AbilityTextureName" 				"dragon_scale_custom"
 		"SecretShop"						"1"
 		
 		//Special
@@ -1835,5 +1835,240 @@
 		}
 
 	}
+	}
+	"item_recipe_titan_platemail_2"
+	{
+	"ID"							    "140020"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1500"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_titan_platemail_2"
+		"ItemRequirements"
+		{
+			"01"						"item_titan_platemail;item_ultimate_orb"
+		}
+	}
+	"item_titan_platemail_2"
+	{
+		//General
+		//------------------------------------------------------------------------------------------------------------------
+		"ID"								"140021"
+		"BaseClass"							"item_datadriven"
+		
+		//Item Info
+		//------------------------------------------------------------------------------------------------------------------
+		"ItemCost"							"8550"
+		"ItemQuality"						"epic"
+		"ItemAliases"						"Titan Platemail"
+		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"					"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 				"titan_platemail_2"
+		
+		//Special
+		//------------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"15"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_str"					"30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"			"25"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"1200"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_armor"				"10"
+			}
+		}
+		"Modifiers"
+		{
+			"stats_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"45"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+				}
+			}
+			"titan_platemail_aura"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Aura"			"aura_properties"
+				"Arua_Radius"	"%aura_radius"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO"
+			}
+			"aura_properties"
+			{
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+				"IsBuff"		"1"
+				"TextureName"	"titan_platemail_2"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%aura_armor"
+				}
+			}
+		}
+	}
+	"item_recipe_titan_platemail_3"
+	{
+	"ID"							    "140022"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1250"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_titan_platemail_3"
+		"ItemRequirements"
+		{
+			"01"						"item_titan_platemail_2;item_ring_of_tarrasque;item_vanguard"
+		}
+	}
+	"item_titan_platemail_3"
+	{
+		//General
+		//------------------------------------------------------------------------------------------------------------------
+		"ID"								"140023"
+		"BaseClass"							"item_datadriven"
+		
+		//Item Info
+		//------------------------------------------------------------------------------------------------------------------
+		"ItemCost"							"8550"
+		"ItemQuality"						"epic"
+		"ItemAliases"						"Titan Platemail"
+		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"					"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 				"titan_platemail_3"
+		
+		//Special
+		//------------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"15"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_str"					"30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"			"25"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"1200"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_armor"				"10"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_regen"				"15"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_hp"					"500"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_block"		"80"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"block_chance"				"100"
+			}
+		}
+		"Modifiers"
+		{
+			"stats_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"45"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%bonus_hp"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_regen"
+					"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"	"%damage_block"
+				}
+			}
+			"titan_platemail_aura"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Aura"			"aura_properties"
+				"Arua_Radius"	"%aura_radius"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO"
+			}
+			"aura_properties"
+			{
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+				"IsBuff"		"1"
+				"TextureName"	"titan_platemail_3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%aura_armor"
+				}
+			}
+		}
 	}
 }
