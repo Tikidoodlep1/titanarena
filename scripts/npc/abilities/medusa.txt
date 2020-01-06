@@ -11,10 +11,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                                      "6"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.4"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -23,12 +24,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_modifier"		"-70 -55 -40 -25"
+				"damage_modifier"		"-70 -55 -40 -25 -20 -15"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_modifier_tooltip"		"30 45 60 75"
+				"damage_modifier_tooltip"		"30 45 60 75 80 85"
 			}
 			"03"
 			{	
@@ -60,6 +61,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Medusa.MysticSnake.Cast"
+		"MaxLevel"                                      "6"
 		
 		"HasScepterUpgrade"				"1"
 
@@ -74,7 +76,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140 150 160 170"
+		"AbilityManaCost"				"140 150 160 170 180 200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -83,27 +85,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"475 475 475 475"
+				"radius"				"475"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"snake_jumps"			"3 4 5 6"
+				"snake_jumps"			"3 4 5 6 7 9"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"jump_delay"			"0.25 0.25 0.25 0.25"
+				"jump_delay"			"0.25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"snake_damage"			"80 120 160 200"
+				"snake_damage"			"80 120 160 200 240 300"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"snake_mana_steal"		"11 14 17 20"
+				"snake_mana_steal"		"11 14 17 20 23 28"
 				"LinkedSpecialBonus"			"special_bonus_unique_medusa_3"
 			}
 			"06"
@@ -163,6 +165,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"		
 		"AbilitySound"					"Hero_Medusa.ManaShield.On"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -175,7 +178,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana"		"1.6 1.9 2.2 2.5"
+				"damage_per_mana"		"1.6 1.9 2.2 2.5 2.75 3.5"
 			}
 			"02"
 			{
@@ -202,6 +205,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Medusa.StoneGaze.Cast"
+		"MaxLevel"                                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -218,7 +222,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 200 200"
+		"AbilityManaCost"				"200"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -232,7 +236,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"5 5.5 6"
+				"duration"					"5 5.5 6 7"
 				"LinkedSpecialBonus"		"special_bonus_unique_medusa"
 			}
 			"03"
@@ -258,7 +262,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_physical_damage"		"40 45 50"
+				"bonus_physical_damage"		"40 45 50 55"
 			}
 			"08"
 			{

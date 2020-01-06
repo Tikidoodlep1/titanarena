@@ -16,20 +16,21 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_ShadowDemon.Disruption"
+		"MaxLevel"                              "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDuration"				"2.75"
-		"AbilityCooldown"				"27.0 24.0 21.0 18.0"
+		"AbilityCooldown"				"27.0 24.0 21.0 18.0 17 16"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 120 120 120"
+		"AbilityManaCost"				"120"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -44,17 +45,17 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"illusion_duration"			"8 10 12 14"
+				"illusion_duration"			"8 10 12 14 16 20"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"illusion_outgoing_damage"	"-70.0 -55.0 -40.0 -25.0"
+				"illusion_outgoing_damage"	"-70.0 -55.0 -40.0 -25.0 -15 -5"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"illusion_outgoing_tooltip"	"30.0 45.0 60.0 75.0"
+				"illusion_outgoing_tooltip"	"30.0 45.0 60.0 75.0 85 95"
 			}
 			"05"
 			{
@@ -69,7 +70,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"27.0 24.0 21.0 18.0"
+				"charge_restore_time"	"27.0 24.0 21.0 18.0 15 13"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -89,19 +90,20 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_ShadowDemon.Soul_Catcher"
+		"MaxLevel"                              "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"26 24 22 20"
+		"AbilityCooldown"				"26 24 22 20 18 16"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 100 120 140"
+		"AbilityManaCost"				"80 100 120 140 160 190"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -110,12 +112,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_lost"			"20 25 30 35"
+				"health_lost"			"20 25 30 35 40 50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"175 200 225 250"
+				"radius"				"175 200 225 250 275 350"
 			}
 			"03"
 			{
@@ -125,12 +127,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_outgoing_damage"	"-70 -55 -40 -25"
+				"illusion_outgoing_damage"	"-70 -55 -40 -25 0 15"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_outgoing_damage_tooltip"	"30 45 60 75"
+				"illusion_outgoing_damage_tooltip"	"30 45 60 75 100 115"
 			}
 			"06"
 			{
@@ -159,6 +161,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_ShadowDemon.ShadowPoison"
+		"MaxLevel"                              "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -172,7 +175,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"
+		"AbilityManaCost"				"35 40 45 50 55 70"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -188,7 +191,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_damage"			"20 35 50 65"
+				"stack_damage"			"20 35 50 65 80 100"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
@@ -212,12 +215,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"1000 1000 1000 1000"
+				"speed"					"1000"
 			}
 			"06" //Damage that is applied every time shadow poison is applied.
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hit_damage"			"26 34 42 50"
+				"hit_damage"			"26 34 42 50 58 66"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
@@ -265,6 +268,7 @@
 		"FightRecapLevel"				"2"
 		"HasScepterUpgrade"			"1"
 		"AbilitySound"					"Hero_ShadowDemon.DemonicPurge.Cast"
+		"MaxLevel"                              "4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -275,12 +279,12 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 200 200"
+		"AbilityManaCost"				"200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -289,7 +293,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"purge_damage"		"200 300 400"
+				"purge_damage"		"200 300 400 450"
 				"LinkedSpecialBonus"	"special_bonus_unique_shadow_demon_1"
 			}
 			"02"

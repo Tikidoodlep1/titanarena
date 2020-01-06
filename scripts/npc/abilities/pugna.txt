@@ -13,11 +13,12 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Pugna.NetherBlast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"400"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -26,7 +27,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"85 105 125 145"
+		"AbilityManaCost"				"85 105 125 145 165 200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,17 +41,17 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"delay"						"0.9 0.9 0.9 0.9"
+				"delay"						"0.9"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"400 400 400 400"
+				"radius"					"400"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blast_damage"				"100 175 250 325"
+				"blast_damage"				"100 175 250 325 400 500"
 				"LinkedSpecialBonus"		"special_bonus_unique_pugna_2"
 			}
 		}
@@ -71,15 +72,16 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Pugna.Decrepify"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 700 700 700"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0 12.0 9.0 6.0"
+		"AbilityCooldown"				"15.0 12.0 9.0 6.0 6 6"
 		"AbilityDuration"				"3.5"
 
 		// Cost
@@ -103,12 +105,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_spell_damage_pct"	"-30 -40 -50 -60"
+				"bonus_spell_damage_pct"	"-30 -40 -50 -60 -70 -85"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"-30 -40 -50 -60"
+				"bonus_movement_speed"		"-30 -40 -50 -60 -70 -85"
 			}			
 			"05"
 			{
@@ -133,20 +135,21 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Pugna.NetherWard"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastRange"				"150"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35.0 35.0 35.0 35.0"
+		"AbilityCooldown"				"35.0"
 		"AbilityDuration"				"30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 80 80 80"		
+		"AbilityManaCost"				"80"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -165,18 +168,18 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"mana_multiplier"			"1.0 1.25 1.50 1.75"
+				"mana_multiplier"			"1.0 1.25 1.50 1.75 2 2.5"
 				"LinkedSpecialBonus"		"special_bonus_unique_pugna_3"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"mana_regen"				"-0.3 -0.6 -0.9 -1.2"
+				"mana_regen"				"-0.3 -0.6 -0.9 -1.2 -1.5 -2"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attacks_to_destroy_tooltip"				"4 4 4 4"
+				"attacks_to_destroy_tooltip"				"4"
 				"LinkedSpecialBonus"		"special_bonus_unique_pugna_6"
 			}
 		}
@@ -201,22 +204,23 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                              "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 		"AbilityChannelTime"			"10.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 22.0 22.0"
+		"AbilityCooldown"				"22.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 175 225"
+		"AbilityManaCost"				"125 175 225 300"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -229,19 +233,19 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"health_drain"					"175 275 375"
+				"health_drain"					"175 275 375 500"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"scepter_cooldown"			"0.0 0.0 0.0"
+				"scepter_cooldown"			"0.0"
 				"RequiresScepter"		"1"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tick_rate"					"0.25 0.25 0.25"
+				"tick_rate"					"0.25"
 			}
 			"04"
 			{

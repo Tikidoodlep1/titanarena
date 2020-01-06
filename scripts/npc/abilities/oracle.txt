@@ -18,6 +18,7 @@
 		"FightRecapLevel"				"1"
 		"HasScepterUpgrade"			"1"
 		"AbilitySound"					"Hero_Oracle.FortunesEnd.Target"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -27,7 +28,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 12 9 6"
+		"AbilityCooldown"				"15 12 9 6 6 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,7 +41,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"120 150 180 210"
+				"damage"					"120 150 180 210 240 280"
 			}
 			"02"
 			{
@@ -100,15 +101,16 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Oracle.FatesEdict.Cast"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500 600 700 800"
+		"AbilityCastRange"				"500 600 700 800 900 1100"
 		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 13 10 7"
+		"AbilityCooldown"				"16 13 10 7 7 7"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -121,7 +123,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 3.5 4.0 4.5"
+				"duration"				"3.0 3.5 4.0 4.5 5 6.5"
 			}
 			"02"
 			{
@@ -149,6 +151,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Oracle.PurifyingFlames.Damage"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -161,7 +164,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 85 90 95"
+		"AbilityManaCost"				"80 85 90 95 100 110"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -170,17 +173,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"90 180 270 360"
+				"damage"				"90 180 270 360 450 570"
 			}			
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"heal_per_second"		"11.0 22.0 33.0 44.0"
+				"heal_per_second"		"11.0 22.0 33.0 44.0 55 65"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"total_heal_tooltip"	"99 198 297 396"
+				"total_heal_tooltip"	"99 198 297 396 455 600"
 			}
 			"04"
 			{
@@ -211,20 +214,21 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Oracle.FalsePromise.Cast"
+		"MaxLevel"                                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 850 1000"
+		"AbilityCastRange"				"700 850 1000 1400"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"115 80 45"
+		"AbilityCooldown"				"115 80 45 40"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 150 200"
+		"AbilityManaCost"				"100 150 200 300"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -233,7 +237,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"8 9 10"
+				"duration"				"8 9 10 12"
 				"LinkedSpecialBonus"	"special_bonus_unique_oracle"
 			}
 			"02"

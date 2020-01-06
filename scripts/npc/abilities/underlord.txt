@@ -12,6 +12,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"                              "6"
 		
 		"AbilityCastRange"				"750"
 		"AbilityCastPoint"				"0.6"
@@ -23,7 +24,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"100 110 120 130 140 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -47,7 +48,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"wave_damage"					"25 40 55 70"
+				"wave_damage"					"25 40 55 70 85 110"
 				"LinkedSpecialBonus"			"special_bonus_unique_underlord_2"
 			}
 			"05"
@@ -58,7 +59,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"burn_damage"					"1 2 3 4"
+				"burn_damage"					"1 2 3 4 5 6"
 				"CalculateSpellDamageTooltip"			"0"
 			}
 			"07"
@@ -102,14 +103,15 @@
 		"AbilityCastRange"				"750"
 		"AbilityCastPoint"				"0.45"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                              "6"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16"
+		"AbilityCooldown"				"22 20 18 16 14 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 100 120 140"
+		"AbilityManaCost"				"80 100 120 140 160 200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -138,7 +140,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"ensnare_duration"				"0.9 1.2 1.5 1.8"
+				"ensnare_duration"				"0.9 1.2 1.5 1.8 2.1 2.6"
 				"LinkedSpecialBonus"			"special_bonus_unique_underlord"
 			}
 		}
@@ -156,6 +158,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"	
+		"MaxLevel"                              "6"
 		
 		"HasScepterUpgrade"				"1"
 		
@@ -174,7 +177,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_reduction_pct"			"5 15 25 35"
+				"damage_reduction_pct"			"5 15 25 35 45 65"
 			}
 			"03"
 			{
@@ -184,23 +187,23 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage_from_hero"		"30 35 40 45"
+				"bonus_damage_from_hero"		"30 35 40 45 50 60"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"bonus_damage_duration"			"30 40 50 60"
+				"bonus_damage_duration"			"30 40 50 60 70 90"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"bonus_damage_duration_scepter"		"70 80 90 100"
+				"bonus_damage_duration_scepter"		"70 80 90 100 110 130"
 				"RequiresScepter"	"1"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"permanent_bonus"		"2 3 4 5"
+				"permanent_bonus"		"2 3 4 5 6 8"
 				"LinkedSpecialBonus"			"special_bonus_unique_underlord_3"
 			}
 		}
@@ -221,6 +224,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilitySound"					"Hero_AbyssalUnderlord.DarkRift.Cast"
+		"MaxLevel"                              "4"
 
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
@@ -230,11 +234,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130 115 100"
+		"AbilityCooldown"				"130 115 100 75"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 200 300"
+		"AbilityManaCost"				"100 200 300 400"
 	
 		
 		"AbilitySpecial"
@@ -247,7 +251,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"teleport_delay"				"6.0 5.0 4.0"
+				"teleport_delay"				"6.0 5.0 4.0 3.5"
 			}
 		}
 	}

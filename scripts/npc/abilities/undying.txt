@@ -16,22 +16,23 @@
 		"AbilitySound"					"Hero_Undying.Decay.Cast"
 		"FightRecapLevel"				"1"
 		"HasScepterUpgrade"				"1"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_UNDYING_DECAY"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"650"
-		"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+		"AbilityCastPoint"				"0.45"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10.0 8.0 6.0 4.0"
-		"AbilityDuration"				"21.0 24.0 27.0 30.0"
+		"AbilityCooldown"				"10.0 8.0 6.0 4.0 4 4"
+		"AbilityDuration"				"21.0 24.0 27.0 30.0 33 38"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 85 100 115"
+		"AbilityManaCost"				"70 85 100 115 130 150"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,7 +41,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"decay_damage"					"20 50 80 110"
+				"decay_damage"					"20 50 80 110 150 200"
 			}
 			"02"
 			{
@@ -87,6 +88,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Undying.SoulRip.Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -97,11 +99,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24.0 18.0 12.0 6.0"
+		"AbilityCooldown"				"24.0 18.0 12.0 6.0 6 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130"		
+		"AbilityManaCost"				"100 110 120 130 140 160"		
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -114,12 +116,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_unit"			"22 29 36 43"
+				"damage_per_unit"			"22 29 36 43 50 60"
 			}			
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_units"					"8 9 10 11"
+				"max_units"					"8 9 10 11 12 14"
 			}
 			"03"
 			{
@@ -129,7 +131,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tombstone_heal"			"4 8 12 16"
+				"tombstone_heal"			"4 8 12 16 20 26"
 			}
 		}
 	}	
@@ -146,21 +148,22 @@
 		"FightRecapLevel"				"1"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Undying.Tombstone"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_UNDYING_TOMBSTONE"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+		"AbilityCastPoint"				"0.45"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"85 80 75 70"
+		"AbilityCooldown"				"85 80 75 70 70 70"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 130 140 150"
+		"AbilityManaCost"				"120 130 140 150 160 180"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -169,12 +172,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tombstone_health"				"8 10 12 14"
+				"tombstone_health"				"8 10 12 14 16 20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hits_to_destroy_tooltip"				"4 5 6 7"
+				"hits_to_destroy_tooltip"				"4 5 6 7 8 10"
 				"LinkedSpecialBonus"		"special_bonus_unique_undying_5"
 			}
 			"03"
@@ -190,17 +193,17 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_threshold"		"100 200 300 400"
+				"health_threshold"		"100 200 300 400 500 700"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_threshold_pct_tooltip"		"20 25 30 35"
+				"health_threshold_pct_tooltip"		"20 25 30 35 40 50"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"zombie_interval"		"4.0 3.5 3.0 2.5"
+				"zombie_interval"		"4.0 3.5 3.0 2.5 2 1.5"
 			}
 		}
 	}
@@ -216,6 +219,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"                              "6"
 		
 
 		"AbilitySpecial"
@@ -223,12 +227,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"600 800 1000 1200"
+				"radius"			"600 800 1000 1200 1400 1700"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_threshold"		"100 200 300 400"
+				"health_threshold"		"100 200 300 400 500 650"
 			}
 			"03"
 			{
@@ -249,6 +253,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"                              "6"
 	
 
 		// Stats
@@ -267,12 +272,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_threshold"		"100 200 300 400"
+				"health_threshold"		"100 200 300 400 500 700"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"health_threshold_pct"	"20 25 30 35"
+				"health_threshold_pct"	"20 25 30 35 40 50"
 			}
 			"04"
 			{
@@ -314,6 +319,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Undying.FleshGolem"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"MaxLevel"                              "4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -321,7 +327,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 125 150"		
+		"AbilityManaCost"				"100 125 150 200"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -330,12 +336,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"						"40 45 50"
+				"slow"						"40 45 50 60"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"25 35 45"
+				"damage"					"25 35 45 70"
 			}
 			"03"
 			{
@@ -345,7 +351,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"str_percentage"			"40 50 60"
+				"str_percentage"			"40 50 60 75"
 			}
 			"05"
 			{
@@ -355,7 +361,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"spawn_rate"				"3 2.5 2"
+				"spawn_rate"				"3 2.5 2 3"
 			}	
 			"07"
 			{

@@ -10,6 +10,7 @@
 		"ID"							"5275"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilitySound"					"Hero_Nightstalker.Void"
+		"MaxLevel"                                      "6"
         "HasScepterUpgrade"			"1"
 
 		// Unit Targeting
@@ -24,10 +25,10 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"525"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCooldown"				"11 10 9 8"
-		"AbilityManaCost"				"80 90 100 110"
-		"AbilityDamage"					"90 160 255 335"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"11 10 9 8 8 8"
+		"AbilityManaCost"				"80 90 100 110 120 140"
+		"AbilityDamage"					"90 160 255 335 400 625"
 			
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -45,17 +46,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_night"		"2.5 3 3.5 4"
+				"duration_night"		"2.5 3 3.5 4 4.5 6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_slow"		"-50 -50 -50 -50"
+				"movespeed_slow"		"-50"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attackspeed_slow"		"-50 -50 -50 -50"
+				"attackspeed_slow"		"-50"
 			}
 			"05"
 			{
@@ -84,6 +85,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Nightstalker.Trickling_Fear"
+		"MaxLevel"                                      "6"
 
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -94,7 +96,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"375"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"30 25 20 15"
+		"AbilityCooldown"				"30 25 20 15 13 13"
 		"AbilityManaCost"				"50"
 			
 		// Special
@@ -104,12 +106,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_day"			"3.0 3.0 3.0 3.0"
+				"duration_day"			"3.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_night"		"4.0 5.0 6.0 7.0"
+				"duration_night"		"4.0 5.0 6.0 7.0 8 9"
 			}
 			"03"
 			{
@@ -129,6 +131,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"5277"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                                      "6"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -137,12 +140,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_movement_speed_pct_night"	"22 28 34 40"
+				"bonus_movement_speed_pct_night"	"22 28 34 40 46 56"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_attack_speed_night"			"20 40 60 80"
+				"bonus_attack_speed_night"			"20 40 60 80 100 130"
 				"LinkedSpecialBonus"		"special_bonus_unique_night_stalker_2"
 			}
 
@@ -162,14 +165,15 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Nightstalker.Darkness"
+		"MaxLevel"                                      "4"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"140 130 120"
-		"AbilityManaCost"				"125 175 225"
+		"AbilityCooldown"				"140 130 120 110"
+		"AbilityManaCost"				"125 175 225 300"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -183,7 +187,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50 100 150"
+				"bonus_damage"			"50 100 150 225"
 			}
 		}
 	}

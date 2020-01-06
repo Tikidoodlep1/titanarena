@@ -15,12 +15,13 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_ObsidianDestroyer.ArcaneOrb"
+		"MaxLevel"                                      "6"
 
 		"AbilityCastRange"				"450"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 140 170 200"
+		"AbilityManaCost"				"110 140 170 200 230 270"
 		"AbilityCooldown"				"0"
 
 		// Special
@@ -30,7 +31,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_pool_damage_pct"	"5 7 9 11"
+				"mana_pool_damage_pct"	"5 7 9 11 14 18"
 				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer"
 			}
 			"02"
@@ -58,21 +59,22 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_ObsidianDestroyer.AstralImprisonment"
+		"MaxLevel"                                      "6"
 		"HasScepterUpgrade"			"1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDuration"				"4.0"
-		"AbilityCooldown"				"24 20 16 12"
+		"AbilityCooldown"				"24 20 16 12 12 12"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"225 300 375 450"
-		"AbilityCastPoint"				"0.25 0.25 0.25 0.25"
+		"AbilityCastRange"				"225 300 375 450 525 700"
+		"AbilityCastPoint"				"0.25"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140 160 180 200"
+		"AbilityManaCost"				"140 160 180 200 220 250"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -91,7 +93,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"		"100 175 250 325"
+				"damage"		"100 175 250 325 400 500"
 				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer_3"
 			}
 			"03"
@@ -138,6 +140,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilitySound"					"Hero_ObsidianDestroyer.EssenceAura"
+		"MaxLevel"                                      "6"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -151,12 +154,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_mana"	    "150 250 350 450"
+				"bonus_mana"	    "150 250 350 450 550 725"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"restore_amount"	"10 15 20 25"
+				"restore_amount"	"10 15 20 25 30 40"
 			}
 			"04"
 			{
@@ -189,6 +192,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"                                      "6"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -215,12 +219,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"mana_restore"	"20 30 40 50"
+				"mana_restore"	"20 30 40 50 60 80"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movement_slow"		"11 22 33 44"
+				"movement_slow"		"11 22 33 44 55 70"
 				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer_2"
 			}
 			"04"
@@ -254,6 +258,7 @@
 		"AbilitySound"					"Hero_ObsidianDestroyer.SanityEclipse"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                                      "4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -261,7 +266,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 325 450"
+		"AbilityManaCost"				"200 325 450 600"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -270,17 +275,17 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"base_damage"				"150 225 300"
+				"base_damage"				"150 225 300 400"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"charge_bonus_damage"					"60 80 100"
+				"charge_bonus_damage"					"60 80 100 140"
 			}		
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"375 475 575"
+				"radius"					"375 475 575 700"
 			}
 			"04"
 			{
@@ -296,7 +301,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stack_mana"	"40 50 60"
+				"stack_mana"	"40 50 60 70"
 			}	
 			"07"
 			{

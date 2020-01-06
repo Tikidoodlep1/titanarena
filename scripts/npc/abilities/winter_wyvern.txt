@@ -14,14 +14,15 @@
 		"AbilitySound"					"Hero_WinterWyvern.ArcticBurn.Cast"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                              "6"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"50.0 40.0 30.0 20.0"
+		"AbilityCooldown"				"50.0 40.0 30.0 20.0 20 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -39,12 +40,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_range_bonus"	"350 425 500 575"
+				"attack_range_bonus"	"350 425 500 575 650 750"
 			}			
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"percent_damage"		"6 7 8 9"
+				"percent_damage"		"6 7 8 9 10 11"
 			}
 			"04"
 			{
@@ -60,7 +61,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"move_slow"				"22 28 34 40"
+				"move_slow"				"22 28 34 40 46 54"
 				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_1"
 			}
 			"07"
@@ -113,11 +114,12 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                              "6"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -125,11 +127,11 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 180 260 340"
+		"AbilityDamage"					"100 180 260 340 520 420 "
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"105 120 135 150"
+		"AbilityManaCost"				"105 120 135 150 165 200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -189,19 +191,20 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Winter_Wyvern.ColdEmbrace"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"24 21 18 15"
+		"AbilityCooldown"				"24 21 18 15 15 15"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityManaCost"				"50 60 70 80 90 110"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -215,12 +218,12 @@
 			"02"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"heal_additive"		"14 18 22 26"
+				"heal_additive"		"14 18 22 26 30 36"
 			}
 			"03"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"heal_percentage"	"3 4 5 6"
+				"heal_percentage"	"3 4 5 6 7 8"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -242,11 +245,12 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_WinterWyvern.WintersCurse.Target"
+		"MaxLevel"                              "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -284,7 +288,7 @@
 			"05"
 			{	
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"4.0 4.75 5.5"
+				"duration"			"4.0 4.75 5.5 6.25"
 				"LinkedSpecialBonus"	"special_bonus_unique_winter_wyvern_3"
 			}
 		}

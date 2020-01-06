@@ -15,6 +15,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Windrunner.ShackleshotCast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -23,15 +24,15 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"16 14 12 10 10 10"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
+		"AbilityDamage"					"0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 85 100 115"
+		"AbilityManaCost"				"70 85 100 115 130 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,12 +41,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fail_stun_duration"	"0.75 0.75 0.75 0.75"
+				"fail_stun_duration"	"0.75"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2.0 2.6 3.2 3.8"
+				"stun_duration"			"2.0 2.6 3.2 3.8 4.4 5"
 				"LinkedSpecialBonus"	"special_bonus_unique_windranger_6"
 			}
 			"03"
@@ -85,6 +86,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Ability.Powershot"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -93,13 +95,13 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 11 10 9"
+		"AbilityCooldown"				"12 11 10 9 9 9"
 		"AbilityChannelTime"			"1.0"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 100 110 120"
+		"AbilityManaCost"				"90 100 110 120 130 150"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -108,7 +110,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"powershot_damage"		"150 250 350 450"
+				"powershot_damage"		"150 250 350 450 550 700"
 				"LinkedSpecialBonus"	"special_bonus_unique_windranger_3"
 			}
 			"02"
@@ -120,7 +122,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"arrow_width"			"125 125 125 125"
+				"arrow_width"			"125"
 			}
 			"04"
 			{
@@ -130,12 +132,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"arrow_speed"			"3000.0 3000.0 3000.0 3000.0"
+				"arrow_speed"			"3000.0"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tree_width"			"75 75 75 75"
+				"tree_width"			"75"
 			}
 			"07"
 			{
@@ -145,7 +147,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"vision_duration"		"3.34 3.34 3.34 3.34"
+				"vision_duration"		"3.34"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -164,15 +166,16 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Ability.Windrun"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 14 13 12"
-		"AbilityDuration"				"3 4 5 6"
+		"AbilityCooldown"				"15 14 13 12 12 12"
+		"AbilityDuration"				"3 4 5 6 7 8"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -199,7 +202,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"enemy_movespeed_bonus_pct"	"-15 -20 -25 -30"
+				"enemy_movespeed_bonus_pct"	"-15 -20 -25 -30 -35 -45"
 				"LinkedSpecialBonus"		"special_bonus_unique_windranger_2"
 			}
 			"04"
@@ -210,7 +213,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"3 4 5 6"
+				"duration"					"3 4 5 6 7 8"
 			}
 			"06"
 			{
@@ -221,7 +224,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"15 14 13 12"
+				"charge_restore_time"	"15 14 13 12 11 11"
 				"RequiresScepter"			"1"
 			}
 			"08"
@@ -250,6 +253,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Ability.Focusfire"
+		"MaxLevel"                              "4"
 
 
 		// Casting
@@ -260,12 +264,12 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 50 30"
+		"AbilityCooldown"				"70 50 30 30"
 		"AbilityDuration"				"20.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 100 125"
+		"AbilityManaCost"				"75 100 125 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -279,7 +283,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"focusfire_damage_reduction"	"-50 -40 -30"
+				"focusfire_damage_reduction"	"-50 -40 -30 -15"
 				"LinkedSpecialBonus"		"special_bonus_unique_windranger_8"
 			}						
 			"03"

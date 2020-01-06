@@ -16,23 +16,24 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Leshrac.Split_Earth"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"650"
-		"AbilityCastPoint"				"0.7 0.7 0.7 0.7"
+		"AbilityCastPoint"				"0.7"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9 9 9 9"
+		"AbilityCooldown"				"9"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 100 120 140"
+		"AbilityManaCost"				"80 100 120 140 160 200"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"120 180 240 300"
+		"AbilityDamage"					"120 180 240 300 360 420"
 		"AbilityDuration"				"2 2 2 2"
 		
 		// Special
@@ -48,7 +49,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"150 175 200 225"
+				"radius"			"150 175 200 225 250 300"
 			}
 			
 			"03"
@@ -76,6 +77,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Leshrac.Diabolic_Edict"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -83,15 +85,15 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 22 22 22"
+		"AbilityCooldown"				"22"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"95 120 135 155"
+		"AbilityManaCost"				"95 120 135 155 175 215"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"8 20 32 44"
+		"AbilityDamage"					"8 20 32 44 56 66"
 		"AbilityDuration"				"10"
 		
 		// Special
@@ -136,6 +138,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Leshrac.Lightning_Storm"
+		"MaxLevel"                                      "6"
 
 		"HasScepterUpgrade"			"1"
 
@@ -151,11 +154,11 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 100 120 140"
+		"AbilityManaCost"				"80 100 120 140 160 200"
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"80 120 160 200"
+		"AbilityDamage"					"80 120 160 200 240 300"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -164,7 +167,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"jump_count"			"4 6 8 10"
+				"jump_count"			"4 6 8 10 12 16"
 			}			
 			"02"
 			{
@@ -174,7 +177,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"jump_delay"			"0.25 0.25 0.25 0.25"
+				"jump_delay"			"0.25"
 			}
 			"04"
 			{
@@ -184,7 +187,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"0.4 0.6 0.8 1.0"
+				"slow_duration"			"0.4 0.6 0.8 1.0 1.2 1.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_2"
 			}	
 			"06"
@@ -219,17 +222,18 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "4"
 
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
-		"AbilityCooldown"				"1.0 1.0 1.0 1.0"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"1.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 90 110"
+		"AbilityManaCost"				"70 90 110 140"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -238,7 +242,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_per_second"	"20 40 60"
+				"mana_cost_per_second"	"20 40 60 85"
 			}
 			
 			"02"
@@ -249,13 +253,13 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 140 180"
+				"damage"			"100 140 180 240"
 				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_scepter"	"160 190 220"
+				"damage_scepter"	"160 190 220 300"
 				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
 			}
 		}

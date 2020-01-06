@@ -13,22 +13,23 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_KeeperOfTheLight.Illuminate.Discharge"
+		"MaxLevel"                                      "6"
 		
 		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"11"
-		"AbilityChannelTime"			"2.0 3.0 4.0 5.0"
+		"AbilityChannelTime"			"2.0 3.0 4.0 5 6 7"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 160 170 180"
+		"AbilityManaCost"				"150 160 170 180 190 220"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,12 +38,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"		"100.0 100.0 100.0 100.0"
+				"damage_per_second"		"100.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"max_channel_time"		"2.0 3.0 4.0 5.0"
+				"max_channel_time"		"2.0 3.0 4.0 5.0 6 7"
 			}
 			"03"
 			{
@@ -62,12 +63,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"800 800 800 800"
+				"vision_radius"			"800"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"vision_duration"		"3.34 3.34 3.34 3.34"
+				"vision_duration"		"3.34"
 			}
 			"08"
 			{	
@@ -92,7 +93,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"total_damage"				"200 300 400 500"
+				"total_damage"				"200 300 400 500 600 800"
 				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light"
 			}
 		}
@@ -113,14 +114,15 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_KeeperOfTheLight.ManaLeak.Cast"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"16 14 12 10 10 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -128,7 +130,7 @@
 
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"400 500 600 700"
+		"AbilityCastRange"				"400 500 600 700 800 1000"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -137,7 +139,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"4.0 5.0 6.0 7.0"
+				"duration"					"4.0 5.0 6.0 7.0 8 8.5"
 			}
 			"02"
 			{
@@ -147,7 +149,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.5 2.0 2.5 3.0"
+				"stun_duration"				"1.5 2.0 2.5 3.0 3.5 4.75"
 				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light_3"
 			}
 		}
@@ -169,6 +171,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilitySound"					"Hero_KeeperOfTheLight.ManaLeak.Cast"
+		"MaxLevel"                                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -180,7 +183,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250 350 450"		
+		"AbilityManaCost"				"250 350 450 600"		
 
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -193,7 +196,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"on_count"					"3 4 5"
+				"on_count"					"3 4 5 6"
 				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light_3"
 			}
 			"02"
@@ -204,7 +207,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_count"					"4 5 6"
+				"hit_count"					"4 5 6 7"
 				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light_4"
 			}
 			"04"
@@ -230,7 +233,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bounty"		"100 125 150"
+				"bounty"		"100 125 150 250"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -250,15 +253,16 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_KeeperOfTheLight.ChakraMagic.Target"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900 900 900 900"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16 14"
+		"AbilityCooldown"				"20 18 16 14 12 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -282,12 +286,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cooldown_reduction"	"4 5 6 7"
+				"cooldown_reduction"	"4 5 6 7 8 8"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_leak_pct"	"4.5 5 5.5 6.0"
+				"mana_leak_pct"	"4.5 5 5.5 6.0 6.5"
 			}	
 			"04"
 			{
@@ -335,14 +339,15 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_KeeperOfTheLight.SpiritForm"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"MaxLevel"                                      "4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80.0 70.0 60.0"
+		"AbilityCooldown"				"80.0 70.0 60.0 55"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 100 100"		
+		"AbilityManaCost"				"100 100 100 100"		
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -374,8 +379,9 @@
 		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"3"
-		"AbilitySound"					"Hero_KeeperOfTheLight.Recall.Cast"
+		"MaxLevel"						"4"
+		"AbilitySound"					"Hero_KeeperOfTheLight.Recall.Cast"		
+
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -398,7 +404,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"teleport_delay"		"5.0 4.0 3.0"
+				"teleport_delay"		"5.0 4.0 3.0 2.5"
 			}
 		}
 	}
@@ -415,10 +421,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_KeeperOfTheLight.BlindingLight"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"475 550 625 700"
+		"AbilityCastRange"				"475 550 625 700 800 900"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
@@ -428,7 +435,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"130 145 160 175"
+		"AbilityManaCost"				"130 145 160 175 200 250"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -446,7 +453,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3 4 5 6"
+				"duration"				"3 4 5 6 7 7.5"
 			}
 			"03"
 			{
@@ -466,7 +473,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 100 150 200"
+				"damage"				"50 100 150 200 250 325"
 			}
 		}
 	}
@@ -499,11 +506,12 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
 
 		// Time		
@@ -512,7 +520,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 160 170 180"
+		"AbilityManaCost"				"150 160 170 180 190 220"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -521,12 +529,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"		"100.0 100.0 100.0 100.0"
+				"damage_per_second"		"100.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"max_channel_time"		"2.0 3.0 4.0 5.0"
+				"max_channel_time"		"2.0 3.0 4.0 5.0 6 7"
 			}
 			"03"
 			{
@@ -546,12 +554,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"800 800 800 800"
+				"vision_radius"			"800"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"vision_duration"		"3.34 3.34 3.34 3.34"
+				"vision_duration"		"3.34"
 			}
 			"08"
 			{	
@@ -576,7 +584,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"total_damage"				"200 300 400 500"
+				"total_damage"				"200 300 400 500 600 700"
 				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light"
 			}
 		}

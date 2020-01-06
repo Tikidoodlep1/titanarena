@@ -16,6 +16,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Luna.LucentBeam.Target"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -24,12 +25,12 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"6.0 6.0 6.0 6.0"
+		"AbilityCooldown"				"6.0"
 	
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 100 110 120"
+		"AbilityManaCost"				"90 100 110 120 130 150"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -47,7 +48,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"beam_damage"			"75 150 225 300"
+				"beam_damage"			"75 150 225 300 375 475"
 				"LinkedSpecialBonus"	"special_bonus_unique_luna_1"
 			}
 		}
@@ -65,6 +66,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Luna.MoonGlaive.Impact"
+		"MaxLevel"                                      "6"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -78,12 +80,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bounces"					"1 2 3 6"
+				"bounces"					"1 2 3 6 8 12"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_reduction_percent"	"35"
+				"damage_reduction_percent"	"35 35 35 35 25 20"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -99,6 +101,7 @@
 		"ID"					"5224"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"MaxLevel"                                      "6"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -112,17 +115,17 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_pct"			"10 15 20 25"
+				"damage_pct"			"10 15 20 25 30 40"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_pct"		"10 15 20 25"
+				"armor_pct"		"10 15 20 25 30 40"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_night_vision"		"200 400 600 800"
+				"bonus_night_vision"		"200 400 600 800 1000 1200"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -137,10 +140,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"337"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"MaxLevel"                                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 25 20 15"
+		"AbilityCooldown"				"30 25 20 15 14 13"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -153,7 +157,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed"					"30 45 60 75"
+				"attack_speed"					"30 45 60 75 100 120"
 			}
 			"02"
 			{
@@ -186,14 +190,15 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Luna.Eclipse.Cast"
+		"MaxLevel"                                      "4"
 
 		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.6 0.6 0.6"
+		"AbilityCastPoint"				"0.6"
 		"AbilityCastRange"				"0"
-		"AbilityDuration"				"2.4 4.2 6.0"
+		"AbilityDuration"				"2.4 4.2 6.0 7.25"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -202,7 +207,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 200 250"
+		"AbilityManaCost"				"150 200 250 300"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -211,7 +216,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"beams"						"6 9 12"
+				"beams"						"6 9 12 15"
 			}
 			"02"
 			{
@@ -221,7 +226,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"beam_interval"				"0.6 0.6 0.6"
+				"beam_interval"				"0.6"
 			}
 			"04"
 			{
@@ -231,24 +236,24 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"675 675 675"
+				"radius"					"675"
 			}	
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"beams_scepter"				"6 12 18"
+				"beams_scepter"				"6 12 18 30"
 				"RequiresScepter"		"1"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_count_scepter"			"6 12 18"
+				"hit_count_scepter"			"6 12 18 30"
 				"RequiresScepter"		"1"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration_tooltip_scepter"	"1.8 3.6 5.4"
+				"duration_tooltip_scepter"	"1.8 3.6 5.4 7.0"
 				"RequiresScepter"		"1"
 			}
 			"10"

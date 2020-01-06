@@ -15,19 +15,20 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Silencer.Curse.Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16 14"
+		"AbilityCooldown"				"20 18 16 14 14 14"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 130 135 140"
+		"AbilityManaCost"				"125 130 135 140 145 160"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,7 +41,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"16 24 32 40"
+				"damage"			"16 24 32 40 48 60"
 				"LinkedSpecialBonus"	"special_bonus_unique_silencer"
 			}
 			"02"
@@ -61,7 +62,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movespeed"			"-9 -12 -15 -18"
+				"movespeed"			"-9 -12 -15 -18 -21 -26"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -81,10 +82,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilitySound"					"Hero_Silencer.GlaivesOfWisdom"
+		"MaxLevel"                              "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"0.0 0.0 0.0 0.0"
+		"AbilityDuration"				"0.0"
 		"AbilityCastRange"				"600"
 		
 		// Time		
@@ -102,18 +104,18 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"intellect_damage_pct"	"15 35 55 75"
+				"intellect_damage_pct"	"15 35 55 75 95 125"
 				"LinkedSpecialBonus"	"special_bonus_unique_silencer_3"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"int_steal"		"1 1 2 3"
+				"int_steal"		"1 1 2 3 4 5"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"int_steal_duration"		"10 20 30 40"
+				"int_steal_duration"		"10 20 30 40 50 70"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -136,6 +138,7 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Silencer.LastWord.Target"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -144,7 +147,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 18 14 10"
+		"AbilityCooldown"				"22 18 14 10 10 10"
 		"AbilityManaCost"				"115"
 
 		// Stats
@@ -159,12 +162,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"80 120 160 200"
+				"damage"			"80 120 160 200 240 300"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"	"1.5 2 2.5 3"
+				"int_multiplier"	"1.5 2 2.5 3 3.5 4.25"
 			}
 			"03"
 			{
@@ -174,7 +177,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"	"3 4 5 6"
+				"duration"	"3 4 5 6 7 8.25"
 			}
 			"05"
 			{
@@ -200,21 +203,22 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Silencer.GlobalSilence.Cast"
+		"MaxLevel"                              "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"130.0"
-		"AbilityDuration"				"4.5 5.25 6.0"
+		"AbilityDuration"				"4.5 5.25 6.0 7.25"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"300 450 600"
+		"AbilityManaCost"				"300 450 600 750"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------

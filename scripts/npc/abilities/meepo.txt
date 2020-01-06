@@ -13,15 +13,16 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Meepo.Earthbind.Cast"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500 750 1000 1250"
+		"AbilityCastRange"				"500 750 1000 1250 1500 1700"
 		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 16 12 8"
+		"AbilityCooldown"				"20 16 12 8 8 8"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -71,6 +72,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Meepo.Poof"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -79,7 +81,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 10 8 6"
+		"AbilityCooldown"				"12 10 8 6 6 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -97,7 +99,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"poof_damage"				"70 90 110 130"
+				"poof_damage"				"70 90 110 130 150 180"
 				"LinkedSpecialBonus"		"special_bonus_unique_meepo_2"
 			}
 		}
@@ -116,6 +118,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Meepo.Geostrike"
+		"MaxLevel"                                      "6"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -133,7 +136,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_steal"				"6 12 18 24"
+				"hp_steal"				"6 12 18 24 30 38"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -151,6 +154,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Meepo.Geostrike"
+		"MaxLevel"                                      "6"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -159,12 +163,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_steal_heroes"	"6 10 14 18"
+				"health_steal_heroes"	"6 10 14 18 22 30"
 			}			
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_steal_creeps"	"4 6 8 10"
+				"health_steal_creeps"	"4 6 8 10 12 16"
 			}			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -184,6 +188,7 @@
 		"LevelsBetweenUpgrades"		"7"
 		"RequiredLevel"			"3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"MaxLevel"                                      "4"
 
 		"HasScepterUpgrade"			"1"
 			
@@ -194,7 +199,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_clones"		"1 2 3"
+				"tooltip_clones"		"1 2 3 4"
 			}
 			"02"
 			{

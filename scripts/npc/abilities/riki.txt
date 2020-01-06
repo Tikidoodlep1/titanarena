@@ -12,6 +12,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Riki.Smoke_Screen"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -20,7 +21,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 17 14 11"
+		"AbilityCooldown"				"20 17 14 11 11 11"
 		"AbilityDuration"				"6"
 
 		// Cost
@@ -34,7 +35,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"280 310 340 370"
+				"radius"					"280 310 340 370 400 450"
 			}
 			"02"
 			{
@@ -44,7 +45,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"miss_rate"					"25 35 45 55"
+				"miss_rate"					"25 35 45 55 65 80"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -64,10 +65,11 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Riki.Blink_Strike"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 700 800 900"
+		"AbilityCastRange"				"600 700 800 900 1000 1200"
 		"AbilityCastPoint"				"0.3"
 
 		// Time		
@@ -91,7 +93,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"25 50 75 100"
+				"bonus_damage"				"25 50 75 100 125 175"
 			}
 			"03"
 			{
@@ -101,7 +103,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"charge_restore_time"		"25 20 15 10"
+				"charge_restore_time"		"25 20 15 10 10 10"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -120,6 +122,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                              "4"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -128,19 +131,19 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_multiplier"				"1.4 1.8 2.2"
+				"damage_multiplier"				"1.4 1.8 2.2 2.6"
 				"LinkedSpecialBonus"		"special_bonus_unique_riki_1"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"backstab_angle"				"105 105 105"
+				"backstab_angle"				"105"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"fade_delay"					"4 3 2"
+				"fade_delay"					"4 3 2 1.5"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -159,6 +162,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                              "4"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -167,12 +171,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"fade_delay"					"4 3 2"
+				"fade_delay"					"4 3 2 1.5"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"20 40 60"
+				"movement_speed"			"20 40 60 85"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -193,6 +197,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Riki.TricksOfTheTrade.Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -204,7 +209,7 @@
 
 		// Ability Data
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"21 18 15 12"
+		"AbilityCooldown"				"21 18 15 12 12 12"
 		"AbilityManaCost"				"50"
 
 
@@ -226,7 +231,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_pct"	"70 80 90 100"
+				"damage_pct"	"70 80 90 100 110 130"
 			}
 			"04"
 			{

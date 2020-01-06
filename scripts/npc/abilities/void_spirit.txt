@@ -16,6 +16,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_VoidSpirit.AetherRemnant.Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -24,11 +25,11 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17.0 15.0 13.0 11.0"
+		"AbilityCooldown"				"17.0 15.0 13.0 11.0 11 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"85 90 95 100"
+		"AbilityManaCost"				"85 90 95 100 105 115"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -77,17 +78,17 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"impact_damage"			"80 130 180 230"
+				"impact_damage"			"80 130 180 230 280 350"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pull_duration"			"1.2 1.4 1.6 1.8"
+				"pull_duration"			"1.2 1.4 1.6 1.8 2 2.4"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pull_destination"		"44 50 56 62"
+				"pull_destination"		"44 50 56 62 68 76"
 			}
 			"12"
 			{
@@ -120,6 +121,7 @@
 		//"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_VoidSpirit.Dissimilate.Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -127,15 +129,15 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 17 14 11"
+		"AbilityCooldown"				"20 17 14 11 11 11"
 
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 180 260 340"
+		"AbilityDamage"					"100 180 260 340 420 520"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"100 110 120 130 140 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -195,6 +197,7 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
 		"AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
+		"MaxLevel"                              "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -226,7 +229,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"30 25 20"
+				"charge_restore_time"	"30 25 20 18"
 				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_1"
 			}
 			"04"
@@ -237,7 +240,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_travel_distance"	"700 900 1100"
+				"max_travel_distance"	"700 900 1100 1300"
 			}
 			"06"
 			{
@@ -247,12 +250,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pop_damage"			"150 200 250"
+				"pop_damage"			"150 200 250 320"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_slow_pct"		"40 60 80"
+				"movement_slow_pct"		"40 60 80 110"
 			}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -272,6 +275,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_VoidSpirit.Pulse.Cast"
+		"MaxLevel"                              "6"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -286,7 +290,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"100 110 120 130 140 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -305,7 +309,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"70 120 170 220"
+				"damage"				"70 120 170 220 270 350"
 				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_4"
 			}
 			"04"
@@ -316,12 +320,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_absorb_amount"	"40 80 120 160"
+				"base_absorb_amount"	"40 80 120 160 200 260"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"absorb_per_hero_hit"	"30 45 60 75"
+				"absorb_per_hero_hit"	"30 45 60 75 90 115"
 			}
 			"07"
 			{

@@ -10,10 +10,11 @@
 		"ID"					"5508"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilitySound"					"Hero_TrollWarlord.BerserkersRage.Toggle"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -27,7 +28,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_move_speed"		"10 20 30 40"
+				"bonus_move_speed"		"10 20 30 40 50 65"
 			}
 			"03"
 			{
@@ -47,12 +48,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ensnare_chance"			"14 16 18 20"
+				"ensnare_chance"			"14 16 18 20 22 26"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ensnare_duration"			"0.8 1.2 1.6 2.0"
+				"ensnare_duration"			"0.8 1.2 1.6 2.0 2.4 3.2"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -75,13 +76,14 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_TrollWarlord.WhirlingAxes.Ranged"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_WHIRLING_AXES_RANGED"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -120,7 +122,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"axe_slow_duration"			"2.5 3 3.5 4"
+				"axe_slow_duration"			"2.5 3 3.5 4 4.5 6"
 			}
 			"06"
 			{
@@ -154,6 +156,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_TrollWarlord.WhirlingAxes.Melee"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -177,7 +180,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"50 100 150 200"
+				"damage"					"50 100 150 200 250 350"
 				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord_3"
 			}
 			"02"
@@ -231,6 +234,7 @@
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"			"1"
 
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_WHIRLING_AXES_RANGED"
@@ -274,6 +278,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
  		"AbilityCastAnimation"			"ACT_INVALID"
+		"MaxLevel"                              "6"
 		
 		// Casting
 		"AbilitySpecial"
@@ -281,7 +286,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 20 25 30"
+				"attack_speed"			"15 20 25 30 35 45"
 			}
 			"02"
 			{
@@ -313,8 +318,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"525"
+		"MaxLevel"                              "4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -336,17 +342,17 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal"			"40 60 80"
+				"lifesteal"			"40 60 80 110"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_speed"			"140 170 200"
+				"attack_speed"			"140 170 200 240"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movement_speed"		"30 35 40"
+				"movement_speed"		"30 35 40 50"
 			}
 			"05"
 			{

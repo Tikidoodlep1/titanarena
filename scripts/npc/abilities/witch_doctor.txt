@@ -16,23 +16,24 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_WitchDoctor.Paralyzing_Cask_Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 18.0 16.0 14.0"
+		"AbilityCooldown"				"20.0 18.0 16.0 14.0 14 14"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"75 100 125 150"
+		"AbilityDamage"					"75 100 125 150 175 225"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 120 130 140"
+		"AbilityManaCost"				"110 120 130 140 150 170"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -45,12 +46,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hero_duration"			"1.0 1.0 1.0 1.0"
+				"hero_duration"			"1.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"creep_duration"		"5.0 5.0 5.0 5.0"
+				"creep_duration"		"5.0"
 			}
 			"03"
 			{
@@ -60,12 +61,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_range"			"575 575 575 575"
+				"bounce_range"			"575"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounces"				"3 5 7 9"
+				"bounces"				"3 5 7 9 11 14"
 			}
 			"06"
 			{
@@ -80,7 +81,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounces_tooltip"				"2 4 6 8"
+				"bounces_tooltip"				"2 4 6 8 10 14"
 				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_3"
 			}
 		}
@@ -99,14 +100,15 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilitySound"					"Hero_WitchDoctor.Voodoo_Restoration"
+		"MaxLevel"                              "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"35 40 45 50"		
+		"AbilityManaCost"				"35 40 45 50 55 65"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -115,7 +117,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_per_second"			"8 12 16 20"
+				"mana_per_second"			"8 12 16 20 24 30"
 			}
 			"02"
 			{
@@ -125,12 +127,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"heal"						"16 24 32 40"
+				"heal"						"16 24 32 40 48 60"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"heal_interval"				"0.33 0.33 0.33 0.33"
+				"heal_interval"				"0.33"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -151,24 +153,25 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_WitchDoctor.Maledict_Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"575"
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 26 22 18"
+		"AbilityCooldown"				"30 26 22 18 16 16"
 		"AbilityDuration"				"12.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"7 14 21 28"
+		"AbilityDamage"					"7 14 21 28 35 44"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"105 110 115 120"
+		"AbilityManaCost"				"105 110 115 120 125 140"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -189,7 +192,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"16 24 32 40"
+				"bonus_damage"				"16 24 32 40 48 60"
 			}
 			"04"
 			{
@@ -222,13 +225,14 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_WitchDoctor.Death_WardBuild"
+		"MaxLevel"                              "4"
 
 		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 
@@ -239,7 +243,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 200 200"
+		"AbilityManaCost"				"200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -248,14 +252,14 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"85 135 185"
+				"damage"					"85 135 185 125 190"
 				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bounces"					"0 0 0"
+				"bounces"					"0"
 			}
 			"03"
 			{
@@ -266,13 +270,13 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bounces_scepter"			"4 4 4"
+				"bounces_scepter"			"4"
 				"RequiresScepter"		"1"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bounce_radius"				"650 650 650"
+				"bounce_radius"				"650"
 				"RequiresScepter"		"1"
 			}
 		}

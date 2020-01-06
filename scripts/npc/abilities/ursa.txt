@@ -14,6 +14,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Ursa.Earthshock"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -22,12 +23,12 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9 8 7 6"
+		"AbilityCooldown"				"9 8 7 6 6 6"
 		"AbilityDuration"				"4.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"75 125 175 225"
+		"AbilityDamage"					"75 125 175 225 275 350"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -46,7 +47,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"-10 -25 -40 -55"
+				"movement_slow"				"-10 -25 -40 -55 -70 -90"
 			}
 			"03"
 			{
@@ -79,17 +80,18 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Ursa.Overpower"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"16 14 12 10 10 10"
 		"AbilityDuration"				"20"
 
 		// Cost
@@ -103,12 +105,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_attacks"				"4 5 6 7"
+				"max_attacks"				"4 5 6 7 8 10"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_bonus_pct"	"400 400 400 400"
+				"attack_speed_bonus_pct"	"400"
 			}
 		}
 	}
@@ -125,6 +127,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                              "6"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -133,7 +136,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"bonus_reset_time"				"8 12 16 20"
+				"bonus_reset_time"				"8 12 16 20 24 30"
 				"LinkedSpecialBonus"			"special_bonus_unique_ursa_4"
 			}
 			"02"
@@ -144,7 +147,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_stack"				"7 14 21 28"
+				"damage_per_stack"				"7 14 21 28 35 46"
 				"LinkedSpecialBonus"			"special_bonus_unique_ursa"
 			}
 		}
@@ -165,6 +168,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Ursa.Enrage"
+		"MaxLevel"                              "4"
 
 		"HasScepterUpgrade"			"1"
 		
@@ -176,11 +180,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70 50 30"
+		"AbilityCooldown"				"70 50 30 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0"
+		"AbilityManaCost"				"0"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -189,7 +193,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"enrage_multiplier"			"1.4 1.7 2.0"
+				"enrage_multiplier"			"1.4 1.7 2.0 2.3"
 			}
 			"02"
 			{
@@ -205,7 +209,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"30 24 18"
+				"cooldown_scepter"			"30 24 18 14"
 				"RequiresScepter"			"1"
 			}
 		}

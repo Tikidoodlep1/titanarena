@@ -14,6 +14,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,12 +38,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.4 0.8 1.2 1.6"
+				"stun_duration"				"0.4 0.8 1.2 1.6 2 2.8"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"strike_crit_mult"			"150 175 200 225"
+				"strike_crit_mult"			"150 175 200 225 250 300"
 				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king"
 			}
 			"03"
@@ -146,6 +147,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilitySound"					"Hero_MonkeyKing.TreeJump.Cast"
+		"MaxLevel"                                      "6"
 
 		"FightRecapLevel"				"1"
 
@@ -227,13 +229,13 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"impact_damage_tooltip"		"140 210 280 350"
+				"impact_damage_tooltip"		"140 210 280 350 400 500"
 				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king_3"
 			}
 			"13"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"impact_movement_slow_tooltip"	"20 40 60 80"
+				"impact_movement_slow_tooltip"	"20 40 60 80 100 135"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -253,6 +255,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_MonkeyKing.Spring.Channel"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -261,7 +264,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"19 17 15 13"
+		"AbilityCooldown"				"19 17 15 13 13 13"
 		"AbilityChannelTime"			"1.7"
 
 		// Cost
@@ -275,13 +278,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"impact_damage"			"140 210 280 350"
+				"impact_damage"			"140 210 280 350 420 510"
 				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king_3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"impact_movement_slow"	"20 40 60 80"
+				"impact_movement_slow"	"20 40 60 80 100 135"
 			}
 			"03"
 			{
@@ -333,6 +336,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_MonkeyKing.FurArmy"
+		"MaxLevel"                                      "4"
         "HasScepterUpgrade"			"1"
 
 		// Casting
@@ -343,7 +347,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"130 110 90"
+		"AbilityCooldown"				"130 110 90 85"
 		"AbilityDuration"				"13.0"
 
 		// Cost
@@ -382,7 +386,7 @@
 			"06"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_armor"						"12 18 24"
+				"bonus_armor"						"12 18 24 32"
 				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king_4"
 			}
 			"07"
@@ -419,7 +423,7 @@
 			"13"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"cooldown_scepter"				"90 70 50"
+				"cooldown_scepter"				"90 70 50 40"
 				"RequiresScepter"	"1"
 			}
 			"14"
@@ -451,6 +455,7 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_MonkeyKing.IronCudgel"
 		"AbilityCastAnimation"			"ACT_INVALID"
+		"MaxLevel"                                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -478,13 +483,13 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"60 90 120 150"
+				"bonus_damage"				"60 90 120 150 170 210"
 				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king_2"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"lifesteal"					"15 30 45 60"
+				"lifesteal"					"15 30 45 60 75 90"
 			}
 			"06"
 			{

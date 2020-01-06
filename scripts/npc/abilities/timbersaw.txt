@@ -14,11 +14,12 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Shredder.WhirlingDeath.Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -40,12 +41,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"whirling_damage"			"90 120 150 180"
+				"whirling_damage"			"90 120 150 180 210 250"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tree_damage_scale"			"12 18 24 30"
+				"tree_damage_scale"			"12 18 24 30 36 46"
 			}
 			"04"
 			{
@@ -55,7 +56,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"stat_loss_pct"				"13 14 15 16"
+				"stat_loss_pct"				"13 14 15 16 17 20"
 				"LinkedSpecialBonus"		"special_bonus_unique_timbersaw"
 			}
 			"06"
@@ -80,10 +81,11 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Shredder.TimberChain.Cast"
+		"MaxLevel"                              "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"850 1050 1250 1450"
 		
 		// Time		
@@ -92,7 +94,7 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 70 80 90"
+		"AbilityManaCost"				"60 70 80 90 100 120"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -101,28 +103,28 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"chain_radius"		"90 90 90 90"
+				"chain_radius"		"90"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"range"				"850 1050 1250 1450"
+				"range"				"850 1050 1250 1450 1650 1950"
 				"LinkedSpecialBonus"	"special_bonus_unique_timbersaw_3"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"		"225 225 225 225"
+				"radius"		"225"
 			}
 			"04"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"speed"				"1600 2000 2400 2800"
+				"speed"				"1600 2000 2400 2800 3000 3400"
 			}
 			"05"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 140 180 220"
+				"damage"			"100 140 180 220 260 320"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -138,6 +140,7 @@
 		"ID"							"5526"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                              "6"
 		
 
 		// Special
@@ -147,23 +150,23 @@
 			"01"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_armor"						"1 1.1 1.2 1.3"
+				"bonus_armor"						"1 1.1 1.2 1.3 1.4 1.6"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"bonus_hp_regen"							"1 1.1 1.2 1.3"
+				"bonus_hp_regen"							"1 1.1 1.2 1.3 1.4 1.6"
 			}
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"stack_limit"						"6 12 18 24"
+				"stack_limit"						"6 12 18 24 30 40"
 				"LinkedSpecialBonus"				"special_bonus_unique_timbersaw_2"
 			}
 			"04"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"stack_duration"					"10 13 16 19"
+				"stack_duration"					"10 13 16 19 22 26"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -185,20 +188,21 @@
 		"FightRecapLevel"				"1"
 		"HasScepterUpgrade"			"1"
 		"AbilitySound"					"Hero_Shredder.Chakram.Cast"
+		"MaxLevel"                              "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1200 1200 1200"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8.0 8.0 8.0"
+		"AbilityCooldown"				"8.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 140 200"
+		"AbilityManaCost"				"80 140 200 300"
 
 
 		// Special
@@ -218,12 +222,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pass_damage"			"100 140 180"
+				"pass_damage"			"100 140 180 260"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"50 75 100"
+				"damage_per_second"		"50 75 100 140"
 			}
 			"05"
 			{
@@ -243,7 +247,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per_second"		"16 23 30"
+				"mana_per_second"		"16 23 30 40"
 			}
 			"09"
 			{
@@ -274,20 +278,21 @@
 		"MaxLevel"						"3"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"			"1"
+		"MaxLevel"                              "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1200 1200 1200"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8.0 8.0 8.0"
+		"AbilityCooldown"				"8.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 140 200"
+		"AbilityManaCost"				"80 140 200 280"
 
 
 		// Special
@@ -309,13 +314,13 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pass_damage"			"100 140 180"
+				"pass_damage"			"100 140 180 260"
 				"RequiresScepter"	"1"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"50 75 100"
+				"damage_per_second"		"50 75 100 140"
 				"RequiresScepter"	"1"
 			}
 			"05"
@@ -339,7 +344,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per_second"		"16 23 30"
+				"mana_per_second"		"16 23 30 40"
 				"RequiresScepter"	"1"
 			}
 			"09"

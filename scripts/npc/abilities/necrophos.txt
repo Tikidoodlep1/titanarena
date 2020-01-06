@@ -13,23 +13,24 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Necrolyte.DeathPulse"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8 7 6 5"
+		"AbilityCooldown"				"8 7 6 5 5 5"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 150 200 250"
+		"AbilityDamage"					"100 150 200 250 300 375"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 130 160 190"
+		"AbilityManaCost"				"100 130 160 190 220 260"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -43,7 +44,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal"					"60 80 100 120"
+				"heal"					"60 80 100 120 140 165"
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_4"
 			}
 			"03"
@@ -67,6 +68,8 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"MaxLevel"                                      "6"
+
 
 		"HasScepterUpgrade"			"1"	
 		
@@ -81,18 +84,18 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"aura_damage"		"0.6 1.2 1.8 2.4" 
+				"aura_damage"		"0.6 1.2 1.8 2.4 3 4" 
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_2"
 			} 	
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"health_regen"	"3.5 4.5 5.5 6.5"
+				"health_regen"	"3.5 4.5 5.5 6.5 7.5 9"
 			}		
 			"04"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"mana_regen"	"3.5 4.5 5.5 6.5"
+				"mana_regen"	"3.5 4.5 5.5 6.5 7.5 9"
 			}	
 			"05"
 			{
@@ -127,6 +130,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Necrolyte.SpiritForm.Cast"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"                                      "6"
 
 		"HasScepterUpgrade"			"1"
 
@@ -136,7 +140,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28 24 20 16"
+		"AbilityCooldown"				"28 24 20 16 14 14"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -148,7 +152,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"duration"		"3 3.5 4 4.5"
+				"duration"		"3 3.5 4 4.5 5 6"
 			}				
 			"02"
 			{
@@ -158,7 +162,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_INTEGER"
-				"movement_speed"			"6 12 18 24"
+				"movement_speed"			"6 12 18 24 30 40"
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_3"
 			}			
 			"04"
@@ -214,6 +218,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Necrolyte.ReapersScythe.Target"
+		"MaxLevel"                                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -226,7 +231,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 350 500"		
+		"AbilityManaCost"				"200 350 500 750"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -243,17 +248,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_per_health"			"0.7 0.8 0.9"
+				"damage_per_health"			"0.7 0.8 0.9 1.1"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.5 1.5 1.5"
+				"stun_duration"				"1.5 1.5 1.5 2.25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"respawn_constant"		"15 25 35"
+				"respawn_constant"		"15 25 35 40"
 			}
 		}
 	}
