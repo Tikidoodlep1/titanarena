@@ -2441,7 +2441,7 @@
     "Ability3"          "boss_resistance"      // Ability 3.
     "Ability4"          ""      // Ability 4.
     "Ability5"          ""      // Ability 5.
-    "Ability6"          ""      // Ability 6 - Unplanned, need something here
+    "Ability6"          "dk_demon_form"      // Ability 6
     "Ability7"          ""      // Ability 7
     "Ability8"          ""      // Ability 8
 	
@@ -2621,14 +2621,14 @@
 	//Creature Data
 	//----------------------------------------------------------------
 	"Creature"
-                {
-                        //Level Up
-                        "HPGain"                                        "20"
-                        "DamageGain"                            "5"
-                        "ArmorGain"                                     "1"
-                        "MagicResistGain"                       "2"
-                        "BountyGain"                            "1"
-                        "XPGain"                                        "1"
-                }
-}
+    {
+        //Level Up
+        "HPGain"                                        "20"
+        "DamageGain"                            "5"
+        "ArmorGain"                                     "1"
+        "MagicResistGain"                       "2"
+        "BountyGain"                            "1"
+        "XPGain"                                        "1"
+    }
+  }
 }

@@ -15329,4 +15329,80 @@
 		}
 	}
   }
+  "dk_demon_form"
+  {
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityTextureName"	"dk_demon_form"
+	"OverrideAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+	"AbilityCooldown"		"50"
+	"AbilityManaCost"		"150"
+	"AbilityDuration"		"30"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"hp_stolen_pct"		"10"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"			"30"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"		"200"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_armor"		"50"
+		}
+	}
+	"OnSpellStart"
+	{
+		"Damage"
+		{
+			"Target"
+			{
+				"Center"	"CASTER"
+				"Radius"	"800"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"ExludeFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+			"Type"	"DAMAGE_TYPE_PURE"
+			"Damage"	"%hp_stolen_pct"
+			"MaxHealthPercentBasedDamage"	"1"
+		}
+		"Heal"
+		{
+			"Target"	"CASTER"
+			"HealAmount"	"500"
+		}
+		"ApplyModifier"
+		{
+			"Target"	"CASTER"
+			"ModifierName"	"modifier_transform"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_transform"
+		{
+			"Passive"	"0"
+			"IsHidden"	"0"
+			"TextureName"	"dk_demon_form"
+			"Duration"	"30"
+			"IsBuff"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage"
+				"MODIFIER_PROPERTY_MODEL_CHANGE"			"models/items/dragon_knight/legacy_of_the_winterwyrm_form_of_the_winterwyrm/legacy_of_the_winterwyrm_form_of_the_winterwyrm.vmdl"
+			}
+		}
+	}
+  }
 }
