@@ -12,13 +12,14 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "6"
 
 		"AbilityCastRange"				"1400"
 		"AbilityCastPoint"				"0.8"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
 		"AbilityCooldown"				"11 9 7 5"
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"100 110 120 130 140 160"
 
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
@@ -48,21 +49,21 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"120 180 240 300"
+				"damage"					"120 180 240 300 360 440"
 				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_per_target"	"16 24 32 40"
+				"bonus_damage_per_target"	"16 24 32 40 48 60"
 				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_slow_pct"		"50 60 70 80"
+				"movement_slow_pct"		"50 60 70 80 90 115"
 			}
 			"07"
 			{
@@ -98,6 +99,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -108,11 +110,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"32 28 24 20"
+		"AbilityCooldown"				"32 28 24 20 18 16"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 120 130 140"
+		"AbilityManaCost"				"110 120 130 140 150 160"
 
 		"AbilityModifierSupportValue"	"0.5"
 
@@ -138,7 +140,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"destroy_attacks"			"6 6 9 9"
+				"destroy_attacks"			"6 6 9 9 10 10"
 				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_4"
 			}
 			"05"
@@ -149,12 +151,12 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_tick"			"3 7 11 15"
+				"damage_per_tick"			"3 7 11 15 20 30"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dps_tooltip"				"6 14 22 30"
+				"dps_tooltip"				"6 14 22 30 38 50"
 			}
 			"08"
 			{
@@ -174,7 +176,7 @@
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"pop_damage"				"80 170 260 350"
+				"pop_damage"				"80 170 260 350 440 540"
 			}
 			"12"
 			{
@@ -288,19 +290,20 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_ObsidianDestroyer.AstralImprisonment"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "6"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 25 20 15"
+		"AbilityCooldown"				"30 25 20 15 15 15"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"400 525 650 775"
+		"AbilityCastRange"				"400 525 650 775 900 1200"
 		"AbilityCastPoint"				"0.15"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 130 140 150"
+		"AbilityManaCost"				"120 130 140 150 160 185"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -319,7 +322,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_bonus_pct"	"12 14 16 18"
+				"movespeed_bonus_pct"	"12 14 16 18 20 26"
 			}
 			"03"
 			{
@@ -330,17 +333,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"100 200 300 400"
+				"max_damage"			"100 200 300 400 500 650"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"max_stun"				"1.0 1.9 2.8 3.7"
+				"max_stun"				"1.0 1.9 2.8 3.7 4.4 5"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_tick"		"5 7 9 11"
+				"damage_per_tick"		"5 7 9 11 13 16"
 			}
 			"07"
 			{
@@ -350,7 +353,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tick_dps_tooltip"		"25 35 45 55"
+				"tick_dps_tooltip"		"25 35 45 55 65 75"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -374,15 +377,16 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"HasScepterUpgrade"			"1"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "4"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_GS_SOUL_CHAIN"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCooldown"				"100 75 50"
-		"AbilityCastRange"				"700 800 900"
+		"AbilityCooldown"				"100 75 50 50"
+		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.15"
-		"AbilityManaCost"				"150 200 250"
+		"AbilityManaCost"				"150 200 250 300"
 		
 		"AbilityModifierSupportValue"	"0.75"
 
@@ -393,7 +397,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_duration"		"6.0 7.0 8.0"
+				"chain_duration"		"6.0 7.0 8.0 9.0"
 			}
 			"02"
 			{

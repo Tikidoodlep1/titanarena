@@ -14,15 +14,16 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_EmberSpirit.SearingChains.Target"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14.0 12.0 10.0 8.0"
+		// Time		 
+		//------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0 12.0 10.0 8.0 8.0 8.0 "
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -35,7 +36,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"1.5 2.0 2.5 3.0"
+				"duration"						"1.5 2.0 2.5 3.0 3.4 4.2"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_2"
 			}			
 			"02"
@@ -46,7 +47,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"total_damage"					"75 150 225 300"
+				"total_damage"					"75 150 225 300 375 525"
 			}
 			"04"
 			{
@@ -82,10 +83,11 @@
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "6"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 14 10 6"
+		"AbilityCooldown"				"18 14 10 6 6 6"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -98,13 +100,13 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"250 350 450 550"
+				"radius"					"250 350 450 550 650 800"
 			}
 			
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_hero_damage"			"40 80 120 160"
+				"bonus_hero_damage"			"40 80 120 160 200 260"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_6"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -124,7 +126,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"30.0 22.0 14.0 6.0"
+				"charge_restore_time"	"30.0 22.0 14.0 6.0 6.0 6.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -143,6 +145,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_EmberSpirit.FlameGuard.Cast"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -155,7 +158,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 90 100 110"
+		"AbilityManaCost"				"80 90 100 110 130 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -164,7 +167,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"8 12 16 20"
+				"duration"						"8 12 16 20 24 32"
 			}
 			
 			"02"
@@ -176,7 +179,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"absorb_amount"					"80 220 360 500"
+				"absorb_amount"					"80 220 360 500 600 750"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_1"
 			}				
 			"04"
@@ -187,7 +190,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"				"30 40 50 60"
+				"damage_per_second"				"30 40 50 60 70 85"
 				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_3"
 			}
 			"06"
@@ -213,6 +216,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_EmberSpirit.FireRemnant.Cast"
         "HasScepterUpgrade"			"1"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -253,7 +257,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 300"
+				"damage"				"100 200 300 400 600"
 			}
 			"05"
 			{
@@ -307,6 +311,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
+		"MaxLevel"                                      "4"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -345,7 +350,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 300"
+				"damage"				"100 200 300 450"
 			}
 			"05"
 			{

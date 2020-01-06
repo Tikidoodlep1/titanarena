@@ -13,20 +13,21 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"					   
 		"AbilitySound"					"Hero_Huskar.Inner_Vitality"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 18 14 10"
-		"AbilityDuration"				"16 16 16 16"
+		"AbilityCooldown"				"22 18 14 10 10 10"
+		"AbilityDuration"				"16"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140 150 160 170"
+		"AbilityManaCost"				"140 150 160 170 180 200"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -45,12 +46,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attrib_bonus"			"0.05 0.1 0.15 0.20"
+				"attrib_bonus"			"0.05 0.1 0.15 0.20 .25 .4"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hurt_attrib_bonus"		"0.2 0.4 0.6 0.8"
+				"hurt_attrib_bonus"		"0.2 0.4 0.6 0.8 1 1.2"
 			}
 			"04"
 			{
@@ -60,12 +61,12 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"tooltip_attrib_bonus"			"6 8 10 12"
+				"tooltip_attrib_bonus"			"6 8 10 12 14 16"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_hurt_attrib_bonus"		"22 30 38 46"
+				"tooltip_hurt_attrib_bonus"		"22 30 38 46 54 70"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -83,6 +84,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"   
 		"AbilitySound"					"Hero_Huskar.Inner_Vitality"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -91,11 +93,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14 13 12 11"
+		"AbilityCooldown"				"14 13 12 11 10 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 100 125 150"
+		"AbilityManaCost"				"75 100 125 150 175 250"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -109,7 +111,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 170 240 310"
+				"damage"				"100 170 240 310 380 525"
 			}
 			"02"
 			{
@@ -119,7 +121,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"disarm_duration"		"1.75 2.5 3.25 4"
+				"disarm_duration"		"1.75 2.5 3.25 4 4.5 5.25"
 			}
 			"04"
 			{
@@ -150,15 +152,16 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Huskar.Burning_Spear"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"450"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"0.0"
 		"AbilityDuration"				"8"
 
 		// Cost
@@ -177,7 +180,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"burn_damage"					"5 10 15 20"
+				"burn_damage"					"5 10 15 20 25 40"
 				"LinkedSpecialBonus"			"special_bonus_unique_huskar_2"
 			}		
 		}
@@ -193,6 +196,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"5273"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                                      "6"
 				
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -201,12 +205,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_attack_speed"			"160 220 280 340"
+				"maximum_attack_speed"			"160 220 280 340 400 540"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_health_regen"			"25 45 65 85"
+				"maximum_health_regen"			"25 45 65 85 120 145"
 			}
 			"03"
 			{
@@ -235,12 +239,13 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Huskar.Life_Break"
+		"MaxLevel"                                      "4"
 
 		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -257,7 +262,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDuration"				"3 4 5"
+		"AbilityDuration"				"3 4 5 6"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -266,12 +271,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_cost_percent"		"0.32 0.38 0.44"
+				"health_cost_percent"		"0.32 0.38 0.44 .55"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_damage"				"0.32 0.38 0.44"
+				"health_damage"				"0.32 0.38 0.44 .55"
 			}
 			"03"
 			{
@@ -281,12 +286,12 @@
 			"04"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_damage"				"32 38 44"
+				"tooltip_health_damage"				"32 38 44 55"
 			}
 			"05"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"tooltip_health_cost_percent"		"32 38 44"
+				"tooltip_health_cost_percent"		"32 38 44 55"
 				"CalculateSpellDamageTooltip"		"1"
 			}
 			"06"
@@ -297,7 +302,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_durtion_tooltip"		"3 4 5"
+				"slow_durtion_tooltip"		"3 4 5 6"
 			}
 			"08"
 			{
