@@ -1630,7 +1630,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"100"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
@@ -2244,7 +2244,6 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
 				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"           "%bonus_damage"
