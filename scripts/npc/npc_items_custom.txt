@@ -1695,12 +1695,47 @@
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"stun_duration"			"2"
+			"stun_duration"					"2"
 		}
 		"05"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"stun_range"			"400"
+			"stun_range"					"400"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_damage"					"25"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_hp"						"250"
+		}
+		"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_regen"					"10"
+		}
+		"09"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_str"						"10"
+		}
+		"10"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"block_chance"					"50"
+		}
+		"11"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"block_melee"					"70"
+		}
+		"12"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"block_ranged"					"25"
 		}
 	}
 	
@@ -1735,6 +1770,21 @@
 					"Damage"				"%attack_damage"
 				}
 			}
+			"OnAttacked"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"items/item_stunning_blink.lua"
+					"Function"				"Block"
+				}
+			}
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_str"
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+				"MODIFIER_PROPERTY_HEALTH_BONUS"			"%bonus_hp"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_regen"
+			}
 		}
 		"modifier_stunning_blink_stun"
 		{
@@ -1748,6 +1798,24 @@
 			"OverrideAnimation"	"ACT_DOTA_DISABLED"
 			"EffectName"		"particles\items\sunning_blink_stunned.vpcf"
 			"EffectAttachType"	"follow_overhead"
+		}
+		"modifier_block_melee"
+		{
+			"Passive"	"0"
+			"IsHidden"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"	"%block_melee"
+			}
+		}
+		"modifier_block_ranged"
+		{
+			"Passive"	"0"
+			"IsHidden"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"	"%block_ranged"
+			}
 		}
 	}
 }
@@ -2071,7 +2139,7 @@
 			}
 		}
 	}
-		"item_recipe_echo_sabre_2"
+"item_recipe_echo_sabre_2"
 	{
 	"ID"							    "8552"
 	"Model"							"models/props_gameplay/recipe.mdl"
@@ -2090,7 +2158,7 @@
 		"ItemResult"					"item_echo_sabre_2"
 		"ItemRequirements"
 		{
-			"01"						"item_recipe_echo_sabre_2"
+			"01"						"item_echo_sabre"
 		}
 	}
 "item_echo_sabre_2"

@@ -49,3 +49,20 @@ function modifier_item_blink_datadriven_damage_cooldown_on_take_damage(keys)
 		end
 	end
 end
+
+function Block(keys)
+local chance = RandomInt(0, 1)
+	if keys.caster:IsRangedAttacker() == true then
+		local ranged = true
+	else
+		local ranged = false
+	end
+	if chance == 1 then
+		if ranged == true then
+			ApplyDataDrivenModifier(caster, caster, "modifier_block_ranged", {duration=0.5})
+		else
+			ApplyDataDrivenModifier(caster, caster, "modifier_block_melee", {duration=0.5})
+		end
+		print("Blocked dablage")
+	end
+end

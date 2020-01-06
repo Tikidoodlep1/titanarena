@@ -14,6 +14,7 @@ function cast()
     thisEntity:CastAbilityOnPosition(thisEntity:GetAggroTarget():GetAbsOrigin(), ABILITY_toxin , -1)
 	ParticleManager:CreateParticle("particles/dk_toxin.vpcf", PATTACH_ABSORIGIN, thisEntity:GetAggroTarget())
 return 21
+	end
 	if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .50 then
     thisEntity:Stop()
     thisEntity:CastAbilityNoTarget(ABILITY_demon_form , -1)
