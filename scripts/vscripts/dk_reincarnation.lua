@@ -1,9 +1,9 @@
 function ResetDK(keys)
 local caster = keys.caster
-if caster:IsAlive() == true then
+print("Ran ResetDK")
 caster:Kill(nil, nil)
-CreateUnitByName("npc_boss_dragon_knight_1", caster:GetAbsOrigin(), true, nil, nil, 4)
-end
+local levels = GetGameTime()/10
+CreateUnitByName("npc_boss_dragon_knight_1", caster:GetAbsOrigin(), true, nil, nil, 4):CreatureLevelUp(levels)
 end
 
 function TransformDK(keys)

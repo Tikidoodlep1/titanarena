@@ -268,7 +268,9 @@ end
 			if boss:GetUnitName() == "npc_boss_scarab" then
 				rsalive = true
 			end
-			if boss:GetUnitName() == "npc_boss_dragon_knight_1" or boss:GetUnitName() == "npc_boss_dragon_knight_2" then
+			if boss:GetUnitName() == "npc_boss_dragon_knight_1" then
+				rdalive = true
+			elseif boss:GetUnitName() == "npc_boss_dragon_knight_2" then
 				rdalive = true
 			end
 		end
@@ -276,26 +278,27 @@ end
 			if boss:GetUnitName() == "npc_boss_scarab" then
 				dsalive = true
 			end
-			if boss:GetUnitName() == "npc_boss_dragon_knight_1" or boss:GetUnitName() == "npc_boss_dragon_knight_2" then
+			if boss:GetUnitName() == "npc_boss_dragon_knight_1" then
+				ddalive = true
+			elseif boss:GetUnitName() == "npc_boss_dragon_knight_2" then
 				ddalive = true
 			end
 		end
 		if rsalive == false then
-			CreateUnitByName("npc_boss_scarab", rad_sk_spawn, true, nil, nil, 4):CreatureLevelUp(rad_sk_level)
 			rad_sk_level = rad_sk_level + 1
-			print(rad_sk_level.."Is SK's current level")
+			CreateUnitByName("npc_boss_scarab", rad_sk_spawn, true, nil, nil, 4):CreatureLevelUp(rad_sk_level)
 		end
 		if rdalive == false then
-			CreateUnitByName("npc_boss_dragon_knight_1", rad_dk_spawn, true, nil, nil, 4):CreatureLevelUp(rad_dk_level)
 			rad_dk_level = rad_dk_level + 1
+			CreateUnitByName("npc_boss_dragon_knight_1", rad_dk_spawn, true, nil, nil, 4):CreatureLevelUp(rad_dk_level)
 		end
 		if dsalive == false then
-			CreateUnitByName("npc_boss_scarab", dire_sk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_sk_level)
 			dire_sk_level = dire_sk_level + 1
+			CreateUnitByName("npc_boss_scarab", dire_sk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_sk_level)
 		end
 		if ddalive == false then
-			CreateUnitByName("npc_boss_dragon_knight_1", dire_dk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_dk_level)
 			dire_dk_level = dire_dk_level + 1
+			CreateUnitByName("npc_boss_dragon_knight_1", dire_dk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_dk_level)
 		end
 	end
 	

@@ -10,10 +10,9 @@ end
 
 function cast()
     if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .99 then
-print("casting toxin")
     thisEntity:Stop()
     thisEntity:CastAbilityOnPosition(thisEntity:GetAggroTarget():GetAbsOrigin(), ABILITY_toxin , -1)
-
+	ParticleManager:CreateParticle("particles/dk_toxin.vpcf", PATTACH_ABSORIGIN, thisEntity:GetAggroTarget())
 return 21
     end
     if thisEntity:GetAggroTarget() ~= nil then

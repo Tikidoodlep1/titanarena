@@ -15251,9 +15251,10 @@
 		"modifier_reset"
 		{
 			"Passive"	"1"
-			"IsHidden"	"0"
-			"Duration"	"180"
-			"OnDestroy"
+			"IsHidden"	"1"
+			"Duration"	"181"
+			"ThinkInterval"	"180"
+			"OnIntervalThink"
 			{
 				"RunScript"
 				{
@@ -15317,16 +15318,6 @@
 			"IsPurgable"	"0"
 			"TextureName"	"dk_toxin"
 			"EffectName" "particles/dk_toxin_root.vpcf"
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"EffectName"	"particles/dk_toxin.vpcf"
-					"EffectAttachType" "follow_origin"
-					"Target" "POINT"
-					"EffectRadius"	"%radius"
-				}
-			}
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%damage_loss"
