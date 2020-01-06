@@ -19,12 +19,13 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"                                      "6"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-		"AbilityCooldown"				"11 10 9 8"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2 0.2"
+		"AbilityCooldown"				"11 10 9 8 7 6"
 		"AbilityManaCost"				"100"
 
 		// Stats
@@ -38,23 +39,23 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"2.0 2.0 2.0 2.0"
+				"buff_duration"			"2.0 2.0 2.0 2.0 2.0 2.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"spiderling_duration"	"60.0 60.0 60.0 60.0"
+				"spiderling_duration"	"60.0 60.0 60.0 60.0 60.0 60.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"70 140 210 280"
+				"damage"				"70 140 210 280 350 550"
 				"LinkedSpecialBonus"	"special_bonus_unique_broodmother_3"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"count"					"1 2 3 4"
+				"count"					"1 2 3 4 5 6"
 			}	 
 			"05"
 			{
@@ -77,6 +78,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -153,6 +155,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Broodmother.SpinWebCast"
         "HasScepterUpgrade"			"1"
+		"MaxLevel"                                      "6"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -173,44 +176,44 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"count"					"2 4 6 8"
+				"count"					"2 4 6 8 9 10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heath_regen"			"3 5 7 9"
+				"heath_regen"			"3 5 7 9 10 12"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"		"25 40 55 70"
+				"bonus_movespeed"		"25 40 55 70 85 85"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"2 4 6 8"
+				"max_charges"			"2 4 6 8 10 12"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"charge_restore_time"	"45.0"
+				"charge_restore_time"	"45.0 45.0 45.0 45.0 40.0 35.0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_charges_scepter"	"6 10 14 18"
+				"max_charges_scepter"	"6 10 14 18 22 26"
 				"RequiresScepter"		"1"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed_scepter"	"30 50 70 90"
+				"bonus_movespeed_scepter"	"30 50 70 90 110 140"
 				"RequiresScepter"		"1"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"count_scepter"					"6 10 14 18"
+				"count_scepter"					"6 10 14 18 22 26"
 				"RequiresScepter"		"1"
 			}
 		}
@@ -228,6 +231,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"                                      "6"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -236,17 +240,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"miss_chance"			"30 40 50 60"
+				"miss_chance"			"30 40 50 60 70 75"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"		"-16 -26 -36 -46"
+				"bonus_movespeed"		"-16 -26 -36 -46 -56 -66"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"			"2.0 2.0 2.0 2.0"
+				"duration"			"2.0 2.0 2.0 2.0 2.0 2.0"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -264,14 +268,15 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
+		"MaxLevel"                                      "4"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"45.0 45.0 45.0"
-		"AbilityManaCost"				"100 100 100"
+		"AbilityCooldown"				"45.0 45.0 45.0 45.0"
+		"AbilityManaCost"				"100 100 100 100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -280,19 +285,19 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60 100 140"
+				"bonus_damage"			"60 100 140 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_broodmother_1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"60 100 140"
+				"lifesteal_pct"			"60 100 140 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_broodmother_1"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"14.0 14.0 14.0"
+				"duration"				"14.0 14.0 14.0 14.0"
 			}
 		}
 	}

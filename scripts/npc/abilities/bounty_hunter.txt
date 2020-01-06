@@ -11,6 +11,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_BountyHunter.Shuriken"
+		"MaxLevel"                                      "6"
 
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -22,7 +23,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"400"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"135"
 
@@ -39,13 +40,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"150 225 300 375"
+				"bonus_damage"			"150 225 300 375 450 550"
 				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_2"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"1000 1000 1000 1000"
+				"speed"					"1000 1000 1000 1000 1000 1000"
 			}
 			"03"
 			{
@@ -85,12 +86,13 @@
 		//"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
 		"AbilitySound"					"Hero_BountyHunter.Jinada"
+		"MaxLevel"                                      "6"
 		
 
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 9 6 3"
+		"AbilityCooldown"				"12 9 6 3 3 3"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -99,12 +101,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"70 100 130 160"
+				"bonus_damage"			"70 100 130 160 190 240"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_steal"			"12 20 28 36"
+				"gold_steal"			"12 20 28 36 42 50"
 				"LinkedSpecialBonus"		"special_bonus_unique_bounty_hunter"
 			}
 		}
@@ -124,11 +126,12 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		//"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilitySound"					"Hero_BountyHunter.WindWalk"
+		"MaxLevel"                                      "6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0 15.0 15.0 15.0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"15.0 15.0 15.0 15.0 15.0 15.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -141,17 +144,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"20.0 25.0 30.0 35.0"
+				"duration"					"20.0 25.0 30.0 35.0 40.0 45.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"fade_time"					"1.0 0.75 0.5 0.25"
+				"fade_time"					"1.0 0.75 0.5 0.25 0.15 0.15"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow"				"14 20 26 32"
+				"slow"				"14 20 26 32 38 44"
 			}
 			"04"
 			{
@@ -176,6 +179,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_BountyHunter.Target"
+		"MaxLevel"                                      "4"
 
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -185,7 +189,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AbilityCooldown"				"4"
@@ -198,7 +202,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"target_crit_multiplier"	"140 170 200"
+				"target_crit_multiplier"	"140 170 200 240"
 			}
 			"02"
 			{
@@ -208,29 +212,29 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold_self"		"150 250 350"
+				"bonus_gold_self"		"150 250 350 450"
 				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_3"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"40 80 120"
+				"bonus_gold"			"40 80 120 160"
 				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"30.0 30.0 30.0"
+				"duration"				"30.0 30.0 30.0 30.0
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"gold_steal"			"0.3 0.4 0.5"
+				"gold_steal"			"0.3 0.4 0.5 0.6"
 			}			
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_move_speed_pct"	"16 20 24"
+				"bonus_move_speed_pct"	"16 20 24 30"
 			}
 
 		}

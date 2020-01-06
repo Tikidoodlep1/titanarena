@@ -11,19 +11,20 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"550 600 650 700"
+		"AbilityCastRange"				"550 600 650 700 750 800"
 		"AbilityCastPoint"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
+		"AbilityCooldown"				"3.0 3.0 3.0 3.0 3.0 3.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"20 20 20 20"
+		"AbilityManaCost"				"20 20 20 20 20 20"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,33 +38,33 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"10 15 20 25"
+				"damage"				"10 15 20 25 30 40"
 				"CalculateSpellDamageTooltip"		"1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"375 375 375 375"
+				"radius"				"375 375 375 375 375 375"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0 8.0 8.0 8.0"
+				"duration"				"8.0 8.0 8.0 8.0 8.0 8.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed_pct"	"-2 -4 -6 -8"
+				"movement_speed_pct"	"-2 -4 -6 -8 -10 -12"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"turn_rate_pct"			"-70 -70 -70 -70"
+				"turn_rate_pct"			"-70 -70 -70 -70 -70 -70"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"10 10 10 10"
+				"max_stacks"			"10 10 10 10 10 10"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -83,19 +84,20 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Batrider.Flamebreak"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2 0.2"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 17 16 15"
+		"AbilityCooldown"				"18 17 16 15 14 13"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 120 130 140"
+		"AbilityManaCost"				"110 120 130 140 150 170"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -108,7 +110,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_impact"		"50 75 100 125"
+				"damage_impact"		"50 75 100 125 150 200"
 			}
 			"02"
 			{
@@ -118,14 +120,14 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_duration"		"4 5 6 7"
+				"damage_duration"		"4 5 6 7 8 9"
 				"CalculateSpellDamageTooltip"	"0"
 				"LinkedSpecialBonus"	"special_bonus_unique_batrider_3"
 			}			
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_total_tooltip"		"100 150 210 280"
+				"damage_total_tooltip"		"100 150 210 280 350 450"
 			}
 			"05"
 			{
@@ -135,12 +137,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"collision_radius"		"100 100 100 100"
+				"collision_radius"		"100 100 100 100 100 100"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.5 0.5 0.5 0.5"
+				"stun_duration"			"0.5 0.5 0.5 0.5 0.5 0.5"
 			}
 			"08"
 			{
@@ -155,7 +157,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"knockback_height"		"100 100 100 100"
+				"knockback_height"		"100 100 100 100 100 100"
 			}
 			"11"
 			{
@@ -178,16 +180,17 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0 0.0 0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40 38 36 34"
+		"AbilityCooldown"				"40 38 36 34 32 30"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -200,17 +203,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"10 30 50 70"
+				"damage_per_second"		"10 30 50 70 90 130"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"5 10 15 20"
+				"movement_speed"		"5 10 15 20 25 30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"200 200 200 200"
+				"radius"				"200 200 200 200 200 200"
 			}
 			"04"
 			{
@@ -221,17 +224,17 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.5 0.5 0.5 0.5"
+				"tick_interval"			"0.5 0.5 0.5 0.5 0.5 0.5"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tree_radius"			"100 100 100 100"
+				"tree_radius"			"100 100 100 100 100 100"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_vision"			"200 400 600 800"
+				"bonus_vision"			"200 400 600 800 1000 1200"
 			}
 		}
 	}
@@ -254,6 +257,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Batrider.FlamingLasso.Cast"
+		"MaxLevel"                                      "4"
 
 		"HasScepterUpgrade"			"1"
 		
@@ -265,7 +269,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
-		"AbilityCooldown"				"100 90 80"
+		"AbilityCooldown"				"100 90 80 70"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -278,12 +282,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 3.5 4.0"
+				"duration"				"3.0 3.5 4.0 4.5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"drag_distance"			"300 300 300"
+				"drag_distance"			"300 300 300 300"
 			}
 			"03"
 			{
@@ -304,7 +308,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"		"20 40 60"
+				"damage"		"20 40 60 85"
 			}
 		}
 	}

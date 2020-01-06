@@ -14,21 +14,22 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Dark_Seer.Vacuum"
+		"MaxLevel"                                      "6"
 
 		"HasScepterUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"450 500 550 600"
+		"AbilityCastRange"				"450 500 550 600 650 700"
 		"AbilityCastPoint"				"0.4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60 50 40 30"
+		"AbilityCooldown"				"60 50 40 30 25 20"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 130 160 190"
+		"AbilityManaCost"				"100 130 160 190 120 150"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,18 +38,18 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"400 450 500 550"
+				"radius"				"400 450 500 550 600 650"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer_2"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.3 0.4 0.5 0.6"
+				"duration"				"0.3 0.4 0.5 0.6 0.7 0.8"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 100 150 200"
+				"damage"				"50 100 150 200 250 325"
 			}
 			"04"
 			{
@@ -82,11 +83,12 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Dark_Seer.Ion_Shield_Start"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -94,7 +96,7 @@
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130"
+		"AbilityManaCost"				"100 110 120 130 140 150"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -112,7 +114,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"24 46 68 90"
+				"damage_per_second"		"24 46 68 90 110 120"
 				"LinkedSpecialBonus"	"special_bonus_unique_dark_seer"
 			}
 			"03"
@@ -143,6 +145,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Dark_Seer.Surge"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -151,7 +154,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 14 12 10"
+		"AbilityCooldown"				"16 14 12 10 10 9"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -173,7 +176,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed_boost"				"25 40 55 70"
+				"speed_boost"				"25 40 55 70 85 100"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -193,6 +196,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Dark_Seer.Wall_of_Replica_Start"
+		"MaxLevel"                                      "3"
 
 		"HasScepterUpgrade"			"1"
 		
@@ -204,11 +208,11 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100.0 100.0 100.0"
+		"AbilityCooldown"				"100.0 100.0 100.0 80.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 250 375"
+		"AbilityManaCost"				"125 250 375 450"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -222,12 +226,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"replica_damage_outgoing"	"-30 -15 0"
+				"replica_damage_outgoing"	"-30 -15 0 10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_outgoing"	"70 85 100"
+				"tooltip_outgoing"	"70 85 100 115"
 			}
 			"04"
 			{
@@ -253,7 +257,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_slow"					"50 60 70"
+				"movement_slow"					"50 60 70 75"
 			}
 			"09"
 			{

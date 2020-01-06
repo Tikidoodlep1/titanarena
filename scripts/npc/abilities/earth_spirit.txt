@@ -17,6 +17,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_EarthSpirit.BoulderSmash.Target"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -27,7 +28,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 18.0 14.0 10.0"
+		"AbilityCooldown"				"22.0 18.0 14.0 10.0 10 10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -50,7 +51,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rock_damage"			"105 170 235 300"
+				"rock_damage"			"105 170 235 300 350 425"
 			}
 			"04"
 			{
@@ -60,7 +61,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"			"1.25 2.5 3.25 4"
+				"duration"			"1.25 2.5 3.25 4 4.50 5"
 			}
 			"06"
 			{
@@ -70,7 +71,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"unit_distance"			"500.0 600.0 700.0 800.0"
+				"unit_distance"			"500.0 600.0 700.0 800.0 900 1100"
 			}
 			"08"
 			{
@@ -98,6 +99,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_EarthSpirit.RollingBoulder.Cast"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -106,7 +108,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16.0 12.0 8.0 4.0"
+		"AbilityCooldown"				"16.0 12.0 8.0 4.0 4.0 4.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -153,19 +155,19 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"70 80 90 100"
+				"damage"				"70 80 90 100 110 145"
 				"LinkedSpecialBonus"	"special_bonus_unique_earth_spirit"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.4 0.6 0.8 1.0"
+				"stun_duration"			"0.4 0.6 0.8 1.0 1.5 2"
 				"LinkedSpecialBonus"	"special_bonus_unique_earth_spirit_3"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"rock_bonus_duration"	"0.4 0.6 0.8 1.0"
+				"rock_bonus_duration"	"0.4 0.6 0.8 1.0 1.2 1.6"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -189,6 +191,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_EarthSpirit.GeomagneticGrip.Target"
+		"MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -217,12 +220,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rock_damage"			"50 100 150 200"
+				"rock_damage"			"50 100 150 200 250 350"
 			}	
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"			"2 2.5 3 3.5"
+				"duration"			"2 2.5 3 3.5 4 4.5"
 			}
 			"04"
 			{
@@ -376,6 +379,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_EarthSpirit.Magnetize.Cast"
+		"MaxLevel"                                      "4"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -386,7 +390,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100 90 80"
+		"AbilityCooldown"				"100 90 80 75"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -404,7 +408,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"			"50 75 100"
+				"damage_per_second"			"50 75 100 135"
 			}
 			"03"
 			{
