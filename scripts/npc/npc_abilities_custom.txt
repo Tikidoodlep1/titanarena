@@ -15332,7 +15332,7 @@
   "dk_demon_form"
   {
 	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityTextureName"	"dk_demon_form"
 	"OverrideAnimation"		"ACT_DOTA_CAST_ABILITY_6"
 	"AbilityCooldown"		"50"

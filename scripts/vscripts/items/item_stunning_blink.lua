@@ -59,10 +59,9 @@ local chance = RandomInt(0, 1)
 	end
 	if chance == 1 then
 		if ranged == true then
-			caster:ApplyDataDrivenModifier(caster, caster, "modifier_block_ranged", {duration=0.5})
+			keys.caster:ApplyDataDrivenModifier(caster, caster, "modifier_block_ranged", {duration=0.5})
 		else
-			caster:ApplyDataDrivenModifier(caster, caster, "modifier_block_melee", {duration=0.5})
+			keys.caster:ApplyDataDrivenModifier(caster, caster, "modifier_block_melee", {duration=0.5})
 		end
-		print("Blocked dablage")
 	end
 end
