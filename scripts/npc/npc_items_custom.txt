@@ -1778,6 +1778,28 @@
 					"Function"				"Block"
 				}
 			}
+			"OnAttackStart"
+			{
+				"Random"
+				{
+					"Chance"	"25"
+					"PseudoRandom"	"0"
+					"OnSuccess"
+					{
+						"ApplyModifier"
+						{
+							"Target"	"TARGET"
+							"ModifierName"	"modifier_stunning_blink_stun"
+						}
+						"Damage"
+						{
+							"Target"	"TARGET"
+							"Damage"	"100"
+							"Type"		"DAMAGE_TYPE_PHYSICAL"
+						}
+					}
+				}
+			}
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_str"
@@ -1790,7 +1812,7 @@
 		{
 			"IsDebuff"	"1"
 			"TextureName" "stunning_blink"
-
+			"Duration"	"1.5"
 			"States"
 			{
 				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"

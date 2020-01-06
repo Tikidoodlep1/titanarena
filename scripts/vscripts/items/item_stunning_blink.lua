@@ -52,16 +52,17 @@ end
 
 function Block(keys)
 local chance = RandomInt(0, 1)
-	if keys.caster:IsRangedAttacker() == true then
+local caster = keys.caster
+	if caster:IsRangedAttacker() == true then
 		local ranged = true
 	else
 		local ranged = false
 	end
 	if chance == 1 then
 		if ranged == true then
-			keys.caster:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_block_ranged", {duration=0.5})
+			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_block_ranged", {duration=0.5})
 		else
-			keys.caster:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_block_melee", {duration=0.5})
+			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_block_melee", {duration=0.5})
 		end
 	end
 end

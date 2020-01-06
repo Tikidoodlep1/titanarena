@@ -15268,7 +15268,7 @@
   "dk_toxin"
   {
 	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityTextureName"	"dk_toxin"
 	"OverrideAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityCooldown"		"20"
@@ -15386,6 +15386,11 @@
 			"Target"	"CASTER"
 			"ModifierName"	"modifier_transform"
 		}
+		"RunScript"
+		{
+			"ScriptFile"	"dk_fireball"
+			"Function"		"DemonForm"
+		}
 	}
 	"Modifiers"
 	{
@@ -15400,7 +15405,6 @@
 			{
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage"
-				"MODIFIER_PROPERTY_MODEL_CHANGE"			"models/items/dragon_knight/legacy_of_the_winterwyrm_form_of_the_winterwyrm/legacy_of_the_winterwyrm_form_of_the_winterwyrm.vmdl"
 			}
 		}
 	}

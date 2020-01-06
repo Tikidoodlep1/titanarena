@@ -54,3 +54,12 @@ end
 ParticleManager:DestroyParticle(effectIndex, true)
 end)
 end
+
+function DemonForm(keys)
+local caster = keys.caster
+caster:SetRenderColor(105, 0, 175)
+print("set material group")
+Timers:CreateTimer(30, function()
+caster:SetRenderColor(255, 255, 255)
+end)
+end

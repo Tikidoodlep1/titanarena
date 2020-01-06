@@ -9,18 +9,23 @@ function Spawn( entityKeyValues )
 end
 
 function cast()
-    if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .99 then
-    thisEntity:Stop()
-    thisEntity:CastAbilityOnPosition(thisEntity:GetAggroTarget():GetAbsOrigin(), ABILITY_toxin , -1)
-	ParticleManager:CreateParticle("particles/dk_toxin.vpcf", PATTACH_ABSORIGIN, thisEntity:GetAggroTarget())
-return 21
-	end
-	if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .50 then
+if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .50 then
     thisEntity:Stop()
     thisEntity:CastAbilityNoTarget(ABILITY_demon_form , -1)
-	ParticleManager:CreateParticle("particles/units/heroes/hero_dragon_knight/dragon_knight_transform_black.vpcf", PATTACH_ABSORIGIN, thisEntity:GetAbsOrigin())
-return 51
-    end
+	ParticleManager:CreateParticle("particles/units/heroes/hero_dragon_knight/dragon_knight_transform_black.vpcf", PATTACH_ABSORIGIN, thisEntity)
+	print("casting demon form")
+return 10
+	end
+    if (thisEntity:GetHealth() / thisEntity:GetMaxHealth()) <= .99 then
+    thisEntity:Stop()
+	local targetpos = thisEntity:GetAggroTarget():GetAbsOrigin()
+		if targetpos == nil then
+			targetpos = caster:GetAbsOrigin() + caster:GetForwardVector()
+		end
+    thisEntity:CastAbilityOnPosition(targetpos, ABILITY_toxin , -1)
+	ParticleManager:CreateParticle("particles/dk_toxin.vpcf", PATTACH_ABSORIGIN, thisEntity:GetAggroTarget())
+return 10
+	end
     if thisEntity:GetAggroTarget() ~= nil then
 local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
 if distance_from_target >= 750 then
