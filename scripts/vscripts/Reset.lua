@@ -29,43 +29,86 @@ local stackcount = caster:GetModifierStackCount("modifier_reset_bonus", caster)
 		player:SetAssignedHeroEntity(new_hero)
 		
 		for _,hero in ipairs(HeroList:GetAllHeroes()) do
-			if PlayerResource:GetLevel(hero:GetPlayerID()) == 1 or PlayerResource:GetLevel(hero:GetPlayerID()) == 2 then
-				print(hero:GetTeamNumber())
+			if new_hero:GetUnitName() == hero:GetUnitName() then
 				if hero:GetTeamNumber() == 2 then
 					FindClearSpaceForUnit(new_hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
-					print("moved to spawn")
 				else
 					FindClearSpaceForUnit(new_hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
-					print("moved to spawn")
 				end
 			end
 		end
-		
-		CreateItem(tostring(item1), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item2), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item3), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item4), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item5), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item6), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item7), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item8), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item9), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item10), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item11), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item12), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item13), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item14), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item15), _G.resetherosname, _G.resetherosname)
-		CreateItem(tostring(item16), _G.resetherosname, _G.resetherosname)
+		if item1 == nil then
+		else
+			new_hero:AddItemByName(item1:GetName())
+		end
+		if item2 == nil then
+		else
+			new_hero:AddItemByName(item2:GetName())
+		end
+		if item3 == nil then
+		else
+			new_hero:AddItemByName(item3:GetName())
+		end
+		if item4 == nil then
+		else
+			new_hero:AddItemByName(item4:GetName())
+		end
+		if item5 == nil then
+		else
+			new_hero:AddItemByName(item5:GetName())
+		end
+		if item6 == nil then
+		else
+			new_hero:AddItemByName(item6:GetName())
+		end
+		if item7 == nil then
+		else
+			new_hero:AddItemByName(item7:GetName())
+		end
+		if item8 == nil then
+		else
+			new_hero:AddItemByName(item8:GetName())
+		end
+		if item9 == nil then
+		else
+			new_hero:AddItemByName(item9:GetName())
+		end
+		if item10 == nil then
+		else
+			new_hero:AddItemByName(item10:GetName())
+		end
+		if item11 == nil then
+		else
+			new_hero:AddItemByName(item11:GetName())
+		end
+		if item12 == nil then
+		else
+			new_hero:AddItemByName(item12:GetName())
+		end
+		if item13 == nil then
+		else
+			new_hero:AddItemByName(item13:GetName())
+		end
+		if item14 == nil then
+		else
+			new_hero:AddItemByName(item14:GetName())
+		end
+		if item15 == nil then
+		else
+			new_hero:AddItemByName(item15:GetName())
+		end
+		if item16 == nil then
+		else
+			new_hero:AddItemByName(item16:GetName())
+		end
 		print("reset success")
-		print(tostring(item1))
 		for _,hero in ipairs(HeroList:GetAllHeroes()) do
-			if _G.resetherosname == hero then
-				if _G.resetherosname:HasModifier("modifier_reset_bonus") == true then
-					SetModifierStackCount("modifier_reset_bonus", _G.resetherosname, stackcount + 1)
+			if new_hero:GetUnitName() == hero:GetUnitName() then
+				if new_hero:HasModifier("modifier_reset_bonus") == true then
+					new_hero:SetModifierStackCount("modifier_reset_bonus", new_hero, stackcount + 1)
 				else
-					_G.resetherosname:AddNewModifier(_G.resetherosname, nil, "modifier_reset_bonus", {duration=-1})
-					SetModifierStackCount("modifier_reset_bonus", _G.resetherosname, stackcount + 1)
+					new_hero:AddNewModifier(new_hero, nil, "modifier_reset_bonus", {duration=-1})
+					new_hero:SetModifierStackCount("modifier_reset_bonus", new_hero, stackcount + 1)
 				end
 			end
 		end
@@ -73,9 +116,8 @@ local stackcount = caster:GetModifierStackCount("modifier_reset_bonus", caster)
 		
 		for _,hero in ipairs(HeroList:GetAllHeroes()) do
 			if hero:GetUnitName() == caster:GetUnitName() then
-				_G.resetherosname =	hero
+				new_hero =	hero
 				hero:Destroy()
-				print("Destroyed old hero")
 				break
 			end
 		end
