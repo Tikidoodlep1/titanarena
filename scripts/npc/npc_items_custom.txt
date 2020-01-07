@@ -958,7 +958,7 @@
 			}
 			"FireSound"
 			{
-				"EffectName"	"moon_shard.vsnd_c"
+				"EffectName"	"Item.MoonShard.Consume"
 				"Target"		"TARGET"
 			}
 		}
@@ -2294,12 +2294,47 @@
 				{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"           "%movement_slow"
 				}
-
-
-
 			}
 		}
-
+	}
+	"item_reset"
+	{
+		"ID"								"140024"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"							"item_datadriven"
+		
+		//Item Info
+		//------------------------------------------------------------------------------------------------------------------
+		"ItemCost"							"99999"
+		"ItemQuality"						"artifact"
+		"ItemAliases"						"Reset"
+		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"						"1"
+		"AbilityTextureName" 				"reset_item"
+		"SecretShop"						"1"
+		"ItemInitialCharges" "1"
+		"ItemDisplayCharges" "0"
+		"ItemRequiresCharges" "1"
+		"ItemStackable" "0"
+		"ItemPermanent" "0"
+		
+		"OnSpellStart"
+		{
+			"SpendCharge"	{}
+			"RunScript"
+			{
+				"ScriptFile"		"Reset.lua"
+				"Function"			"CastReset"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Item.MoonShard.Consume"
+				"Target"		"TARGET"
+			}
+		}
 	}
 
 }

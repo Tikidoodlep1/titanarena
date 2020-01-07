@@ -228,18 +228,24 @@ end
 	local rad_sk_spawn = Entities:FindByName(nil, "rad_boss_sk"):GetAbsOrigin()
 	local dire_dk_spawn = Entities:FindByName(nil, "dire_boss_dk"):GetAbsOrigin()
 	local dire_sk_spawn = Entities:FindByName(nil, "dire_boss_sk"):GetAbsOrigin()
+	local rreset_spawn = Entities:FindByName(nil, "rad_boss_minibuff"):GetAbsOrigin()
+	local dreset_spawn = Entities:FindByName(nil, "dire_boss_minibuff"):GetAbsOrigin()
 	local w_spawn = Entities:FindByName(nil, "wanderer_spawn"):GetAbsOrigin()
 	local walive = false
 	local rsalive = false
 	local rdalive = false
 	local dsalive = false
 	local ddalive = false
+	local rreset = false
+	local dreset = false
 	local entities = Entities:FindAllByClassname("npc_dota_creature")
 	local bosslevel = 1
 	local rad_sk_level = 1
 	local dire_sk_level = 1
 	local rad_dk_level = 1
 	local dire_dk_level = 1
+	local rad_reset_level = 1
+	local dire_reset_level = 1
 		for _, ent in ipairs(entities) do
 			if ent:GetUnitName() == "npc_boss_wanderer" then
 				walive = true
@@ -299,6 +305,32 @@ end
 		if ddalive == false then
 			dire_dk_level = dire_dk_level + 1
 			CreateUnitByName("npc_boss_dragon_knight_1", dire_dk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_dk_level)
+		end
+		local radresetboss = FindUnitsInRadius(4, rreset_spawn, nil, 2500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+		for _,resetboss in ipairs(radresetboss) do
+			if resetboss:GetUnitName() == "npc_boss_et_mag" or resetboss:GetUnitName() == "npc_boss_et_phys" then
+				rreset = true
+			else
+				rreset = false
+			end
+			if rreset == false then
+				rad_reset_level = rad_reset_level + 1
+				CreateUnitByName("npc_boss_et_mag", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(rad_reset_level)
+				CreateUnitByName("npc_boss_et_phys", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(rad_reset_level)
+			end
+		end
+		local direresetboss = FindUnitsInRadius(4, dreset_spawn, nil, 2500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+		for _,resetboss in ipairs(direresetboss) do
+			if resetboss:GetUnitName() == "npc_boss_et_mag" or resetboss:GetUnitName() == "npc_boss_et_phys" then
+				dreset = true
+			else
+				dreset = false
+			end
+			if dreset == false then
+				dire_reset_level = dire_reset_level + 1
+				CreateUnitByName("npc_boss_et_mag", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
+				CreateUnitByName("npc_boss_et_phys", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
+			end
 		end
 	end
 	
@@ -912,6 +944,7 @@ function barebones:InitGameMode()
 	LinkLuaModifier("modifier_custom_invulnerable", "modifiers/modifier_custom_invulnerable", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_status_resistance", "modifiers/modifier_status_resistance", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_titan_slain", "modifiers/modifier_titan_slain", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_reset_bonus", "modifiers/modifier_reset_bonus", LUA_MODIFIER_MOTION_NONE)
 
 	-- Talent modifiers (this can be done in ability scripts, but it can be done here as well)
 	LinkLuaModifier("modifier_ability_name_talent_name_1", "modifiers/talents/modifier_ability_name_talent_name_1", LUA_MODIFIER_MOTION_NONE)

@@ -2528,6 +2528,218 @@
         "MagicResistGain"                       "5"
     }
   }
+  "npc_boss_et_phys"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           	"models/heroes/elder_titan/elder_titan.vmdl"  // Model.
+	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+	"ModelScale"		"2"
+    "SoundSet"          "Hero_ElderTitan"          // Name of sound set.
+    "Level"           "1"
+    "UnitLabel"         "Physical Titan"
+	
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          ""     // Ability 1.
+    "Ability2"          ""      // Ability 2.
+    "Ability3"          "boss_resistance"      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          ""      // Ability 5.
+    "Ability6"          ""      // Ability 6
+    "Ability7"          ""      // Ability 7
+    "Ability8"          ""      // Ability 8
+	
+	
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "45"     // Physical protection.
+    "MagicalResistance"       "100"     // Magical protection.
+	"DisableResistance"            "75"
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
+    "AttackDamageMin"     "1500"     // Damage range min.
+    "AttackDamageMax"     "1500"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "1"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "750"   // Range within a target can be acquired.
+    "AttackRange"       "450"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"   "125"     // Base strength
+    "AttributeStrengthGain"   "1"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "125"     // Base intelligence
+    "AttributeIntelligenceGain" "1"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "125"     // Base agility
+    "AttributeAgilityGain"    "1"     // Agility bonus per level.
+	"CanBeDominated"               "0"
+	"IsAncient"					"1"
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "0"     // Experience earn.
+    "BountyGoldMin"       "0"     // Gold earned min.
+    "BountyGoldMax"       "0"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_HUGE"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "350"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "15000"     // Base health.
+    "StatusHealthRegen"     "30"     // Health regeneration rate.
+    "StatusMana"        "0"     // Base mana.
+    "StatusManaRegen"     "0"     // Mana regeneration rate.
+	"ConsideredHero"		"1"
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
+    
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "2000"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	"UseNeutralCreepBehavior" 	"1"
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+    {
+        //Level Up
+        "HPGain"                                        "1500"
+        "DamageGain"                            "100"
+        "ArmorGain"                                     "5"
+        "MagicResistGain"                       "5"
+    }
+  }
+  "npc_boss_et_mag"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           	"models/heroes/elder_titan/ancestral_spirit.vmdl"  // Model.
+	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+	"ModelScale"		"2"
+    "SoundSet"          "Hero_ElderTitan"          // Name of sound set.
+    "Level"           "1"
+    "UnitLabel"         "Spiritual Titan"
+	
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          ""     // Ability 1.
+    "Ability2"          ""      // Ability 2.
+    "Ability3"          "boss_resistance"      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          ""      // Ability 5.
+    "Ability6"          ""      // Ability 6
+    "Ability7"          ""      // Ability 7
+    "Ability8"          ""      // Ability 8
+	
+	
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "180"     // Physical protection.
+    "MagicalResistance"       "45"     // Magical protection.
+	"DisableResistance"            "75"
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
+	"ProjectileModel"			"models/items/elder_titan/elder_titan_immortal_back/elder_titan_back_immortal_rock_fx.vmdl" // Particle system model for projectile.
+	"ProjectileSpeed"			"550"		// Speed of projectile.
+    "AttackDamageMin"     "1500"     // Damage range min.
+    "AttackDamageMax"     "1500"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_MAGICAL"
+    "AttackRate"        "1"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "750"   // Range within a target can be acquired.
+    "AttackRange"       "450"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+    "AttributeBaseStrength"   "125"     // Base strength
+    "AttributeStrengthGain"   "1"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "125"     // Base intelligence
+    "AttributeIntelligenceGain" "1"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "125"     // Base agility
+    "AttributeAgilityGain"    "1"     // Agility bonus per level.
+	"CanBeDominated"               "0"
+	"IsAncient"					"1"
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "0"     // Experience earn.
+    "BountyGoldMin"       "0"     // Gold earned min.
+    "BountyGoldMax"       "0"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_HUGE"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "350"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "15000"     // Base health.
+    "StatusHealthRegen"     "30"     // Health regeneration rate.
+    "StatusMana"        "0"     // Base mana.
+    "StatusManaRegen"     "0"     // Mana regeneration rate.
+	"ConsideredHero"		"1"
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
+    
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "2000"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "5"   // How much bots want to attack them vs other non-hero things
+	"UseNeutralCreepBehavior" 	"1"
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+    {
+        //Level Up
+        "HPGain"                                        "1500"
+        "DamageGain"                            "100"
+        "ArmorGain"                                     "5"
+        "MagicResistGain"                       "5"
+    }
+  }
   "npc_invader"
   {
     // General
