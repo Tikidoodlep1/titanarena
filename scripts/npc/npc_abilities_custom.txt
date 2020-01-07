@@ -15363,6 +15363,11 @@
 	}
 	"OnSpellStart"
 	{
+		"FireSound"     // Action
+    		{
+        		"EffectName"    "Hero_DragonKnight.Projection"
+        		"Target"        "CASTER"
+    		}
 		"Damage"
 		{
 			"Target"
