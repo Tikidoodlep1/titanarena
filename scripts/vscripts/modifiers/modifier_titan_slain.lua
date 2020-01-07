@@ -21,8 +21,8 @@ function modifier_titan_slain:Duration()
 	return 600
 end
 
-function modifier_titan_slain:TextureName()
-	return "resource/flash3/images/spellicons/titan_slain_buff"
+function modifier_titan_slain:GetTexture()
+	return "titan_slain_buff"
 end
 
 function modifier_titan_slain:OnTooltip(keys)
