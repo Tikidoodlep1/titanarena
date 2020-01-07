@@ -208,17 +208,17 @@ function barebones:OnGameInProgress()
 	end)
 
 function notifyDual30()
-Notifications:TopToAll({text = "A duel will begin in 30 seconds!", duration=5.0})
+Notifications:TopToAll({text = "A duel will begin in 30 seconds!", duration=5.0,style={color="red"}})
 EmitGlobalSound("ui.contract_complete")
 end
 
 function notifyDual15()
-Notifications:TopToAll({text = "A duel will begin in 15 seconds!", duration=5.0})
+Notifications:TopToAll({text = "A duel will begin in 15 seconds!", duration=5.0,style={color="red"}})
 EmitGlobalSound("ui.contract_complete")
 end
 
 function notifyDual5()
-Notifications:TopToAll({text = "A duel will begin in 5 seconds!", duration=5.0})
+Notifications:TopToAll({text = "A duel will begin in 5 seconds!", duration=5.0,style={color="red"}})
 EmitGlobalSound("ui.contract_complete")
 end
 
@@ -313,7 +313,7 @@ end
 	for _, trigger in pairs(trigger_in) do
 			trigger:Enable()
 		end
-	Notifications:TopToAll({text = "The duel has begun!", duration=5.0})
+	Notifications:TopToAll({text = "THE DUEL HAS BEGUN!", duration=5.0,style={color="red"}})
 	EmitGlobalSound("ui.contract_complete")
 	local players = HeroList:GetAllHeroes()
 	local dHeroIncrementer = 0
