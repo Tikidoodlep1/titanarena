@@ -10,20 +10,20 @@ if thisEntity:GetAggroTarget() == nil then
 	if thisEntity:GetTeamNumber() == 2 then
 		if	Entities:FindByName(nil, "npc_dire_titan") == nil then
 			thisEntity:MoveToPositionAggressive(Entities:FindByName(nil, "dire_titan"):GetAbsOrigin())
-			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=10})
+			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=8})
 		else
 			thisEntity:MoveToPosition(Entities:FindByName(nil, "dire_titan"):GetAbsOrigin())
 			thisEntity:SetAggoTarget(Entities:FindByName(nil, "npc_dire_titan"))
-			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=10})
+			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=8})
 		end
 	else
 		if	Entities:FindByName(nil, "npc_radiant_titan") == nil then
 			thisEntity:MoveToPositionAggressive(Entities:FindByName(nil, "rad_titan"):GetAbsOrigin())
-			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=10})
+			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=8})
 		else
 			thisEntity:MoveToPosition(Entities:FindByName(nil, "rad_titan"):GetAbsOrigin())
 			thisEntity:SetAggoTarget(Entities:FindByName(nil, "npc_radiant_titan"))
-			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=10})
+			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=8})
 		end
 	end
 return 2
