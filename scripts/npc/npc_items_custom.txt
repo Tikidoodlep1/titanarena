@@ -2135,7 +2135,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_slow"			"100"
+				"movement_slow"			"-100"
 			}
 			"08"
 			{
@@ -2150,14 +2150,18 @@
 		}
 				"Modifiers"
 		{
-			"echo_sabre_bonus_attacks	_modifier"
+			"echo_sabre_bonus_attacks_modifier"
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"           "%bonus_damage"
+				"MODIFIER_PROPERTY_BASE_MANA_REGEN"                  "%bonus_mana_regen"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"             "%bonus_strength"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"            "%bonus_intellect"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"       "%bonus_attack_speed"
 				}
 						"OnAttackLanded"
 						{
@@ -2168,7 +2172,21 @@
 								"Function"				"bonus_attacks"
 							}
 						}
-			} 
+			}
+			"modifier_echo_sabre_debuff" 
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsDebuff"  "1"
+
+				"properties"
+				{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"           "%movement_slow"
+				}
+
+
+
+			}
 		}
 
 	}

@@ -8,6 +8,7 @@ local enemy_target = keys.target
 local abil_cooldown = ability:GetSpecialValueFor("AbilityCooldown")
 print("checking echo sabre 2")
 if ability:GetCooldownTimeRemaining() == 0 then
+	ability:ApplyDataDrivenModifier(caster, enemy_target, "modifier_echo_sabre_debuff", {duration = .8})
 	ability:StartCooldown(5)
 	local attacks_sent = 0
 print("echo sabre 2 is off cooldown")
