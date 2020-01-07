@@ -22,7 +22,7 @@ local ability = keys.ability
 local attacker = keys.attacker
 local cd = ability:GetSpecialValueFor("cooldown")
 
-	if attacker:IsHero() == true then
+	if attacker:IsHero() == true or attacker:IsBoss() == true then
 	ability:StartCooldown(cd)
 
 		if caster:HasModifier("visible_regen_modifier") then

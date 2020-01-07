@@ -2336,5 +2336,98 @@
 			}
 		}
 	}
-
+	"item_recipe_moon_jelly"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140024"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_moon_jelly"
+		"ItemRequirements"
+		{
+			"01"						"item_moon_shard;item_spectral_jelly"
+		}
+	}
+	"item_moon_jelly"
+	{
+		//General
+		//------------------------------------------------------------------------------------------------------------------
+		"ID"								"140025"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"							"item_datadriven"
+		
+		//Item Info
+		//------------------------------------------------------------------------------------------------------------------
+		"ItemCost"							"99999"
+		"ItemQuality"						"artifact"
+		"ItemAliases"						"Moon Jelly"
+		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"						"1"
+		"AbilityTextureName" 				"moon_jelly"
+		"SecretShop"						"1"
+		"ItemInitialCharges" "1"
+		"ItemDisplayCharges" "0"
+		"ItemRequiresCharges" "1"
+		"ItemStackable" "0"
+		"ItemPermanent" "0"
+		
+		//Special
+		//------------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_night_vision"		"300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"80"
+			}
+		}
+		"OnSpellStart"
+		{
+			"SpendCharge"	{}
+			"ApplyModifier"
+			{
+				"Target"		"TARGET"
+				"ModifierName"	"moon_jelly_modifier"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Item.MoonShard.Consume"
+				"Target"		"TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"moon_jelly_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+				"IsBuff"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"TextureName"	"moon_jelly"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION" "%bonus_night_vision"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+				}
+			}
+		}
+	
+	}
 }

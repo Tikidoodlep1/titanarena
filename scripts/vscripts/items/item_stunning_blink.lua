@@ -42,7 +42,7 @@ end
 function modifier_item_blink_datadriven_damage_cooldown_on_take_damage(keys)
 	local attacker_name = keys.attacker:GetName()
 
-	if keys.Damage > 0 and (attacker_name == "npc_dota_roshan" or keys.attacker:IsControllableByAnyPlayer()) then  --If the damage was dealt by neutrals or lane creeps, essentially.
+	if keys.Damage > 0 and (attacker_name == "npc_dota_roshan" or keys.attacker:IsControllableByAnyPlayer()) or keys.attacker:IsBoss() == true then  --If the damage was dealt by neutrals or lane creeps, essentially.
 		if keys.ability:GetCooldownTimeRemaining() < keys.BlinkDamageCooldown then
 			keys.ability:StartCooldown(keys.BlinkDamageCooldown)
 
