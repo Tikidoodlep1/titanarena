@@ -390,8 +390,40 @@ function barebones:OnEntityKilled(keys)
 	if keys.entindex_attacker ~= nil then
 		killer_unit = EntIndexToHScript(keys.entindex_attacker)
 	end
-	
 	local players = HeroList:GetAllHeroes()
+	if killed_unit:GetUnitName() == "npc_boss_et_phys" or killed_unit:GetUnitName() == "npc_boss_et_mag" then
+		for _, hero in ipairs(players) do
+			if hero:GetTeamNumber() == killer_unit:GetTeamNumber() then
+				PlayerResource:ModifyGold(hero:GetPlayerID(), 500, true, 14)
+				hero:AddExperience(5000, 3, false, true)
+			end
+		end			
+	end
+	if killed_unit:GetUnitName() == "npc_boss_dragon_knight_2" or killed_unit:GetUnitName() == "npc_boss_dragon_knight_1" then
+		for _, hero in ipairs(players) do
+			if hero:GetTeamNumber() == killer_unit:GetTeamNumber() then
+				PlayerResource:ModifyGold(hero:GetPlayerID(), 700, true, 14)
+				hero:AddExperience(1500, 3, false, true)
+			end
+		end			
+	end
+	if killed_unit:GetUnitName() == "npc_boss_scarab" then
+		for _, hero in ipairs(players) do
+			if hero:GetTeamNumber() == killer_unit:GetTeamNumber() then
+				PlayerResource:ModifyGold(hero:GetPlayerID(), 700, true, 14)
+				hero:AddExperience(3000, 3, false, true)
+			end
+		end			
+	end
+	if killed_unit:GetUnitName() == "npc_boss_wanderer" then
+		for _, hero in ipairs(players) do
+			if hero:GetTeamNumber() == killer_unit:GetTeamNumber() then
+				PlayerResource:ModifyGold(hero:GetPlayerID(), 1500, true, 14)
+				hero:AddExperience(7000, 3, false, true)
+			end
+		end			
+	end
+	
 	if killed_unit:GetUnitName() == "npc_dire_titan" then
 		Notifications:TopToAll({text = "The Dire Titan Has Been Slain!", duration=5.0})
 		for _, hero in ipairs(players) do
@@ -406,6 +438,10 @@ function barebones:OnEntityKilled(keys)
 				hero:AddNewModifier(hero, nil, "modifier_titan_slain", {duration=600})
 			end
 		end
+	end
+	
+	if killed_unit:IsRealHero() == true and killer_unit:GetClassname() == "npc_dota_creature" then
+		killed_unit:SetTimeUntilRespawn(GetTimeUntilRespawn() / 4)
 	end
 	
 	--[[require('gamemode')
