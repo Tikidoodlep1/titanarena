@@ -15299,6 +15299,11 @@
 			"ModifierName"	"modifier_aura_apply"
 			"Target"		"POINT"
 		}
+		"FireSound"     // Action
+    		{
+        		"EffectName"    "Hero_Viper.Pick"
+        		"Target"        "CASTER"
+    		}
 	}
 	"Modifiers"
 	{
