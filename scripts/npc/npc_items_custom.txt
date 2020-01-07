@@ -2090,7 +2090,7 @@
 		"ItemResult"					"item_echo_sabre_2"
 		"ItemRequirements"
 		{
-			"01"						"item_echo_sabre"
+			"01"						"item_recipe_echo_sabre_2"
 		}
 	}
 "item_echo_sabre_2"
@@ -2179,7 +2179,7 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"           "%bonus_damage"
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"           "%bonus_damage"
 				"MODIFIER_PROPERTY_BASE_MANA_REGEN"                  "%bonus_mana_regen"
 				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"             "%bonus_strength"
 				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"            "%bonus_intellect"
