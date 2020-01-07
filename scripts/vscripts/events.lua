@@ -480,29 +480,23 @@ function barebones:OnEntityKilled(keys)
 			
 			for _, hero in pairs(players) do
 				if hero:IsAlive() == false and hero:GetTeamNumber() == 3 then
-					DireDead = true
+					DireDead = DireDead + 1
 					print("all heroes are dead on dire")
-				else
-					DireDead = false
-					print("This hero is still alive")
 				end
 			end
-			if DireDead == true then
+			if DireDead == PlayerResource:GetTeamPlayerCount(3) then
 				ExitDual(2)
 			end
 		elseif killer_unit:GetTeamNumber() == 3 then
 			for _, hero in pairs(players) do
 				if hero:IsAlive() == false and hero:GetTeamNumber() == 2 then
-					RadiantDead = true
-				else
-					RadiantDead = false
+					RadiantDead = RadiantDead + 1
 				end
 			end
-			if RadiantDead == true then
+			if RadiantDead == PlayerResource:GetTeamPlayerCount(2) then
 				ExitDual(3)
 			end
 		end
-	end
 
 		-- Hero gold bounty update for the killer
 		if USE_CUSTOM_HERO_GOLD_BOUNTY then

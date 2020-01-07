@@ -321,7 +321,7 @@
 		"FightRecapLevel"				"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
-		"AbilitySound"					"Hero_Treant.Eyes.Cast
+		"AbilitySound"					"Hero_Treant.Eyes.Cast"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
