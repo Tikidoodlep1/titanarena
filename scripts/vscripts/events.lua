@@ -441,7 +441,7 @@ function barebones:OnEntityKilled(keys)
 	end
 	
 	if killed_unit:IsRealHero() == true and killer_unit:GetClassname() == "npc_dota_creature" then
-		killed_unit:SetTimeUntilRespawn(GetTimeUntilRespawn() / 4)
+		killed_unit:SetTimeUntilRespawn(killed_unit:GetTimeUntilRespawn() / 4)
 	end
 	
 	--[[require('gamemode')

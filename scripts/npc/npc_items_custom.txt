@@ -2466,7 +2466,7 @@
 		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemKillable"						"1"
 		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
-		"AbilityTextureName" 				"fire_radiance"
+		"AbilityTextureName" 				"fire_forged_radiance"
 		"SecretShop"						"1"
 		
 		//Special
@@ -2531,6 +2531,7 @@
 				"IsDebuff"	"1"
 				"IsPurgable"	"0"
 				"EffectName"	"particles/econ/events/ti6/radiance_ti6.vpcf"
+				"TextureName"	"fire_forged_radiance"
 				"ThinkInterval"	"1"
 				"OnIntervalThink"
 				{

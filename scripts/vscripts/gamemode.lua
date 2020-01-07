@@ -307,30 +307,28 @@ end
 			CreateUnitByName("npc_boss_dragon_knight_1", dire_dk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_dk_level)
 		end
 		local radresetboss = FindUnitsInRadius(4, rreset_spawn, nil, 2500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-		for _,resetboss in ipairs(radresetboss) do
+		for _,resetboss inipairs(radresetboss) do
 			if resetboss:GetUnitName() == "npc_boss_et_mag" or resetboss:GetUnitName() == "npc_boss_et_phys" then
 				rreset = true
-			else
-				rreset = false
-			end
-			if rreset == false then
-				rad_reset_level = rad_reset_level + 1
-				CreateUnitByName("npc_boss_et_mag", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(rad_reset_level)
-				CreateUnitByName("npc_boss_et_phys", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(rad_reset_level)
+				break
 			end
 		end
+		if rreset == false then
+			rad_reset_level = rad_reset_level + 1
+			CreateUnitByName("npc_boss_et_mag", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(rad_reset_level)
+			CreateUnitByName("npc_boss_et_phys", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(rad_reset_level)
+		end
 		local direresetboss = FindUnitsInRadius(4, dreset_spawn, nil, 2500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-		for _,resetboss in ipairs(direresetboss) do
+		for _,resetboss in pairs(direresetboss) do
 			if resetboss:GetUnitName() == "npc_boss_et_mag" or resetboss:GetUnitName() == "npc_boss_et_phys" then
 				dreset = true
-			else
-				dreset = false
+				break
 			end
-			if dreset == false then
-				dire_reset_level = dire_reset_level + 1
-				CreateUnitByName("npc_boss_et_mag", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
-				CreateUnitByName("npc_boss_et_phys", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
-			end
+		end
+		if dreset == false then
+			dire_reset_level = dire_reset_level + 1
+			CreateUnitByName("npc_boss_et_mag", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
+			CreateUnitByName("npc_boss_et_phys", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
 		end
 	end
 	
