@@ -179,7 +179,7 @@ local item16_charges = 0
 			end
 		end
 	end
-		
+		if level == 50 then
 		for _,hero in ipairs(HeroList:GetAllHeroes()) do
 			if hero:GetUnitName() == caster:GetUnitName() then
 				new_hero =	hero
@@ -187,6 +187,10 @@ local item16_charges = 0
 				break
 			end
 		end
+	end
+		if level ~= 50 then
+			caster:AddItemByName("item_reset")
+		end		
 		
 		
 end
