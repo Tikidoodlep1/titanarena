@@ -24,26 +24,19 @@ local stackcount = caster:GetModifierStackCount("modifier_reset_bonus", caster)
 		local item15 = caster:GetItemInSlot(14)
 		local item16 = caster:GetItemInSlot(15)
 		
-		
+		local new_hero = CreateHeroForPlayer(heroname, player)
+		new_hero:SetControllableByPlayer(casterID, true)
+		player:SetAssignedHeroEntity(new_hero)
 		
 		for _,hero in ipairs(HeroList:GetAllHeroes()) do
-			if hero:GetUnitName() == caster:GetUnitName() then
-				_G.resetherosname =	hero
-				hero:Destroy()
-				print("Destroyed old hero")
-				break
-			end
-		end
-		
-		CreateHeroForPlayer(heroname, player):SetControllableByPlayer(casterID, false)
-		local list = HeroList:GetAllHeroes()
-		print(list)
-		for _ ,hero in pairs(list) do
-			if hero:GetUnitName() == heroname then
+			if PlayerResource:GetLevel(hero:GetPlayerID()) == 1 or PlayerResource:GetLevel(hero:GetPlayerID()) == 2 then
+				print(hero:GetTeamNumber())
 				if hero:GetTeamNumber() == 2 then
-					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+					FindClearSpaceForUnit(new_hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+					print("moved to spawn")
 				else
-					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+					FindClearSpaceForUnit(new_hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+					print("moved to spawn")
 				end
 			end
 		end
@@ -77,4 +70,15 @@ local stackcount = caster:GetModifierStackCount("modifier_reset_bonus", caster)
 			end
 		end
 	end
+		
+		for _,hero in ipairs(HeroList:GetAllHeroes()) do
+			if hero:GetUnitName() == caster:GetUnitName() then
+				_G.resetherosname =	hero
+				hero:Destroy()
+				print("Destroyed old hero")
+				break
+			end
+		end
+		
+		
 end
