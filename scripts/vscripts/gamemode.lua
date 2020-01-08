@@ -145,11 +145,8 @@ end
 
 function barebones:OnGameInProgress()
 		_G.IsDual = false
-
 	DebugPrint("[BAREBONES] The game has officially begun.")
 	
-	CustomGameEventManager:Send_ServerToAllClients("setKillsToWin", {})
-
 	Timers:CreateTimer(0, function()
 	local players = HeroList:GetAllHeroes()
 		for _, hero in ipairs(players) do
@@ -164,11 +161,10 @@ function barebones:OnGameInProgress()
 		cour:AddNewModifier(cour, nil, "modifier_courier_flying", {duration=-1})
 		cour:SetBaseMoveSpeed(600)
 	end
-
 	_G.invaderlevel = 0
 	Timers:CreateTimer(30, function()
+	
 	notifyDual30()
-
 		return 600
 	end)
 		Timers:CreateTimer(45, function()
@@ -346,9 +342,15 @@ end
 	for _, trigger in pairs(trigger_in) do
 			trigger:Enable()
 		end
+		local players = HeroList:GetAllHeroes()
+		for _, player in ipairs(players) do
+        if player:IsAlive() == false then
+            player:RespawnUnit()
+        end
+    end
 	Notifications:TopToAll({text = "THE DUEL HAS BEGUN!", duration=5.0,style={color="red"}})
 	EmitGlobalSound("ui.contract_complete")
-	local players = HeroList:GetAllHeroes()
+	
 	local dHeroIncrementer = 0
 	local rHeroIncrementer = 0
 	local GetTotalDualPlayers = RandomInt(1,5)

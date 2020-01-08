@@ -650,6 +650,13 @@ if _G.dire_kills == 50 then
 	GameRules:SetGameWinner(3)
 	end
 end
+if team == 3 then
+_G.radiant_kills = (_G.radiant_kills + 1)
+--checks to see if a team has hit the minimum number of kills to win
+if _G.radiant_kills == 50 then
+	GameRules:SetGameWinner(2)
+	end
+end
 
 function ExitDual(WinningTeam)
 	_G.IsDual = false
