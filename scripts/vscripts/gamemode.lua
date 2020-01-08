@@ -63,6 +63,10 @@ end
 ]]
 function barebones:OnAllPlayersLoaded()
 	DebugPrint("[BAREBONES] All Players have loaded into the game.")
+	_G.radiant_players = 0
+	_G.dire_players = 0
+	_G.DireDead = 0
+	_G.RadiantDead = 0
 
 end
 
@@ -88,6 +92,14 @@ function barebones:OnHeroInGame(hero)
 			hero:SetGold(NORMAL_START_GOLD, false)
 			if hero:IsClone() == false then
 				CreateUnitByName("npc_dota_courier", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeam()):SetControllableByPlayer(playerID, false)
+				if hero:GetTeamNumber() == 2 then
+						_G.radiant_players = _G.radiant_players + 1
+						print("radiant has " .. _G.radiant_players)
+					end
+					if hero:GetTeamNumber() == 3 then
+						_G.dire_players = _G.dire_players + 1
+						print("dire has " .._G.dire_players)
+					end
 			end
 		else
 			DebugPrint("[BAREBONES] OnHeroInGame running for a non-bot player!")
@@ -126,6 +138,13 @@ function barebones:OnHeroInGame(hero)
 				local playerid = player:GetPlayerID()
 				if hero:IsClone() == false then
 					CreateUnitByName("npc_dota_courier", playerlocation, true, player, player, player:GetTeam()):SetControllableByPlayer(playerid, false)
+					hero:GetTeamNumber()
+					if hero:GetTeamNumber() == 2 then
+						_G.radiant_players = _G.radiant_players + 1
+					end
+					if hero:GetTeamNumber() == 3 then
+						_G.dire_players = _G.dire_players + 1
+					end
 				end
 				-- Make sure that stuff above will not happen again for the player if some other hero spawns
 				-- for him for the first time during the game 

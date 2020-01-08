@@ -374,6 +374,7 @@ end
 
 -- An entity died (an entity killed an entity)
 function barebones:OnEntityKilled(keys)
+
 	DebugPrint("[BAREBONES] An entity was killed.")
 	--PrintTable(keys)
 
@@ -382,6 +383,23 @@ function barebones:OnEntityKilled(keys)
 
 	-- The Killing entity
 	local killer_unit = nil
+
+	local team = killed_unit:GetTeamNumber()
+
+if team == 2 then
+_G.dire_kills = (_G.dire_kills + 1)
+--checks to see if a team has hit the minimum number of kills to win
+if _G.dire_kills == 50 then
+	GameRules:SetGameWinner(3)
+	end
+end
+if team == 3 then
+_G.radiant_kills = (_G.radiant_kills + 1)
+--checks to see if a team has hit the minimum number of kills to win
+if _G.radiant_kills == 50 then
+	GameRules:SetGameWinner(2)
+	end
+end
 	
 	if killed_unit:IsCreature() then
 		RollDrops(killed_unit)
@@ -469,34 +487,27 @@ function barebones:OnEntityKilled(keys)
 		--Handles scripts for end game and setting and checking current team kills
 	if killer_unit:IsRealHero() then
 		print("awarded a team a kill!")
-		getkills(killed_unit)
+
 	end
-	local DireDead = false
-	local RadiantDead = false
+
 	local players = HeroList:GetAllHeroes()
-	if  killer_unit:IsRealHero() and _G.IsDual == true then
-	print("Entity was killed by a real hero and _G.IsDual is true!")
-		if killer_unit:GetTeamNumber() == 2 then
-			
-			for _, hero in pairs(players) do
-				if hero:IsAlive() == false and hero:GetTeamNumber() == 3 then
-					DireDead = DireDead + 1
-					print("all heroes are dead on dire")
+	if  _G.IsDual == true then
+	if killed_unit:IsRealHero() and killed_unit:GetTeamNumber() == 2 then
+			_G.RadiantDead = _G.RadiantDead + 1
+			print(_G.RadiantDead .. " radiant dead" .. " out of" .. _G.radiant_players)
+			if _G.RadiantDead == _G.radiant_players then
+					ExitDual(3)
+			end
+	end
+	if killed_unit:IsRealHero() and killed_unit:GetTeamNumber() == 3 then
+		_G.DireDead = _G.DireDead + 1
+		print(_G.DireDead .. " dire dead" .. " out of" .. _G.dire_players)
+				if _G.DireDead == _G.Dire_Players then
+						ExitDual(2)
 				end
-			end
-			if DireDead == PlayerResource:GetTeamPlayerCount(3) then
-				ExitDual(2)
-			end
-		elseif killer_unit:GetTeamNumber() == 3 then
-			for _, hero in pairs(players) do
-				if hero:IsAlive() == false and hero:GetTeamNumber() == 2 then
-					RadiantDead = RadiantDead + 1
-				end
-			end
-			if RadiantDead == PlayerResource:GetTeamPlayerCount(2) then
-				ExitDual(3)
-			end
+
 		end
+	end
 
 		-- Hero gold bounty update for the killer
 		if USE_CUSTOM_HERO_GOLD_BOUNTY then
@@ -634,27 +645,12 @@ function barebones:OnEntityKilled(keys)
 	end
 end
 
-function getkills(unit)
-local team = unit:GetTeamNumber()
 
-if team == 2 then
-_G.dire_kills = (_G.dire_kills + 1)
---checks to see if a team has hit the minimum number of kills to win
-if _G.dire_kills == 50 then
-	GameRules:SetGameWinner(3)
-	end
-end
-if team == 3 then
-_G.radiant_kills = (_G.radiant_kills + 1)
---checks to see if a team has hit the minimum number of kills to win
-if _G.radiant_kills == 50 then
-	GameRules:SetGameWinner(2)
-	end
-end
 
 function ExitDual(WinningTeam)
 	_G.IsDual = false
-
+	_G.DireDead = 0
+	_G.RadiantDead = 0
 	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
@@ -747,7 +743,6 @@ _G.radiant_kills = (_G.radiant_kills + 1)
 --checks to see if a team has hit the minimum number of kills to win
 if _G.radiant_kills == 50 then
 	GameRules:SetGameWinner(2)
-end
 end
 end
 
