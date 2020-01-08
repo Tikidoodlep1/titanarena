@@ -492,12 +492,12 @@ end
 
 	local players = HeroList:GetAllHeroes()
 	if  _G.IsDual == true then
-	if killed_unit:IsRealHero() and killed_unit:GetTeamNumber() == 2 then
+	if killed_unit:IsRealHero() and not killed_unit:IsIllusion() and killed_unit:GetTeamNumber() == 2 then
 			_G.RadiantDead = _G.RadiantDead + 1
 			print(_G.RadiantDead .. " radiant dead" .. " out of" .. _G.radiant_players)
 
 	end
-	if killed_unit:IsRealHero() and killed_unit:GetTeamNumber() == 3 then
+	if killed_unit:IsRealHero() and not killed_unit:IsIllusion() and killed_unit:GetTeamNumber() == 3 then
 		_G.DireDead = _G.DireDead + 1
 		print(_G.DireDead .. " dire dead" .. " out of" .. _G.dire_players)
 				
