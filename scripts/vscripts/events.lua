@@ -657,23 +657,29 @@ function ExitDualWinner(WinningTeam)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
 			hero:SetBuyBackDisabledByReapersScythe(false)
-			if hero:GetTeamNumber() == 2 then
-				if hero:IsAlive() == true then
-					hero:Kill(nil, nil)
-					hero:RespawnUnit()
-				end
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
-				SendToConsole("dota_camera_center")
-			elseif hero:GetTeamNumber() == 3 then
-				if hero:IsAlive() == true then
-					hero:Kill(nil, nil)
-					hero:RespawnUnit()
-				end
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
-				SendToConsole("dota_camera_center")
-			end
+if hero:GetTeamNumber() == 2 then
+                if hero:IsAlive() == true then
+                    hero:Kill(nil, nil)
+                    hero:RespawnUnit()
+                else
+                    hero:RespawnUnit()
+                end
+                FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
+                hero:RemoveModifierByName("modifier_battle_cup_effigy")
+                hero:RemoveModifierByName("modifier_truesight")
+                SendToConsole("dota_camera_center")
+            elseif hero:GetTeamNumber() == 3 then
+                if hero:IsAlive() == true then
+                    hero:Kill(nil, nil)
+                    hero:RespawnUnit()
+                else
+                    hero:RespawnUnit()
+                end
+                FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
+                hero:RemoveModifierByName("modifier_battle_cup_effigy")
+                hero:RemoveModifierByName("modifier_truesight")
+                SendToConsole("dota_camera_center")
+            end
 		end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		local radiant_titan_return = Entities:FindByName(nil, "rad_titan"):GetAbsOrigin()
