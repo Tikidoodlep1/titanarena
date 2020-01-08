@@ -474,6 +474,10 @@ end
 						end
 					end
 				end
+				for _, hero in ipairs(players) do
+					hero:SetHealth(hero:GetMaxHealth())
+					hero:SetMana(hero:GetMaxMana())
+				end
 			end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		for _, unit in ipairs(Creatures) do
@@ -697,19 +701,19 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	elseif randint == 2 then
 		CreateUnitByName(e2, loc, true, nil, nil, 4):CreatureLevelUp(level)
 		CreateUnitByName(e2, loc1, true, nil, nil, 4):CreatureLevelUp(level)
-		CreateUnitByName(e1, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e2, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
 		CreateUnitByName(e3, loc, true, nil, nil, 4):CreatureLevelUp(level)
 		CreateUnitByName(e3, loc1, true, nil, nil, 4):CreatureLevelUp(level)
-		CreateUnitByName(e1, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e3, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 4 then
 		CreateUnitByName(e4, loc, true, nil, nil, 4):CreatureLevelUp(level)
 		CreateUnitByName(e4, loc1, true, nil, nil, 4):CreatureLevelUp(level)
-		CreateUnitByName(e1, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e4, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 5 then
 		CreateUnitByName(e5, loc, true, nil, nil, 4):CreatureLevelUp(level)
 		CreateUnitByName(e5, loc1, true, nil, nil, 4):CreatureLevelUp(level)
-		CreateUnitByName(e1, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e5, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if randint == 1 then
 		CreateUnitByName(e1, badloc, true, nil, nil, 4):CreatureLevelUp(level)
