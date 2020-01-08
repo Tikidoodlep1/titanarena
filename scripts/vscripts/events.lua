@@ -495,17 +495,19 @@ end
 	if killed_unit:IsRealHero() and killed_unit:GetTeamNumber() == 2 then
 			_G.RadiantDead = _G.RadiantDead + 1
 			print(_G.RadiantDead .. " radiant dead" .. " out of" .. _G.radiant_players)
-			if _G.RadiantDead == _G.radiant_players then
-					ExitDual(3)
-			end
+
 	end
 	if killed_unit:IsRealHero() and killed_unit:GetTeamNumber() == 3 then
 		_G.DireDead = _G.DireDead + 1
 		print(_G.DireDead .. " dire dead" .. " out of" .. _G.dire_players)
-				if _G.DireDead == _G.Dire_Players then
-						ExitDual(2)
-				end
+				
 
+		end
+		if _G.DireDead == _G.dire_players then
+						ExitDualWinner(2)
+				end
+		if _G.RadiantDead == _G.radiant_players then
+					ExitDualWinner(3)
 		end
 	end
 
@@ -647,7 +649,7 @@ end
 
 
 
-function ExitDual(WinningTeam)
+function ExitDualWinner(WinningTeam)
 	_G.IsDual = false
 	_G.DireDead = 0
 	_G.RadiantDead = 0
