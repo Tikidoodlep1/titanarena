@@ -32,27 +32,39 @@ else
 	arena2 = Entities:FindByName(nil, "dual_keepin1_trigger")
 end
 for i, hero in pairs(_G.DualArena1) do
-	if trigger.activator == hero and arena:IsTouching(hero) == true then
-	else
-		trigger.activator:SetMana(0)
+	if trigger.activator == hero then
+		Timers:CreateTimer(0.5, function()
+			if arena:IsTouching(hero) == false then
+				trigger.activator:SetMana(0)
+			end
+		end)
 	end
 end
 for i, hero in pairs(_G.DualArenavs1) do
-	if trigger.activator == hero and arena:IsTouching(hero) == true then
-	else
-		trigger.activator:SetMana(0)
+	if trigger.activator == hero then
+		Timers:CreateTimer(0.5, function()
+			if arena:IsTouching(hero) == false then
+				trigger.activator:SetMana(0)
+			end
+		end)
 	end
 end
 for i, hero in pairs(_G.DualArena2) do
-	if trigger.activator == hero and arena2:IsTouching(hero) == true then
-	else
-		trigger.activator:SetMana(0)
+	if trigger.activator == hero then
+		Timers:CreateTimer(0.5, function()
+			if arena2:IsTouching(hero) == false then
+				trigger.activator:SetMana(0)
+			end
+		end)
 	end
 end
 for i, hero in pairs(_G.DualArenavs2) do
-	if trigger.activator == hero and arena2:IsTouching(hero) == true then
-	else
-		trigger.activator:SetMana(0)
+	if trigger.activator == hero then
+		Timers:CreateTimer(0.5, function()
+			if arena2:IsTouching(hero) == false then
+				trigger.activator:SetMana(0)
+			end
+		end)
 	end
 end
 end

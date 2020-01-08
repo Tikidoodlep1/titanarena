@@ -15,12 +15,12 @@ function dual_actions()
 		thisEntity:MoveToTargetToAttack(Entities:FindByName(nil, "npc_dire_titan"))
 		thisEntity:SetAggroTarget(Entities:FindByName(nil, "npc_dire_titan"))
 		if _G.RadiantDead >= (_G.radiant_players/2) then
-		local units = FindUnitsInRadius(DOTA_TEAM_BADGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_FLAG_NONE, FIND_CLOSEST, false)
+		local units = FindUnitsInRadius(DOTA_TEAM_BADGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 			for _, hero in ipairs(units) do
 			if hero:IsRealHero() then
 				thisEntity:SetAggroTarget(hero)
 			else
-				thisEntity:SetAggroTarget("npc_dire_titan")
+				thisEntity:SetAggroTarget(Entities:FindByName(nil, "npc_dire_titan"))
 			end
 			break
 			end
@@ -31,12 +31,12 @@ function dual_actions()
 		thisEntity:MoveToTargetToAttack(Entities:FindByName(nil, "npc_radiant_titan"))
 		thisEntity:SetAggroTarget(Entities:FindByName(nil, "npc_radiant_titan"))
 		if _G.DireDead >= (_G.dire_players/2) then
-		local units = FindUnitsInRadius(DOTA_TEAM_BADGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_FLAG_NONE, FIND_CLOSEST, false)
+		local units = FindUnitsInRadius(DOTA_TEAM_BADGUYS, thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 			for _, hero in ipairs(units) do
 			if hero:IsRealHero() then
 				thisEntity:SetAggroTarget(hero)
 			else
-				thisEntity:SetAggroTarget("npc_radiant_titan")
+				thisEntity:SetAggroTarget(Entities:FindByName(nil, "npc_radiant_titan"))
 			end
 			break
 			end

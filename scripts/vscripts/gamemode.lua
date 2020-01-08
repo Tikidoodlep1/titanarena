@@ -352,13 +352,13 @@ end
 	
 	function EnterDual()
 	_G.IsDual = true
-	local trigger_in = {}
-	trigger_in[1] = Entities:FindByName(nil, "dual_keepin_trigger")
-	trigger_in[2] = Entities:FindByName(nil, "dual_keepin1_trigger")
-	trigger_in[3] = Entities:FindByName(nil, "dual_keepin2_trigger")
-	trigger_in[4] = Entities:FindByName(nil, "dual_keepin3_trigger")
-	trigger_in[5] = Entities:FindByName(nil, "dual_keepin4_trigger")
-	for _, trigger in pairs(trigger_in) do
+		local trigger_in = {}
+		trigger_in[1] = Entities:FindByName(nil, "dual_keepin_trigger")
+		trigger_in[2] = Entities:FindByName(nil, "dual_keepin1_trigger")
+		trigger_in[3] = Entities:FindByName(nil, "dual_keepin2_trigger")
+		trigger_in[4] = Entities:FindByName(nil, "dual_keepin3_trigger")
+		trigger_in[5] = Entities:FindByName(nil, "dual_keepin4_trigger")
+		for _, trigger in pairs(trigger_in) do
 			trigger:Enable()
 		end
 		local players = HeroList:GetAllHeroes()
@@ -421,8 +421,6 @@ end
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 2 and hero:IsClone() == false then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
-						hero:SetMana(hero:GetMaxMana())
-						hero:SetHealth(hero:GetMaxHealth())
 						FindClearSpaceForUnit(hero, _G.arena1, false)
 						SendToConsole("dota_camera_center")
 						rHeroIncrementer = rHeroIncrementer + 1
@@ -433,8 +431,6 @@ end
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
-						hero:SetMana(hero:GetMaxMana())
-						hero:SetHealth(hero:GetMaxHealth())
 						FindClearSpaceForUnit(hero, _G.arena1vs, false)
 						SendToConsole("dota_camera_center")
 						dHeroIncrementer = dHeroIncrementer + 1
@@ -445,8 +441,6 @@ end
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
-						hero:SetHealth(hero:GetMaxHealth())
-						hero:SetMana(hero:GetMaxMana())
 						FindClearSpaceForUnit(hero, _G.arena2, false)
 						SendToConsole("dota_camera_center")
 						_G.DualArena2[i] = hero
@@ -456,8 +450,6 @@ end
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 2 and hero:IsClone() == false then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
-						hero:SetHealth(hero:GetMaxHealth())
-						hero:SetMana(hero:GetMaxMana())
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
 						SendToConsole("dota_camera_center")
 						_G.DualArenavs2[i] = hero
@@ -469,14 +461,8 @@ end
 					for i, hero in pairs(players) do
 						if hero:IsClone() == true and hero:GetUnitName() == clonename then
 							FindClearSpaceForUnit(hero, originalclone, false)
-							hero:SetHealth(hero:GetMaxHealth())
-							hero:SetMana(hero:GetMaxMana())
 						end
 					end
-				end
-				for _, hero in ipairs(players) do
-					hero:SetHealth(hero:GetMaxHealth())
-					hero:SetMana(hero:GetMaxMana())
 				end
 			end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
@@ -496,6 +482,13 @@ end
 				break
 			end
 		end
+		Timers:CreateTimer(1, function()
+			for _, hero in ipairs(players) do
+				hero:SetHealth(hero:GetMaxHealth())
+				hero:SetMana(hero:GetMaxMana())
+				print("set mana to "..hero:GetMaxMana())
+			end
+		end)
 	end
 	
 	function ExitDual()
