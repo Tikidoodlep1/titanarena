@@ -504,10 +504,10 @@ end
 
 		end
 		if _G.DireDead == _G.dire_players then
-						ExitDualWinner(2)
-				end
+			ExitDualWinner(2)
+		end
 		if _G.RadiantDead == _G.radiant_players then
-					ExitDualWinner(3)
+			ExitDualWinner(3)
 		end
 	end
 
@@ -687,6 +687,7 @@ if hero:GetTeamNumber() == 2 then
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then
 				FindClearSpaceForUnit(unit, radiant_titan_return, false)
+				unit:RemoveModifierByName("modifier_titan_in_dual")
 				unit:Stop()
 				break
 			end
@@ -694,6 +695,7 @@ if hero:GetTeamNumber() == 2 then
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_dire_titan" then
 				FindClearSpaceForUnit(unit, dire_titan_return, false)
+				unit:RemoveModifierByName("modifier_titan_in_dual")
 				unit:Stop()
 				break
 			end

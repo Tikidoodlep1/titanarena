@@ -478,6 +478,7 @@ end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then
+				unit:AddNewModifier(unit, nil, "modifier_titan_in_dual", {duration=-1})
 				FindClearSpaceForUnit(unit, arena1titan, false)
 				unit:MoveToPositionAggressive(arena1titanvs)
 				break
@@ -485,6 +486,7 @@ end
 		end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_dire_titan" then
+				unit:AddNewModifier(unit, nil, "modifier_titan_in_dual", {duration=-1})
 				FindClearSpaceForUnit(unit, arena1titanvs, false)
 				unit:MoveToPositionAggressive(arena1titan)
 				break
@@ -535,6 +537,7 @@ end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then
 				FindClearSpaceForUnit(unit, radiant_titan_return, false)
+				unit:RemoveModifierByName("modifier_titan_in_dual")
 				unit:SetHealth(unit:GetMaxHealth())
 				unit:SetMana(unit:GetMaxMana())
 				unit:Stop()
@@ -544,6 +547,7 @@ end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_dire_titan" then
 				FindClearSpaceForUnit(unit, dire_titan_return, false)
+				unit:RemoveModifierByName("modifier_titan_in_dual")
 				unit:SetHealth(unit:GetMaxHealth())
 				unit:SetMana(unit:GetMaxMana())
 				unit:Stop()
@@ -979,6 +983,7 @@ function barebones:InitGameMode()
 	LinkLuaModifier("modifier_status_resistance", "modifiers/modifier_status_resistance", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_titan_slain", "modifiers/modifier_titan_slain", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_reset_bonus", "modifiers/modifier_reset_bonus", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_titan_in_dual", "modifiers/modifier_titan_in_dual", LUA_MODIFIER_MOTION_NONE)
 
 	-- Talent modifiers (this can be done in ability scripts, but it can be done here as well)
 	LinkLuaModifier("modifier_ability_name_talent_name_1", "modifiers/talents/modifier_ability_name_talent_name_1", LUA_MODIFIER_MOTION_NONE)
