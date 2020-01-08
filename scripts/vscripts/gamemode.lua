@@ -145,9 +145,11 @@ end
 
 function barebones:OnGameInProgress()
 		_G.IsDual = false
+
 	DebugPrint("[BAREBONES] The game has officially begun.")
 	
 	CustomGameEventManager:Send_ServerToAllClients("setKillsToWin", {})
+
 	Timers:CreateTimer(0, function()
 	local players = HeroList:GetAllHeroes()
 		for _, hero in ipairs(players) do
@@ -162,10 +164,11 @@ function barebones:OnGameInProgress()
 		cour:AddNewModifier(cour, nil, "modifier_courier_flying", {duration=-1})
 		cour:SetBaseMoveSpeed(600)
 	end
+
 	_G.invaderlevel = 0
 	Timers:CreateTimer(30, function()
-	
 	notifyDual30()
+
 		return 600
 	end)
 		Timers:CreateTimer(45, function()
@@ -307,7 +310,7 @@ end
 			CreateUnitByName("npc_boss_dragon_knight_1", dire_dk_spawn, true, nil, nil, 4):CreatureLevelUp(dire_dk_level)
 		end
 		local radresetboss = FindUnitsInRadius(4, rreset_spawn, nil, 2500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-		for _,resetboss inipairs(radresetboss) do
+		for _,resetboss in pairs(radresetboss) do
 			if resetboss:GetUnitName() == "npc_boss_et_mag" or resetboss:GetUnitName() == "npc_boss_et_phys" then
 				rreset = true
 				break
