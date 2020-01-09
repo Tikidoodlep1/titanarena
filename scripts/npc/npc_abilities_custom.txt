@@ -14466,7 +14466,7 @@
 		"01"
 		{
 			"var_type"		"FIELD_INTEGER"
-			"mana_break"	"-5"
+			"mana_break"	"-4"
 		}
 	}
 	"Modifiers"
