@@ -54,45 +54,45 @@ end
 for i, hero in pairs(_G.DualArena1) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
-			if arena:IsTouching(hero) == false then
+			if arena:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, closest, false)
-				SendToConsole("dota_camera_center")
 			end
 		return 1
 		end)
+		SendToConsole("dota_camera_center")
 	end
 end
 for i, hero in pairs(_G.DualArenavs1) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
-			if arena:IsTouching(hero) == false then
+			if arena:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, closest, false)
-				SendToConsole("dota_camera_center")
 			end
 		return 1
 		end)
+		SendToConsole("dota_camera_center")
 	end
 end
 for i, hero in pairs(_G.DualArena2) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
-			if arena2:IsTouching(hero) == false then
+			if arena2:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, closest, false)
-				SendToConsole("dota_camera_center")
 			end
 		return 1
 		end)
+		SendToConsole("dota_camera_center")
 	end
 end
 for i, hero in pairs(_G.DualArenavs2) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
-			if arena2:IsTouching(hero) == false then
+			if arena2:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, closest, false)
-				SendToConsole("dota_camera_center")
 			end
 		return 1
 		end)
+		SendToConsole("dota_camera_center")
 	end
 end
 end
