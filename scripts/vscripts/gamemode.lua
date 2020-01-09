@@ -486,7 +486,6 @@ end
 			for _, hero in ipairs(players) do
 				hero:SetHealth(hero:GetMaxHealth())
 				hero:SetMana(hero:GetMaxMana())
-				print("set mana to "..hero:GetMaxMana())
 			end
 		end)
 	end

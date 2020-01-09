@@ -650,6 +650,7 @@ end
 
 
 function ExitDualWinner(WinningTeam)
+print("Called ExitDualWinner with winning team as "..WinningTeam)
 	_G.IsDual = false
 	_G.DireDead = 0
 	_G.RadiantDead = 0
@@ -657,29 +658,21 @@ function ExitDualWinner(WinningTeam)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
 			hero:SetBuyBackDisabledByReapersScythe(false)
-if hero:GetTeamNumber() == 2 then
-                if hero:IsAlive() == true then
-                    hero:Kill(nil, nil)
-                    hero:RespawnUnit()
-                else
-                    hero:RespawnUnit()
-                end
+			if hero:IsAlive() == false then
+                hero:RespawnUnit()
+            end
+			if hero:GetTeamNumber() == 2 then
                 FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
                 hero:RemoveModifierByName("modifier_battle_cup_effigy")
                 hero:RemoveModifierByName("modifier_truesight")
                 SendToConsole("dota_camera_center")
             elseif hero:GetTeamNumber() == 3 then
-                if hero:IsAlive() == true then
-                    hero:Kill(nil, nil)
-                    hero:RespawnUnit()
-                else
-                    hero:RespawnUnit()
-                end
                 FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
                 hero:RemoveModifierByName("modifier_battle_cup_effigy")
                 hero:RemoveModifierByName("modifier_truesight")
                 SendToConsole("dota_camera_center")
             end
+			print("respawned units and removed modifiers")
 		end
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		local radiant_titan_return = Entities:FindByName(nil, "rad_titan"):GetAbsOrigin()
@@ -700,6 +693,7 @@ if hero:GetTeamNumber() == 2 then
 				break
 			end
 		end
+		print("teleported titans")
 		local Heroes = HeroList:GetAllHeroes()
 		local team_networth = 0
 		local player_networth = 0
@@ -714,6 +708,7 @@ if hero:GetTeamNumber() == 2 then
 				current_gold = PlayerResource:GetGold(ID)
 				players:SetGold(current_gold + amount + 1, false)
 			end
+			print("Gave "..players.." gold")
 		end
 		if WinningTeam == 2 then
 		Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
@@ -737,14 +732,15 @@ if hero:GetTeamNumber() == 2 then
 			trigger:Disable()
 		end
 		for r=1,5 do
-		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
+		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(_G.invaderlevel)
 		r = r + 1
 		end
 		for d=1,5 do
-		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
+		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(_G.invaderlevel)
 		d = d + 1
 		end
 		_G.invaderlevel = _G.invaderlevel + 1
+		print("spawned invaders")
 	end
 
 if team == 3 then
