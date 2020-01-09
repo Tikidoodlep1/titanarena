@@ -38,7 +38,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_unit"		"14 16 18 20 22 26"
+				"damage_per_unit"		"6 10 12 15 18 20"
 			}
 			"03"
 			{
@@ -55,7 +55,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_speed_creeps"		"3"
+				"bonus_speed_creeps"		"1"
 			}
 			"06"
 			{
@@ -70,7 +70,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"330"
+				"radius"				"200"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
