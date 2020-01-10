@@ -57,6 +57,9 @@ for i, hero in pairs(_G.DualArena1) do
 			if arena:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, closest, false)
 			end
+			if _G.IsDual == false then
+				Timers.removeSelf = true
+			end
 		return 1
 		end)
 		SendToConsole("dota_camera_center")
@@ -67,6 +70,9 @@ for i, hero in pairs(_G.DualArenavs1) do
 		Timers:CreateTimer(0.5, function()
 			if arena:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, closest, false)
+			end
+			if _G.IsDual == false then
+				Timers.removeSelf = true
 			end
 		return 1
 		end)
@@ -89,6 +95,10 @@ for i, hero in pairs(_G.DualArenavs2) do
 		Timers:CreateTimer(0.5, function()
 			if arena2:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, closest, false)
+			end
+			if _G.IsDual == false then
+				Timers.removeSelf = true
+				print("removed Dual Arena timers")
 			end
 		return 1
 		end)
