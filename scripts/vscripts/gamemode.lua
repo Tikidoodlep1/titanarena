@@ -67,6 +67,7 @@ function barebones:OnAllPlayersLoaded()
 	_G.dire_players = 0
 	_G.DireDead = 0
 	_G.RadiantDead = 0
+	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 
 end
 
@@ -91,7 +92,7 @@ function barebones:OnHeroInGame(hero)
 			-- Set starting gold for bots
 			hero:SetGold(NORMAL_START_GOLD, false)
 			if hero:IsClone() == false then
-				CreateUnitByName("npc_dota_courier", hero:GetAbsOrigin(), true, hero, hero, hero:GetTeam()):SetControllableByPlayer(playerID, false)
+				
 				if hero:GetTeamNumber() == 2 then
 						_G.radiant_players = _G.radiant_players + 1
 						print("radiant has " .. _G.radiant_players)
@@ -137,7 +138,7 @@ function barebones:OnHeroInGame(hero)
 				local playerlocation = player:GetAbsOrigin()
 				local playerid = player:GetPlayerID()
 				if hero:IsClone() == false then
-					CreateUnitByName("npc_dota_courier", playerlocation, true, player, player, player:GetTeam()):SetControllableByPlayer(playerid, false)
+					
 					hero:GetTeamNumber()
 					if hero:GetTeamNumber() == 2 then
 						_G.radiant_players = _G.radiant_players + 1
