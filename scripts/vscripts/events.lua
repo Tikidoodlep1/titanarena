@@ -708,7 +708,7 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 				current_gold = PlayerResource:GetGold(ID)
 				players:SetGold(current_gold + amount + 1, false)
 			end
-			print("Gave "..players.." gold")
+
 		end
 		if WinningTeam == 2 then
 		Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
@@ -731,7 +731,7 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
-		for r=1,5 do
+		--[[for r=1,5 do
 		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(_G.invaderlevel)
 		r = r + 1
 		end
@@ -741,6 +741,7 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 		end
 		_G.invaderlevel = _G.invaderlevel + 1
 		print("spawned invaders")
+		--]]
 	end
 
 if team == 3 then
@@ -751,6 +752,7 @@ if _G.radiant_kills == 50 then
 	GameRules:SetGameWinner(2)
 end
 end
+
 
 function RollDrops(unit)
 		local dropinfo = GameRules.DropTable[unit:GetUnitName()]
