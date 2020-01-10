@@ -435,6 +435,7 @@ end
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena1, false)
 						SendToConsole("dota_camera_center")
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
 						rHeroIncrementer = rHeroIncrementer + 1
 						_G.DualArena1[i] = hero
 					end
@@ -445,6 +446,7 @@ end
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena1vs, false)
 						SendToConsole("dota_camera_center")
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
 						dHeroIncrementer = dHeroIncrementer + 1
 						_G.DualArenavs1[i] = hero
 					end
