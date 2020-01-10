@@ -704,7 +704,7 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 		for _, players in ipairs(Heroes) do
 			if players:GetTeamNumber() == WinningTeam and players:IsClone() == false then
 			ID = players:GetPlayerID()
-				amount = 750 * 1.85^(game_time/600)
+				amount = (math.log10(game_time/1800))/(math.log10(2.8))
 				current_gold = PlayerResource:GetGold(ID)
 				players:SetGold(current_gold + amount + 1, false)
 			end

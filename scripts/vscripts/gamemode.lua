@@ -726,19 +726,19 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	elseif randint == 2 then
 		CreateUnitByName(e2, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 		CreateUnitByName(e2, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
-		CreateUnitByName(e1, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e2, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 3 then
 		CreateUnitByName(e3, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 		CreateUnitByName(e3, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
-		CreateUnitByName(e1, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e3, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 4 then
 		CreateUnitByName(e4, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 		CreateUnitByName(e4, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
-		CreateUnitByName(e1, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e4, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	elseif randint == 5 then
 		CreateUnitByName(e5, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 		CreateUnitByName(e5, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
-		CreateUnitByName(e1, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+		CreateUnitByName(e5, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
 	for m=1, 7 do
