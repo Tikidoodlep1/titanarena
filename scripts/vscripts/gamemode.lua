@@ -67,7 +67,7 @@ function barebones:OnAllPlayersLoaded()
 	_G.dire_players = 0
 	_G.DireDead = 0
 	_G.RadiantDead = 0
-	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+	
 
 end
 
@@ -142,9 +142,13 @@ function barebones:OnHeroInGame(hero)
 					hero:GetTeamNumber()
 					if hero:GetTeamNumber() == 2 then
 						_G.radiant_players = _G.radiant_players + 1
+						print("radiant has " .. _G.radiant_players)
+						DebugPrint("radiant has " .. _G.radiant_players)
 					end
 					if hero:GetTeamNumber() == 3 then
 						_G.dire_players = _G.dire_players + 1
+						print("dire has " .. _G.dire_players)
+						DebugPrint("dire has " .. _G.dire_players)
 					end
 				end
 				-- Make sure that stuff above will not happen again for the player if some other hero spawns
@@ -1053,6 +1057,7 @@ function barebones:CaptureGameMode()
 	gamemode:SetStickyItemDisabled(DISABLE_STICKY_ITEM)
 	gamemode:SetPauseEnabled(ENABLE_PAUSING)
 	gamemode:SetCustomScanCooldown(CUSTOM_SCAN_COOLDOWN)
+	gamemode:SetFreeCourierModeEnabled(true)
 
 	self:OnFirstPlayerLoaded()
 end
