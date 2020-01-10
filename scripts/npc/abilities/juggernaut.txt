@@ -75,7 +75,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_fury_damage"			"85 110 135 160 185 310"
+				"blade_fury_damage"			"85 110 135 160 185 225"
 				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_3"
 			}
 			"04"

@@ -89,7 +89,7 @@ for i, hero in pairs(_G.DualArena2) do
 		end)
 		SendToConsole("dota_camera_center")
 	end
-end
+end1
 for i, hero in pairs(_G.DualArenavs2) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()

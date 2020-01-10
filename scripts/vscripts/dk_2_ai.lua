@@ -30,6 +30,14 @@ return 10
 local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
 if distance_from_target >= 750 then
     thisEntity:SetAggoTarget(nil)
+	local radiant = GridNav:FindPathLength(thisEntity:GetAbsOrigin(), Entities:FindByName(nil, "rad_boss_dk"):GetAbsOrigin())
+	local dire = GridNav:FindPathLength(thisEntity:GetAbsOrigin(), Entities:FindByName(nil, "dire_boss_dk"):GetAbsOrigin())
+	if radiant < dire then
+		local closest = Entities:FindByName(nil, "rad_boss_dk"):GetAbsOrigin()
+	else
+		local closest = Entities:FindByName(nil, "dire_boss_dk"):GetAbsOrigin()
+	end
+	thisEntity:MoveToPosition(closest)
 return .1 
 end
 return .1
