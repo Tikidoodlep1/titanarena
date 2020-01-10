@@ -30,32 +30,11 @@ else
 	arena = Entities:FindByName(nil, "dual_keepin2_trigger")
 	arena2 = Entities:FindByName(nil, "dual_keepin1_trigger")
 end
-local closest = nil
-for i, hero in pairs(_G.DualArena1) do
-	if trigger.activator == hero then
-	closest = _G.arena1
-	end
-end
-for i, hero in pairs(_G.DualArenavs1) do
-	if trigger.activator == hero then
-	closest = _G.arena1vs
-	end
-end
-for i, hero in pairs(_G.DualArena2) do
-	if trigger.activator == hero then
-	closest = _G.arena2
-	end
-end
-for i, hero in pairs(_G.DualArenavs2) do
-	if trigger.activator == hero then
-	closest = _G.arena2vs
-	end
-end
 for i, hero in pairs(_G.DualArena1) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena:IsTouching(hero) == false and _G.IsDual == true then
-				FindClearSpaceForUnit(trigger.activator, closest, false)
+				FindClearSpaceForUnit(trigger.activator, _G.arena1, false)
 			end
 			if _G.IsDual == false then
 				Timers.removeSelf = true
@@ -69,7 +48,7 @@ for i, hero in pairs(_G.DualArenavs1) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena:IsTouching(hero) == false and _G.IsDual == true then
-				FindClearSpaceForUnit(trigger.activator, closest, false)
+				FindClearSpaceForUnit(trigger.activator, _G.arena1vs, false)
 			end
 			if _G.IsDual == false then
 				Timers.removeSelf = true
@@ -83,7 +62,10 @@ for i, hero in pairs(_G.DualArena2) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena2:IsTouching(hero) == false and _G.IsDual == true then
-				FindClearSpaceForUnit(trigger.activator, closest, false)
+				FindClearSpaceForUnit(trigger.activator, _G.arena2, false)
+			end
+			if _G.IsDual == false then
+				Timers.removeSelf = true
 			end
 		return 1
 		end)
@@ -94,11 +76,10 @@ for i, hero in pairs(_G.DualArenavs2) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena2:IsTouching(hero) == false and _G.IsDual == true then
-				FindClearSpaceForUnit(trigger.activator, closest, false)
+				FindClearSpaceForUnit(trigger.activator, _G.arena2vs, false)
 			end
 			if _G.IsDual == false then
 				Timers.removeSelf = true
-				print("removed Dual Arena timers")
 			end
 		return 1
 		end)
