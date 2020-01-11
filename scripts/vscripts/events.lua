@@ -714,6 +714,7 @@ end
 function ExitDualWinnerSpecific(WinningDual)
 	if  _G.DualArena2 == nil or _G.DualArenavs2 == nil then
 		_G.TotalDualsWon = _G.TotalDualsWon + 1
+	end
 	print("Ran Winning Dual with Winning dual number "..WinningDual)
 		if WinningDual == 1 then
 		if _G.TotalDualsWon == 2 then
