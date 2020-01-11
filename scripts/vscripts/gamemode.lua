@@ -94,12 +94,10 @@ function barebones:OnHeroInGame(hero)
 			if hero:IsClone() == false then
 				
 				if hero:GetTeamNumber() == 2 then
-						_G.radiant_players = _G.radiant_players + 1
-						print("radiant has " .. _G.radiant_players)
+
 					end
 					if hero:GetTeamNumber() == 3 then
-						_G.dire_players = _G.dire_players + 1
-						print("dire has " .._G.dire_players)
+
 					end
 			end
 		else
@@ -141,14 +139,10 @@ function barebones:OnHeroInGame(hero)
 					
 					hero:GetTeamNumber()
 					if hero:GetTeamNumber() == 2 then
-						_G.radiant_players = _G.radiant_players + 1
-						print("radiant has " .. _G.radiant_players)
-						DebugPrint("radiant has " .. _G.radiant_players)
+						
 					end
 					if hero:GetTeamNumber() == 3 then
-						_G.dire_players = _G.dire_players + 1
-						print("dire has " .. _G.dire_players)
-						DebugPrint("dire has " .. _G.dire_players)
+
 					end
 				end
 				-- Make sure that stuff above will not happen again for the player if some other hero spawns
@@ -170,12 +164,25 @@ end
 function barebones:OnGameInProgress()
 		_G.IsDual = false
 	DebugPrint("[BAREBONES] The game has officially begun.")
+	local players = HeroList:GetAllHeroes()
+	for _, hero in ipairs(players) do
+				if hero:GetTeam() == 2 then
+					_G.radiant_players = _G.radiant_players + 1
+					print("Radiant has ".. _G.radiant_players.." players!")
+				end
+				if hero:GetTeam() == 3 then
+					_G.dire_players = _G.dire_players + 1
+					print("Dire has ".. _G.dire_players.." players!")
+				end
+	end
 	
 	Timers:CreateTimer(0, function()
 	local players = HeroList:GetAllHeroes()
 		for _, hero in ipairs(players) do
+			
 			if hero:HasModifier("modifier_titan_slain") == true and hero:IsClone() == false then
 				PlayerResource:ModifyGold(hero:GetPlayerID(), (math.sqrt(GameRules:GetGameTime()/600)), true, 16)
+				
 			end
 		end
 		return 1
