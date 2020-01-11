@@ -1695,7 +1695,7 @@
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"stun_duration"					"2"
+			"stun_duration"					"3"
 		}
 		"05"
 		{
@@ -1778,26 +1778,12 @@
 					"Function"				"Block"
 				}
 			}
-			"OnAttackStart"
+			"OnAttackLanded"
 			{
-				"Random"
+				"RunScript"
 				{
-					"Chance"	"25"
-					"PseudoRandom"	"0"
-					"OnSuccess"
-					{
-						"ApplyModifier"
-						{
-							"Target"	"TARGET"
-							"ModifierName"	"modifier_stunning_blink_stun"
-						}
-						"Damage"
-						{
-							"Target"	"TARGET"
-							"Damage"	"100"
-							"Type"		"DAMAGE_TYPE_PHYSICAL"
-						}
-					}
+					"ScriptFile"	"items/item_stunning_blink.lua"
+					"Function"		"OnCD"
 				}
 			}
 			"Properties"

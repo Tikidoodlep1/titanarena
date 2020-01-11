@@ -66,3 +66,21 @@ local caster = keys.caster
 		end
 	end
 end
+
+function OnCD(keys)
+local caster = keys.caster
+local target = keys.target
+local ability = keys.ability
+local chance = RandomInt(0, 100)
+	if chance <= 25 then
+	local damagetable = {
+		victim = target,
+		attacker = caster,
+		damage = 100,
+		damage_type = DAMAGE_TYPE_PHYSICAL,
+		}
+	ApplyDamage(damagetable)
+	ability:ApplyDataDrivenModifier(caster, target, "modifier_stunning_blink_stun", {duration=2})
+	ability:StartCooldown(5)
+	end
+end
