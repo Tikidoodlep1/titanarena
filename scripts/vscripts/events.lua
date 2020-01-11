@@ -412,14 +412,14 @@ function barebones:OnEntityKilled(keys)
 
 	local team = killed_unit:GetTeamNumber()
 
-if team == 2 then
+if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() then
 _G.dire_kills = (_G.dire_kills + 1)
 --checks to see if a team has hit the minimum number of kills to win
 if _G.dire_kills == 50 then
 	GameRules:SetGameWinner(3)
 	end
 end
-if team == 3 then
+if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() then
 _G.radiant_kills = (_G.radiant_kills + 1)
 --checks to see if a team has hit the minimum number of kills to win
 if _G.radiant_kills == 50 then
@@ -713,7 +713,7 @@ end
 
 function ExitDualWinnerSpecific(WinningDual)
 	if  _G.DualArena2[1] == nil or _G.DualArenavs2[1] == nil then
-		_G.TotalDualsWon = _G.TotalDualsWon + 1
+		_G.TotalDualsWon = 1
 	end
 		local radiantwon = false
 		local direwon = false
@@ -978,7 +978,7 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 		print("spawned invaders")
 	end
 	]]
-
+--[[
 if team == 3 then
 _G.radiant_kills = (_G.radiant_kills + 1)
 
@@ -987,7 +987,7 @@ if _G.radiant_kills == 50 then
 	GameRules:SetGameWinner(2)
 end
 end
-
+]]
 
 function RollDrops(unit)
 		local dropinfo = GameRules.DropTable[unit:GetUnitName()]
