@@ -441,6 +441,7 @@ end
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2, false)
 						SendToConsole("dota_camera_center")
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
 						_G.DualArena2[i] = hero
 						_G.NumDualArena2  = _G.NumDualArena2 + 1
 					end
@@ -451,6 +452,7 @@ end
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
 						SendToConsole("dota_camera_center")
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
 						_G.DualArenavs2[i] = hero
 						_G.NumDualArena2vs  = _G.NumDualArena2vs + 1
 					end
@@ -485,6 +487,7 @@ end
 					for i, hero in pairs(players) do
 						if hero:IsClone() == true and hero:GetUnitName() == clonename then
 							FindClearSpaceForUnit(hero, originalclone, false)
+							hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
 						end
 					end
 				end
