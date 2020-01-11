@@ -2099,7 +2099,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_block"		"80"
+				"damage_block"				"50"
 			}
 			"09"
 			{
