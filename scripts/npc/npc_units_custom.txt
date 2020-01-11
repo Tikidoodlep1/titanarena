@@ -1627,7 +1627,6 @@
     "Level"           "0"
     "UnitLabel"         "Radiant Titan"
     "vscripts"                    "titan_ai.lua"
-	"IsBoss"					"1"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -1743,7 +1742,6 @@
     "Level"           "0"
     "UnitLabel"         "Dire Titan"
     "vscripts"                    "titan_ai.lua"
-	"IsBoss"					"1"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -2093,7 +2091,6 @@
     "Level"           "1"
     "UnitLabel"         "The Wanderer"
     "vscripts"                    "wanderer_ai.lua"
-	"IsBoss"					"1"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -2209,7 +2206,6 @@
     "Level"           "0"
     "UnitLabel"         "The Scarab"
 	"vscripts"           "sk_ai.lua"
-	"IsBoss"					"1"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -2322,7 +2318,6 @@
     "SoundSet"          "Hero_DragonKnight"          // Name of sound set.
     "Level"           "1"
     "UnitLabel"         "Ophidian Executioner"
-	"IsBoss"					"1"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -2437,8 +2432,7 @@
     "Level"           "1"
     "UnitLabel"         "Ophidian Executioner"
 	"vscripts"           "dk_2_ai.lua"
-	"IsBoss"					"1"
-	
+
     // Abilities
     //----------------------------------------------------------------
     
@@ -2545,7 +2539,6 @@
     "SoundSet"          "Hero_ElderTitan"          // Name of sound set.
     "Level"           "1"
     "UnitLabel"         "Physical Titan"
-	"IsBoss"					"1"
 	
     // Abilities
     //----------------------------------------------------------------
@@ -2651,7 +2644,6 @@
     "SoundSet"          "Hero_ElderTitan"          // Name of sound set.
     "Level"           "1"
     "UnitLabel"         "Spiritual Titan"
-	"IsBoss"					"1"
 	
     // Abilities
     //----------------------------------------------------------------

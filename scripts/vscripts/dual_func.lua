@@ -35,6 +35,7 @@ for i, hero in pairs(_G.DualArena1) do
 		Timers:CreateTimer(0.5, function()
 			if arena:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, _G.arena1, false)
+				--print("teleporting to dual arena 1")
 			end
 			if _G.IsDual == false then
 				Timers.removeSelf = true
@@ -49,6 +50,7 @@ for i, hero in pairs(_G.DualArenavs1) do
 		Timers:CreateTimer(0.5, function()
 			if arena:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, _G.arena1vs, false)
+				--print("teleporting to dual arena 1 vs")
 			end
 			if _G.IsDual == false then
 				Timers.removeSelf = true
@@ -63,6 +65,7 @@ for i, hero in pairs(_G.DualArena2) do
 		Timers:CreateTimer(0.5, function()
 			if arena2:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, _G.arena2, false)
+				--print("teleporting to dual arena 2")
 			end
 			if _G.IsDual == false then
 				Timers.removeSelf = true
@@ -71,12 +74,13 @@ for i, hero in pairs(_G.DualArena2) do
 		end)
 		SendToConsole("dota_camera_center")
 	end
-end1
+end
 for i, hero in pairs(_G.DualArenavs2) do
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena2:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, _G.arena2vs, false)
+				--print("teleporting to dual arena 2 vs")
 			end
 			if _G.IsDual == false then
 				Timers.removeSelf = true

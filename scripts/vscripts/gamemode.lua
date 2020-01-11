@@ -54,7 +54,6 @@ end
 ]]
 function barebones:OnFirstPlayerLoaded()
 	DebugPrint("[BAREBONES] First Player has loaded.")
-
 end
 
 --[[
@@ -68,7 +67,6 @@ function barebones:OnAllPlayersLoaded()
 	_G.DireDead = 0
 	_G.RadiantDead = 0
 	
-
 end
 
 --[[
@@ -152,7 +150,6 @@ function barebones:OnHeroInGame(hero)
 			end
 		end
 	end)
-	
 end
 
 --[[
@@ -182,7 +179,6 @@ function barebones:OnGameInProgress()
 			
 			if hero:HasModifier("modifier_titan_slain") == true and hero:IsClone() == false then
 				PlayerResource:ModifyGold(hero:GetPlayerID(), (math.sqrt(GameRules:GetGameTime()/600)), true, 16)
-				
 			end
 		end
 		return 1
@@ -357,8 +353,8 @@ end
 		end
 		if dreset == false then
 			dire_reset_level = dire_reset_level + 1
-			CreateUnitByName("npc_boss_et_mag", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
-			CreateUnitByName("npc_boss_et_phys", rreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
+			CreateUnitByName("npc_boss_et_mag", dreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
+			CreateUnitByName("npc_boss_et_phys", dreset_spawn, true, nil, nil, 4):CreatureLevelUp(dire_reset_level)
 		end
 	end
 	
@@ -378,6 +374,7 @@ end
         if player:IsAlive() == false then
             player:RespawnUnit()
         end
+		
     end
 	Notifications:TopToAll({text = "THE DUEL HAS BEGUN!", duration=5.0,style={color="red"}})
 	EmitGlobalSound("ui.contract_complete")
@@ -396,6 +393,15 @@ end
 	_G.DualArena2 = {}
 	_G.DualArenavs1 = {}
 	_G.DualArenavs2 = {}
+	_G.NumDualArena1  = 0
+	_G.NumDualArena1vs  = 0
+	_G.NumDualArena2  = 0
+	_G.NumDualArena2vs  = 0
+	_G.NumDualArena1Dead  = 0
+	_G.NumDualArena1vsDead  = 0
+	_G.NumDualArena2Dead  = 0
+	_G.NumDualArena2vsDead  = 0
+	_G.TotalDualsWon = 0
 
 		if _G.GetArena == 1 then
 			_G.arena1 = Entities:FindByName(nil, "dire_dual"):GetAbsOrigin()
@@ -429,28 +435,6 @@ end
 			GameRules:SetHeroRespawnEnabled(false)
 			for i, hero in pairs(players) do
 				hero:SetBuyBackDisabledByReapersScythe(true)
-				if rHeroIncrementer <= GetTotalDualPlayers then
-				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 2 and hero:IsClone() == false then
-						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
-						FindClearSpaceForUnit(hero, _G.arena1, false)
-						SendToConsole("dota_camera_center")
-						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
-						rHeroIncrementer = rHeroIncrementer + 1
-						_G.DualArena1[i] = hero
-					end
-				end
-				if dHeroIncrementer <= GetTotalDualPlayers then
-				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
-						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
-						FindClearSpaceForUnit(hero, _G.arena1vs, false)
-						SendToConsole("dota_camera_center")
-						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
-						dHeroIncrementer = dHeroIncrementer + 1
-						_G.DualArenavs1[i] = hero
-					end
-				end
 				if dHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
@@ -458,6 +442,7 @@ end
 						FindClearSpaceForUnit(hero, _G.arena2, false)
 						SendToConsole("dota_camera_center")
 						_G.DualArena2[i] = hero
+						_G.NumDualArena2  = _G.NumDualArena2 + 1
 					end
 				end
 				if rHeroIncrementer > GetTotalDualPlayers then
@@ -467,6 +452,31 @@ end
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
 						SendToConsole("dota_camera_center")
 						_G.DualArenavs2[i] = hero
+						_G.NumDualArena2vs  = _G.NumDualArena2vs + 1
+					end
+				end
+				if rHeroIncrementer <= GetTotalDualPlayers then
+				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+					if hero:GetTeamNumber() == 2 and hero:IsClone() == false then
+						rHeroIncrementer = rHeroIncrementer + 1
+						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+						FindClearSpaceForUnit(hero, _G.arena1, false)
+						SendToConsole("dota_camera_center")
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
+						_G.DualArena1[i] = hero
+						_G.NumDualArena1  = _G.NumDualArena1 + 1
+					end
+				end
+				if dHeroIncrementer <= GetTotalDualPlayers then
+				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
+					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
+						dHeroIncrementer = dHeroIncrementer + 1
+						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
+						FindClearSpaceForUnit(hero, _G.arena1vs, false)
+						SendToConsole("dota_camera_center")
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
+						_G.DualArenavs1[i] = hero
+						_G.NumDualArena1vs  = _G.NumDualArena1vs + 1
 					end
 				end
 				if hero:IsRealHero() == true then
@@ -932,6 +942,7 @@ function barebones:InitGameMode()
 	ListenToGameEvent('dota_rune_activated_server', Dynamic_Wrap(barebones, 'OnRuneActivated'), self)
 	ListenToGameEvent('dota_player_take_tower_damage', Dynamic_Wrap(barebones, 'OnPlayerTakeTowerDamage'), self)
 	ListenToGameEvent('tree_cut', Dynamic_Wrap(barebones, 'OnTreeCut'), self)
+	ListenToGameEvent('entity_hurt', Dynamic_Wrap(barebones, 'OnEntityHurt'), self)
 
 	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(barebones, 'OnAbilityUsed'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(barebones, 'OnGameRulesStateChange'), self)

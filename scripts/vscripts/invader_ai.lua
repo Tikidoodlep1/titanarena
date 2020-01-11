@@ -13,8 +13,10 @@ if thisEntity:GetAggroTarget() == nil then
 			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=6})
 		else
 			thisEntity:MoveToPosition(Entities:FindByName(nil, "dire_titan"):GetAbsOrigin())
-			thisEntity:SetAggoTarget(Entities:FindByName(nil, "npc_dire_titan"))
 			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=6})
+			Timers:CreateTimer(6, function()
+				thisEntity:SetAggoTarget(Entities:FindByName(nil, "npc_radiant_titan"))
+			end)
 		end
 	else
 		if	Entities:FindByName(nil, "npc_radiant_titan") == nil then
@@ -22,8 +24,10 @@ if thisEntity:GetAggroTarget() == nil then
 			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=6})
 		else
 			thisEntity:MoveToPosition(Entities:FindByName(nil, "rad_titan"):GetAbsOrigin())
-			thisEntity:SetAggoTarget(Entities:FindByName(nil, "npc_radiant_titan"))
 			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=6})
+			Timers:CreateTimer(6, function()
+				thisEntity:SetAggoTarget(Entities:FindByName(nil, "npc_radiant_titan"))
+			end)
 		end
 	end
 return 2

@@ -323,6 +323,32 @@ function barebones:OnRuneActivated(keys)
   -- This event can be used for adding more effects to existing runes.
 end
 
+function barebones:OnEntityHurt(keys)
+local cause = keys.entindex_attacker
+local killed = keys.entindex_killed
+local inflictor = keys.entindex_inflictor
+	if cause ~= nil and killed ~= nil then
+		local Victim = EntIndexToHScript(killed)
+		local Attacker = EntIndexToHScript(cause)
+		
+		local damagingAbility = nil
+		
+		if inflictor ~= nil then
+			damagingAbility = EntIndexToHScript(inflictor)
+		end
+		if Attacker:GetUnitName() == "npc_boss_dragon_knight_1" or Attacker:GetUnitName() == "npc_boss_dragon_knight_2" or Attacker:GetUnitName() == "npc_boss_scarab" or Attacker:GetUnitName() == "npc_boss_wanderer" or Attacker:GetUnitName() == "npc_boss_et_mag" or Attacker:GetUnitName() == "npc_boss_et_phys" then
+		if Victim:HasItemInInventory("item_heart") or tim:HasItemInInventory("item_blink") then
+			for x = 0, 5 do
+				local item = Victim:GetItemInSlot(x)
+				if item:GetItemName() == "item_heart" or item:GetItemName() == "item_blink" then
+					item:StartCooldown(4.45)
+				end
+			end
+		end
+	end
+	end
+end
+
 -- A player took damage from a tower
 function barebones:OnPlayerTakeTowerDamage(keys)
 	DebugPrint("[BAREBONES] OnPlayerTakeTowerDamage")
@@ -458,10 +484,6 @@ end
 		end
 	end
 	
-	if killed_unit:IsRealHero() == true and killer_unit:GetClassname() == "npc_dota_creature" then
-		killed_unit:SetTimeUntilRespawn(killed_unit:GetTimeUntilRespawn() / 4)
-	end
-	
 	--[[require('gamemode')
 	local checkFunction = gamemode.CheckDualStatus()
 	checkFunction()
@@ -485,13 +507,52 @@ end
 	if killed_unit:IsRealHero() and (not killed_unit:IsReincarnating()) then
 
 		--Handles scripts for end game and setting and checking current team kills
-	if killer_unit:IsRealHero() then
-		print("awarded a team a kill!")
 
-	end
-
-	local players = HeroList:GetAllHeroes()
 	if  _G.IsDual == true then
+	print("An entity has died and IsDual is true")
+		for _, hero in pairs(_G.DualArena1) do
+			print("Ran _G.DualArena1 loop")
+			if killed_unit == hero and not killed_unit:IsIllusion() and not killed_unit:IsClone() then
+				_G.NumDualArena1Dead  = _G.NumDualArena1Dead + 1
+				if _G.NumDualArena1Dead == _G.NumDualArena1 then
+					ExitDualWinnerSpecific(2)
+				end
+			end
+		end
+		for _, hero in pairs(_G.DualArenavs1) do
+		print("Ran _G.DualArena1 loop")
+			if killed_unit == hero and not killed_unit:IsIllusion() and not killed_unit:IsClone() then
+				_G.NumDualArena1vsDead  = _G.NumDualArena1vsDead + 1
+				print(_G.NumDualArena1vsDead.." dead in dual arena 1vs")
+				print(_G.NumDualArena1vs.."Number of heroes that need to be dead to end the dual in dual arena 1 vs")
+				if _G.NumDualArena1vsDead == _G.NumDualArena1vs then
+					ExitDualWinnerSpecific(1)
+				end
+			end
+		end
+		for _, hero in pairs(_G.DualArena2) do
+		print("Ran _G.DualArena1 loop")
+			if killed_unit == hero and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() then
+				_G.NumDualArena2Dead  = _G.NumDualArena2Dead + 1
+				print(_G.NumDualArena2Dead.." dead in dual arena 2")
+				print(_G.NumDualArena1vs.."Number of heroes that need to be dead to end the dual in dual arena 2")
+				if _G.NumDualArena2Dead == _G.NumDualArena2 then
+					ExitDualWinnerSpecific(4)
+				end
+			end
+		end
+		for _, hero in pairs(_G.DualArenavs2) do
+		print("Ran _G.DualArena1 loop")
+			if killed_unit == hero and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() then
+				_G.NumDualArena2vsDead  = _G.NumDualArena2vsDead + 1
+				print(_G.NumDualArena2vsDead.." dead in dual arena 2vs")
+				print(_G.NumDualArena1vs.."Number of heroes that need to be dead to end the dual in dual arena 2 vs")
+				if _G.NumDualArena2vsDead == _G.NumDualArena2vs then
+					ExitDualWinnerSpecific(3)
+				end
+			end
+		end
+	--[[
 	if killed_unit:IsRealHero() and not killed_unit:IsIllusion() and killed_unit:GetTeamNumber() == 2 then
 			_G.RadiantDead = _G.RadiantDead + 1
 			print(_G.RadiantDead .. " radiant dead" .. " out of" .. _G.radiant_players)
@@ -509,8 +570,9 @@ end
 		if _G.RadiantDead == _G.radiant_players then
 			ExitDualWinner(3)
 		end
+		]]
 	end
-
+	
 		-- Hero gold bounty update for the killer
 		if USE_CUSTOM_HERO_GOLD_BOUNTY then
 			if killer_unit:IsRealHero() then
@@ -579,6 +641,7 @@ end
 			-- Killer is a neutral creep
 			if killer_unit:IsNeutralUnitType() then
 				-- If a hero is killed by a neutral creep, respawn time can be modified here
+				killed_unit:SetTimeUntilRespawn(killed_unit:GetTimeUntilRespawn() / 4)
 			end
 
 			-- Maximum Respawn Time
@@ -648,6 +711,115 @@ end
 end
 
 
+function ExitDualWinnerSpecific(WinningDual)
+	print("Ran Winning Dual with Winning dual number "..WinningDual)
+		if WinningDual == 1 then
+		if _G.TotalDualsWon == 2 then
+			_G.IsDual = false
+		else
+			_G.IsDual = true
+		end
+		for _, hero in pairs(_G.DualArena1) do
+			if hero:IsAlive() == false then
+				hero:RespawnUnit()
+			end
+			if hero:IsClone() == false then
+				ID = hero:GetPlayerID()
+				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				PlayerResource:ModifyGold(ID, amount, false, 16)
+			end
+			if hero:GetTeamNumber() == 2 then
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
+				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+			elseif hero:GetTeamNumber() == 3 then
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
+				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+			end
+			EmitGlobalSound("ui.contract_complete")
+		end
+		elseif WinningDual == 2 then
+		if _G.TotalDualsWon == 2 then
+			_G.IsDual = false
+		else
+			_G.IsDual = true
+		end
+		for _, hero in pairs(_G.DualArenavs1) do
+			if hero:IsAlive() == false then
+				hero:RespawnUnit()
+			end
+			if hero:IsClone() == false then
+				ID = hero:GetPlayerID()
+				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				PlayerResource:ModifyGold(ID, amount, false, 16)
+			end
+			if hero:GetTeamNumber() == 2 then
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
+				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+			elseif hero:GetTeamNumber() == 3 then
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
+				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+			end
+			EmitGlobalSound("ui.contract_complete")
+		end
+		elseif WinningDual == 3 then
+		if _G.TotalDualsWon == 2 then
+			_G.IsDual = false
+		else
+			_G.IsDual = true
+		end
+		for _, hero in pairs(_G.DualArena2) do
+			if hero:IsAlive() == false then
+				hero:RespawnUnit()
+			end
+			if hero:IsClone() == false then
+				ID = hero:GetPlayerID()
+				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				PlayerResource:ModifyGold(ID, amount, false, 16)
+			end
+			if hero:GetTeamNumber() == 2 then
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
+				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+			elseif hero:GetTeamNumber() == 3 then
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
+				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+			end
+			EmitGlobalSound("ui.contract_complete")
+		end
+		elseif WinningDual == 4 then
+		if _G.TotalDualsWon == 2 then
+			_G.IsDual = false
+		else
+			_G.IsDual = true
+		end
+		for _, hero in pairs(_G.DualArenavs2) do
+			if hero:IsAlive() == false then
+				hero:RespawnUnit()
+			end
+			if hero:IsClone() == false then
+				ID = hero:GetPlayerID()
+				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				PlayerResource:ModifyGold(ID, amount, false, 16)
+			end
+			if hero:GetTeamNumber() == 2 then
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
+				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+			elseif hero:GetTeamNumber() == 3 then
+				hero:RemoveModifierByName("modifier_battle_cup_effigy")
+				hero:RemoveModifierByName("modifier_truesight")
+				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+			end
+			EmitGlobalSound("ui.contract_complete")
+		end
+		end
+	_G.TotalDualsWon = _G.TotalDualsWon + 1
+end
 
 function ExitDualWinner(WinningTeam)
 print("Called ExitDualWinner with winning team as "..WinningTeam)
@@ -708,7 +880,6 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 				current_gold = PlayerResource:GetGold(ID)
 				players:SetGold(current_gold + amount + 1, false)
 			end
-
 		end
 		if WinningTeam == 2 then
 		Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
@@ -731,7 +902,9 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
-		--[[for r=1,5 do
+	end
+		--[[
+		for r=1,5 do
 		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(_G.invaderlevel)
 		r = r + 1
 		end
@@ -741,8 +914,8 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 		end
 		_G.invaderlevel = _G.invaderlevel + 1
 		print("spawned invaders")
-		--]]
 	end
+	]]
 
 if team == 3 then
 _G.radiant_kills = (_G.radiant_kills + 1)
@@ -880,7 +1053,7 @@ function barebones:OnPlayerChat(keys)
 	local team_num = PlayerResource:GetTeam(userID)
 	print("Team "..team_num.. " typed a message")
 
-	if team_num == 2 then 
+	if team_num == 3 then 
 		if (text == "no" or text == "NO" or text == "No") and _G.vote_to_concede_radiant == true then
 		_G.vote_to_concede_radiant = false
 		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
@@ -904,7 +1077,7 @@ function barebones:OnPlayerChat(keys)
     end)
 end
 end
-	if team_num == 3 then 
+	if team_num == 0 then 
 		if (text == "no" or text == "NO" or text == "No") and _G.vote_to_concede_dire == true then
 		_G.vote_to_concede_dire = false
 		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
