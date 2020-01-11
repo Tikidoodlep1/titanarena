@@ -712,9 +712,11 @@ end
 
 
 function ExitDualWinnerSpecific(WinningDual)
-	if  _G.DualArena2 == nil or _G.DualArenavs2 == nil then
+	if  _G.DualArena2[1] == nil or _G.DualArenavs2[1] == nil then
 		_G.TotalDualsWon = _G.TotalDualsWon + 1
 	end
+		local radiantwon = false
+		local direwon = false
 	print("Ran Winning Dual with Winning dual number "..WinningDual)
 		if WinningDual == 1 then
 		if _G.TotalDualsWon == 2 then
@@ -730,22 +732,28 @@ function ExitDualWinnerSpecific(WinningDual)
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
-				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+				radiantwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
-			end
+					if _G.IsDual == false then
+						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
+						SendToConsole("dota_camera_center")
+					end
+				end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
-				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+				direwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-
 				PlayerResource:ModifyGold(ID, amount, false, 16)
-			end
+					if _G.IsDual == false then
+						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
+						SendToConsole("dota_camera_center")
+					end
+				end
 			end
 			EmitGlobalSound("ui.contract_complete")
 		end
@@ -763,22 +771,28 @@ function ExitDualWinnerSpecific(WinningDual)
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
-				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+				radiantwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
+				if _G.IsDual == false then
+					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
+					SendToConsole("dota_camera_center")
+				end
 			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
-				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+				direwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
-			end
+					if _G.IsDual == false then
+						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
+						SendToConsole("dota_camera_center")
+					end
+				end
 			end
 			EmitGlobalSound("ui.contract_complete")
 		end
@@ -796,22 +810,28 @@ function ExitDualWinnerSpecific(WinningDual)
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
-				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+				radiantwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
+				if _G.IsDual == false then
+					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
+					SendToConsole("dota_camera_center")
+				end
 			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
-				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+				direwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
-			end
+					if _G.IsDual == false then
+						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
+						SendToConsole("dota_camera_center")
+					end
+				end
 			end
 			EmitGlobalSound("ui.contract_complete")
 		end
@@ -829,25 +849,36 @@ function ExitDualWinnerSpecific(WinningDual)
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
-				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+				radiantwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
+				if _G.IsDual == false then
+					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
+					SendToConsole("dota_camera_center")
+				end
 			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
-				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+				direwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
-			end
+					if _G.IsDual == false then
+						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
+						SendToConsole("dota_camera_center")
+					end
+				end
 			end
 			EmitGlobalSound("ui.contract_complete")
 		end
+		end
+		if radiantwon == true then
+			Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+		elseif direwon == true then
+			Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
 		end
 	_G.TotalDualsWon = _G.TotalDualsWon + 1
 end
