@@ -762,19 +762,21 @@ function ExitDualWinnerSpecific(WinningDual)
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
+				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
 			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
+				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
 			end
 			end
@@ -793,19 +795,21 @@ function ExitDualWinnerSpecific(WinningDual)
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
+				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
 			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
+				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
 			end
 			end
@@ -824,19 +828,21 @@ function ExitDualWinnerSpecific(WinningDual)
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
+				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
 			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
+				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+				
 				PlayerResource:ModifyGold(ID, amount, false, 16)
 			end
 			end
