@@ -715,8 +715,20 @@ end
 
 
 function ExitDualWinnerSpecific(WinningDual)
-	if  _G.DualArena2[1] == nil or _G.DualArenavs2[1] == nil then
-		_G.TotalDualsWon = 1
+	if _G.GetArena == 1 then
+		arena2 = Entities:FindByName(nil, "dual_keepin4_trigger")
+	elseif _G.GetArena == 2 then
+		arena2 = Entities:FindByName(nil, "dual_keepin3_trigger")
+	elseif _G.GetArena == 3 then
+		arena2 = Entities:FindByName(nil, "dual_keepin2_trigger")
+	else 
+		arena2 = Entities:FindByName(nil, "dual_keepin1_trigger")
+	end
+	local allheroes = HeroList:GetAllHeroes()
+	for _, player in ipairs(allheroes) do
+		if arena2:IsTouching(player) == false then
+			_G.TotalDualsWon = _G.TotalDualsWon + 1
+		end
 	end
 		local radiantwon = false
 		local direwon = false
