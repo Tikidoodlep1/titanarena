@@ -412,14 +412,14 @@ function barebones:OnEntityKilled(keys)
 
 	local team = killed_unit:GetTeamNumber()
 
-if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() then
+if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:GetTeamNumber() == 4 then
 _G.dire_kills = (_G.dire_kills + 1)
 --checks to see if a team has hit the minimum number of kills to win
 if _G.dire_kills == 50 then
 	GameRules:SetGameWinner(3)
 	end
 end
-if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() then
+if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:GetTeamNumber() == 4 then
 _G.radiant_kills = (_G.radiant_kills + 1)
 --checks to see if a team has hit the minimum number of kills to win
 if _G.radiant_kills == 50 then
