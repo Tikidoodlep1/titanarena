@@ -2706,4 +2706,101 @@
 			}
 		}
 	}
+	"item_philosophers_stone"
+	{
+		"ItemPurchasable" "1"
+		"ItemCost" "875"
+	}
+	"item_recipe_midas_2"
+	{
+	"ID"							    "140031"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_midas_2"
+		"ItemRequirements"
+		{
+			"01"						"item_hand_of_midas;item_philosophers_stone"
+		}
+	}
+	"item_midas_2"
+	{
+		//General
+		//------------------------------------------------------------------------------------------------------------------
+		"ID"								"140032"
+		"BaseClass"							"item_datadriven"
+		
+		//Item Info
+		//------------------------------------------------------------------------------------------------------------------
+		"ItemCost"							"3125"
+		"ItemQuality"						"artifact"
+		"ItemAliases"						"Titan Platemail"
+		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"					"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 				"midas_2"
+		"AllowedInBackpack"					"0"
+		
+		//Special
+		//------------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_as"					"30"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_pct"				"-50"
+			}
+		}
+		"Modifiers"
+		{
+			"gpm"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+				"ThinkInterval"	"1"
+				"TextureName"	"midas_2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/midas2.lua"
+						"Function"		"gpmBoost"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_as"
+				}
+			}
+			"modifier_damage_pct"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%damage_pct"
+				}
+			}
+		}
+	}
+	"item_recipe_vambrace"
+	{
+		"ItemPurchasable" "1"
+		"ItemCost" "275"
+	}
 }
