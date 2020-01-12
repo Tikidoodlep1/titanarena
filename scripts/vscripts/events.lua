@@ -1074,12 +1074,20 @@ function barebones:OnPlayerChat(keys)
 	local userID = keys.userid
 	local team = keys.team
 	local text = keys.text
-	print(text)
-	local hero = PlayerResource:GetPlayer(userID)
-	local team_num = GetTeamName(hero:GetTeamNumber())
-	print("Team "..team_num.. " typed a message")
+	local player = PlayerResource:GetPlayer(userID)
+	local playerid = player:GetPlayerID()
+	local heroes = HeroList:GetAllHeroes()
+	for num,hero in pairs(heroes) do
+			print(hero:GetOwner())
+			if player == hero:GetOwner() then
+				print(hero:GetTeamNumber())
+			end
+	end
 
-	if team_num == "#DOTA_GoodGuys" then 
+    local team_num = player:GetTeamNumber()
+    print("Team "..team_num.. " typed a message")
+
+	if team_num == 2 then 
 		if (text == "no" or text == "NO" or text == "No") and _G.vote_to_concede_radiant == true then
 		_G.vote_to_concede_radiant = false
 		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
@@ -1103,7 +1111,7 @@ function barebones:OnPlayerChat(keys)
     end)
 end
 end
-	if team_num == "#DOTA_BadGuys" then 
+	if team_num == 3 then 
 		if (text == "no" or text == "NO" or text == "No") and _G.vote_to_concede_dire == true then
 		_G.vote_to_concede_dire = false
 		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
