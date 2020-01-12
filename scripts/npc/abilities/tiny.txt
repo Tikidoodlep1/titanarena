@@ -260,7 +260,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"splash_range"				"400"
+				"splash_range"				"200"
 			}
 			"06"
 			{
