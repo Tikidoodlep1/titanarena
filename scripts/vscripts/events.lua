@@ -642,7 +642,7 @@ end
 			end
 
 			-- Killer is a neutral creep
-			if killer_unit:IsNeutralUnitType() then
+			if killer_unit:GetTeamNumber() == 4 then
 				-- If a hero is killed by a neutral creep, respawn time can be modified here
 				killed_unit:SetTimeUntilRespawn(killed_unit:GetTimeUntilRespawn() / 4)
 			end
