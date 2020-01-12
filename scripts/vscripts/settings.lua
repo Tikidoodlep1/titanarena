@@ -149,12 +149,12 @@ ENABLED_RUNES[DOTA_RUNE_REGENERATION] = true
 ENABLED_RUNES[DOTA_RUNE_ARCANE] = true	-- BUGGED! NEVER SPAWNS!
 
 MAX_NUMBER_OF_TEAMS = 2                				-- How many potential teams can be in this game mode?
-USE_CUSTOM_TEAM_COLORS = false           			-- Should we use custom team colors?
+USE_CUSTOM_TEAM_COLORS = false          			-- Should we use custom team colors?
 USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS = false          -- Should we use custom team colors to color the players/minimap?
 
 TEAM_COLORS = {}                        -- If USE_CUSTOM_TEAM_COLORS is set, use these colors.
-TEAM_COLORS[DOTA_TEAM_GOODGUYS] = { 61, 210, 150 }  --    Teal
-TEAM_COLORS[DOTA_TEAM_BADGUYS]  = { 243, 201, 9 }   --    Yellow
+TEAM_COLORS[DOTA_TEAM_GOODGUYS] = { 43, 255, 0 }  --    Teal
+TEAM_COLORS[DOTA_TEAM_BADGUYS]  = { 255, 0, 0 }   --    Yellow
 TEAM_COLORS[DOTA_TEAM_CUSTOM_1] = { 197, 77, 168 }  --    Pink
 TEAM_COLORS[DOTA_TEAM_CUSTOM_2] = { 255, 108, 0 }   --    Orange
 TEAM_COLORS[DOTA_TEAM_CUSTOM_3] = { 52, 85, 255 }   --    Blue
