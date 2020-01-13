@@ -409,18 +409,23 @@ function barebones:OnEntityKilled(keys)
 
 	-- The Killing entity
 	local killer_unit = nil
+	if keys.entindex_attacker ~= nil then
+		killer_unit = EntIndexToHScript(keys.entindex_attacker)
+	end
 
 	local team = killed_unit:GetTeamNumber()
 
-if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:GetTeamNumber() == 4 then
+if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() then
 _G.dire_kills = (_G.dire_kills + 1)
+print("Dire has ".._G.dire_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
 if _G.dire_kills == 50 then
 	GameRules:SetGameWinner(3)
 	end
 end
-if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:GetTeamNumber() == 4 then
+if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() then
 _G.radiant_kills = (_G.radiant_kills + 1)
+print("Radiant has ".._G.radiant_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
 if _G.radiant_kills == 50 then
 	GameRules:SetGameWinner(2)
@@ -431,9 +436,7 @@ end
 		RollDrops(killed_unit)
 	end
 	
-	if keys.entindex_attacker ~= nil then
-		killer_unit = EntIndexToHScript(keys.entindex_attacker)
-	end
+
 	local players = HeroList:GetAllHeroes()
 	if killed_unit:GetUnitName() == "npc_boss_et_phys" or killed_unit:GetUnitName() == "npc_boss_et_mag" then
 		for _, hero in ipairs(players) do
