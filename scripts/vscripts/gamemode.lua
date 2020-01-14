@@ -66,6 +66,12 @@ function barebones:OnAllPlayersLoaded()
 	_G.dire_players = 0
 	_G.DireDead = 0
 	_G.RadiantDead = 0
+	_G.radiant1_stacking_can_spawn = true
+	_G.radiant2_stacking_can_spawn = true
+	_G.radiant_stacks_cleared = 0
+	_G.dire1_stacking_can_spawn = true
+	_G.dire2_stacking_can_spawn = true
+	_G.dire_stacks_cleared = 0
 	
 end
 
@@ -211,6 +217,11 @@ function barebones:OnGameInProgress()
 	EnterDual()
 		return 600
 	end)
+	Timers:CreateTimer(0, function()
+	
+	spawn_stacking_camps()
+		return 60
+	end)
 	
 	Timers:CreateTimer(180, function()
 	
@@ -232,6 +243,64 @@ function barebones:OnGameInProgress()
 	SpawnBosses()
 		return 600
 	end)
+
+
+function spawn_stacking_camps()
+
+if _G.radiant1_stacking_can_spawn == true then
+	local point = Entities:FindByName(nil,"radiant_stacking_spawn1"):GetAbsOrigin()
+
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+
+		_G.radiant_stacks_cleared = _G.radiant_stacks_cleared + 1
+end
+
+if _G.radiant2_stacking_can_spawn == true then
+	local point = Entities:FindByName(nil,"radiant_stacking_spawn2"):GetAbsOrigin()
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+
+		_G.radiant_stacks_cleared = _G.radiant_stacks_cleared + 1
+end
+
+if _G.dire1_stacking_can_spawn == true then
+	local point = Entities:FindByName(nil,"dire_stacking_spawn1"):GetAbsOrigin()
+
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+
+		_G.dire_stacks_cleared = _G.dire_stacks_cleared + 1
+end
+
+if _G.dire2_stacking_can_spawn == true then
+	local point = Entities:FindByName(nil,"dire_stacking_spawn2"):GetAbsOrigin()
+
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant_stacks_cleared)
+
+		_G.dire_stacks_cleared = _G.dire_stacks_cleared + 1
+end
+
+end
+
+
 
 function notifyDual30()
 Notifications:TopToAll({text = "A duel will begin in 30 seconds!", duration=5.0,style={color="red"}})
