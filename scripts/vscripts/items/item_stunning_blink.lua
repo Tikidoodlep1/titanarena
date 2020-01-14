@@ -72,7 +72,7 @@ local caster = keys.caster
 local target = keys.target
 local ability = keys.ability
 local chance = RandomInt(0, 100)
-	if chance <= 25 then
+	if chance <= 25 and ability:GetCooldownTimeRemaining() == 0 then
 	local damagetable = {
 		victim = target,
 		attacker = caster,
