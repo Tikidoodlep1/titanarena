@@ -6,7 +6,7 @@ local ward_hp = ability:GetSpecialValueFor("ward_hp_tooltip")
 local ward_damage = ability:GetSpecialValueFor("ward_damage_tooltip")
 local point = caster:GetCursorPosition()
 local unit = CreateUnitByName("npc_dota_venomancer_plague_ward_1", point, true, caster, caster, caster:GetTeamNumber())
-
+EmitSoundOnLocationWithCaster(point, "Hero_Venomancer.Plague_Ward", caster)
 
 unit:SetControllableByPlayer(caster:GetPlayerID(), false)
 
