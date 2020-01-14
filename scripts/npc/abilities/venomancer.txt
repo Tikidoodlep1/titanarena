@@ -130,7 +130,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Venomancer.Plague_Ward"
-		"AbilityTextureName"				"venomancer_plague_wards"
+		"AbilityTextureName"				"Plague_Ward"
 		"MaxLevel"                              "6"
 
 		// Casting

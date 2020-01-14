@@ -14,4 +14,9 @@ unit:SetMaxHealth(ward_hp)
 unit:SetHealth(unit:GetMaxHealth())
 unit:SetBaseDamageMax(ward_damage)
 unit:SetBaseDamageMin(ward_damage - 5)
+Timers:CreateTimer(40, function()
+
+unit:ForceKill(false)
+
+end)
 end
