@@ -337,13 +337,9 @@ local inflictor = keys.entindex_inflictor
 			damagingAbility = EntIndexToHScript(inflictor)
 		end
 		if Attacker:GetUnitName() == "npc_boss_dragon_knight_1" or Attacker:GetUnitName() == "npc_boss_dragon_knight_2" or Attacker:GetUnitName() == "npc_boss_scarab" or Attacker:GetUnitName() == "npc_boss_wanderer" or Attacker:GetUnitName() == "npc_boss_et_mag" or Attacker:GetUnitName() == "npc_boss_et_phys" then
-		if Victim:HasItemInInventory("item_heart") or tim:HasItemInInventory("item_blink") then
-			for x = 0, 5 do
-				local item = Victim:GetItemInSlot(x)
-				if item:GetItemName() == "item_heart" or item:GetItemName() == "item_blink" then
-					item:StartCooldown(4.45)
-				end
-			end
+		if Victim:HasItemInInventory("item_heart") or Victim:HasItemInInventory("item_blink") then
+			Victim:FindItemInInventory("item_heart"):StartCooldown(4.45)
+			Victim:FindItemInInventory("item_blink"):StartCooldown(4.45)
 		end
 	end
 	end
@@ -415,7 +411,7 @@ function barebones:OnEntityKilled(keys)
 
 	local team = killed_unit:GetTeamNumber()
 
-if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() then
+if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() and not IsSummoned() then
 _G.dire_kills = (_G.dire_kills + 1)
 print("Dire has ".._G.dire_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
@@ -423,7 +419,7 @@ if _G.dire_kills == 50 then
 	GameRules:SetGameWinner(3)
 	end
 end
-if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() then
+if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() and not IsSummoned() then
 _G.radiant_kills = (_G.radiant_kills + 1)
 print("Radiant has ".._G.radiant_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
