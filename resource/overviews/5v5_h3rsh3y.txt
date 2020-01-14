@@ -1,0 +1,8 @@
+5v5_h3rsh3y
+{
+	material materials/overviews/5v5_h3rsh3y.vmat
+	pos_x -14592
+	pos_y 14592
+	scale 28.500
+}
+
