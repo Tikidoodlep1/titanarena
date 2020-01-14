@@ -592,7 +592,7 @@ end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if dHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
+					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not IsSummoned() then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2, false)
 						SendToConsole("dota_camera_center")
@@ -603,7 +603,7 @@ end
 				end
 				if rHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 2 and hero:IsClone() == false then
+					if hero:GetTeamNumber() == 2 and hero:IsClone() == false not IsSummoned() then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
 						SendToConsole("dota_camera_center")
