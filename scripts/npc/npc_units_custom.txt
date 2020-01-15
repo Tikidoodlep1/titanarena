@@ -1722,7 +1722,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/heroes/kunkka/kunkka.vmdl"  // Model.
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
-	"ModelScale"		"3.2"
+	"ModelScale"		"2.3"
     "SoundSet"          "Hero_Kunkka"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Radiant Titan"
@@ -1836,7 +1836,7 @@
     //
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/heroes/necrolyte/necrolyte.vmdl"  // Model.
-	"ModelScale"		"3.2"
+	"ModelScale"		"2.3"
     "SoundSet"          "Hero_Necrolyte"          // Name of sound set.
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
     "Level"           "0"
@@ -2995,8 +2995,8 @@
         
         // Vision
         //----------------------------------------------------------------
-        "VisionDaytimeRange"        "1200"      // Range of vision during day light.
-        "VisionNighttimeRange"      "1200"      // Range of vision at night time.
+        "VisionDaytimeRange"        "2000"      // Range of vision during day light.
+        "VisionNighttimeRange"      "2000"      // Range of vision at night time.
         "EffectName"                "particles/dire_shrine_ambient_flares.vpcf"
 
         "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"

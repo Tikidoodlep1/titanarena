@@ -2822,7 +2822,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"       "9999999999"
+		"AbilityCastRange"       "100000000"
 		"AbilityCastPoint"       "0"
 		"AbilityCastAnimation"  "pudge_meat_hook"
 		"AbilityCastAnimation"  "pudge_meat_hook"
