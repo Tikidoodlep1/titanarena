@@ -358,9 +358,9 @@
 
     // Bounty
     //----------------------------------------------------------------
-    "BountyXP"          "16"     // Experience earn.
-    "BountyGoldMin"       "11"     // Gold earned min.
-    "BountyGoldMax"       "13"     // Gold earned max.
+    "BountyXP"          "18"     // Experience earn.
+    "BountyGoldMin"       "18"     // Gold earned min.
+    "BountyGoldMax"       "22"     // Gold earned max.
 
     // Bounds
     //----------------------------------------------------------------
@@ -403,8 +403,8 @@
                         "DamageGain"                            "5"
                         "ArmorGain"                                     "1"
                         "MagicResistGain"                       ".20"
-                        "BountyGain"                            "4.5"
-                        "XPGain"                                        "5"
+                        "BountyGain"                            "6"
+                        "XPGain"                                        "6"
                 }
 }
 	"npc_easy_satyr_b"
