@@ -264,9 +264,10 @@ function barebones:OnGameInProgress()
 	Timers:CreateTimer(0, function()
 	
 	spawn_stacking_camps()
+	SpawnJungleCamps()
 		return 60
 	end)
-	
+	_G.jungleforestclearedcamps = 0
 	Timers:CreateTimer(180, function()
 	
 	ExitDual()

@@ -123,3 +123,29 @@ if _G.dire5_stacking_can_spawn == true then
 end
 end
 end
+
+function SpawnJungleCamps()
+local jungle = {}
+jungle[1] = Entities:FindByName(nil, "jungle_camp1"):GetAbsOrigin()
+jungle[2] = Entities:FindByName(nil, "jungle_camp2"):GetAbsOrigin()
+jungle[3] = Entities:FindByName(nil, "jungle_camp3"):GetAbsOrigin()
+jungle[4] = Entities:FindByName(nil, "jungle_camp4"):GetAbsOrigin()
+jungle[5] = Entities:FindByName(nil, "jungle_camp5"):GetAbsOrigin()
+jungle[6] = Entities:FindByName(nil, "jungle_camp6"):GetAbsOrigin()
+
+for _, camp in pairs(jungle) do
+	local incamp = 0
+	units = FindUnitsInRadius(4, camp, nil, 422, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+	for _, creep in pairs(units) do
+		incamp = incamp + 1
+	end
+	if incamp <= 1 then
+		_G.jungleforestclearedcamps = _G.jungleforestclearedcamps + 1
+	end
+	while incamp <= 10 do
+		CreateUnitByName("npc_jungle_creep", camp, true, nil, nil, 4):CreatureLevelUp(_G.jungleforestclearedcamps)
+		print("Spawned Jungle Creep")
+		incamp = incamp + 1
+	end
+end
+end

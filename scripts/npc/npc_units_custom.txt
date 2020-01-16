@@ -3121,4 +3121,107 @@
         
     }       
 }
+"npc_jungle_creep"
+  {
+    // General
+    //
+    "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
+    "Model"           "models/creeps/roshan/roshan.vmdl"  // Model.
+	"ModelScale"		"0.55"
+    "SoundSet"          "Roshan"          // Name of sound set.
+    "Level"           "0"
+    "UnitLabel"         "Jungle Neutral"
+    
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          ""     // Ability 1.
+    "Ability2"          ""      // Ability 2.
+    "Ability3"          ""      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          ""      // Ability 5.
+    "Ability6"          ""      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"       "6"     // Physical protection.
+    "MagicalResistance"       "30"     // Magical protection.
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
+	"ProjectileModel"            "particles/neutral_fx/harpy_chain_lightning_head.vpcf"
+	"ProjectileSpeed"            "700"
+    "AttackDamageMin"     "65"     // Damage range min.
+    "AttackDamageMax"     "70"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "0.8"     // Speed of attack.
+    "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "300"   // Range within a target can be acquired.
+    "AttackRange"       "225"   // Range within a target can be attacked.
+
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"     // Base strength
+    "AttributeStrengthGain"   "0"     // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"     // Base intelligence
+    "AttributeIntelligenceGain" "0"     // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"     // Base agility
+    "AttributeAgilityGain"    "0"     // Agility bonus per level.
+
+    // Bounty
+    //----------------------------------------------------------------
+    "BountyXP"          "60"     // Experience earn.
+    "BountyGoldMin"       "53"     // Gold earned min.
+    "BountyGoldMax"       "58"     // Gold earned max.
+
+    // Bounds
+    //----------------------------------------------------------------
+    "BoundsHullName"      "DOTA_HULL_SIZE_REGULAR"      // Hull type used for navigation/locomotion.
+
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
+    "MovementSpeed"       "350"   // Speed
+    "MovementTurnRate"      "1.0"   // Turning rate.
+
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"        "900"     // Base health.
+    "StatusHealthRegen"     "10"     // Health regeneration rate.
+    "StatusMana"        "300"     // Base mana.
+    "StatusManaRegen"     "10"     // Mana regeneration rate.
+
+    // Team
+    //----------------------------------------------------------------
+    "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UseNeutralCreepBehavior" 	"1"
+	
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"    "1200"   // Range of vision during day light.
+    "VisionNighttimeRange"    "1800"   // Range of vision at night time.
+
+    // Bots
+    //----------------------------------------------------------------
+    "AttackDesire"        "3"   // How much bots want to attack them vs other non-hero things
+	
+	//Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+    {
+        //Level Up
+        "HPGain"                                        "30"
+        "DamageGain"                            "10"
+        "ArmorGain"                                     "1"
+        "MagicResistGain"                       "2"
+        "BountyGain"                            "4"
+        "XPGain"                                        "4"
+    }
+  }
 }
