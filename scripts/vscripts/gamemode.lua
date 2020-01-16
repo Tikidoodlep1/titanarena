@@ -24,6 +24,8 @@ require('events')
 -- filters.lua
 require('filters')
 
+require('new_camp_spawning')
+
 --[[
   This function should be used to set up Async precache calls at the beginning of the gameplay.
 
@@ -86,7 +88,19 @@ function barebones:OnAllPlayersLoaded()
 	_G.dire3_stacking_can_spawn = true
 	_G.dire4_stacking_can_spawn = true
 	_G.dire5_stacking_can_spawn = true
-
+	_G.radiant_easy1_creeps = 0
+	_G.radiant_easy2_creeps = 0
+	_G.radiant_easy3_creeps = 0
+	_G.radiant_medium1_creeps = 0
+	_G.radiant_medium2_creeps = 0
+	_G.radiant_medium3_creeps = 0
+	_G.radiant_medium4_creeps = 0
+	_G.radiant_hard1_creeps = 0
+	_G.radiant_hard2_creeps = 0
+	_G.radiant_hard3_creeps = 0
+	_G.radiant_hard4_creeps = 0
+	_G.radiant_ancient1_creeps = 0
+	_G.radiant_ancient2_creeps = 0
 	
 end
 
@@ -260,131 +274,7 @@ function barebones:OnGameInProgress()
 	end)
 
 
-function spawn_stacking_camps()
 
-if _G.radiant1_stacking_can_spawn == true then
-	_G.radiant1_stacks_cleared = _G.radiant1_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"radiant_stacking_spawn1"):GetAbsOrigin()
-
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant1_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant1_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant1_stacks_cleared)
-end
-
-if _G.radiant2_stacking_can_spawn == true then
-	_G.radiant2_stacks_cleared = _G.radiant2_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"radiant_stacking_spawn2"):GetAbsOrigin()
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant2_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant2_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant2_stacks_cleared)
-end
-
-if _G.dire1_stacking_can_spawn == true then
-			_G.dire1_stacks_cleared = _G.dire1_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"dire_stacking_spawn1"):GetAbsOrigin()
-
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire1_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire1_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire1_stacks_cleared)
-
-
-end
-
-if _G.dire2_stacking_can_spawn == true then
-			_G.dire2_stacks_cleared = _G.dire2_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"dire_stacking_spawn2"):GetAbsOrigin()
-
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire2_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire2_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire2_stacks_cleared)
-
-end
-
-if GetMapName() == "5v5_h3rsh3y" then
-if _G.radiant3_stacking_can_spawn == true then
-	_G.radiant3_stacks_cleared = _G.radiant3_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"radiant_stacking_spawn3"):GetAbsOrigin()
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant3_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant3_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant3_stacks_cleared)
-
-
-end
-if _G.radiant4_stacking_can_spawn == true then
-	_G.radiant4_stacks_cleared = _G.radiant4_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"radiant_stacking_spawn4"):GetAbsOrigin()
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant4_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant4_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant4_stacks_cleared)
-
-end
-if _G.radiant5_stacking_can_spawn == true then
-	_G.radiant5_stacks_cleared = _G.radiant5_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"radiant_stacking_spawn5"):GetAbsOrigin()
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant5_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant5_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.radiant5_stacks_cleared)
-
-		
-end
-
-
-if _G.dire3_stacking_can_spawn == true then
-			_G.dire3_stacks_cleared = _G.dire3_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"dire_stacking_spawn3"):GetAbsOrigin()
-
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire3_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire3_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire3_stacks_cleared)
-end
-if _G.dire4_stacking_can_spawn == true then
-			_G.dire4_stacks_cleared = _G.dire4_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"dire_stacking_spawn4"):GetAbsOrigin()
-
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire4_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire4_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire4_stacks_cleared)
-end
-if _G.dire5_stacking_can_spawn == true then
-			_G.dire5_stacks_cleared = _G.dire5_stacks_cleared + 1
-	local point = Entities:FindByName(nil,"dire_stacking_spawn5"):GetAbsOrigin()
-
-		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire5_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire5_stacks_cleared)
-				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
-		unit:CreatureLevelUp(_G.dire5_stacks_cleared)
-end
-end
-end
 
 
 
@@ -592,7 +482,7 @@ end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if dHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not IsSummoned() then
+					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsSummoned() then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2, false)
 						SendToConsole("dota_camera_center")
@@ -603,7 +493,7 @@ end
 				end
 				if rHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 2 and hero:IsClone() == false not IsSummoned() then
+					if hero:GetTeamNumber() == 2 and hero:IsClone() == false and not hero:IsSummoned() then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
 						SendToConsole("dota_camera_center")
@@ -869,25 +759,55 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for e=1, 7 do
 	local randint = RandomInt(1,5)
 	 if randint == 1 then
+	if _G.radiant_easy1_creeps < 14 then
 		CreateUnitByName(e1, loc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy2_creeps < 14 then
 		CreateUnitByName(e1, loc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy3_creeps < 14 then
 		CreateUnitByName(e1, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 2 then
+	if _G.radiant_easy1_creeps < 14 then
 		CreateUnitByName(e2, loc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy2_creeps < 14 then
 		CreateUnitByName(e2, loc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy3_creeps < 14 then
 		CreateUnitByName(e2, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 3 then
+		if _G.radiant_easy1_creeps < 14 then
 		CreateUnitByName(e3, loc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy2_creeps < 14 then
 		CreateUnitByName(e3, loc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy3_creeps < 14 then
 		CreateUnitByName(e3, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 4 then
+		if _G.radiant_easy1_creeps < 14 then
 		CreateUnitByName(e4, loc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy2_creeps < 14 then
 		CreateUnitByName(e4, loc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy3_creeps < 14 then
 		CreateUnitByName(e4, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 5 then
+	if _G.radiant_easy1_creeps < 14 then
 		CreateUnitByName(e5, loc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy2_creeps < 14 then
 		CreateUnitByName(e5, loc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_easy3_creeps < 14 then
 		CreateUnitByName(e5, loc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	end
 	if randint == 1 then
 		CreateUnitByName(e1, badloc, true, nil, nil, 4):CreatureLevelUp(level)
@@ -913,26 +833,58 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	end
 	for m=1, 7 do
 	local randint = RandomInt(1,4)
-	 if randint == 1 then
+	if randint == 1 then
+	if _G.radiant_medium1_creeps < 14 then
 		CreateUnitByName(m1, mloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium2_creeps < 14 then
 		CreateUnitByName(m1, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium3_creeps < 14 then
 		CreateUnitByName(m1, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium4_creeps < 14 then
 		CreateUnitByName(m1, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 2 then
+	if _G.radiant_medium1_creeps < 14 then
 		CreateUnitByName(m2, mloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium2_creeps < 14 then
 		CreateUnitByName(m2, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium3_creeps < 14 then
 		CreateUnitByName(m2, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium4_creeps < 14 then
 		CreateUnitByName(m2, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 3 then
+	if _G.radiant_medium1_creeps < 14 then
 		CreateUnitByName(m3, mloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium2_creeps < 14 then
 		CreateUnitByName(m3, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium3_creeps < 14 then
 		CreateUnitByName(m3, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium4_creeps < 14 then
 		CreateUnitByName(m3, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 4 then
+	if _G.radiant_medium1_creeps < 14 then
 		CreateUnitByName(m4, mloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium2_creeps < 14 then
 		CreateUnitByName(m4, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium3_creeps < 14 then
 		CreateUnitByName(m4, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_medium4_creeps < 14 then
 		CreateUnitByName(m4, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	end
 	if randint == 1 then
 		CreateUnitByName(m1, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
@@ -963,25 +915,57 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for h=1, 7 do
 	local randint = RandomInt(1,4)
 	 if randint == 1 then
+	 if _G.radiant_hard1_creeps < 14 then
 		CreateUnitByName(h1, hloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard2_creeps < 14 then
 		CreateUnitByName(h1, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard3_creeps < 14 then
 		CreateUnitByName(h1, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard4_creeps < 14 then
 		CreateUnitByName(h1, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 2 then
+		if _G.radiant_hard1_creeps < 14 then
 		CreateUnitByName(h2, hloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard2_creeps < 14 then
 		CreateUnitByName(h2, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard3_creeps < 14 then
 		CreateUnitByName(h2, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard4_creeps < 14 then
 		CreateUnitByName(h2, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 3 then
+		if _G.radiant_hard1_creeps < 14 then
 		CreateUnitByName(h3, hloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard2_creeps < 14 then
 		CreateUnitByName(h3, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard3_creeps < 14 then
 		CreateUnitByName(h3, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard4_creeps < 14 then
 		CreateUnitByName(h3, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 4 then
+	if _G.radiant_hard1_creeps < 14 then
 		CreateUnitByName(h4, hloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard2_creeps < 14 then
 		CreateUnitByName(h4, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard3_creeps < 14 then
 		CreateUnitByName(h4, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_hard4_creeps < 14 then
 		CreateUnitByName(h4, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	end
 	if randint == 1 then
 		CreateUnitByName(h1, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
@@ -1008,14 +992,26 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for a=1, 7 do
 	local randint = RandomInt(1,3)
 	 if randint == 1 then
+	 	if _G.radiant_ancient1_creeps < 7 then
 		CreateUnitByName(a1, aloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_ancient2_creeps < 7 then
 		CreateUnitByName(a1, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 2 then
+		if _G.radiant_ancient1_creeps < 7 then
 		CreateUnitByName(a2, aloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_ancient2_creeps < 7 then
 		CreateUnitByName(a2, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 3 then
+		if _G.radiant_ancient1_creeps < 7 then
 		CreateUnitByName(a3, aloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.radiant_ancient2_creeps < 7 then
 		CreateUnitByName(a3, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	end
 	if randint == 1 then
 		CreateUnitByName(a1, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
