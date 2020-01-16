@@ -8,7 +8,7 @@ LOCK_TEAMS = false 						-- Should we Lock (true) or unlock (false) team assigne
 
 CUSTOM_GAME_SETUP_TIME = 15			-- How long should custom game setup last - the screen where players pick a team?
 HERO_SELECTION_TIME = 60.0				-- How long should we let people select their hero? Should be at least 5 seconds.
-HERO_SELECTION_PENALTY_TIME = 15      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
+HERO_SELECTION_PENALTY_TIME = 25      -- How long should the penalty time for not picking a hero last? During this time player loses gold.
 BANNING_PHASE_TIME = 15.0               -- How long should the banning phase last? This will work only if "EnablePickRules" is "1" in 'addoninfo.txt'
 STRATEGY_TIME = 20.0					-- How long should strategy time last? Bug: You can buy items during strategy time and it will not be spent!
 SHOWCASE_TIME = 12.0					-- How long should show case time be?
