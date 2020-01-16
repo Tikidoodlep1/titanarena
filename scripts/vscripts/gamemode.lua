@@ -101,6 +101,21 @@ function barebones:OnAllPlayersLoaded()
 	_G.radiant_hard4_creeps = 0
 	_G.radiant_ancient1_creeps = 0
 	_G.radiant_ancient2_creeps = 0
+	_G.dire_easy1_creeps = 0
+	_G.dire_easy2_creeps = 0
+	_G.dire_easy3_creeps = 0
+	_G.dire_medium1_creeps = 0
+	_G.dire_medium2_creeps = 0
+	_G.dire_medium3_creeps = 0
+	_G.dire_medium4_creeps = 0
+	_G.dire_hard1_creeps = 0
+	_G.dire_hard2_creeps = 0
+	_G.dire_hard3_creeps = 0
+	_G.dire_hard4_creeps = 0
+	_G.dire_ancient1_creeps = 0
+	_G.dire_ancient2_creeps = 0
+	_G.level_up = 0
+
 	
 end
 
@@ -682,10 +697,10 @@ function SpawnTitans(keys)
 		CreateUnitByName("npc_dire_titan", Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(level)
 	end
 end
-	Timers:CreateTimer(30, function() -- Start this timer 30 game-time seconds later
+	Timers:CreateTimer(0, function() -- Start this timer 30 game-time seconds later
     
 	SpawnCreeps()
-      return 120 -- Rerun this timer every 120 game-time seconds 
+      return 60 -- Rerun this timer every 120 game-time seconds 
 	  
     end)
 
@@ -810,25 +825,55 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	end
 	end
 	if randint == 1 then
+	if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e1, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e1, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e1, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 2 then
+		if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e2, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e2, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e2, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 3 then
+		if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e3, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e3, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e3, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 4 then
+		if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e4, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e4, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e4, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 5 then
+		if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e5, badloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e5, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e5, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	end
 	end
 	for m=1, 7 do
@@ -887,28 +932,60 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	end
 	end
 	if randint == 1 then
+		if _G.dire_medium1_creeps < 14 then
 		CreateUnitByName(m1, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium2_creeps < 14 then
 		CreateUnitByName(m1, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium3_creeps < 14 then
 		CreateUnitByName(m1, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium4_creeps < 14 then
 		CreateUnitByName(m1, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 		
 	elseif randint == 2 then
+		if _G.dire_medium1_creeps < 14 then
 		CreateUnitByName(m2, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium2_creeps < 14 then
 		CreateUnitByName(m2, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium3_creeps < 14 then
 		CreateUnitByName(m2, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium4_creeps < 14 then
 		CreateUnitByName(m2, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 		
 	elseif randint == 3 then
+		if _G.dire_medium1_creeps < 14 then
 		CreateUnitByName(m3, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium2_creeps < 14 then
 		CreateUnitByName(m3, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium3_creeps < 14 then
 		CreateUnitByName(m3, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium4_creeps < 14 then
 		CreateUnitByName(m3, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 		
 	elseif randint == 4 then
+		if _G.dire_medium1_creeps < 14 then
 		CreateUnitByName(m4, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium2_creeps < 14 then
 		CreateUnitByName(m4, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium3_creeps < 14 then
 		CreateUnitByName(m4, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_medium4_creeps < 14 then
 		CreateUnitByName(m4, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 		
 	end
 	end
@@ -968,25 +1045,57 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	end
 	end
 	if randint == 1 then
+		if _G.dire_hard1_creeps < 14 then
 		CreateUnitByName(h1, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard2_creeps < 14 then
 		CreateUnitByName(h1, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard3_creeps < 14 then
 		CreateUnitByName(h1, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard4_creeps < 14 then
 		CreateUnitByName(h1, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 2 then
+		if _G.dire_hard1_creeps < 14 then
 		CreateUnitByName(h2, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard2_creeps < 14 then
 		CreateUnitByName(h2, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard3_creeps < 14 then
 		CreateUnitByName(h2, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard4_creeps < 14 then
 		CreateUnitByName(h2, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 3 then
+		if _G.dire_hard1_creeps < 14 then
 		CreateUnitByName(h3, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard2_creeps < 14 then
 		CreateUnitByName(h3, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard3_creeps < 14 then
 		CreateUnitByName(h3, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard4_creeps < 14 then
 		CreateUnitByName(h3, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 4 then
+		if _G.dire_hard1_creeps < 14 then
 		CreateUnitByName(h4, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard2_creeps < 14 then
 		CreateUnitByName(h4, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard3_creeps < 14 then
 		CreateUnitByName(h4, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_hard4_creeps < 14 then
 		CreateUnitByName(h4, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	end
 	end
 	for a=1, 7 do
@@ -1014,17 +1123,33 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	end
 	end
 	if randint == 1 then
+	if _G.dire_ancient1_creeps < 7 then
 		CreateUnitByName(a1, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_ancient2_creeps < 7 then
 		CreateUnitByName(a1, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 2 then
+		if _G.dire_ancient1_creeps < 7 then
 		CreateUnitByName(a2, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_ancient2_creeps < 7 then
 		CreateUnitByName(a2, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
+	end
 	elseif randint == 3 then
+		if _G.dire_ancient1_creeps < 7 then
 		CreateUnitByName(a3, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
+	end
+	if _G.dire_ancient2_creeps < 7 then
 		CreateUnitByName(a3, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
+	end
+	_G.level_up = _G.level_up + .5
+	if level_up == 1 then
 	level = level + 1
+	_G.levelup = 0
+end
 end
 end
 
