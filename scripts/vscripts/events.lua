@@ -39,7 +39,7 @@ function barebones:OnGameRulesStateChange(keys)
 		_G.radiant_can_concede = true
 		_G.dire_can_concede = true
 
-		Timers:CreateTimer(HERO_SELECTION_TIME+STRATEGY_TIME-1, function()
+		Timers:CreateTimer(HERO_SELECTION_TIME+HERO_SELECTION_PENALTY_TIME)-1, function()
 			for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 				if PlayerResource:IsValidPlayerID(playerID) then
 					-- If this player still hasn't picked a hero, random one
