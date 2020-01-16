@@ -411,7 +411,7 @@ function barebones:OnEntityKilled(keys)
 
 	local team = killed_unit:GetTeamNumber()
 
-if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() and not IsSummoned() then
+if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() and not killed_unit:IsSummoned() then
 _G.dire_kills = (_G.dire_kills + 1)
 print("Dire has ".._G.dire_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
@@ -419,7 +419,7 @@ if _G.dire_kills == 50 then
 	GameRules:SetGameWinner(3)
 	end
 end
-if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() and not IsSummoned() then
+if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and not killed_unit:IsClone() and killer_unit:IsRealHero() and not killed_unit:IsSummoned() then
 _G.radiant_kills = (_G.radiant_kills + 1)
 print("Radiant has ".._G.radiant_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
@@ -728,7 +728,7 @@ function ExitDualWinnerSpecific(WinningDual)
 	end
 		local radiantwon = false
 		local direwon = false
-	print("Ran Winning Dual with Winning dual number "..WinningDual)
+		_G.WinningDualGoldAmountPerPlayer = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 		if WinningDual == 1 then
 		if _G.TotalDualsWon == 2 then
 			_G.IsDual = false
@@ -742,11 +742,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
-				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				radiantwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, amount, false, 16)
+				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 					if _G.IsDual == false then
 						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
 						SendToConsole("dota_camera_center")
@@ -755,11 +754,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
-				amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				direwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, amount, false, 16)
+				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 					if _G.IsDual == false then
 						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
 						SendToConsole("dota_camera_center")
@@ -781,11 +779,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
-				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				radiantwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, amount, false, 16)
+				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				if _G.IsDual == false then
 					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
 					SendToConsole("dota_camera_center")
@@ -794,11 +791,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
-				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				direwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, amount, false, 16)
+				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 					if _G.IsDual == false then
 						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
 						SendToConsole("dota_camera_center")
@@ -820,11 +816,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
-				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				radiantwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, amount, false, 16)
+				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				if _G.IsDual == false then
 					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
 					SendToConsole("dota_camera_center")
@@ -833,11 +828,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
-				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				direwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, amount, false, 16)
+				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 					if _G.IsDual == false then
 						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
 						SendToConsole("dota_camera_center")
@@ -859,11 +853,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
-				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				radiantwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, amount, false, 16)
+				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				if _G.IsDual == false then
 					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
 					SendToConsole("dota_camera_center")
@@ -872,11 +865,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
-				local amount = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 				direwon = true
 				if hero:IsClone() == false then
 				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, amount, false, 16)
+				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 					if _G.IsDual == false then
 						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
 						SendToConsole("dota_camera_center")
@@ -886,10 +878,28 @@ function ExitDualWinnerSpecific(WinningDual)
 			EmitGlobalSound("ui.contract_complete")
 		end
 		end
+		local allheroes = HeroList:GetAllHeroes()
+		local base = 75
+		_G.DireDualLosingStreak = 1
+		_G.RadiantDualLosingStreak = 1
 		if radiantwon == true then
-			Notifications:TopToAll({text = "The Radiant Won And Recieved "..amount.." Gold!", duration=5.0})
+			Notifications:TopToAll({text = "The Radiant Won And Recieved ".._G.WinningDualGoldAmountPerPlayer.." Gold!", duration=5.0})
+			_G.DireDualLosingStreak = 1
+			for _, hero in ipairs(allheroes) do
+				if hero:GetTeamNumber() == 3 then
+					hero:AddExperience((base * _G.DualLosingStreak) + (base * GameRules:GetGameTime()/600), 1, false, true)
+				end
+			end
+			_G.DualLosingStreak = _G.DualLosingStreak + 1
 		elseif direwon == true then
-			Notifications:TopToAll({text = "The Dire Won And Recieved "..amount.." Gold!", duration=5.0})
+			Notifications:TopToAll({text = "The Dire Won And Recieved ".._G.WinningDualGoldAmountPerPlayer.." Gold!", duration=5.0})
+			_G.RadiantDualLosingStreak = 1
+			for _, hero in ipairs(allheroes) do
+				if hero:GetTeamNumber() == 2 then
+					hero:AddExperience((base * _G.DualLosingStreak) + (base * GameRules:GetGameTime()/600), 1, false, true)
+				end
+			end
+			_G.DualLosingStreak = _G.DualLosingStreak + 1
 		end
 	_G.TotalDualsWon = _G.TotalDualsWon + 1
 end
