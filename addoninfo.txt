@@ -1,17 +1,14 @@
 "AddonInfo"
 {
 	"TeamCount" 	      	"2"
-	"maps"      			"5v5 5v5_h3rsh3y"
+	"maps"      			"5v5_h3rsh3y"
 	"IsPlayable"  			"1"
 	"PenaltiesEnabled"  	"0"         // For enabling/disabling the leaver penalty
 	"CheckAFKPlayers" 		"1"			// For automatically kicking afk players from the lobby
 	"HeroGuidesSupported" 	"1"
 	"EnablePickRules"		"1"			// For enabling/disabling banning phase; prevents skipping hero selection and force picking a hero!
 	
-	"5v5"
-	{
-	  "MaxPlayers"          "10"
-	}
+
 	"5v5_h3rsh3y"
 	{
 	  "MaxPlayers"          "10"
