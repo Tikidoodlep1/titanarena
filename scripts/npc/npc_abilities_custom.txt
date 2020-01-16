@@ -40,6 +40,7 @@
 #base "abilities/tinker.txt"
 #base "abilities/sniper.txt"
 #base "abilities/warlock.txt"
+#base "abilities/mars.txt"
 #base "abilities/beastmaster.txt"
 #base "abilities/necrophos.txt"
 #base "abilities/queen_of_pain.txt"
