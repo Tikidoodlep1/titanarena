@@ -723,48 +723,31 @@ function ExitDualWinnerSpecific(WinningDual)
 	local allheroes = HeroList:GetAllHeroes()
 	for _, player in ipairs(allheroes) do
 		if arena2:IsTouching(player) == false then
-			_G.TotalDualsWon = _G.TotalDualsWon + 1
+			_G.TotalDualsWon = 1
 		end
 	end
 		local radiantwon = false
 		local direwon = false
 		_G.WinningDualGoldAmountPerPlayer = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
 		if WinningDual == 1 then
-		if _G.TotalDualsWon == 2 then
-			_G.IsDual = false
-		else
-			_G.IsDual = true
-		end
 		for _, hero in pairs(_G.DualArena1) do
-			if hero:IsAlive() == false then
-				hero:RespawnUnit()
-			end
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				radiantwon = true
 				if hero:IsClone() == false then
-				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
-					if _G.IsDual == false then
-						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
-						SendToConsole("dota_camera_center")
-					end
+					ID = hero:GetPlayerID()
+					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				direwon = true
 				if hero:IsClone() == false then
-				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
-					if _G.IsDual == false then
-						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
-						SendToConsole("dota_camera_center")
-					end
+					ID = hero:GetPlayerID()
+					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			end
-			EmitGlobalSound("ui.contract_complete")
 		end
 		elseif WinningDual == 2 then
 		if _G.TotalDualsWon == 2 then
@@ -773,35 +756,23 @@ function ExitDualWinnerSpecific(WinningDual)
 			_G.IsDual = true
 		end
 		for _, hero in pairs(_G.DualArenavs1) do
-			if hero:IsAlive() == false then
-				hero:RespawnUnit()
-			end
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				radiantwon = true
 				if hero:IsClone() == false then
-				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
-				if _G.IsDual == false then
-					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
-					SendToConsole("dota_camera_center")
+					ID = hero:GetPlayerID()
+					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
-			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				direwon = true
 				if hero:IsClone() == false then
-				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
-					if _G.IsDual == false then
-						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
-						SendToConsole("dota_camera_center")
-					end
+					ID = hero:GetPlayerID()
+					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			end
-			EmitGlobalSound("ui.contract_complete")
 		end
 		elseif WinningDual == 3 then
 		if _G.TotalDualsWon == 2 then
@@ -810,35 +781,23 @@ function ExitDualWinnerSpecific(WinningDual)
 			_G.IsDual = true
 		end
 		for _, hero in pairs(_G.DualArena2) do
-			if hero:IsAlive() == false then
-				hero:RespawnUnit()
-			end
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				radiantwon = true
 				if hero:IsClone() == false then
-				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
-				if _G.IsDual == false then
-					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
-					SendToConsole("dota_camera_center")
+					ID = hero:GetPlayerID()
+					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
-			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				direwon = true
 				if hero:IsClone() == false then
-				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
-					if _G.IsDual == false then
-						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
-						SendToConsole("dota_camera_center")
-					end
+					ID = hero:GetPlayerID()
+					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			end
-			EmitGlobalSound("ui.contract_complete")
 		end
 		elseif WinningDual == 4 then
 		if _G.TotalDualsWon == 2 then
@@ -847,41 +806,30 @@ function ExitDualWinnerSpecific(WinningDual)
 			_G.IsDual = true
 		end
 		for _, hero in pairs(_G.DualArenavs2) do
-			if hero:IsAlive() == false then
-				hero:RespawnUnit()
-			end
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				radiantwon = true
 				if hero:IsClone() == false then
-				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
-				if _G.IsDual == false then
-					FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
-					SendToConsole("dota_camera_center")
+					ID = hero:GetPlayerID()
+					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
-			end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight")
 				direwon = true
 				if hero:IsClone() == false then
-				ID = hero:GetPlayerID()
-				PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
-					if _G.IsDual == false then
-						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
-						SendToConsole("dota_camera_center")
-					end
+					ID = hero:GetPlayerID()
+					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			end
-			EmitGlobalSound("ui.contract_complete")
 		end
 		end
 		local allheroes = HeroList:GetAllHeroes()
 		local base = 75
 		_G.DireDualLosingStreak = 1
 		_G.RadiantDualLosingStreak = 1
+		EmitGlobalSound("ui.contract_complete")
 		if radiantwon == true then
 			Notifications:TopToAll({text = "The Radiant Won And Recieved ".._G.WinningDualGoldAmountPerPlayer.." Gold!", duration=5.0})
 			_G.DireDualLosingStreak = 1
@@ -899,9 +847,29 @@ function ExitDualWinnerSpecific(WinningDual)
 					hero:AddExperience((base * _G.RadiantDualLosingStreak) + (base * GameRules:GetGameTime()/600), 1, false, true)
 				end
 			end
+			_G.TotalDualsWon = _G.TotalDualsWon + 1
+			print("Total duals won = ".._G.TotalDualsWon)
+			if _G.TotalDualsWon == 2 then
+				_G.IsDual = false
+				GameRules:SetHeroRespawnEnabled(true)
+				for _, hero in ipairs(allheroes) do
+					hero:SetBuyBackDisabledByReapersScythe(false)
+					if hero:IsAlive() == false then
+						hero:RespawnUnit()
+					end
+					if hero:GetTeamNumber() == 2 then
+						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
+						sendToConsole("dota_camera_center")
+					elseif hero:GetTeamNumber() == 3 then
+						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
+						sendToConsole("dota_camera_center")
+					end
+				end
+			else
+				_G.IsDual = true
+			end
 			_G.RadiantDualLosingStreak = _G.RadiantDualLosingStreak + 1
 		end
-	_G.TotalDualsWon = _G.TotalDualsWon + 1
 end
 
 --[[
