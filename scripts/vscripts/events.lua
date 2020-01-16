@@ -859,10 +859,10 @@ function ExitDualWinnerSpecific(WinningDual)
 					end
 					if hero:GetTeamNumber() == 2 then
 						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
-						sendToConsole("dota_camera_center")
+						SendToConsole("dota_camera_center")
 					elseif hero:GetTeamNumber() == 3 then
 						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
-						sendToConsole("dota_camera_center")
+						SendToConsole("dota_camera_center")
 					end
 				end
 			end
