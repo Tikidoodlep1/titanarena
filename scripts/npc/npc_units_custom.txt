@@ -401,10 +401,10 @@
                         //Level Up
                         "HPGain"                                        "50"
                         "DamageGain"                            "5"
-                        "ArmorGain"                                     "2"
-                        "MagicResistGain"                       ".3"
-                        "BountyGain"                            "3.5"
-                        "XPGain"                                        "4"
+                        "ArmorGain"                                     "1"
+                        "MagicResistGain"                       ".20"
+                        "BountyGain"                            "4.5"
+                        "XPGain"                                        "5"
                 }
 }
 	"npc_easy_satyr_b"
