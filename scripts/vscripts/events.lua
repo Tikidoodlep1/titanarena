@@ -865,8 +865,6 @@ function ExitDualWinnerSpecific(WinningDual)
 						sendToConsole("dota_camera_center")
 					end
 				end
-			else
-				_G.IsDual = true
 			end
 			_G.RadiantDualLosingStreak = _G.RadiantDualLosingStreak + 1
 		end
