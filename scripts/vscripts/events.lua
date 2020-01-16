@@ -887,23 +887,24 @@ function ExitDualWinnerSpecific(WinningDual)
 			_G.DireDualLosingStreak = 1
 			for _, hero in ipairs(allheroes) do
 				if hero:GetTeamNumber() == 3 then
-					hero:AddExperience((base * _G.DualLosingStreak) + (base * GameRules:GetGameTime()/600), 1, false, true)
+					hero:AddExperience((base * _G.DireDualLosingStreak) + (base * GameRules:GetGameTime()/600), 1, false, true)
 				end
 			end
-			_G.DualLosingStreak = _G.DualLosingStreak + 1
+			_G.DireDualLosingStreak = _G.DireDualLosingStreak + 1
 		elseif direwon == true then
 			Notifications:TopToAll({text = "The Dire Won And Recieved ".._G.WinningDualGoldAmountPerPlayer.." Gold!", duration=5.0})
 			_G.RadiantDualLosingStreak = 1
 			for _, hero in ipairs(allheroes) do
 				if hero:GetTeamNumber() == 2 then
-					hero:AddExperience((base * _G.DualLosingStreak) + (base * GameRules:GetGameTime()/600), 1, false, true)
+					hero:AddExperience((base * _G.RadiantDualLosingStreak) + (base * GameRules:GetGameTime()/600), 1, false, true)
 				end
 			end
-			_G.DualLosingStreak = _G.DualLosingStreak + 1
+			_G.RadiantDualLosingStreak = _G.RadiantDualLosingStreak + 1
 		end
 	_G.TotalDualsWon = _G.TotalDualsWon + 1
 end
 
+--[[
 function ExitDualWinner(WinningTeam)
 print("Called ExitDualWinner with winning team as "..WinningTeam)
 	_G.IsDual = false
@@ -986,7 +987,7 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 			trigger:Disable()
 		end
 	end
-		--[[
+
 		for r=1,5 do
 		CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(_G.invaderlevel)
 		r = r + 1
@@ -998,8 +999,7 @@ print("Called ExitDualWinner with winning team as "..WinningTeam)
 		_G.invaderlevel = _G.invaderlevel + 1
 		print("spawned invaders")
 	end
-	]]
---[[
+
 if team == 3 then
 _G.radiant_kills = (_G.radiant_kills + 1)
 
