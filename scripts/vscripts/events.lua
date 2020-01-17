@@ -721,10 +721,19 @@ function ExitDualWinnerSpecific(WinningDual)
 		arena2 = Entities:FindByName(nil, "dual_keepin1_trigger")
 	end
 	local allheroes = HeroList:GetAllHeroes()
+	local duals2 = false
 	for _, player in ipairs(allheroes) do
-		if arena2:IsTouching(player) == false then
-			_G.TotalDualsWon = 1
+		if arena2:IsTouching(player) == true then
+			duals2 = true
 		end
+	end
+	if duals2 == true then
+		print("duals2 is true")
+	else
+		print("duals2 is false")
+	end
+	if duals2 == false then
+		_G.TotalDualsWon = 1
 	end
 		local radiantwon = false
 		local direwon = false
@@ -750,11 +759,6 @@ function ExitDualWinnerSpecific(WinningDual)
 			end
 		end
 		elseif WinningDual == 2 then
-		if _G.TotalDualsWon == 2 then
-			_G.IsDual = false
-		else
-			_G.IsDual = true
-		end
 		for _, hero in pairs(_G.DualArenavs1) do
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
@@ -775,11 +779,6 @@ function ExitDualWinnerSpecific(WinningDual)
 			end
 		end
 		elseif WinningDual == 3 then
-		if _G.TotalDualsWon == 2 then
-			_G.IsDual = false
-		else
-			_G.IsDual = true
-		end
 		for _, hero in pairs(_G.DualArena2) do
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
@@ -800,11 +799,6 @@ function ExitDualWinnerSpecific(WinningDual)
 			end
 		end
 		elseif WinningDual == 4 then
-		if _G.TotalDualsWon == 2 then
-			_G.IsDual = false
-		else
-			_G.IsDual = true
-		end
 		for _, hero in pairs(_G.DualArenavs2) do
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
@@ -847,6 +841,7 @@ function ExitDualWinnerSpecific(WinningDual)
 					hero:AddExperience((base * _G.RadiantDualLosingStreak) + (base * GameRules:GetGameTime()/600), 1, false, true)
 				end
 			end
+		end
 			_G.TotalDualsWon = _G.TotalDualsWon + 1
 			print("Total duals won = ".._G.TotalDualsWon)
 			if _G.TotalDualsWon == 2 then
@@ -865,24 +860,40 @@ function ExitDualWinnerSpecific(WinningDual)
 						SendToConsole("dota_camera_center")
 					end
 				end
+				for x=1, 11 do
+					_G.DualArena1[x] = nil
+					_G.DualArena2[x] = nil
+					_G.DualArenavs1[x] = nil
+					_G.DualArenavs2[x] = nil
+				end
+				local trigger_out = Entities:FindByName(nil, "dual_keepout_trigger")
+				local trigger_out1 = Entities:FindByName(nil, "dual_keepout1_trigger")
+					trigger_out:Disable()
+					trigger_out1:Disable()
+				local trigger_in = {}
+					trigger_in[1] = Entities:FindByName(nil, "dual_keepin_trigger")
+					trigger_in[2] = Entities:FindByName(nil, "dual_keepin1_trigger")
+					trigger_in[3] = Entities:FindByName(nil, "dual_keepin2_trigger")
+					trigger_in[4] = Entities:FindByName(nil, "dual_keepin3_trigger")
+					trigger_in[5] = Entities:FindByName(nil, "dual_keepin4_trigger")
+				for _, trigger in pairs(trigger_in) do
+					trigger:Disable()
+				end
 				local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_radiant_titan" then
 				unit:AddNewModifier(unit, nil, "modifier_titan_in_dual", {duration=-1})
-				FindClearSpaceForUnit(unit, arena1titan, false)
-				unit:MoveToPositionAggressive(arena1titanvs)
+				FindClearSpaceForUnit(unit, Entities:FindByName(nil, "rad_titan"):GetAbsOrigin(), false)
 				break
 			end
 		end
 		for _, unit in ipairs(Creatures) do
 			if unit:GetUnitName() == "npc_dire_titan" then
 				unit:AddNewModifier(unit, nil, "modifier_titan_in_dual", {duration=-1})
-				FindClearSpaceForUnit(unit, arena1titanvs, false)
-				unit:MoveToPositionAggressive(arena1titan)
+				FindClearSpaceForUnit(unit, Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), false)
 				break
 			end
 		end
-			end
 			_G.RadiantDualLosingStreak = _G.RadiantDualLosingStreak + 1
 		end
 end
