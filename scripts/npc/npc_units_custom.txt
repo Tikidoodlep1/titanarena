@@ -500,12 +500,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "2.525"
-                        "DamageGain"                            "0.92"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.25"
-                        "XPGain"                                        "0.25"
+                        "HPGain"                                        "4"
+                        "DamageGain"                            "2"
+                        "ArmorGain"                                     "1"
+                        "MagicResistGain"                       "0.3"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 	"npc_easy_beast"
@@ -599,12 +599,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "2.825"
-                        "DamageGain"                            "0.92"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.25"
-                        "XPGain"                                        "0.25"
+                        "HPGain"                                        "4"
+                        "DamageGain"                            "2"
+                        "ArmorGain"                                     "1"
+                        "MagicResistGain"                       "0.3"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
     "npc_med_harpy_b"
@@ -700,12 +700,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "3.225"
-                        "DamageGain"                            "1.2"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.35"
-                        "XPGain"                                        "0.35"
+                       "HPGain"                                        "6"
+                        "DamageGain"                            "4"
+                        "ArmorGain"                                     "2"
+                        "MagicResistGain"                       "0.6"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_med_kobold_a"
@@ -800,12 +800,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "3.3"
-                        "DamageGain"                            "1.25"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.35"
-                        "XPGain"                                        "0.35"
+                        "HPGain"                                        "6"
+                        "DamageGain"                            "4"
+                        "ArmorGain"                                     "2"
+                        "MagicResistGain"                       "0.6"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_med_vulture_a"
@@ -899,12 +899,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "3.325"
-                        "DamageGain"                            "1.22"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.35"
-                        "XPGain"                                        "0.35"
+                        "HPGain"                                        "6"
+                        "DamageGain"                            "4"
+                        "ArmorGain"                                     "2"
+                        "MagicResistGain"                       "0.6"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_med_frost_gnoll"
@@ -1000,12 +1000,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "3.425"
-                        "DamageGain"                            "1.23"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.35"
-                        "XPGain"                                        "0.35"
+                        "HPGain"                                        "6"
+                        "DamageGain"                            "4"
+                        "ArmorGain"                                     "2"
+                        "MagicResistGain"                       "0.6"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_hard_ghost_a"
@@ -1101,12 +1101,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "3.925"
-                        "DamageGain"                            "1.89"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.45"
-                        "XPGain"                                        "0.45"
+                        "HPGain"                                        "8"
+                        "DamageGain"                            "6"
+                        "ArmorGain"                                     "3"
+                        "MagicResistGain"                       "0.7"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_hard_eimermole"
@@ -1200,12 +1200,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "4.21"
-                        "DamageGain"                            "1.94"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.45"
-                        "XPGain"                                        "0.45"
+                        "HPGain"                                        "8"
+                        "DamageGain"                            "6"
+                        "ArmorGain"                                     "3"
+                        "MagicResistGain"                       "0.7"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_hard_satyr_a"
@@ -1299,12 +1299,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "4.225"
-                        "DamageGain"                            "2.4"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.45"
-                        "XPGain"                                        "0.45"
+                        "HPGain"                                        "8"
+                        "DamageGain"                            "6"
+                        "ArmorGain"                                     "3"
+                        "MagicResistGain"                       "0.7"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_hard_gargoyle_jungle_stalker"
@@ -1400,12 +1400,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "4.125"
-                        "DamageGain"                            "2.5"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.45"
-                        "XPGain"                                        "0.45"
+                        "HPGain"                                        "8"
+                        "DamageGain"                            "6"
+                        "ArmorGain"                                     "3"
+                        "MagicResistGain"                       "0.7"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_ancient_troll_dark_frost"
@@ -1501,12 +1501,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "5.125"
-                        "DamageGain"                            "2.63"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.55"
-                        "XPGain"                                        "0.55"
+                        "HPGain"                                        "10"
+                        "DamageGain"                            "8"
+                        "ArmorGain"                                     "4"
+                        "MagicResistGain"                       "0.8"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_ancient_dragonspawn_b"
@@ -1600,12 +1600,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "6.1"
-                        "DamageGain"                            "2.67"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.55"
-                        "XPGain"                                        "0.55"
+                        "HPGain"                                        "10"
+                        "DamageGain"                            "8"
+                        "ArmorGain"                                     "4"
+                        "MagicResistGain"                       "0.8"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
 }
 "npc_ancient_frost_ghost"
@@ -1703,12 +1703,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "6.4"
-                        "DamageGain"                            "2.66"
-                        "ArmorGain"                                     "0.25"
-                        "MagicResistGain"                       "0.1"
-                        "BountyGain"                            "0.55"
-                        "XPGain"                                        "0.55"
+                        "HPGain"                                        "10"
+                        "DamageGain"                            "8"
+                        "ArmorGain"                                     "4"
+                        "MagicResistGain"                       "0.8"
+                        "BountyGain"                            "1"
+                        "XPGain"                                        "1"
                 }
   }
   
