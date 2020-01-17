@@ -1079,6 +1079,18 @@ function barebones:OnAbilityCastBegins(keys)
 
 	local playerID = keys.PlayerID
 	local ability_name = keys.abilityname
+	local player_hero_id = DOTAGameManager:GetHeroNameByID(PlayerResource:GetSelectedHeroID(playerID))
+	print(player_hero_id)
+if _G.IsDual == true and ability_name == "item_tpscroll" then
+local heroes = HeroList:GetAllHeroes()
+for i,hero in pairs(heroes) do
+	print(hero:GetUnitName())
+if hero:GetUnitName() == "npc_dota_hero_"..player_hero_id then
+print("hero found")
+hero:Stop()
+end
+	end
+end
 
 	-- If you need to adjust abilities on their cast, use Order Filter, not this
 end

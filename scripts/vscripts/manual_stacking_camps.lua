@@ -58,7 +58,7 @@ _G.radiant5_stacking_can_spawn = true
 print("radiant 5 is empty")
 end
 function enable_spawning_dire2(trigger)
-_G.dire1_stacking_can_spawn = true
+_G.dire2_stacking_can_spawn = true
 print("dire 2 is empty")
 end
 
