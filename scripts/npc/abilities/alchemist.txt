@@ -241,7 +241,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"600 650 700 750 800 850"
+				"radius"				"300 350 400 450 500 550"
 			}
 			"03"
 			{
@@ -261,10 +261,10 @@
 		{
 			"modifier_gold"
 			{
-				"EffectName"	"particles/econ/items/bounty_hunter/bounty_hunter_hunters_hoard/bounty_hunter_hoard_track_reward_down.vpcf"
-				"EffectAttachType"	"follow_overhead"
+				"EffectName"	"particles/econ/events/ti7/golden_treasure_ti7_ambient.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"Passive"		"0"
-				"IsHidden"		"0"
+				"IsHidden"		"1"
 				"IsPurgable"	"0"
 				"OnDeath"
 				{
