@@ -204,18 +204,22 @@ end
 
 function dire_easy1_camp_add(trigger)
 _G.dire_easy1_creeps = _G.dire_easy1_creeps + 1
+print("camp 1 has ".. _G.dire_easy1_creeps)
 end
 
 function dire_easy1_camp_minus(trigger)
 _G.dire_easy1_creeps = _G.dire_easy1_creeps - 1
+print("camp 1 has ".. _G.dire_easy1_creeps)
 end
 
 function dire_easy2_camp_add(trigger)
 _G.dire_easy2_creeps = _G.dire_easy2_creeps + 1
+print("camp 2 has ".. _G.dire_easy2_creeps)
 end
 
 function dire_easy2_camp_minus(trigger)
 _G.dire_easy2_creeps = _G.dire_easy2_creeps - 1
+print("camp 2 has ".. _G.dire_easy2_creeps)
 end
 
 function dire_easy3_camp_add(trigger)

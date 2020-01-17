@@ -826,50 +826,50 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	end
 	end
 	if randint == 1 then
-	if _G.dire_easy1_creeps < 14 then
+	if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e1, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy2_creeps < 14 then
+	if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e1, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e1, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 2 then
-		if _G.dire_easy1_creeps < 14 then
+		if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e2, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy2_creeps < 14 then
+	if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e2, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e2, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 3 then
-		if _G.dire_easy1_creeps < 14 then
+		if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e3, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy2_creeps < 14 then
+	if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e3, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e3, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 4 then
-		if _G.dire_easy1_creeps < 14 then
+		if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e4, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy2_creeps < 14 then
+	if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e4, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if _G.dire_easy3_creeps < 14 then
 		CreateUnitByName(e4, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 5 then
-		if _G.dire_easy1_creeps < 14 then
+		if _G.dire_easy2_creeps < 14 then
 		CreateUnitByName(e5, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy2_creeps < 14 then
+	if _G.dire_easy1_creeps < 14 then
 		CreateUnitByName(e5, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	if _G.dire_easy3_creeps < 14 then
