@@ -2873,4 +2873,155 @@
 			}
 		}
 	}
+	"item_recipe_midas_2"
+	{
+	"ID"							    "140033"
+	"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1250"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_manta_2"
+		"ItemRequirements"
+		{
+			"01"						"item_manta;item_blade_of_alacrity"
+		}
+	}
+	"item_manta_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140034"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"item_manta"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45.0"
+		"AbilityCastPoint"				"0.0"
+		"AbilityTextureName"			"manta_2"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+		"ItemCost"						"6950"
+		"ItemShopTags"					"agi;str;int;attack_speed;move_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"manta style 2"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_count"			"2"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_illusion_duration"			"20"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_do_damage_percent_melee"	"-60"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_damage_outgoing_melee"			"40"
+			}	
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_take_damage_percent_melee"	"200"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_damage_incoming_melee_total_pct"			"300"
+			}			
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_do_damage_percent_ranged"	"-67"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_damage_outgoing_ranged"			"33"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"images_take_damage_percent_ranged"	"250"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_damage_incoming_ranged_total_pct"			"350"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_melee"		"30"
+			}
+			"17"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_ranged_tooltip"		"45"
+			}
+			"18"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invuln_duration"		"0.1"
+			}
+			"19"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"1000"
+			}
+			"20"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_ranged_cooldown_increase"	"15"
+			}		
+		}
+	}
 }
