@@ -675,6 +675,7 @@ end
 		
 	end)
 	level = 0
+	_G.TitanTotalLevel = 0
 function SpawnTitans(keys)
 	local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	local radtitan = false
@@ -692,10 +693,10 @@ function SpawnTitans(keys)
 		end
 	end
 	if radtitan == false then
-		CreateUnitByName("npc_radiant_titan", Entities:FindByName(nil, "rad_titan"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(level)
+		CreateUnitByName("npc_radiant_titan", Entities:FindByName(nil, "rad_titan"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(_G.TitanTotalLevel)
 	end
 	if badtitan == false then
-		CreateUnitByName("npc_dire_titan", Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(level)
+		CreateUnitByName("npc_dire_titan", Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(_G.TitanTotalLevel)
 	end
 end
 	Timers:CreateTimer(0, function() -- Start this timer 30 game-time seconds later
@@ -728,7 +729,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 			break
 		end
 	end
-
+	_G.TitanTotalLevel = _G.TitanTotalLevel + 1
 	local e1 = "npc_easy_ghost_b"
 	local e2 = "npc_easy_forest_troll_berserker"
 	local e3 = "npc_easy_frost_kobold"

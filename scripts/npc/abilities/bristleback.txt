@@ -241,7 +241,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"max_stacks"					"5 7 9 11"
+				"max_stacks"					"5 6 7 8"
 			}
 		}
 	}

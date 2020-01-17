@@ -2750,6 +2750,8 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityCooldown"					"90"
 		"AbilityTextureName" 				"midas_2"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
 		
 		//Special
 		//------------------------------------------------------------------------------------------------------------------

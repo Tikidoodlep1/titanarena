@@ -205,12 +205,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_attack_speed"			"160 220 280 340 400 540"
+				"maximum_attack_speed"			"100 140 180 220 260 300"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_health_regen"			"25 45 65 85 120 145"
+				"maximum_health_regen"			"25 35 45 55 65 75"
 			}
 			"03"
 			{

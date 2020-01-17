@@ -865,6 +865,23 @@ function ExitDualWinnerSpecific(WinningDual)
 						SendToConsole("dota_camera_center")
 					end
 				end
+				local Creatures = Entities:FindAllByClassname("npc_dota_creature")
+		for _, unit in ipairs(Creatures) do
+			if unit:GetUnitName() == "npc_radiant_titan" then
+				unit:AddNewModifier(unit, nil, "modifier_titan_in_dual", {duration=-1})
+				FindClearSpaceForUnit(unit, arena1titan, false)
+				unit:MoveToPositionAggressive(arena1titanvs)
+				break
+			end
+		end
+		for _, unit in ipairs(Creatures) do
+			if unit:GetUnitName() == "npc_dire_titan" then
+				unit:AddNewModifier(unit, nil, "modifier_titan_in_dual", {duration=-1})
+				FindClearSpaceForUnit(unit, arena1titanvs, false)
+				unit:MoveToPositionAggressive(arena1titan)
+				break
+			end
+		end
 			end
 			_G.RadiantDualLosingStreak = _G.RadiantDualLosingStreak + 1
 		end
