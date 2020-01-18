@@ -894,6 +894,18 @@ function ExitDualWinnerSpecific(WinningDual)
 				break
 			end
 		end
+		if Entities:FindByName(nil, "npc_dire_titan"):IsAlive() == true then
+			for r=1,5 do
+			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
+			r = r + 1
+			end
+		end
+		if Entities:FindByName(nil, "npc_radiant_titan"):IsAlive() == true then
+			for d=1,5 do
+			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
+			d = d + 1
+			end
+		end
 			_G.RadiantDualLosingStreak = _G.RadiantDualLosingStreak + 1
 		end
 end

@@ -512,21 +512,26 @@ end
 		end
 			GameRules:SetHeroRespawnEnabled(false)
 			for i, hero in pairs(players) do
+				for i=0, hero:GetAbilityCount() - 1, 1 do
+					if hero:GetAbilityByIndex(i) ~= nil and hero:GetAbilityByIndex(i):GetCooldownTimeRemaining() ~= 0 then
+						hero:GetAbilityByIndex(i):EndCooldown()
+					end
+				end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if dHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsSummoned() then
+					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsSummoned() and not hero:IsIllusion() then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2, false)
 						SendToConsole("dota_camera_center")
-						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})	
 						_G.DualArena2[i] = hero
 						_G.NumDualArena2  = _G.NumDualArena2 + 1
 					end
 				end
 				if rHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 2 and hero:IsClone() == false and not hero:IsSummoned() then
+					if hero:GetTeamNumber() == 2 and hero:IsClone() == false and not hero:IsSummoned() and not hero:IsIllusion() then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
 						SendToConsole("dota_camera_center")
@@ -537,7 +542,7 @@ end
 				end
 				if rHeroIncrementer <= GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 2 and hero:IsClone() == false then
+					if hero:GetTeamNumber() == 2 and hero:IsClone() == false and not hero:IsIllusion() then
 						rHeroIncrementer = rHeroIncrementer + 1
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena1, false)
@@ -549,7 +554,7 @@ end
 				end
 				if dHeroIncrementer <= GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
-					if hero:GetTeamNumber() == 3 and hero:IsClone() == false then
+					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsIllusion() then
 						dHeroIncrementer = dHeroIncrementer + 1
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena1vs, false)
@@ -668,13 +673,13 @@ end
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
-		if badtitan == true then
+		if Entities:FindByName(nil, "npc_dire_titan"):IsAlive() == true then
 			for r=1,5 do
 			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
 			r = r + 1
 			end
 		end
-		if radtitan == true then
+		if Entities:FindByName(nil, "npc_radiant_titan"):IsAlive() == true then
 			for d=1,5 do
 			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
 			d = d + 1

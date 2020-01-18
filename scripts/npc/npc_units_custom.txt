@@ -2213,8 +2213,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "1750"     // Damage range min.
-    "AttackDamageMax"     "1750"     // Damage range max.
+    "AttackDamageMin"     "1250"     // Damage range min.
+    "AttackDamageMax"     "1250"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.7"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -2251,7 +2251,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "17000"     // Base health.
+    "StatusHealth"        "10000"     // Base health.
     "StatusHealthRegen"     "100"     // Health regeneration rate.
     "StatusMana"        "5000"     // Base mana.
     "StatusManaRegen"     "100"     // Mana regeneration rate.
@@ -2328,8 +2328,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "1200"     // Damage range min.
-    "AttackDamageMax"     "1200"     // Damage range max.
+    "AttackDamageMin"     "700"     // Damage range min.
+    "AttackDamageMax"     "700"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -2366,7 +2366,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "16000"     // Base health.
+    "StatusHealth"        "12500"     // Base health.
     "StatusHealthRegen"     "100"     // Health regeneration rate.
     "StatusMana"        "5000"     // Base mana.
     "StatusManaRegen"     "100"     // Mana regeneration rate.
@@ -2440,8 +2440,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "1500"     // Damage range min.
-    "AttackDamageMax"     "1500"     // Damage range max.
+    "AttackDamageMin"     "1000"     // Damage range min.
+    "AttackDamageMax"     "1000"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -2478,7 +2478,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "13500"     // Base health.
+    "StatusHealth"        "10000"     // Base health.
     "StatusHealthRegen"     "100"     // Health regeneration rate.
     "StatusMana"        "1500"     // Base mana.
     "StatusManaRegen"     "100"     // Mana regeneration rate.
@@ -2557,8 +2557,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_fire.vpcf" // Particle system model for projectile.
 	"ProjectileSpeed"			"550"		// Speed of projectile.
-    "AttackDamageMin"     "1500"     // Damage range min.
-    "AttackDamageMax"     "1500"     // Damage range max.
+    "AttackDamageMin"     "1000"     // Damage range min.
+    "AttackDamageMax"     "1000"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "0.9"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -2595,7 +2595,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "13500"     // Base health.
+    "StatusHealth"        "10000"     // Base health.
     "StatusHealthRegen"     "30"     // Health regeneration rate.
     "StatusMana"        "1500"     // Base mana.
     "StatusManaRegen"     "30"     // Mana regeneration rate.
@@ -2662,8 +2662,8 @@
     // Attack
     //----------------------------------------------------------------
     "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"     // Type of attack - melee, ranged, etc.
-    "AttackDamageMin"     "1500"     // Damage range min.
-    "AttackDamageMax"     "1500"     // Damage range max.
+    "AttackDamageMin"     "1000"     // Damage range min.
+    "AttackDamageMax"     "1000"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -2700,7 +2700,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "15000"     // Base health.
+    "StatusHealth"        "10000"     // Base health.
     "StatusHealthRegen"     "30"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -2769,8 +2769,8 @@
     "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
 	"ProjectileModel"			"models/items/elder_titan/elder_titan_immortal_back/elder_titan_back_immortal_rock_fx.vmdl" // Particle system model for projectile.
 	"ProjectileSpeed"			"550"		// Speed of projectile.
-    "AttackDamageMin"     "1500"     // Damage range min.
-    "AttackDamageMax"     "1500"     // Damage range max.
+    "AttackDamageMin"     "1000"     // Damage range min.
+    "AttackDamageMax"     "1000"     // Damage range max.
     "AttackDamageType"      "DAMAGE_TYPE_MAGICAL"
     "AttackRate"        "1"     // Speed of attack.
     "AttackAnimationPoint"    "0.5"   // Normalized time in animation cycle to attack.
@@ -2807,7 +2807,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "15000"     // Base health.
+    "StatusHealth"        "10000"     // Base health.
     "StatusHealthRegen"     "30"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
