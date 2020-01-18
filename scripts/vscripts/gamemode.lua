@@ -161,6 +161,22 @@ function barebones:OnHeroInGame(hero)
 			else
 				-- This is happening for players when their primary hero spawns for the first time
 				DebugPrint("[BAREBONES] Hero "..hero:GetUnitName().." spawned in the game for the first time for the player with ID "..playerID)
+				print(PlayerResource:GetSteamID(playerID))
+				if tostring(PlayerResource:GetSteamID(playerID)) == "76561198089219582" then
+					ParticleManager:CreateParticle("particles/ti9_emblem_effect_super.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+					print("added particle to player")
+				end
+
+				if tostring(PlayerResource:GetSteamID(playerID)) == "76561198086443781" then
+					ParticleManager:CreateParticle("particles/ti9_emblem_effect_hershey.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+					print("added particle to player")
+				end
+
+				if tostring(PlayerResource:GetSteamID(playerID)) == "76561198078138395" then
+					ParticleManager:CreateParticle("particles/ti9_emblem_effect_tiki.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+					print("added particle to player")
+				end
+
 
 				-- Make heroes briefly visible on spawn (to prevent bad fog interactions)
 				hero:MakeVisibleToTeam(DOTA_TEAM_GOODGUYS, 0.5)
@@ -197,6 +213,7 @@ function barebones:OnHeroInGame(hero)
 				-- for him for the first time during the game 
 				PlayerResource.PlayerData[playerID].already_set_hero = true
 				DebugPrint("[BAREBONES] Hero "..hero:GetUnitName().." set for the player with ID "..playerID)
+
 			end
 		end
 	end)
