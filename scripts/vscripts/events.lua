@@ -884,6 +884,10 @@ function ExitDualWinnerSpecific(WinningDual)
 			if unit:GetUnitName() == "npc_radiant_titan" then
 				unit:AddNewModifier(unit, nil, "modifier_titan_in_dual", {duration=-1})
 				FindClearSpaceForUnit(unit, Entities:FindByName(nil, "rad_titan"):GetAbsOrigin(), false)
+				for d=1,5 do
+					CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(_G.TitanTotalLevel)
+					d = d + 1
+				end
 				break
 			end
 		end
@@ -891,19 +895,11 @@ function ExitDualWinnerSpecific(WinningDual)
 			if unit:GetUnitName() == "npc_dire_titan" then
 				unit:AddNewModifier(unit, nil, "modifier_titan_in_dual", {duration=-1})
 				FindClearSpaceForUnit(unit, Entities:FindByName(nil, "dire_titan"):GetAbsOrigin(), false)
+				for r=1,5 do
+					CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(_G.TitanTotalLevel)
+					r = r + 1
+				end
 				break
-			end
-		end
-		if Entities:FindByName(nil, "npc_dire_titan"):IsAlive() == true then
-			for r=1,5 do
-			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
-			r = r + 1
-			end
-		end
-		if Entities:FindByName(nil, "npc_radiant_titan"):IsAlive() == true then
-			for d=1,5 do
-			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
-			d = d + 1
 			end
 		end
 			_G.RadiantDualLosingStreak = _G.RadiantDualLosingStreak + 1

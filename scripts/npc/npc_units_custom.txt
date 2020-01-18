@@ -2935,12 +2935,12 @@
 	"Creature"
     {
         //Level Up
-        "HPGain"                                        "20"
-        "DamageGain"                            "5"
-        "ArmorGain"                                     "1"
-        "MagicResistGain"                       "2"
-        "BountyGain"                            "1"
-        "XPGain"                                        "1"
+        "HPGain"                                        "40"
+        "DamageGain"                            "10"
+        "ArmorGain"                                     "2"
+        "MagicResistGain"                       "4"
+        "BountyGain"                            "5"
+        "XPGain"                                        "5"
     }
   }
   "npc_vision_dummy"

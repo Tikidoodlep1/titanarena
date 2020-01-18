@@ -647,6 +647,10 @@ end
 				unit:SetHealth(unit:GetMaxHealth())
 				unit:SetMana(unit:GetMaxMana())
 				unit:Stop()
+				for d=1,5 do
+					CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3):CreatureLevelUp(_G.TitanTotalLevel)
+					d = d + 1
+				end
 				break
 			end
 		end
@@ -657,6 +661,10 @@ end
 				unit:SetHealth(unit:GetMaxHealth())
 				unit:SetMana(unit:GetMaxMana())
 				unit:Stop()
+				for r=1,5 do
+					CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2):CreatureLevelUp(_G.TitanTotalLevel)
+					r = r + 1
+				end
 				break
 			end
 		end
@@ -672,18 +680,6 @@ end
 		trigger_in[5] = Entities:FindByName(nil, "dual_keepin4_trigger")
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
-		end
-		if Entities:FindByName(nil, "npc_dire_titan"):IsAlive() == true then
-			for r=1,5 do
-			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_rad_spawn"):GetAbsOrigin(), true, nil, nil, 2)
-			r = r + 1
-			end
-		end
-		if Entities:FindByName(nil, "npc_radiant_titan"):IsAlive() == true then
-			for d=1,5 do
-			CreateUnitByName("npc_invader", Entities:FindByName(nil, "invaders_dire_spawn"):GetAbsOrigin(), true, nil, nil, 3)
-			d = d + 1
-			end
 		end
 		_G.invaderlevel = _G.invaderlevel + 1
 	end
