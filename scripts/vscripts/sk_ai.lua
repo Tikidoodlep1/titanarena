@@ -18,20 +18,27 @@ print("casting epicenter")
 return 21
     end
     if thisEntity:GetAggroTarget() ~= nil then
-local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
-if distance_from_target >= 750 then
-    thisEntity:SetAggoTarget(nil)
-	local radiant = GridNav:FindPathLength(thisEntity:GetAbsOrigin(), Entities:FindByName(nil, "rad_boss_sk"):GetAbsOrigin())
-	local dire = GridNav:FindPathLength(thisEntity:GetAbsOrigin(), Entities:FindByName(nil, "dire_boss_sk"):GetAbsOrigin())
-	if radiant < dire then
-		local closest = Entities:FindByName(nil, "rad_boss_sk"):GetAbsOrigin()
-	else
-		local closest = Entities:FindByName(nil, "dire_boss_sk"):GetAbsOrigin()
+		local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
+		if distance_from_target >= 550 then
+			thisEntity:Stop()
+			thisEntity:SetAggroTarget(nil)
+		return .1 
+		end
+	return .1
 	end
-	thisEntity:MoveToPosition(closest)
-return .1 
-end
-return .1
-end
+	if thisEntity:GetAggroTarget() == nil then
+		local radiant = (thisEntity:GetAbsOrigin() - Entities:FindByName(nil, "rad_boss_sk"):GetAbsOrigin()):Length2D()
+		local dire = (thisEntity:GetAbsOrigin() - Entities:FindByName(nil, "dire_boss_sk"):GetAbsOrigin()):Length2D()
+		local closest = Entities:FindByName(nil, "rad_boss_sk"):GetAbsOrigin()
+		if radiant < dire then
+			closest = Entities:FindByName(nil, "rad_boss_sk"):GetAbsOrigin()
+		else
+			closest = Entities:FindByName(nil, "dire_boss_sk"):GetAbsOrigin()
+		end
+		if (closest - thisEntity:GetAbsOrigin()):Length2D() >= 550 then
+			thisEntity:MoveToPosition(closest)
+		end
+	return .1
+	end
 return .1
 end
