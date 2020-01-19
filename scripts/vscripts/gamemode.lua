@@ -517,6 +517,12 @@ end
 						hero:GetAbilityByIndex(i):EndCooldown()
 					end
 				end
+				for i = 0, 5, 1 do
+					local item_equipped = hero:GetItemInSlot(i)
+					if item_equipped ~= nill then
+						item_equipped:EndCooldown()
+					end
+				end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if dHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
