@@ -15,7 +15,7 @@ if thisEntity:GetAggroTarget() == nil then
 			thisEntity:MoveToPosition(Entities:FindByName(nil, "dire_titan"):GetAbsOrigin())
 			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=6})
 			Timers:CreateTimer(6, function()
-				thisEntity:SetAggoTarget(Entities:FindByName(nil, "npc_radiant_titan"))
+				thisEntity:SetAggroTarget(Entities:FindByName(nil, "npc_radiant_titan"))
 			end)
 		end
 	else
@@ -26,7 +26,7 @@ if thisEntity:GetAggroTarget() == nil then
 			thisEntity:MoveToPosition(Entities:FindByName(nil, "rad_titan"):GetAbsOrigin())
 			thisEntity:AddNewModifier(thisEntity, nil, "modifier_custom_invulnerable", {duration=6})
 			Timers:CreateTimer(6, function()
-				thisEntity:SetAggoTarget(Entities:FindByName(nil, "npc_radiant_titan"))
+				thisEntity:SetAggroTarget(Entities:FindByName(nil, "npc_radiant_titan"))
 			end)
 		end
 	end
@@ -35,7 +35,7 @@ end
 
 local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
 if distance_from_target >= 500 then
-	thisEntity:SetAggoTarget(nil)
+	thisEntity:SetAggroTarget(nil)
 return .1
 end
 
