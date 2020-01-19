@@ -3063,6 +3063,7 @@
 		"ItemAliases"					"bfly2;butterfly 2"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -3188,5 +3189,107 @@
 				"blast_speed"			"350"
 			}
 		}
+	}
+
+"item_titan_hp_tome"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140039"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"hp_tome"
+		"ItemStockMax"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockTime"					"200"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				""
+		"AbilityCastRange"				""
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				""
+		"ItemCost"						"1000"
+		"ItemShopTags"					"titan;hp;tome"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"tome;titan;hp"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemQuality"					"consumable"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"		"400"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items/titan_tome.lua"
+				"Function"				"Add_Titan_HP"
+			}
+		}
+	
+	}
+
+"item_titan_damage_tome"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140040"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"damage_tome"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				""
+		"AbilityCastRange"				""
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				""
+		"ItemCost"						"1000"
+		"ItemShopTags"					"titan;damage;tome"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"tome;titan;damage"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemQuality"					"consumable"
+		"ItemStockMax"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockTime"					"200"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"		"50"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items/titan_tome.lua"
+				"Function"				"Add_Titan_Damage"
+			}
+		}
+	
 	}
 }

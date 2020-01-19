@@ -530,7 +530,7 @@ end
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2, false)
 						SendToConsole("dota_camera_center")
-						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})	
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})	
 						_G.DualArena2[i] = hero
 						_G.NumDualArena2  = _G.NumDualArena2 + 1
 					end
@@ -541,7 +541,7 @@ end
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
 						SendToConsole("dota_camera_center")
-						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
 						_G.DualArenavs2[i] = hero
 						_G.NumDualArena2vs  = _G.NumDualArena2vs + 1
 					end
@@ -553,7 +553,7 @@ end
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena1, false)
 						SendToConsole("dota_camera_center")
-						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
 						_G.DualArena1[i] = hero
 						_G.NumDualArena1  = _G.NumDualArena1 + 1
 					end
@@ -565,7 +565,7 @@ end
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena1vs, false)
 						SendToConsole("dota_camera_center")
-						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
+						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
 						_G.DualArenavs1[i] = hero
 						_G.NumDualArena1vs  = _G.NumDualArena1vs + 1
 					end
@@ -576,7 +576,7 @@ end
 					for i, hero in pairs(players) do
 						if hero:IsClone() == true and hero:GetUnitName() == clonename then
 							FindClearSpaceForUnit(hero, originalclone, false)
-							hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 5})
+							hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
 						end
 					end
 				end

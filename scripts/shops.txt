@@ -16,12 +16,15 @@
 		"item"		"item_courier"
 		"item"		"item_bottle"
 		"item"		"item_forseers_flare"
+
 		//"item"    "item_divine_potion"
 		//"item"    "item_telescope"
 		//"item"    "item_blinders"
 		//"item"    "item_red_mist"
 		//"item"    "item_bounty_pact"
 		//"item" 	"item_elixer"
+		"item"		"item_titan_hp_tome"
+		"item"		"item_titan_damage_tome"
 	}
 
 	"attributes"
