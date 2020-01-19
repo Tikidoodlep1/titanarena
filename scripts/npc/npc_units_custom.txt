@@ -399,10 +399,10 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "50"
-                        "DamageGain"                            "5"
+                        "HPGain"                                        "55"
+                        "DamageGain"                            "6"
                         "ArmorGain"                                     "1"
-                        "MagicResistGain"                       ".20"
+                        "MagicResistGain"                       ".30"
                         "BountyGain"                            "6"
                         "XPGain"                                        "6"
                 }
@@ -3126,8 +3126,8 @@
     // General
     //
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
-    "Model"           "models/creeps/roshan/roshan.vmdl"  // Model.
-	"ModelScale"		"0.55"
+    "Model"           "models/items/wraith_king/wk_ti8_creep/wk_ti8_creep_crimson.vmdl"  // Model.
+	"ModelScale"		"1.5"
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Jungle Neutral"
