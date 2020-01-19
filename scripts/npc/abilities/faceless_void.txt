@@ -99,6 +99,7 @@
 		"AbilitySound"					"Hero_FacelessVoid.TimeLockImpact"
 		"MaxLevel"                                      "6"
 
+
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportBonus"		"25"
@@ -115,12 +116,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"2.0"
+				"duration_creep"		".65"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"12 16 20 24 28 36"
+				"chance_pct"			"12 16 20 24 25 28"
 			}
 			"04"
 			{
