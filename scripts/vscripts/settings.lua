@@ -146,7 +146,7 @@ ENABLED_RUNES[DOTA_RUNE_HASTE] = true
 ENABLED_RUNES[DOTA_RUNE_ILLUSION] = false
 ENABLED_RUNES[DOTA_RUNE_INVISIBILITY] = true
 ENABLED_RUNES[DOTA_RUNE_REGENERATION] = true
-ENABLED_RUNES[DOTA_RUNE_ARCANE] = true	-- BUGGED! NEVER SPAWNS!
+ENABLED_RUNES[DOTA_RUNE_ARCANE] = false	-- BUGGED! NEVER SPAWNS!
 
 MAX_NUMBER_OF_TEAMS = 2                				-- How many potential teams can be in this game mode?
 USE_CUSTOM_TEAM_COLORS = false          			-- Should we use custom team colors?
