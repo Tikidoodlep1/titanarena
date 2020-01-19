@@ -1137,16 +1137,17 @@ function barebones:OnPlayerChat(keys)
 	local text = keys.text
 	local player = PlayerResource:GetPlayer(userID)
 	local playerid = player:GetPlayerID()
+	local player_hero_id = DOTAGameManager:GetHeroNameByID(PlayerResource:GetSelectedHeroID(playerid))
 	local heroes = HeroList:GetAllHeroes()
 	for num,hero in pairs(heroes) do
-			print(hero:GetOwner())
-			if player == hero:GetOwner() then
-				print(hero:GetTeamNumber())
+
+		if hero:GetUnitName() == "npc_dota_hero_"..player_hero_id then
+					print(hero:GetUnitName())
+				team_num = hero:GetTeamNumber()
+				    print("Team "..team_num.. " typed a message")
 			end
 	end
 
-    local team_num = player:GetTeamNumber()
-    print("Team "..team_num.. " typed a message")
 
 	if team_num == 2 then 
 		if (text:lower() == "no") and _G.vote_to_concede_radiant == true then
