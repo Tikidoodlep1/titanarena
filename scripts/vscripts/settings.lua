@@ -141,9 +141,9 @@ BOUNTY_RUNE_SPAWN_INTERVAL = 300		-- How long in seconds should we wait between 
 POWER_RUNE_SPAWN_INTERVAL = 120			-- How long in seconds should we wait between power-up runes spawns? BUGGED! WORKS FOR BOUNTIES TOO!
 
 ENABLED_RUNES = {}                      -- Which power-up runes should be enabled to spawn in our game mode?
-ENABLED_RUNES[DOTA_RUNE_DOUBLEDAMAGE] = true
+ENABLED_RUNES[DOTA_RUNE_DOUBLEDAMAGE] = false
 ENABLED_RUNES[DOTA_RUNE_HASTE] = true
-ENABLED_RUNES[DOTA_RUNE_ILLUSION] = true
+ENABLED_RUNES[DOTA_RUNE_ILLUSION] = false
 ENABLED_RUNES[DOTA_RUNE_INVISIBILITY] = true
 ENABLED_RUNES[DOTA_RUNE_REGENERATION] = true
 ENABLED_RUNES[DOTA_RUNE_ARCANE] = true	-- BUGGED! NEVER SPAWNS!
