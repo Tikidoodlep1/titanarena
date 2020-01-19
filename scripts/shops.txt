@@ -26,6 +26,7 @@
 		"item"		"item_titan_hp_tome"
 		"item"		"item_titan_damage_tome"
 		"item"		"item_titan_armor_tome"
+		"item"		"item_titan_magic_tome"
 	}
 
 	"attributes"

@@ -3342,4 +3342,54 @@
 		}
 	
 	}
+"item_titan_magic_tome"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140042"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"resist_tome"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				""
+		"AbilityCastRange"				""
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				""
+		"ItemCost"						"1000"
+		"ItemShopTags"					"titan;magic resist;tome"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"tome;titan;magic resist"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemQuality"					"consumable"
+		"ItemStockMax"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockTime"					"200"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_resist"		"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items/titan_tome.lua"
+				"Function"				"Add_Titan_Resist"
+			}
+		}
+	
+	}
 }
