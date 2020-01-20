@@ -13,6 +13,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 			if item:GetName() == 'item_titan_hp_tome' then
 
 					UTIL_RemoveImmediate(item)
+					break
 			end
 		end
 	end
@@ -30,6 +31,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 			if item:GetName() == 'item_titan_hp_tome' then
 
 					UTIL_RemoveImmediate(item)
+					break
 			end
 		end
 	end
@@ -54,6 +56,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		if item then
 			if item:GetName() == 'item_titan_damage_tome' then
 					UTIL_RemoveImmediate(item)
+					break
 			end
 		end
 	end
@@ -71,7 +74,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		if item then
 			if item:GetName() == 'item_titan_damage_tome' then
 					UTIL_RemoveImmediate(item)
-					return
+					break
 			end
 		end
 	end
@@ -94,6 +97,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		if item then
 			if item:GetName() == 'item_titan_armor_tome' then
 					UTIL_RemoveImmediate(item)
+					break
 			end
 		end
 	end
@@ -110,7 +114,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		if item then
 			if item:GetName() == 'item_titan_armor_tome' then
 					UTIL_RemoveImmediate(item)
-					return
+					break
 			end
 		end
 	end
@@ -133,6 +137,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		if item then
 			if item:GetName() == 'item_titan_magic_tome' then
 					UTIL_RemoveImmediate(item)
+					break
 			end
 		end
 	end
@@ -149,7 +154,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		if item then
 			if item:GetName() == 'item_titan_magic_tome' then
 					UTIL_RemoveImmediate(item)
-					return
+					break
 			end
 		end
 	end
