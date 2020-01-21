@@ -120,7 +120,7 @@
     // Abilities
     //----------------------------------------------------------------
     
-    "Ability1"          ""     // Ability 1.
+    "Ability1"          "neutral_as_aura"     // Ability 1.
     "Ability2"          ""      // Ability 2.
     "Ability3"          ""      // Ability 3.
     "Ability4"          ""      // Ability 4.
@@ -721,7 +721,7 @@
     // Abilities
     //----------------------------------------------------------------
     
-    "Ability1"          ""     // Ability 1.
+    "Ability1"          "kobold_taskmaster_speed_aura"     // Ability 1.
     "Ability2"          ""      // Ability 2.
     "Ability3"          ""      // Ability 3.
     "Ability4"          ""      // Ability 4.
@@ -821,8 +821,8 @@
     // Abilities
     //----------------------------------------------------------------
     
-    "Ability1"          ""     // Ability 1.
-    "Ability2"          ""      // Ability 2.
+    "Ability1"					"enraged_wildkin_tornado"			// Ability 1
+	"Ability2"					"enraged_wildkin_toughness_aura"			// Ability 2
     "Ability3"          ""      // Ability 3.
     "Ability4"          ""      // Ability 4.
     "Ability5"          ""      // Ability 5.
@@ -1221,8 +1221,8 @@
     // Abilities
     //----------------------------------------------------------------
     
-    "Ability1"          ""     // Ability 1.
-    "Ability2"          ""      // Ability 2.
+    "Ability1"					"satyr_hellcaller_shockwave"			// Ability 1
+	"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2
     "Ability3"          ""      // Ability 3.
     "Ability4"          ""      // Ability 4.
     "Ability5"          ""      // Ability 5.
@@ -1320,7 +1320,7 @@
     // Abilities
     //----------------------------------------------------------------
     
-    "Ability1"          ""     // Ability 1.
+    "Ability1"          "neutral_arc_lightning"     // Ability 1.
     "Ability2"          ""      // Ability 2.
     "Ability3"          ""      // Ability 3.
     "Ability4"          ""      // Ability 4.
@@ -1422,8 +1422,8 @@
     // Abilities
     //----------------------------------------------------------------
     
-    "Ability1"          ""     // Ability 1.
-    "Ability2"          ""      // Ability 2.
+    "Ability1"			"dark_troll_warlord_ensnare"			// Ability 1
+	"Ability2"			""			// Ability 2
     "Ability3"          ""      // Ability 3.
     "Ability4"          ""      // Ability 4.
     "Ability5"          ""      // Ability 5.
