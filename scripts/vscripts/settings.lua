@@ -87,7 +87,7 @@ SKILL_POINTS_AT_EVERY_LEVEL = true		-- Should we allow heroes to gain skill poin
 
 FIXED_RESPAWN_TIME = -1                 -- What time should we use for a fixed respawn timer?  Use -1 to keep the default dota behavior.
 -- NOTE: use FIXED_RESPAWN_TIME if you want the same respawn time on every level.
-MAX_RESPAWN_TIME = 100     				-- Default Dota doesn't have a limit (it can go above 125). Fast game modes should have 20 seconds.
+MAX_RESPAWN_TIME = 60     				-- Default Dota doesn't have a limit (it can go above 125). Fast game modes should have 20 seconds.
 USE_CUSTOM_RESPAWN_TIMES = false		-- Should we use custom respawn times (true) or dota default (false)?
 
 -- Fill this table with respawn times on each level if USE_CUSTOM_RESPAWN_TIMES is true.
