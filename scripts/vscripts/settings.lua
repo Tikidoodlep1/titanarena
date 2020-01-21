@@ -82,7 +82,7 @@ FORCE_PICKED_HERO = nil                 -- What hero should we force all players
 -- This will not work if "EnablePickRules" is "1" in 'addoninfo.txt'!
 TELEPORT_SCROLL_ON_START = true         -- Should the heroes have a teleport scroll in their inventory right at the start of the game?
 ADD_ITEM_TO_HERO_ON_SPAWN = false		-- Add an example item to the picked hero when he spawns?
-SKILL_POINTS_AT_EVERY_LEVEL = false		-- Should we allow heroes to gain skill points even at levels 17, 19, 21, 22, 23 and 24?
+SKILL_POINTS_AT_EVERY_LEVEL = true		-- Should we allow heroes to gain skill points even at levels 17, 19, 21, 22, 23 and 24?
 -- NOTE: If SKILL_POINTS_AT_EVERY_LEVEL is true, there will be strange interactions with heroes like Invoker and Meepo.
 
 FIXED_RESPAWN_TIME = -1                 -- What time should we use for a fixed respawn timer?  Use -1 to keep the default dota behavior.
@@ -146,7 +146,7 @@ ENABLED_RUNES[DOTA_RUNE_HASTE] = true
 ENABLED_RUNES[DOTA_RUNE_ILLUSION] = false
 ENABLED_RUNES[DOTA_RUNE_INVISIBILITY] = true
 ENABLED_RUNES[DOTA_RUNE_REGENERATION] = true
-ENABLED_RUNES[DOTA_RUNE_ARCANE] = false	-- BUGGED! NEVER SPAWNS!
+ENABLED_RUNES[DOTA_RUNE_ARCANE] = oracle_false_promise	-- BUGGED! NEVER SPAWNS!
 
 MAX_NUMBER_OF_TEAMS = 2                				-- How many potential teams can be in this game mode?
 USE_CUSTOM_TEAM_COLORS = false          			-- Should we use custom team colors?
