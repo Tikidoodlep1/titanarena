@@ -384,7 +384,7 @@ end
 				rdalive = true
 			end
 		end
-		for _, boss in pairs(radbosses) do
+		for _, boss in pairs(direbosses) do
 			if boss:GetUnitName() == "npc_boss_scarab" then
 				dsalive = true
 			end

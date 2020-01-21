@@ -3392,4 +3392,30 @@
 		}
 	
 	}
+	"item_recipe_trident"
+	{
+		"ItemCost"						"1000"	
+		"ItemPurchasable"				"1"
+	}
+	"item_recipe_desolator_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140042"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1250"	
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_2"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator"
+		}
+	}
 }
