@@ -276,7 +276,7 @@ function barebones:OnGameInProgress()
 	Timers:CreateTimer(60, function()
 	
 	EnterDual()
-		return 600
+		return 420
 	end)
 	Timers:CreateTimer(0, function()
 	
@@ -288,7 +288,7 @@ function barebones:OnGameInProgress()
 	Timers:CreateTimer(180, function()
 	
 	ExitDual()
-		return 600
+		return 420
 	end)
 	
 	Timers:CreateTimer(59, function()
@@ -1171,7 +1171,11 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	end
 	end
 	end
+	_G.level_up = _G.level_up + .5
+	if level_up == 1 then
 	level = level + 1
+	_G.levelup = 0
+end
 end
 end
 

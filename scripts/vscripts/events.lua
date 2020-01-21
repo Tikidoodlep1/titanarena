@@ -263,10 +263,6 @@ function barebones:OnPlayerLevelUp(keys)
 			hero:SetMinimumGoldBounty(gold_bounty)
 			hero:SetMaximumGoldBounty(gold_bounty)
 		end
-		
-		if hero:GetLevel() == 35 or hero:GetLevel() == 45  or hero:GetLevel() == 50 then
-			hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
-		end
 
 		-- Add a skill point when a hero levels
 		if SKILL_POINTS_AT_EVERY_LEVEL then
