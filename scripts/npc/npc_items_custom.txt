@@ -3418,4 +3418,103 @@
 			"01"						"item_desolator"
 		}
 	}
+"item_siphoning_mail"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140043"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"
+		"ItemCost"						"2200"
+		"ItemShopTags"					"damage;armor;absorb;siphon"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sm;mail;blademail;siphon;armor"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"BaseClass"					"item_datadriven"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"22"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_returned"			"25"
+
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range"					"800"
+
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/items/siphon_mail.lua"
+				"Function"				"apply_siphon_damage_modifier"
+			}
+		}
+		"Modifiers"
+		{
+			"damage_soak"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsBuff"	"1"
+				"TextureName"	"midas_2"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-%damage_returned"
+				}
+				"OnAttacked"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/siphon_mail.lua"
+						"Function"		"send_damage"
+					}
+				}
+
+			}
+			"damage_receiver"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsBuff"	"1"
+
+			}
+
+		}
+	}
 }
