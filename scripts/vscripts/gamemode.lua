@@ -259,18 +259,18 @@ function barebones:OnGameInProgress()
 	Timers:CreateTimer(30, function()
 	
 	notifyDual30()
-		return 600
+		return 420
 	end)
 		Timers:CreateTimer(45, function()
 	
 	notifyDual15()
-		return 600
+		return 420
 	end)
 
 	Timers:CreateTimer(55, function()
 	
 	notifyDual5()
-		return 600
+		return 420
 	end)
 	
 	Timers:CreateTimer(60, function()
