@@ -3394,14 +3394,106 @@
 	}
 	"item_recipe_trident"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"275"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"1000"	
+		"ItemShopTags"					""
+		"ItemIsNeutralDrop"				"1"
 		"ItemPurchasable"				"1"
+		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"				"item_recipe"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_trident"
+		"ItemRequirements"
+		{
+			"01"						"item_kaya;item_sange;item_yasha;"
+			"02"						"item_kaya_and_sange;item_yasha;"
+			"03"						"item_sange_and_yasha;item_kaya;"
+			"04"						"item_yasha_and_kaya;item_sange;"
+		}
+	}
+"item_trident"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"369"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+		
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"33"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"33"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"			"33"
+			}		
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"status_resistance"				"33"
+			}		
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"33"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus"	"33"
+			}					
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_amp"			"33"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction"			"33"
+			}			
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"			"33"
+			}
+		}
 	}
 	"item_recipe_desolator_2"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"140042"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140043"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"				"item_recipe"													
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -3418,11 +3510,69 @@
 			"01"						"item_desolator"
 		}
 	}
+	"item_desolator_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"292"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"corruption_armor"		"-12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+		}
+	}
+"item_recipe_siphoning_mail"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140044"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						""	
+		"ItemShopTags"					""
+		"ItemPurchasable"				"0"
+		"BaseClass"						"item_datadriven"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_siphoning_mail"
+		"ItemRequirements"
+		{
+			"01"						"item_broadsword;item_robe;item_buckler"
+		}
+	}
 "item_siphoning_mail"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"140043"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140045"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Stats		
@@ -3432,12 +3582,13 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"25"
-		"ItemCost"						"2200"
+		"ItemCost"						"2150"
 		"ItemShopTags"					"damage;armor;absorb;siphon"
 		"ItemQuality"					"epic"
-		"ItemAliases"					"sm;mail;blademail;siphon;armor"
+		"ItemAliases"					"sm;mail;blademail;sacrifice;armor"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
 		"BaseClass"					"item_datadriven"
 		"AbilityTextureName"					"siphoning_blade_mail"
 		
@@ -3491,7 +3642,7 @@
 			"siphon_mail_stats_modifier"
 			{
 				"Passive"     "1"
-				"IsHidden"    "0"
+				"IsHidden"    "1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"       "%bonus_armor"
@@ -3534,4 +3685,5 @@
 
 		}
 	}
+
 }
