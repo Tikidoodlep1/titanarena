@@ -10,6 +10,11 @@ local ally_units = FindUnitsInRadius(caster_team, loc, nil, distance,DOTA_UNIT_T
 for num,unit in pairs(ally_units) do
 ability:ApplyDataDrivenModifier(caster, unit, "damage_soak", {duration = abil_duration})
 if unit == caster then
+	local caster_particle = ParticleManager:CreateParticle("particles/blademail_syphon_all.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+	EmitSoundOn("DOTA_Item.BladeMail.Activate",caster)
+	Timers:CreateTimer(abil_duration, function()
+		ParticleManager:DestroyParticle(caster_particle, true)
+		end)
 ability:ApplyDataDrivenModifier(caster, caster, "damage_receiver", {duration = abil_duration})
 	end
 end
@@ -32,6 +37,8 @@ local damageTable = {
 }
 
 ApplyDamage(damageTable)
+ParticleManager:CreateParticle("particles/vacuum_syphon_mail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+SendOverheadEventMessage(nil, nil, OVERHEAD_ALERT_DAMAGE, hero, damage, damage_dealer)
 end
 end
 

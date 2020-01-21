@@ -3439,6 +3439,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
 		"BaseClass"					"item_datadriven"
+		"AbilityTextureName"					"siphoning_blade_mail"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -3462,7 +3463,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.5"
+				"duration"				"8"
 			}
 			"05"
 			{
@@ -3487,6 +3488,22 @@
 		}
 		"Modifiers"
 		{
+			"siphon_mail_stats_modifier"
+			{
+				"Passive"     "1"
+				"IsHidden"    "0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"       "%bonus_armor"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"           "%bonus_damage"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_intellect"
+					
+				}
+
+
+
+
+			}
 			"damage_soak"
 			{
 				"Passive"	"0"
