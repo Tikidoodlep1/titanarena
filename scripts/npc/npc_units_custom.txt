@@ -1417,6 +1417,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Dark Frost Troll"
+    "IsAncient" 		"1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -1518,6 +1519,7 @@
     "SoundSet"          "Creep_Good_Melee"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Dragoon Warrior"
+    "IsAncient" 		"1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -1618,6 +1620,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Frost Ghost"
+    "IsAncient" 		"1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -2850,6 +2853,7 @@
     "Level"           "0"
     "UnitLabel"         "Invader"
 	"vscripts"           "invader_ai.lua"
+    "IsAncient" 		"1"
     
     // Abilities
     //----------------------------------------------------------------
