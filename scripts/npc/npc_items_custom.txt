@@ -1384,7 +1384,7 @@
 		"ItemResult"					"item_ethereal_desolator2"
 		"ItemRequirements"
 		{
-			"01"						"item_ethereal_desolator"
+			"01"						"item_ethereal_desolator;item_ghost"
 		}
 	}
 	"item_ethereal_desolator2"
@@ -1398,7 +1398,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5250"
+		"ItemCost"						"6750"
 		"ItemShopTags"					"int"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"Edeso2; Ethereal Desolator 2"
@@ -1501,7 +1501,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"
+		"ItemCost"						"2500"
 		"ItemShopTags"					""
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
@@ -1527,7 +1527,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"7250"
+		"ItemCost"						"8250"
 		"ItemShopTags"					"int"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"Edeso; Ethereal Desolator"
