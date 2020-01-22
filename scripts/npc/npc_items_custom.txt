@@ -3977,7 +3977,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"creep_lifesteal"		"5"
+				"creep_lifesteal"		"10"
 			}	
 			"07"
 			{
