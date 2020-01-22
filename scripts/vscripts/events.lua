@@ -754,7 +754,11 @@ function ExitDualWinnerSpecific(WinningDual)
 	end
 		local radiantwon = false
 		local direwon = false
-		_G.WinningDualGoldAmountPerPlayer = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+		if GameRules:GetGameTime() <= 1320 then
+			_G.WinningDualGoldAmountPerPlayer = (((math.log10(GameRules:GetGameTime()/1800))/(math.log10(2.8)))+5)*60
+		else
+			_G.WinningDualGoldAmountPerPlayer = (0.6*GameRules:GetGameTime()) - 511
+		end
 		if WinningDual == 1 then
 		for _, hero in pairs(_G.DualArena1) do
 			if hero:GetTeamNumber() == 2 then

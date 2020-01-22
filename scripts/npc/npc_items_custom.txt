@@ -1309,6 +1309,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"mana_regen"			"3"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_bonus_pct_tooltip" "12"
+			}
 		}
 		"Modifiers"
 		{
@@ -1438,6 +1443,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"mana_regen"			"3"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_bonus_pct_tooltip" "15"
+			}
 		}
 		"Modifiers"
 		{
@@ -1566,6 +1576,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"mana_regen"			"3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist_bonus_pct_tooltip" "18"
 			}
 		}
 		"Modifiers"
