@@ -2782,6 +2782,21 @@
 				"var_type"					"FIELD_INTEGER"
 				"damage_pct"				"-50"
 			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"total_gpm_tooltip"			"300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration_tooltip"			"60"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_pct_tooltip"				"50"
+			}
 		}
 		"OnSpellStart"
 		{
