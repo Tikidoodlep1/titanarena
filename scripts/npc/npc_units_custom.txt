@@ -2941,8 +2941,8 @@
         //Level Up
         "HPGain"                                        "40"
         "DamageGain"                            "10"
-        "ArmorGain"                                     "2"
-        "MagicResistGain"                       "4"
+        "ArmorGain"                                     "0.5"
+        "MagicResistGain"                       "0.25"
         "BountyGain"                            "5"
         "XPGain"                                        "5"
     }
