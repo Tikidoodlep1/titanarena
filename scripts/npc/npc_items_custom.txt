@@ -4064,7 +4064,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.5"
+				"sheep_duration"		"4"
 			}
 			"06"
 			{
