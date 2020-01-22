@@ -3693,6 +3693,7 @@
 		"ItemShopTags"					""
 		"BaseClass"						"item_datadriven"
 		"ID"							"140045"
+		"AbilityTextureName"			"item_recipe"
 	
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -3758,6 +3759,7 @@
 		"ItemShopTags"					""
 		"BaseClass"						"item_datadriven"
 		"ID"							"140047"
+		"AbilityTextureName"			"item_recipe"
 	
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -3908,6 +3910,8 @@
 		"ItemShopTags"					""
 		"BaseClass"						"item_datadriven"
 		"ID"							"140049"
+		"AbilityTextureName"			"item_recipe"
+
 	
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -3984,6 +3988,7 @@
 		"ItemShopTags"					""
 		"BaseClass"						"item_datadriven"
 		"ID"							"140053"
+		"AbilityTextureName"			"item_recipe"
 	
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
