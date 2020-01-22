@@ -655,6 +655,7 @@
 		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
 		"AbilityTextureName" 				"scarab_claw"
 		"SecretShop"						"1"
+		"ItemPurchasable"						"0"
 	
 		//Special
 		//-----------------------------------------------------------------------------------------------------------------
@@ -696,6 +697,7 @@
 		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
 		"AbilityTextureName" 				"dragon_scale_custom"
 		"SecretShop"						"1"
+		"ItemPurchasable"						"0"
 		
 		//Special
 		//------------------------------------------------------------------------------------------------------------------
@@ -737,6 +739,7 @@
 		"ItemShareability"					"ITEM_FULLY_SHAREABLE"
 		"AbilityTextureName" 				"fire_blade"
 		"SecretShop"						"1"
+		"ItemPurchasable"						"0"
 		
 		//Special
 		//------------------------------------------------------------------------------------------------------------------
