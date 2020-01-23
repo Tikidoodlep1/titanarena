@@ -25,6 +25,7 @@ function item_blink_datadriven_on_spell_start(keys)
 			if entity:IsHero() then
 				print(entity)
 							ability:ApplyDataDrivenModifier(caster, entity, "modifier_stunning_blink_stun", {duration = stun_duration})
+							ParticleManager:CreateParticle("particles/abyssal_blink_stun.vpcf", PATTACH_ABSORIGIN_FOLLOW, entity)
 				return
 			end
 	end
