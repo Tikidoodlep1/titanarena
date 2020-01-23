@@ -14546,7 +14546,7 @@
   {
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"	"omni_split_shot"
+	"AbilityTextureName"	"omni_split_shot_necro"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilitySpecial"
 	{
