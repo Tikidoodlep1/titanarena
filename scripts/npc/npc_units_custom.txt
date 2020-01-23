@@ -701,8 +701,8 @@
                 {
                         //Level Up
                        "HPGain"                                        "8"
-                        "DamageGain"                            "3"
-                        "ArmorGain"                                     "2"
+                        "DamageGain"                            "1.6"
+                        "ArmorGain"                                     "1"
                         "MagicResistGain"                       "0.6"
                         "BountyGain"                            "1.75"
                         "XPGain"                                        "1.75"
@@ -801,8 +801,8 @@
                 {
                         //Level Up
                         "HPGain"                                        "6"
-                        "DamageGain"                            "2"
-                        "ArmorGain"                                     "2"
+                        "DamageGain"                            "1.4"
+                        "ArmorGain"                                     "1"
                         "MagicResistGain"                       "0.6"
                         "BountyGain"                            "1.75"
                         "XPGain"                                        "3"
@@ -900,8 +900,8 @@
                 {
                         //Level Up
                         "HPGain"                                        "8"
-                        "DamageGain"                            "2"
-                        "ArmorGain"                                     "2"
+                        "DamageGain"                            "1.2"
+                        "ArmorGain"                                     "1"
                         "MagicResistGain"                       "0.6"
                         "BountyGain"                            "1.85"
                         "XPGain"                                        "2"
@@ -1002,7 +1002,7 @@
                         //Level Up
                         "HPGain"                                        "8.5"
                         "DamageGain"                            "2"
-                        "ArmorGain"                                     "1"
+                        "ArmorGain"                                     ".6"
                         "MagicResistGain"                       "0.6"
                         "BountyGain"                            "1.85"
                         "XPGain"                                        "1.75"
@@ -1103,7 +1103,7 @@
                         //Level Up
                         "HPGain"                                        "10"
                         "DamageGain"                            "3"
-                        "ArmorGain"                                     "3"
+                        "ArmorGain"                                     "1.2"
                         "MagicResistGain"                       "0.7"
                         "BountyGain"                            "2"
                         "XPGain"                                        "1.85"
@@ -1202,7 +1202,7 @@
                         //Level Up
                         "HPGain"                                        "12"
                         "DamageGain"                            "3"
-                        "ArmorGain"                                     "3"
+                        "ArmorGain"                                     "1.2"
                         "MagicResistGain"                       "0.7"
                         "BountyGain"                            "2"
                         "XPGain"                                        "1.75"
@@ -1299,9 +1299,9 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "14"
-                        "DamageGain"                            "4"
-                        "ArmorGain"                                     "3"
+                        "HPGain"                                        "8"
+                        "DamageGain"                            "2"
+                        "ArmorGain"                                     "1.2"
                         "MagicResistGain"                       "0.7"
                         "BountyGain"                            "2"
                         "XPGain"                                        "1.75"
@@ -1401,8 +1401,8 @@
                 {
                         //Level Up
                         "HPGain"                                        "13"
-                        "DamageGain"                            "3"
-                        "ArmorGain"                                     "3"
+                        "DamageGain"                            "1.6"
+                        "ArmorGain"                                     "1.2"
                         "MagicResistGain"                       "0.75"
                         "BountyGain"                            "1.75"
                         "XPGain"                                        "2"
@@ -1504,7 +1504,7 @@
                         //Level Up
                         "HPGain"                                        "14"
                         "DamageGain"                            "4"
-                        "ArmorGain"                                     "4"
+                        "ArmorGain"                                     "1"
                         "MagicResistGain"                       "0.8"
                         "BountyGain"                            "1.75"
                         "XPGain"                                        "2"
@@ -1603,8 +1603,8 @@
                 {
                         //Level Up
                         "HPGain"                                        "15"
-                        "DamageGain"                            "4"
-                        "ArmorGain"                                     "4"
+                        "DamageGain"                            "2"
+                        "ArmorGain"                                     "1.2"
                         "MagicResistGain"                       "0.8"
                         "BountyGain"                            "2.1"
                         "XPGain"                                        "2.25"
@@ -1707,8 +1707,8 @@
                 {
                         //Level Up
                         "HPGain"                                        "14"
-                        "DamageGain"                            "5"
-                        "ArmorGain"                                     "4"
+                        "DamageGain"                            "2"
+                        "ArmorGain"                                     "1.2"
                         "MagicResistGain"                       "0.9"
                         "BountyGain"                            "2.5"
                         "XPGain"                                        "4"
