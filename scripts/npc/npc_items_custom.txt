@@ -2333,11 +2333,6 @@
 				"ScriptFile"		"Reset.lua"
 				"Function"			"CastReset"
 			}
-			"FireSound"
-			{
-				"EffectName"	"Item.MoonShard.Consume"
-				"Target"		"TARGET"
-			}
 		}
 	}
 	"item_recipe_moon_jelly"

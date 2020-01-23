@@ -1,3 +1,4 @@
+require('gamemode')
 function CastReset(keys)
 local caster = keys.caster
 local casterID = caster:GetPlayerID()
@@ -180,6 +181,7 @@ local item16_charges = 0
 		end
 	end
 		if level == 50 then
+		EmitSoundOnClient("Item.MoonShard.Consume", player)
 		for _,hero in ipairs(HeroList:GetAllHeroes()) do
 			if hero:GetUnitName() == caster:GetUnitName() then
 				new_hero =	hero
@@ -188,8 +190,10 @@ local item16_charges = 0
 			end
 		end
 	end
-		if level ~= 50 then
-			caster:AddItemByName("item_reset")
+		if level ~= 50 or _G.IsDual == true then
+			EmitSoundOnClient("General.InvalidTarget_Invulnerable", player)
+			 Notifications:Bottom(player, {text="Must Be Level 50 To Use", duration=5, style={color="red", ["font-size"]="80px", border="10px solid red"}})
+			caster:AddItemByName("item_reset"):SetCurrentCharges(1)
 		end		
 		
 		
