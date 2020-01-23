@@ -512,6 +512,7 @@ end
 		end
 			GameRules:SetHeroRespawnEnabled(false)
 			for i, hero in pairs(players) do
+				if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true then
 				for i=0, hero:GetAbilityCount() - 1, 1 do
 					if hero:GetAbilityByIndex(i) ~= nil and hero:GetAbilityByIndex(i):GetCooldownTimeRemaining() ~= 0 then
 						hero:GetAbilityByIndex(i):EndCooldown()
@@ -574,9 +575,11 @@ end
 					local clonename = hero:GetUnitName()
 					local originalclone = hero:GetAbsOrigin()
 					for i, hero in pairs(players) do
-						if hero:IsClone() == true and hero:GetUnitName() == clonename then
-							FindClearSpaceForUnit(hero, originalclone, false)
-							hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
+						if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true then
+							if hero:IsClone() == true and hero:GetUnitName() == clonename then
+								FindClearSpaceForUnit(hero, originalclone, false)
+								hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
+							end
 						end
 					end
 				end
@@ -600,10 +603,13 @@ end
 		end
 		Timers:CreateTimer(1, function()
 			for _, hero in ipairs(players) do
-				hero:SetHealth(hero:GetMaxHealth())
-				hero:SetMana(hero:GetMaxMana())
+				if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true then
+					hero:SetHealth(hero:GetMaxHealth())
+					hero:SetMana(hero:GetMaxMana())
+				end
 			end
 		end)
+		end
 	end
 	
 	function ExitDual()
