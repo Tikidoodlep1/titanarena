@@ -864,8 +864,8 @@ function ExitDualWinnerSpecific(WinningDual)
 			end
 		end
 			_G.TotalDualsWon = _G.TotalDualsWon + 1
-			Timers:CreateTimer(1, function()
 			if _G.TotalDualsWon == 2 then
+			Timers:CreateTimer(1, function()
 				_G.IsDual = false
 				GameRules:SetHeroRespawnEnabled(true)
 				for _, hero in ipairs(allheroes) do

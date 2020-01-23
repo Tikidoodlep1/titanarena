@@ -16,6 +16,10 @@ if unit == caster then
 		ParticleManager:DestroyParticle(caster_particle, true)
 		end)
 ability:ApplyDataDrivenModifier(caster, caster, "damage_receiver", {duration = abil_duration})
+local ally_particle = ParticleManager:CreateParticle("particles/siphon_allys.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+	Timers:CreateTimer(abil_duration, function()
+		ParticleManager:DestroyParticle(ally_particle, true)
+		end)
 	end
 end
 
