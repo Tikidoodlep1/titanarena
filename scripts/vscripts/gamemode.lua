@@ -1171,7 +1171,7 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	end
 	end
 	end
-	level = level + 1
+	level = level + 0.5
 end
 end
 
