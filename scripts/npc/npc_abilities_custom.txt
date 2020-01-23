@@ -15479,7 +15479,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"arc_damage"			"50 60 70 80"
-				"LinkedSpecialBonus"	"special_bonus_unique_zeus_2"
 			}
 			"02"
 			{
