@@ -864,7 +864,7 @@ function ExitDualWinnerSpecific(WinningDual)
 			end
 		end
 			_G.TotalDualsWon = _G.TotalDualsWon + 1
-			print("Total duals won = ".._G.TotalDualsWon)
+			Timers:CreateTimer(1, function()
 			if _G.TotalDualsWon == 2 then
 				_G.IsDual = false
 				GameRules:SetHeroRespawnEnabled(true)
@@ -881,6 +881,7 @@ function ExitDualWinnerSpecific(WinningDual)
 						SendToConsole("dota_camera_center")
 					end
 				end
+			end)
 				for x=1, 11 do
 					_G.DualArena1[x] = nil
 					_G.DualArena2[x] = nil

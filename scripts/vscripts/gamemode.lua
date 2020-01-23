@@ -616,6 +616,7 @@ end
 		_G.DualArenavs1[x] = nil
 		_G.DualArenavs2[x] = nil
 	end
+	Timers:CreateTimer(1, function()
 	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
@@ -643,6 +644,7 @@ end
 				SendToConsole("dota_camera_center")
 			end
 		end
+	end)
 		local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 		local radiant_titan_return = Entities:FindByName(nil, "rad_titan"):GetAbsOrigin()
 		local dire_titan_return = Entities:FindByName(nil, "dire_titan"):GetAbsOrigin()
