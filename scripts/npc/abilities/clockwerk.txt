@@ -114,7 +114,7 @@
 			"04"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"20 56.25 87.5 142.5 165 200"
+				"damage"			"20 50 70 90 110 130"
 				"LinkedSpecialBonus"		"special_bonus_unique_clockwerk_3"
 			}
 		}
@@ -159,12 +159,12 @@
 			"02"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"50 156 250 405 525 850"
+				"damage"		"50 80 110 140 170 200"
 			}
 			"03"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"mana_burn"		"50 100 137.5 210 255 400"
+				"mana_burn"		"50 75 100 125 150 200"
 			}
 			"04"
 			{	
@@ -259,7 +259,7 @@
 			"05"
 			{	
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"80 150 200 300 360 560"
+				"damage"			"80 110 140 170 200 230"
 				"LinkedSpecialBonus"	"special_bonus_unique_clockwerk_2"
 			}
 			
@@ -290,7 +290,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCastRange"				"2500 3000 3500 4000"
+		"AbilityCastRange"				"2000 2250 2500 3000"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
