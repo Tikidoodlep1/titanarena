@@ -297,7 +297,7 @@ function barebones:OnGameInProgress()
 			
 			trigger_out:Disable()
 			trigger_out1:Disable()
-		return 600
+		return 420
 	end)
 	
 	Timers:CreateTimer(300, function()
@@ -456,7 +456,7 @@ end
     end
 	Notifications:TopToAll({text = "THE DUEL HAS BEGUN!", duration=5.0,style={color="red"}})
 	EmitGlobalSound("ui.contract_complete")
-	
+	SpawnTitans()
 	local dHeroIncrementer = 0
 	local rHeroIncrementer = 0
 	local GetTotalDualPlayers = RandomInt(1,5)
@@ -709,7 +709,7 @@ end
 	Timers:CreateTimer(0, function()
 	
 	SpawnTitans()
-		return 600
+		return 420
 		
 	end)
 	level = 0
