@@ -524,6 +524,9 @@ end
 						item_equipped:EndCooldown()
 					end
 				end
+				if hero:IsIllusion() == true then
+					hero:Kill()
+				end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if dHeroIncrementer > GetTotalDualPlayers then
 				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
@@ -628,6 +631,9 @@ end
 		for _, hero in pairs(players) do
 			hero:SetBuyBackDisabledByReapersScythe(false)
 			hero:RemoveModifierByName("modifier_truesight")
+			if hero:IsIllusion() == true then
+				hero:Kill()
+			end
 			if hero:GetTeamNumber() == 2 then
 				if hero:IsAlive() == true then
 					hero:Kill(nil, nil)

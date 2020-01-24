@@ -743,6 +743,9 @@ function ExitDualWinnerSpecific(WinningDual)
 		if arena2:IsTouching(player) == true then
 			duals2 = true
 		end
+		if hero:IsIllusion() == true then
+			hero:Kill()
+		end
 	end
 	if duals2 == true then
 		print("duals2 is true")

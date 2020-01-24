@@ -143,7 +143,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cleave_damage_pct"		"15 25 35 45 55 70"
+				"cleave_damage_pct"		"10 15 20 25 30 35"
 				"LinkedSpecialBonus"	"special_bonus_unique_magnus_2"
 			}			
 			"04"
