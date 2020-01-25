@@ -447,19 +447,20 @@ end
 		end
 	end
 	
-	if killed_unit:GetUnitName() == "npc_boss_dragon_knight_1"then
+	if killed_unit:GetUnitName() == "npc_boss_dragon_knight_1" then
 		local randdropnum = RandomInt(1, 2)
-		local DidDk1Drop = false
+		_G.DidDk1Drop = false
 		if randdropnum == 1 then
 			local item = CreateItem("item_fire_forged_blade", nil, nil)
 			local pos = killed_unit:GetAbsOrigin()
 			local drop = CreateItemOnPositionSync( pos, item )
 			local pos_launch = pos+RandomVector(RandomFloat(150,400))
 			item:LaunchLoot(false, 200, 0.75, pos_launch)
-			DidDk1Drop = true
+			_G.DidDk1Drop = true
 		end
-	elseif killed_unit:GetUnitName() == "npc_boss_dragon_knight_2" then
-		if DidDk1Drop == false then
+	end
+	if killed_unit:GetUnitName() == "npc_boss_dragon_knight_2" then
+		if _G.DidDk1Drop == false then
 			local item = CreateItem("item_dragon_scale", nil, nil)
 			local pos = killed_unit:GetAbsOrigin()
 			local drop = CreateItemOnPositionSync( pos, item )

@@ -629,7 +629,7 @@ end
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
 			hero:SetBuyBackDisabledByReapersScythe(false)
-			hero:RemoveModifierByName("modifier_truesight")
+			hero:RemoveModifierByName("modifier_truesight_aura")
 			if hero:IsIllusion() == true then
 				hero:Kill()
 			end
@@ -641,7 +641,7 @@ end
 					hero:RespawnUnit()
 				end
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				SendToConsole("dota_camera_center")
 			elseif hero:GetTeamNumber() == 3 then
 				if hero:IsAlive() == true then
@@ -651,7 +651,7 @@ end
 					hero:RespawnUnit()
 				end
 				FindClearSpaceForUnit(hero, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), true)
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				SendToConsole("dota_camera_center")
 			end
 		end
