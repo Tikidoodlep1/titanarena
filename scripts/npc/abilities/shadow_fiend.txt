@@ -240,7 +240,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls"	"12 19 26 33 40 47"
+				"necromastery_max_souls"	"12 19 26 33 40 50"
 				"LinkedSpecialBonus"			"special_bonus_unique_nevermore_4"
 			}
 			"03"
@@ -256,7 +256,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls_scepter" "22 30 38 46 56"
+				"necromastery_max_souls_scepter" "30 35 40 45 50 60"
 				"RequiresScepter"			"1"
 			}			
 		}
