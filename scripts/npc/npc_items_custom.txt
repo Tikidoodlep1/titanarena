@@ -4152,7 +4152,7 @@
 	{
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"140054"	
+		"ItemCost"						"1400"	
 		"ItemShopTags"					"mask of madness;MOM;lifesteal"
 		"BaseClass"						"item_datadriven"
 		"ID"							"1710"
@@ -4248,7 +4248,7 @@
 	{
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"140056"	
+		"ItemCost"						"2300"	
 		"ItemShopTags"					"mask of madness;MOM;lifesteal"
 		"BaseClass"						"item_datadriven"
 		"ID"							"1719"
@@ -4286,7 +4286,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75"
+		"AbilityManaCost"				"90"
 		"ItemCost"						"1775"
 		"ItemShopTags"					"unique;hard_to_tag"
 		"ItemQuality"					"artifact"
@@ -4294,6 +4294,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+		"soundset" "item_mask_of_madness"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -4344,6 +4345,7 @@
 				"Target"  "CASTER"
 				"ModifierName"  "modifier_silence_mom"
 			}
+
 		}
 
 		"Modifiers"
@@ -4382,7 +4384,7 @@
 				"States"
 				{
 					"MODIFIER_STATE_SILENCED"  "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_INVULNERABLE"  "MODIFIER_STATE_VALUE_ENNABLED"
+					"MODIFIER_STATE_TROLL_WARLORD_BATTLE_TRANCE"  "MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
