@@ -4399,7 +4399,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"629"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140058"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe_power_treads"
@@ -4428,7 +4428,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"630"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140059"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Item Info
@@ -4472,7 +4472,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"631"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140060"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe_power_treads"
@@ -4501,7 +4501,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"632"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140061"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		// Item Info
@@ -4544,7 +4544,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"2130"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140062"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"			"item_recipe_tranquil_boots"
 	
@@ -4570,7 +4570,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"2140"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140063"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_tranquil_boots"
 
@@ -4654,7 +4654,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"499"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140064"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                   "item_datadriven"
 		"AbilityTextureName"		"item_recipe_phase_boots"
@@ -4681,7 +4681,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"500"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140065"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		
 		// Stats		
