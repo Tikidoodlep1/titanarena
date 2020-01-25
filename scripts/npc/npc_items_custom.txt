@@ -4152,7 +4152,7 @@
 	{
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1750"	
+		"ItemCost"						"140054"	
 		"ItemShopTags"					"mask of madness;MOM;lifesteal"
 		"BaseClass"						"item_datadriven"
 		"ID"							"1710"
@@ -4176,7 +4176,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1711"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140055"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL |"
 		"FightRecapLevel"				"1"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -4248,7 +4248,7 @@
 	{
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1750"	
+		"ItemCost"						"140056"	
 		"ItemShopTags"					"mask of madness;MOM;lifesteal"
 		"BaseClass"						"item_datadriven"
 		"ID"							"1719"
@@ -4265,14 +4265,14 @@
 	}
 	
 	//=================================================================================================================
-	// Mask of Madness 2
+	// Mask of Madness 3
 	//=================================================================================================================
 	"item_mask_of_madness_3"
 	{
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1712"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140057"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL |"
 		"FightRecapLevel"				"1"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -4324,16 +4324,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"berserk_bonus_movement_speed"	"40"
 			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"berserk_armor_reduction"	"8"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"berserk_duration"		"7.0"
-			}
 			"08"
 			{
                "var_type"           "FIELD_FLOAT"
@@ -4349,47 +4339,52 @@
 
 			"OnSpellStart"
 		{
-  		"ApplyModifier"
-  		{
-    		"Target"  "CASTER"
-    		"ModifierName"  "modifier_silence_mom"
-  		}
+			"ApplyModifier"
+			{
+				"Target"  "CASTER"
+				"ModifierName"  "modifier_silence_mom"
+			}
 		}
 
-			"Modifiers"
+		"Modifiers"
 		{
-		"modifier_mom_3"
-		{
-			"Passive"	"1"
-			"IsHidden"	"0"
-			"OnAttackLanded"
+			"modifier_mom_3"
 			{
-				"Lifesteal"
+				"Passive"	"1"
+				"IsHidden"	"0"
+				"OnAttackLanded"
 				{
-					"Target"	"CASTER"
-					"LifestealPercent"	"%lifesteal_pct"
+					"Lifesteal"
+					{
+						"Target"	"CASTER"
+						"LifestealPercent"	"%lifesteal_pct"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_attack_speed"
 				}
 			}
-
+			"modifier_silence_mom"
+			{
+				"Passive"  "0"
+				"IsHidden"  "0"
+				"IsBuff"  "1"
+				"Duration"  "%duration"
+				"TextureName"	"mom_3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%berserk_bonus_attackspeed"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "%bonus_armor"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%berserk_bonus_movement_speed"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"  "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"  "MODIFIER_STATE_VALUE_ENNABLED"
+				}
+			}
 		}
-		"modifier_silence_mom"
-{
-  "Passive"  "0"
-  "IsHidden"  "0"
-  "IsBuff"  "1"
-  "Duration"  "%duration"
-  "Properties"
-  {
-    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_attackspeed"
-    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "%bonus_armor"
-  }
-  "States"
-  {
-    "MODIFIER_STATE_SILENCED"  "MODIFIER_STATE_VALUE_ENABLED"
-    "MODIFIER_STATE_INVULNERABLE"  "MODIFIER_STATE_VALUE_ENNABLED"
-  }
-}
 	}
-
-}
 }
