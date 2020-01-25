@@ -514,6 +514,8 @@ end
 			GameRules:SetHeroRespawnEnabled(false)
 			for i, hero in pairs(players) do
 				if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true then
+				hero:AddNewModifier(hero, nil, "modifier_truesight_aura", {duration=-1})
+				print("Applied truesight")
 				for i=0, hero:GetAbilityCount() - 1, 1 do
 					if hero:GetAbilityByIndex(i) ~= nil and hero:GetAbilityByIndex(i):GetCooldownTimeRemaining() ~= 0 then
 						hero:GetAbilityByIndex(i):EndCooldown()
@@ -530,7 +532,6 @@ end
 				end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if dHeroIncrementer > GetTotalDualPlayers then
-				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsSummoned() and not hero:IsIllusion() then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2, false)
@@ -541,7 +542,6 @@ end
 					end
 				end
 				if rHeroIncrementer > GetTotalDualPlayers then
-				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 2 and hero:IsClone() == false and not hero:IsSummoned() and not hero:IsIllusion() then
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
@@ -552,7 +552,6 @@ end
 					end
 				end
 				if rHeroIncrementer <= GetTotalDualPlayers then
-				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 2 and hero:IsClone() == false and not hero:IsIllusion() then
 						rHeroIncrementer = rHeroIncrementer + 1
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
@@ -564,7 +563,6 @@ end
 					end
 				end
 				if dHeroIncrementer <= GetTotalDualPlayers then
-				hero:AddNewModifier(hero, nil, "modifier_truesight", {duration=-1})
 					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsIllusion() then
 						dHeroIncrementer = dHeroIncrementer + 1
 						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
