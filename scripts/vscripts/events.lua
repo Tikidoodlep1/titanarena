@@ -744,7 +744,7 @@ function ExitDualWinnerSpecific(WinningDual)
 		if arena2:IsTouching(player) == true then
 			duals2 = true
 		end
-		if hero:IsIllusion() == true then
+		if player:IsIllusion() == true then
 			hero:Kill()
 		end
 	end
@@ -1170,12 +1170,14 @@ function barebones:OnPlayerChat(keys)
 	local team = keys.team
 	local text = keys.text
 	local player = PlayerResource:GetPlayer(userID)
-	local playerid = player:GetPlayerID()
+	local playerid = keys.playerid
 	local player_hero_id = DOTAGameManager:GetHeroNameByID(PlayerResource:GetSelectedHeroID(playerid))
 	local heroes = HeroList:GetAllHeroes()
-	for num,hero in pairs(heroes) do
 
-		if hero:GetUnitName() == "npc_dota_hero_"..player_hero_id then
+	for num,hero in pairs(heroes) do
+		if hero:GetPlayerOwnerID() == playerid then
+			print("Player Owner ID -->"..hero:GetPlayerOwnerID())
+			print("Player ID -->"..playerid)
 					print(hero:GetUnitName())
 				team_num = hero:GetTeamNumber()
 				    print("Team "..team_num.. " typed a message")
@@ -1183,7 +1185,7 @@ function barebones:OnPlayerChat(keys)
 	end
 
 
-	if team_num == 2 then 
+	if team_num == 2 then
 		if (text:lower() == "no") and _G.vote_to_concede_radiant == true then
 		_G.vote_to_concede_radiant = false
 		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
@@ -1191,23 +1193,22 @@ function barebones:OnPlayerChat(keys)
 		if (text:lower() == "gg") and _G.radiant_can_concede == false then
 		GameRules:SendCustomMessage("<font color='#dc143c'>You can only attempt to surrender 1 time per 2 minutes!</font>", 0, 0)
 		end
-		if (text:lower() == "gg") and _G.radiant_can_concede == true then
-			GameRules:SendCustomMessage("<font color='#dc143c'>Radiant is Voting to Surrender! To cancel the vote type no (Radiant only!)</font>", 0, 0)
-			_G.vote_to_concede_radiant = true
-			_G.radiant_can_concede = false
-					Timers:CreateTimer(120, function()
-      						_G.radiant_can_concede = true    
-    				end)
+	if (text:lower() == "gg") and _G.radiant_can_concede == true then
+		GameRules:SendCustomMessage("<font color='#dc143c'>Radiant is Voting to Surrender! To cancel the vote type no (Radiant only!)</font>", 0, 0)
+		_G.vote_to_concede_radiant = true
+		_G.radiant_can_concede = false
+		Timers:CreateTimer(120, function()
+      		_G.radiant_can_concede = true    
+    	end)
 		
-    Timers:CreateTimer(10, function()
-        if _G.vote_to_concede_radiant == true then
-        	GameRules:SetGameWinner(3)
-        end
-        
-    end)
+		Timers:CreateTimer(10, function()
+			if _G.vote_to_concede_radiant == true then
+				GameRules:SetGameWinner(3)
+			end
+		end)
+	end
 end
-end
-	if team_num == 3 then 
+	if team_num == 3 then
 		if (text:lower() == "no") and _G.vote_to_concede_dire == true then
 		_G.vote_to_concede_dire = false
 		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
