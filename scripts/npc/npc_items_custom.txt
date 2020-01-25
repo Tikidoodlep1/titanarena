@@ -4145,4 +4145,251 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Recipe: Mask of Madness
+	//=================================================================================================================
+	"item_recipe_mask_of_madness_2"
+	{
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1750"	
+		"ItemShopTags"					"mask of madness;MOM;lifesteal"
+		"BaseClass"						"item_datadriven"
+		"ID"							"1710"
+		"AbilityTextureName"			"item_recipe"
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_2"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness;item_quarterstaff;item_quarterstaff"
+		}
+	}
+	
+	//=================================================================================================================
+	// Mask of Madness 2
+	//=================================================================================================================
+	"item_mask_of_madness_2"
+	{
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1711"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL |"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_mask_of_madness"
+		"AbilityTextureName"			"mom_2"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"1775"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness;mom2"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_percent"		"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_bonus_attack_speed"	"130"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_bonus_movement_speed"	"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_armor_reduction"	"8"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"berserk_duration"		"7.0"
+			}
+		}
+
+}
+//=================================================================================================================
+	// Recipe: Mask of Madness
+	//=================================================================================================================
+	"item_recipe_mask_of_madness_3"
+	{
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1750"	
+		"ItemShopTags"					"mask of madness;MOM;lifesteal"
+		"BaseClass"						"item_datadriven"
+		"ID"							"1719"
+		"AbilityTextureName"			"item_recipe"
+	
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_madness_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness_2;item_aeon_disk"
+		}
+	}
+	
+	//=================================================================================================================
+	// Mask of Madness 2
+	//=================================================================================================================
+	"item_mask_of_madness_3"
+	{
+
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1712"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL |"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemPurchasable"				"1"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"mom_3"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"1775"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mom;mask of madness;mom2"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_pct"		"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_bonus_attackspeed"	"130"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_bonus_movement_speed"	"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"berserk_armor_reduction"	"8"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"berserk_duration"		"7.0"
+			}
+			"08"
+			{
+               "var_type"           "FIELD_FLOAT"
+               "duration"           "7.0"
+			}
+			"09"
+			{
+               "var_type"           "Field_FLOAT"
+               "bonus_armor"        "-10"
+			}
+
+		}
+
+			"OnSpellStart"
+		{
+  		"ApplyModifier"
+  		{
+    		"Target"  "CASTER"
+    		"ModifierName"  "modifier_silence_mom"
+  		}
+		}
+
+			"Modifiers"
+		{
+		"modifier_mom_3"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+			"OnAttackLanded"
+			{
+				"Lifesteal"
+				{
+					"Target"	"CASTER"
+					"LifestealPercent"	"%lifesteal_pct"
+				}
+			}
+
+		}
+		"modifier_silence_mom"
+{
+  "Passive"  "0"
+  "IsHidden"  "0"
+  "IsBuff"  "1"
+  "Duration"  "%duration"
+  "Properties"
+  {
+    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_attackspeed"
+    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "%bonus_armor"
+  }
+  "States"
+  {
+    "MODIFIER_STATE_SILENCED"  "MODIFIER_STATE_VALUE_ENABLED"
+    "MODIFIER_STATE_INVULNERABLE"  "MODIFIER_STATE_VALUE_ENNABLED"
+  }
+}
+	}
+
+}
 }
