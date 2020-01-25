@@ -3228,4 +3228,88 @@
         "XPGain"                                        "4"
     }
   }
+  "npc_unit_fountain_radiant_custom"
+  {
+	"BaseClass"		"npc_dota_creature"
+	"ModelScale"		"10"
+    "SoundSet"          "Creep_Good_Range"          // Name of sound set.
+    "Level"           	"100"
+    "UnitLabel"         "Radiant Fountain"
+    
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          "monkey_king_jingu_mastery"     // Ability 1.
+    "Ability2"          "slark_essence_shift"      // Ability 2.
+    "Ability3"          "ursa_fury_swipes"      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          ""      // Ability 5.
+    "Ability6"          ""      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+	"HasInventory"		"1"
+	"StatusHealth"        "100000000"     // Base health.
+    "StatusHealthRegen"     "100000000"     // Health regeneration rate.
+    "StatusMana"        "0"     // Base mana.
+    "StatusManaRegen"     "0"     // Mana regeneration rate.
+
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
+	"ProjectileModel"            "particles/base_attacks/fountain_attack.vpcf"
+	"ProjectileSpeed"            "1500"
+    "AttackDamageMin"     "2000"     // Damage range min.
+    "AttackDamageMax"     "2000"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "0.1"     // Speed of attack.
+    "AttackAnimationPoint"    "0"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "1600"   // Range within a target can be acquired.
+    "AttackRange"       "1500"   // Range within a target can be attacked.
+	"TeamName"          "DOTA_TEAM_GOODGUYS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"
+  }
+  "npc_unit_fountain_dire_custom"
+  {
+	"BaseClass"		"npc_dota_creature"
+	"ModelScale"		"10"
+    "SoundSet"          "Creep_Good_Range"          // Name of sound set.
+    "Level"           	"100"
+    "UnitLabel"         "Dire Fountain"
+    
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "Ability1"          "monkey_king_jingu_mastery"     // Ability 1.
+    "Ability2"          "slark_essence_shift"      // Ability 2.
+    "Ability3"          "ursa_fury_swipes"      // Ability 3.
+    "Ability4"          ""      // Ability 4.
+    "Ability5"          ""      // Ability 5.
+    "Ability6"          ""      // Ability 6 - Extra.
+    "Ability7"          ""      // Ability 7 - Extra.
+    "Ability8"          ""      // Ability 8 - Extra.
+	"HasInventory"		"1"
+	"StatusHealth"        "100000000"     // Base health.
+    "StatusHealthRegen"     "100000000"     // Health regeneration rate.
+    "StatusMana"        "0"     // Base mana.
+    "StatusManaRegen"     "0"     // Mana regeneration rate.
+	
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"     // Type of attack - melee, ranged, etc.
+	"ProjectileModel"            "particles/base_attacks/fountain_attack.vpcf"
+	"ProjectileSpeed"            "1500"
+    "AttackDamageMin"     "2000"     // Damage range min.
+    "AttackDamageMax"     "2000"     // Damage range max.
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"        "0.1"     // Speed of attack.
+    "AttackAnimationPoint"    "0"   // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"  "1600"   // Range within a target can be acquired.
+    "AttackRange"       "1500"   // Range within a target can be attacked.
+	"TeamName"          "DOTA_TEAM_BADGUYS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"
+  }
 }

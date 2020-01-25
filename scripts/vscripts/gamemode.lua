@@ -239,7 +239,8 @@ function barebones:OnGameInProgress()
 					print("Dire has ".. _G.dire_players.." players!")
 				end
 	end
-	
+	CreateUnitByName("npc_unit_fountain_radiant_custom", Entities:FindByName(nil, "fountain_radiant"):GetAbsOrigin(), false, nil, nil, 2)
+	CreateUnitByName("npc_unit_fountain_dire_custom", Entities:FindByName(nil, "fountain_dire"):GetAbsOrigin(), false, nil, nil, 3)
 	Timers:CreateTimer(0, function()
 	local players = HeroList:GetAllHeroes()
 		for _, hero in ipairs(players) do
