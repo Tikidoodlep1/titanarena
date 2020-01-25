@@ -31,7 +31,7 @@ else
 	arena2 = Entities:FindByName(nil, "dual_keepin1_trigger")
 end
 for i, hero in pairs(_G.DualArena1) do
-	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true then
+	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena:IsTouching(hero) == false and _G.IsDual == true then
@@ -47,7 +47,7 @@ for i, hero in pairs(_G.DualArena1) do
 	end
 end
 for i, hero in pairs(_G.DualArenavs1) do
-	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true then
+	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena:IsTouching(hero) == false and _G.IsDual == true then
@@ -63,7 +63,7 @@ for i, hero in pairs(_G.DualArenavs1) do
 	end
 end
 for i, hero in pairs(_G.DualArena2) do
-	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true then
+	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena2:IsTouching(hero) == false and _G.IsDual == true then
@@ -79,7 +79,7 @@ for i, hero in pairs(_G.DualArena2) do
 	end
 end
 for i, hero in pairs(_G.DualArenavs2) do
-	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true then
+	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
 			if arena2:IsTouching(hero) == false and _G.IsDual == true then

@@ -461,7 +461,7 @@ end
 	end
 	if killed_unit:GetUnitName() == "npc_boss_dragon_knight_2" then
 		if _G.DidDk1Drop == false then
-			local item = CreateItem("item_dragon_scale", nil, nil)
+			local item = CreateItem("item_dragon_scale_custom", nil, nil)
 			local pos = killed_unit:GetAbsOrigin()
 			local drop = CreateItemOnPositionSync( pos, item )
 			local pos_launch = pos+RandomVector(RandomFloat(150,400))
@@ -745,7 +745,7 @@ function ExitDualWinnerSpecific(WinningDual)
 			duals2 = true
 		end
 		if player:IsIllusion() == true then
-			hero:Kill()
+			player:Kill()
 		end
 	end
 	if duals2 == true then
@@ -767,7 +767,7 @@ function ExitDualWinnerSpecific(WinningDual)
 		for _, hero in pairs(_G.DualArena1) do
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				radiantwon = true
 				if hero:IsClone() == false then
 					ID = hero:GetPlayerID()
@@ -775,7 +775,7 @@ function ExitDualWinnerSpecific(WinningDual)
 				end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				direwon = true
 				if hero:IsClone() == false then
 					ID = hero:GetPlayerID()
@@ -787,7 +787,7 @@ function ExitDualWinnerSpecific(WinningDual)
 		for _, hero in pairs(_G.DualArenavs1) do
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				radiantwon = true
 				if hero:IsClone() == false then
 					ID = hero:GetPlayerID()
@@ -795,7 +795,7 @@ function ExitDualWinnerSpecific(WinningDual)
 				end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				direwon = true
 				if hero:IsClone() == false then
 					ID = hero:GetPlayerID()
@@ -807,7 +807,7 @@ function ExitDualWinnerSpecific(WinningDual)
 		for _, hero in pairs(_G.DualArena2) do
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				radiantwon = true
 				if hero:IsClone() == false then
 					ID = hero:GetPlayerID()
@@ -815,7 +815,7 @@ function ExitDualWinnerSpecific(WinningDual)
 				end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				direwon = true
 				if hero:IsClone() == false then
 					ID = hero:GetPlayerID()
@@ -827,7 +827,7 @@ function ExitDualWinnerSpecific(WinningDual)
 		for _, hero in pairs(_G.DualArenavs2) do
 			if hero:GetTeamNumber() == 2 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				radiantwon = true
 				if hero:IsClone() == false then
 					ID = hero:GetPlayerID()
@@ -835,7 +835,7 @@ function ExitDualWinnerSpecific(WinningDual)
 				end
 			elseif hero:GetTeamNumber() == 3 then
 				hero:RemoveModifierByName("modifier_battle_cup_effigy")
-				hero:RemoveModifierByName("modifier_truesight")
+				hero:RemoveModifierByName("modifier_truesight_aura")
 				direwon = true
 				if hero:IsClone() == false then
 					ID = hero:GetPlayerID()
