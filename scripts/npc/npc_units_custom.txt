@@ -403,8 +403,8 @@
                         "DamageGain"                            "8"
                         "ArmorGain"                                     "1"
                         "MagicResistGain"                       ".35"
-                        "BountyGain"                            "3"
-                        "XPGain"                                        "3"
+                        "BountyGain"                            "4.5"
+                        "XPGain"                                        "4.5"
                 }
 }
 	"npc_easy_satyr_b"
