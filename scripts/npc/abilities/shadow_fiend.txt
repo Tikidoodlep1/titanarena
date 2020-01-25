@@ -240,7 +240,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls"	"12 20 28 36 46 60"
+				"necromastery_max_souls"	"12 19 26 33 40 47"
 				"LinkedSpecialBonus"			"special_bonus_unique_nevermore_4"
 			}
 			"03"
@@ -289,7 +289,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"presence_armor_reduction"		"-4 -5 -6 -7 -8 -9"
+				"presence_armor_reduction"		"-2 -3 -4 -5 -6 -7"
 				"LinkedSpecialBonus"			"special_bonus_unique_nevermore_5"
 			}
 			"02"
