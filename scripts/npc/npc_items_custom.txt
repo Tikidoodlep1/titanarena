@@ -4345,7 +4345,11 @@
 				"Target"  "CASTER"
 				"ModifierName"  "modifier_silence_mom"
 			}
-
+			"FireSound"
+			{
+				"EffectName"	"DOTA_Item.MaskOfMadness.Activate"
+				"Target"		"CASTER"
+			}
 		}
 
 		"Modifiers"
@@ -4375,6 +4379,8 @@
 				"IsBuff"  "1"
 				"Duration"  "%duration"
 				"TextureName"	"mom_3"
+				"EffectName"	"particles/items2_fx/mask_of_madness.vpcf"
+				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%berserk_bonus_attackspeed"
