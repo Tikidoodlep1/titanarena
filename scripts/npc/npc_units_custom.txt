@@ -3235,6 +3235,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           	"100"
     "UnitLabel"         "Radiant Fountain"
+    "HealthBarOffset"           "16000000000"
     
     // Abilities
     //----------------------------------------------------------------
@@ -3277,6 +3278,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           	"100"
     "UnitLabel"         "Dire Fountain"
+    "HealthBarOffset"           "160000000"
     
     // Abilities
     //----------------------------------------------------------------
