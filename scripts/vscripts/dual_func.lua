@@ -17,18 +17,23 @@ function InDuals(trigger)
 local point = Entities:FindByName(nil, trigger.caller:GetName()):GetAbsOrigin()
 local arena = nil
 local arena2 = nil
+local globalarena2 = nil
 if _G.GetArena == 1 then
 	arena = Entities:FindByName(nil, "dual_keepin3_trigger")
-	arena2 = Entities:FindByName(nil, "dual_keepin4_trigger")
+	arena22 = Entities:FindByName(nil, "dual_keepin4_trigger")
+	globalarena2 = Entities:FindByName(nil, "dire_dual2")
 elseif _G.GetArena == 2 then
 	arena = Entities:FindByName(nil, "dual_keepin4_trigger")
-	arena2 = Entities:FindByName(nil, "dual_keepin3_trigger")
+	arena22 = Entities:FindByName(nil, "dual_keepin3_trigger")
+	globalarena2 = Entities:FindByName(nil, "dire_dual")
 elseif _G.GetArena == 3 then
 	arena = Entities:FindByName(nil, "dual_keepin1_trigger")
-	arena2 = Entities:FindByName(nil, "dual_keepin2_trigger")
+	arena22 = Entities:FindByName(nil, "dual_keepin2_trigger")
+	globalarena2 = Entities:FindByName(nil, "rad_dual2")
 else 
 	arena = Entities:FindByName(nil, "dual_keepin2_trigger")
-	arena2 = Entities:FindByName(nil, "dual_keepin1_trigger")
+	arena22 = Entities:FindByName(nil, "dual_keepin1_trigger")
+	globalarena2 = Entities:FindByName(nil, "rad_dual")
 end
 for i, hero in pairs(_G.DualArena1) do
 	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
@@ -65,9 +70,10 @@ end
 for i, hero in pairs(_G.DualArena2) do
 	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero and trigger.activator:GetPlayerID() ~= _G.SpectatorPlayerID then
+	print(globalarena2:GetAbsOrigin())
 		Timers:CreateTimer(0.5, function()
-			if arena2:IsTouching(hero) == false and _G.IsDual == true then
-				FindClearSpaceForUnit(trigger.activator, _G.arena2, false)
+			if arena22:IsTouching(hero) == false and _G.IsDual == true then
+				FindClearSpaceForUnit(trigger.activator, globalarena2:GetAbsOrigin(), false)
 			end
 			if _G.IsDual == false then
 				Timers.removeSelf = true
@@ -82,7 +88,7 @@ for i, hero in pairs(_G.DualArenavs2) do
 	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero and trigger.activator:GetPlayerID() ~= _G.SpectatorPlayerID then
 		Timers:CreateTimer(0.5, function()
-			if arena2:IsTouching(hero) == false and _G.IsDual == true then
+			if arena22:IsTouching(hero) == false and _G.IsDual == true then
 				FindClearSpaceForUnit(trigger.activator, _G.arena2vs, false)
 			end
 			if _G.IsDual == false then
