@@ -5063,5 +5063,673 @@
 			}
 		}
 	}
+	"item_ward_observer"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"42"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"Model"							"models/props_gameplay/observer_ward_bundle.vmdl"
+		
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"observer ward"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"4"
+		"ItemStockInitial"				"2"
+		"ItemStockTime"					"135.0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+		"ItemSupport"					"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifetime"				"420"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_range"			"2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_minutes_tooltip"				"7"
+			}
+		}
+	}
+	"item_ward_sentry"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"43"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"Model"							"models/props_gameplay/sentry_ward_bundle.vmdl"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"75"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"sentry ward"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"10"
+		"ItemStockInitial"				"3"
+		"ItemStockTime"					"90.0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+		"ItemSupport"					"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifetime"				"480"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_range"			"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"true_sight_range"		"1400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_minutes_tooltip"				"8"
+			}
+		}
+	}
+	"item_recipe_skadi_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140072"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"		    "item_recipe"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_2"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_skadi"
+		}
+	}
+	
+	//=================================================================================================================
+	// Skadi
+	//=================================================================================================================
+	"item_skadi_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140073"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_skadi"
+		"AbilityTextureName"		    "skadi_2"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5500"
+		"ItemShopTags"					"agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"eos;eye of skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"325"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"350"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cold_slow_melee"	"-30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cold_slow_ranged"	"-55"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cold_duration"	"3.5"
+			}
+		}
+	}
+		"item_recipe_skadi_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140074"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"		    "item_recipe"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi_3"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_skadi_2"
+		}
+	}
+	
+	//=================================================================================================================
+	// Skadi
+	//=================================================================================================================
+	"item_skadi_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140075"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_skadi"
+		"AbilityTextureName"		    "skadi_3"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5500"
+		"ItemShopTags"					"agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"eos;eye of skadi"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"425"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cold_slow_melee"	"-35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cold_slow_ranged"	"-60"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cold_duration"	"4.0"
+			}
+		}
+	}
+	"item_recipe_aether_lens_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140076"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"		    "item_recipe_aether_lens"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens_2"
+		"ItemRequirements"
+		{
+			"01"						"item_energy_booster;item_void_stone;item_aether_lens"
+		}
+	}
+	
+	//=================================================================================================================
+	// Aether Lens
+	//=================================================================================================================
+	"item_aether_lens_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140077"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_aether_lens"
+		"AbilityTextureName"		    "aether_2"
+
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2350"
+		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"aether lens"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"5.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"			"350"
+			}
+		}
+	}
+		"item_recipe_aether_lens_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140078"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+        "AbilityTextureName"		    "item_recipe_aether_lens"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens_3"
+		"ItemRequirements"
+		{
+			"01"						"item_energy_booster;item_void_stone;item_aether_lens_2"
+		}
+	}
+	
+	//=================================================================================================================
+	// Aether Lens
+	//=================================================================================================================
+	"item_aether_lens_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140079"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_aether_lens"
+		"AbilityTextureName"		    "aether_3"
+
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2350"
+		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"aether lens"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"7.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"			"475"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Hurricane Pike
+	//=================================================================================================================
+	"item_recipe_hurricane_pike_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140080"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"		    "item_recipe_hurricane_pike"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1100"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hurricane_pike_2"
+		"ItemRequirements"
+		{
+			"01"						"item_dragon_lance;item_hurricane_pike"
+		}
+	}
+	
+	//=================================================================================================================
+	// Hurricane Pike
+	//=================================================================================================================
+	"item_hurricane_pike_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140081"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"BaseClass"                     "item_hurricane_pike"
+		"AbilityTextureName"		    "hurricane_2"
+
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20.0"
+		"AbilitySharedCooldown"			"force"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"4600"
+		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"fs;force staff"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"4.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"32"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_attack_range"		"190"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"push_length"			"800"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"enemy_length"			"525"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range_duration"		"5.5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_enemy"		"450"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_attacks"			"5"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"115"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Hurricane Pike
+	//=================================================================================================================
+	"item_recipe_hurricane_pike_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140082"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"		    "item_recipe_hurricane_pike"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hurricane_pike_3"
+		"ItemRequirements"
+		{
+			"01"						"item_dragon_lance;item_hurricane_pike_2"
+		}
+	}
+	
+	//=================================================================================================================
+	// Hurricane Pike
+	//=================================================================================================================
+	"item_hurricane_pike_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140083"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+		"FightRecapLevel"				"1"
+		"BaseClass"                     "item_hurricane_pike"
+		"AbilityTextureName"		    "hurricane_3"
+
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20.0"
+		"AbilitySharedCooldown"			"force"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		"ItemCost"						"4600"
+		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"fs;force staff"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"37"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"5.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"42"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"41"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_attack_range"		"250"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"push_length"			"750"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"enemy_length"			"550"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range_duration"		"6"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_enemy"		"475"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_attacks"			"5"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"135"
+			}
+		}
+	}
+  
+  
 	
 }
