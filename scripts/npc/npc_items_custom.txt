@@ -4379,7 +4379,7 @@
 				"IsBuff"  "1"
 				"Duration"  "%duration"
 				"TextureName"	"mom_3"
-				"EffectName"	"particles/items2_fx/mask_of_madness.vpcf"
+				"EffectName"	"particles/mom_2.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"Properties"
 				{
@@ -4647,6 +4647,8 @@
 		}
 	}
 
+
+
 	//=================================================================================================================
 	// Recipe: Phase Boots
 	//=================================================================================================================
@@ -4756,8 +4758,307 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"12"
+				"bonus_armor"			"14"
 			}		
+		}
+	}
+	"item_recipe_tranquil_boots_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140066"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"			"item_recipe_tranquil_boots"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"950"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"450"
+		"ItemResult"					"item_tranquil_boots_3"
+		"ItemRequirements"
+		{
+			"01"						"item_tranquil_boots_2;item_holy_locket"
+		}
+	}
+	
+	//=================================================================================================================
+	// Tranquil Boots
+	//=================================================================================================================
+	"item_tranquil_boots_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140067"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_tranquil_boots"
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10.0"
+		"AbilityManaCost"				"0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"
+		"ItemShopTags"					"move_speed;regen_health;armor"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"tranquil boots"
+		"ItemHideCharges"		     	"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"26"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal_duration"			"22.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"250"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal_interval"			"0.280"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"break_time"			"8"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"break_count"			"1"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"break_threshold"		"20"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"broken_movement_speed"	"30"
+			}
+		}
+	}
+	"item_recipe_phase_boots_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140068"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                   "item_datadriven"
+		"AbilityTextureName"		"item_recipe_phase_boots"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1400"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_phase_boots_3"
+		"ItemRequirements"
+		{
+			"01"						"item_phase_boots_2;item_platemail;item_claymore"
+		}
+	}
+	
+	//=================================================================================================================
+	// Phase Boots
+	//=================================================================================================================
+	"item_phase_boots_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140068"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1480"
+		"ItemShopTags"					"damage;move_speed;hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"phase boots"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"BaseClass"                     "item_phase_boots"
+		"AbilityTextureName"			"phase_3"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage_melee"			"55"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage_range"			"38"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block_melee"	"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_block_ranged"	"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"0"
+			}		
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"phase_movement_speed"  "34"
+			}		
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"phase_movement_speed_range"  "12"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"phase_duration"		"5.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"0"
+			}		
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"25"
+			}		
+		}
+	}
+
+	"item_recipe_black_king_bar_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140069"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_black_king_bar"
+		"AbilityTextureName"		"item_recipe_black_king_bar"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1250"	
+		"ItemShopTags"					"BKB;magic immune"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_2"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar;item_mithril_hammer;item_ogre_axe"
+		}
+	}
+	
+	//=================================================================================================================
+	// Black King Bar
+	//=================================================================================================================
+	"item_black_king_bar_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140070"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"BaseClass"                     "item_black_king_bar"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"70"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4050"
+		"ItemShopTags"					"str;damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bkb;black king bar"
+		"ItemSellable"					"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"		    "bkb_2"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"22"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"7.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_level"				"6"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"model_scale"			"33"     // Percentage over model scale
+			}
 		}
 	}
 	
