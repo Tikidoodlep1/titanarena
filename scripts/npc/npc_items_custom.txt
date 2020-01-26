@@ -4901,7 +4901,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"140068"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140069"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		
 		// Stats		
@@ -4985,7 +4985,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"140069"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140070"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_black_king_bar"
 		"AbilityTextureName"		"item_recipe_black_king_bar"
@@ -5012,7 +5012,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"140070"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140071"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"FightRecapLevel"				"2"
 		"BaseClass"                     "item_black_king_bar"
