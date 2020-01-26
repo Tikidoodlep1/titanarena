@@ -23,6 +23,8 @@ end
 function modifier_animation_freeze:CheckState() 
   local state = {
     [MODIFIER_STATE_FROZEN] = true,
+	[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+	[MODIFIER_STATE_NO_HEALTH_BAR] = true,
   }
 
   return state
