@@ -4380,7 +4380,7 @@
 				"Duration"  "%duration"
 				"TextureName"	"mom_3"
 				"EffectName"	"particles/mom_2.vpcf"
-				"EffectAttachType"	"follow_origin"
+				"EffectAttachType"	"follow_origin | follow_overhead | follow_eyes"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%berserk_bonus_attackspeed"
