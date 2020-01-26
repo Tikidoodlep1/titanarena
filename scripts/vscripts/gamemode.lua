@@ -772,6 +772,8 @@ end
 		trigger_in[3] = Entities:FindByName(nil, "dual_keepin2_trigger")
 		trigger_in[4] = Entities:FindByName(nil, "dual_keepin3_trigger")
 		trigger_in[5] = Entities:FindByName(nil, "dual_keepin4_trigger")
+		trigger_in[6] = Entities:FindByName(nil, "dual_keepin5_trigger")
+		trigger_in[7] = Entities:FindByName(nil, "dual_keepin6_trigger")
 		for _, trigger in pairs(trigger_in) do
 			trigger:Disable()
 		end
