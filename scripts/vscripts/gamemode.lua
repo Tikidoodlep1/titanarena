@@ -612,6 +612,62 @@ end
 			end
 		end)
 		end
+		BalanceDuels()
+	end
+	
+	function BalanceDuels()
+		if _G.NumDualArena2 > _G.NumDualArena2vs then
+			local spectator = _G.DualArena2[1]
+			_G.SpectatorPlayerID = spectator:GetPlayerID()
+			_G.NumDualArena2 = _G.NumDualArena2 - 1
+			Timers:CreateTimer(2, function()
+				if spectator:GetTeamNumber() == 2 then
+					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+				else
+					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+				end
+				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
+			end)
+		end
+		if _G.NumDualArena2vs > _G.NumDualArena2 then
+			local spectator = _G.DualArenavs2[1]
+			_G.SpectatorPlayerID = spectator:GetPlayerID()
+			_G.NumDualArena2vs = _G.NumDualArena2vs - 1
+			Timers:CreateTimer(2, function()
+				if spectator:GetTeamNumber() == 2 then
+					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+				else
+					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+				end
+				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
+			end)
+		end
+		if _G.NumDualArena1vs > _G.NumDualArena1 then
+			local spectator = _G.DualArenavs1[1]
+			_G.SpectatorPlayerID = spectator:GetPlayerID()
+			_G.NumDualArena1vs = _G.NumDualArena1vs - 1
+			Timers:CreateTimer(2, function()
+				if spectator:GetTeamNumber() == 2 then
+					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+				else
+					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+				end
+				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
+			end)
+		end
+		if _G.NumDualArena1 > _G.NumDualArena1vs then
+			local spectator = _G.DualArena1[1]
+			_G.SpectatorPlayerID = spectator:GetPlayerID()
+			_G.NumDualArena1 = _G.NumDualArena1 - 1
+			Timers:CreateTimer(2, function()
+				if spectator:GetTeamNumber() == 2 then
+					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
+				else
+					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
+				end
+				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
+			end)
+		end
 	end
 	
 	function ExitDual()
@@ -630,6 +686,7 @@ end
 		for _, hero in pairs(players) do
 			hero:SetBuyBackDisabledByReapersScythe(false)
 			hero:RemoveModifierByName("modifier_truesight_aura")
+			hero:RemoveModifierByName("modifier_animation_freeze")
 			if hero:IsIllusion() == true then
 				hero:Kill()
 			end
@@ -1319,6 +1376,7 @@ function barebones:InitGameMode()
 	LinkLuaModifier("modifier_titan_slain", "modifiers/modifier_titan_slain", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_reset_bonus", "modifiers/modifier_reset_bonus", LUA_MODIFIER_MOTION_NONE)
 	LinkLuaModifier("modifier_titan_in_dual", "modifiers/modifier_titan_in_dual", LUA_MODIFIER_MOTION_NONE)
+	LinkLuaModifier("modifier_animation_freeze", "modifiers/modifier_animation_freeze", LUA_MODIFIER_MOTION_NONE)
 
 	-- Talent modifiers (this can be done in ability scripts, but it can be done here as well)
 	LinkLuaModifier("modifier_ability_name_talent_name_1", "modifiers/talents/modifier_ability_name_talent_name_1", LUA_MODIFIER_MOTION_NONE)

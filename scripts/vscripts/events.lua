@@ -748,11 +748,6 @@ function ExitDualWinnerSpecific(WinningDual)
 			player:Kill()
 		end
 	end
-	if duals2 == true then
-		print("duals2 is true")
-	else
-		print("duals2 is false")
-	end
 	if duals2 == false then
 		_G.TotalDualsWon = 1
 	end
@@ -873,6 +868,7 @@ function ExitDualWinnerSpecific(WinningDual)
 				_G.IsDual = false
 				GameRules:SetHeroRespawnEnabled(true)
 				for _, hero in ipairs(allheroes) do
+					hero:RemoveModifierByName("modifier_animation_freeze")
 					hero:SetBuyBackDisabledByReapersScythe(false)
 					if hero:IsAlive() == false then
 						hero:RespawnUnit()
