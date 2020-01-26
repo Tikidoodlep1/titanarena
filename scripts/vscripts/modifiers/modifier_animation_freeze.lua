@@ -25,6 +25,10 @@ function modifier_animation_freeze:CheckState()
     [MODIFIER_STATE_FROZEN] = true,
 	[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
 	[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+	[MODIFIER_STATE_UNSELECTABLE] = true,
+	[MODIFIER_STATE_DISARMED] = true,
+	[MODIFIER_STATE_ROOTED] = true,
+	[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
   }
 
   return state

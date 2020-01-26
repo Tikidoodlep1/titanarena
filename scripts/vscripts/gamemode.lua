@@ -533,7 +533,6 @@ end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if dHeroIncrementer > GetTotalDualPlayers then
 					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsSummoned() and not hero:IsIllusion() then
-						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2, false)
 						SendToConsole("dota_camera_center")
 						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})	
@@ -543,7 +542,6 @@ end
 				end
 				if rHeroIncrementer > GetTotalDualPlayers then
 					if hero:GetTeamNumber() == 2 and hero:IsClone() == false and not hero:IsSummoned() and not hero:IsIllusion() then
-						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena2vs, false)
 						SendToConsole("dota_camera_center")
 						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
@@ -554,7 +552,6 @@ end
 				if rHeroIncrementer <= GetTotalDualPlayers then
 					if hero:GetTeamNumber() == 2 and hero:IsClone() == false and not hero:IsIllusion() then
 						rHeroIncrementer = rHeroIncrementer + 1
-						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena1, false)
 						SendToConsole("dota_camera_center")
 						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
@@ -565,7 +562,6 @@ end
 				if dHeroIncrementer <= GetTotalDualPlayers then
 					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsIllusion() then
 						dHeroIncrementer = dHeroIncrementer + 1
-						hero:AddNewModifier(hero, nil, "modifier_battle_cup_effigy", {duration=-1})
 						FindClearSpaceForUnit(hero, _G.arena1vs, false)
 						SendToConsole("dota_camera_center")
 						hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 7})
@@ -616,56 +612,73 @@ end
 	end
 	
 	function BalanceDuels()
-		if _G.NumDualArena2 > _G.NumDualArena2vs then
-			local spectator = _G.DualArena2[1]
-			_G.SpectatorPlayerID = spectator:GetPlayerID()
+		_G.SpectatorPlayerID = {}
+		while _G.NumDualArena2 > _G.NumDualArena2vs do
+			local rand = RandomInt(1, _G.NumDualArena2)
+			local spectator = _G.DualArena2[rand]
+			_G.SpectatorPlayerIDs[rand] = spectator:GetPlayerID()
 			_G.NumDualArena2 = _G.NumDualArena2 - 1
 			Timers:CreateTimer(2, function()
 				if spectator:GetTeamNumber() == 2 then
+					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
 				else
+					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
 				end
 				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
+				spectator:AddNewModifier(caster, nil, "modifier_custom_invulnerable", {duration=-1})
 			end)
 		end
-		if _G.NumDualArena2vs > _G.NumDualArena2 then
-			local spectator = _G.DualArenavs2[1]
-			_G.SpectatorPlayerID = spectator:GetPlayerID()
+		while _G.NumDualArena2vs > _G.NumDualArena2 do
+			local rand = RandomInt(1, _G.NumDualArena2vs)
+			local spectator = _G.DualArenavs2[rand]
+			_G.SpectatorPlayerID[rand] = spectator:GetPlayerID()
 			_G.NumDualArena2vs = _G.NumDualArena2vs - 1
 			Timers:CreateTimer(2, function()
 				if spectator:GetTeamNumber() == 2 then
+					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
 				else
+					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
 				end
 				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
+				spectator:AddNewModifier(caster, nil, "modifier_custom_invulnerable", {duration=-1})
 			end)
 		end
-		if _G.NumDualArena1vs > _G.NumDualArena1 then
-			local spectator = _G.DualArenavs1[1]
-			_G.SpectatorPlayerID = spectator:GetPlayerID()
+		while _G.NumDualArena1vs > _G.NumDualArena1 do
+			local rand = RandomInt(1, _G.NumDualArena1vs)
+			local spectator = _G.DualArenavs1[rand]
+			_G.SpectatorPlayerID[rand] = spectator:GetPlayerID()
 			_G.NumDualArena1vs = _G.NumDualArena1vs - 1
 			Timers:CreateTimer(2, function()
 				if spectator:GetTeamNumber() == 2 then
+					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
 				else
+					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
 				end
 				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
+				spectator:AddNewModifier(caster, nil, "modifier_custom_invulnerable", {duration=-1})
 			end)
 		end
-		if _G.NumDualArena1 > _G.NumDualArena1vs then
-			local spectator = _G.DualArena1[1]
-			_G.SpectatorPlayerID = spectator:GetPlayerID()
+		while _G.NumDualArena1 > _G.NumDualArena1vs do
+			local rand = RandomInt(1, _G.NumDualArena1)
+			local spectator = _G.DualArena1[rand]
+			_G.SpectatorPlayerID[rand] = spectator:GetPlayerID()
 			_G.NumDualArena1 = _G.NumDualArena1 - 1
 			Timers:CreateTimer(2, function()
 				if spectator:GetTeamNumber() == 2 then
+					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
 				else
+					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "dire_spawn"):GetAbsOrigin(), false)
 				end
 				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
+				spectator:AddNewModifier(caster, nil, "modifier_custom_invulnerable", {duration=-1})
 			end)
 		end
 	end
@@ -687,6 +700,7 @@ end
 			hero:SetBuyBackDisabledByReapersScythe(false)
 			hero:RemoveModifierByName("modifier_truesight_aura")
 			hero:RemoveModifierByName("modifier_animation_freeze")
+			hero:RemoveModifierByName("modifier_custom_invulnerable")
 			if hero:IsIllusion() == true then
 				hero:Kill()
 			end

@@ -761,7 +761,6 @@ function ExitDualWinnerSpecific(WinningDual)
 		if WinningDual == 1 then
 		for _, hero in pairs(_G.DualArena1) do
 			if hero:GetTeamNumber() == 2 then
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				radiantwon = true
 				if hero:IsClone() == false then
@@ -769,7 +768,6 @@ function ExitDualWinnerSpecific(WinningDual)
 					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			elseif hero:GetTeamNumber() == 3 then
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				direwon = true
 				if hero:IsClone() == false then
@@ -781,7 +779,6 @@ function ExitDualWinnerSpecific(WinningDual)
 		elseif WinningDual == 2 then
 		for _, hero in pairs(_G.DualArenavs1) do
 			if hero:GetTeamNumber() == 2 then
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				radiantwon = true
 				if hero:IsClone() == false then
@@ -789,7 +786,6 @@ function ExitDualWinnerSpecific(WinningDual)
 					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			elseif hero:GetTeamNumber() == 3 then
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				direwon = true
 				if hero:IsClone() == false then
@@ -801,7 +797,6 @@ function ExitDualWinnerSpecific(WinningDual)
 		elseif WinningDual == 3 then
 		for _, hero in pairs(_G.DualArena2) do
 			if hero:GetTeamNumber() == 2 then
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				radiantwon = true
 				if hero:IsClone() == false then
@@ -809,7 +804,6 @@ function ExitDualWinnerSpecific(WinningDual)
 					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			elseif hero:GetTeamNumber() == 3 then
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				direwon = true
 				if hero:IsClone() == false then
@@ -821,7 +815,6 @@ function ExitDualWinnerSpecific(WinningDual)
 		elseif WinningDual == 4 then
 		for _, hero in pairs(_G.DualArenavs2) do
 			if hero:GetTeamNumber() == 2 then
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				radiantwon = true
 				if hero:IsClone() == false then
@@ -829,7 +822,6 @@ function ExitDualWinnerSpecific(WinningDual)
 					PlayerResource:ModifyGold(ID, _G.WinningDualGoldAmountPerPlayer, false, 16)
 				end
 			elseif hero:GetTeamNumber() == 3 then
-				hero:RemoveModifierByName("modifier_battle_cup_effigy")
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				direwon = true
 				if hero:IsClone() == false then
@@ -869,6 +861,7 @@ function ExitDualWinnerSpecific(WinningDual)
 				GameRules:SetHeroRespawnEnabled(true)
 				for _, hero in ipairs(allheroes) do
 					hero:RemoveModifierByName("modifier_animation_freeze")
+					hero:RemoveModifierByName("modifier_custom_invulnerable")
 					hero:SetBuyBackDisabledByReapersScythe(false)
 					if hero:IsAlive() == false then
 						hero:RespawnUnit()
