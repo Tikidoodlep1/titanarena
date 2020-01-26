@@ -460,7 +460,14 @@ end
 	SpawnTitans()
 	local dHeroIncrementer = 0
 	local rHeroIncrementer = 0
-	local GetTotalDualPlayers = RandomInt(1,5)
+	local GetTotalDualPlayers = 5
+	if _G.radiant_players > _G.dire_players then
+		GetTotalDualPlayers = _G.radiant_players
+	elseif _G.dire_players > _G.radiant_players then
+		GetTotalDualPlayers = _G.dire_players
+	else
+		GetTotalDualPlayers = RandomInt(1,5)
+	end
 	_G.GetArena = RandomInt(1,4)
 	_G.arena1 = nil
 	local arena1titan
@@ -608,17 +615,16 @@ end
 			end
 		end)
 		end
-		BalanceDuels()
+		Timers:CreateTimer(2, function()
+			BalanceDuels()
+		end)
 	end
 	
 	function BalanceDuels()
-		_G.SpectatorPlayerID = {}
 		while _G.NumDualArena2 > _G.NumDualArena2vs do
 			local rand = RandomInt(1, _G.NumDualArena2)
 			local spectator = _G.DualArena2[rand]
-			_G.SpectatorPlayerIDs[rand] = spectator:GetPlayerID()
-			_G.NumDualArena2 = _G.NumDualArena2 - 1
-			Timers:CreateTimer(2, function()
+			if spectator:HasModifier("modifier_animation_freeze") == false then
 				if spectator:GetTeamNumber() == 2 then
 					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
@@ -628,14 +634,13 @@ end
 				end
 				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
 				spectator:AddNewModifier(caster, nil, "modifier_custom_invulnerable", {duration=-1})
-			end)
+				_G.NumDualArena2 = _G.NumDualArena2 - 1
+			end
 		end
 		while _G.NumDualArena2vs > _G.NumDualArena2 do
 			local rand = RandomInt(1, _G.NumDualArena2vs)
 			local spectator = _G.DualArenavs2[rand]
-			_G.SpectatorPlayerID[rand] = spectator:GetPlayerID()
-			_G.NumDualArena2vs = _G.NumDualArena2vs - 1
-			Timers:CreateTimer(2, function()
+			if spectator:HasModifier("modifier_animation_freeze") == false then
 				if spectator:GetTeamNumber() == 2 then
 					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
@@ -645,14 +650,13 @@ end
 				end
 				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
 				spectator:AddNewModifier(caster, nil, "modifier_custom_invulnerable", {duration=-1})
-			end)
+				_G.NumDualArena2vs = _G.NumDualArena2vs - 1
+			end
 		end
 		while _G.NumDualArena1vs > _G.NumDualArena1 do
 			local rand = RandomInt(1, _G.NumDualArena1vs)
 			local spectator = _G.DualArenavs1[rand]
-			_G.SpectatorPlayerID[rand] = spectator:GetPlayerID()
-			_G.NumDualArena1vs = _G.NumDualArena1vs - 1
-			Timers:CreateTimer(2, function()
+			if spectator:HasModifier("modifier_animation_freeze") == false then
 				if spectator:GetTeamNumber() == 2 then
 					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
@@ -662,14 +666,13 @@ end
 				end
 				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
 				spectator:AddNewModifier(caster, nil, "modifier_custom_invulnerable", {duration=-1})
-			end)
+				_G.NumDualArena1vs = _G.NumDualArena1vs - 1
+			end
 		end
 		while _G.NumDualArena1 > _G.NumDualArena1vs do
 			local rand = RandomInt(1, _G.NumDualArena1)
 			local spectator = _G.DualArena1[rand]
-			_G.SpectatorPlayerID[rand] = spectator:GetPlayerID()
-			_G.NumDualArena1 = _G.NumDualArena1 - 1
-			Timers:CreateTimer(2, function()
+			if spectator:HasModifier("modifier_animation_freeze") == false then
 				if spectator:GetTeamNumber() == 2 then
 					spectator:Stop()
 					FindClearSpaceForUnit(spectator, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), false)
@@ -679,7 +682,8 @@ end
 				end
 				spectator:AddNewModifier(caster, nil, "modifier_animation_freeze", {duration=-1})
 				spectator:AddNewModifier(caster, nil, "modifier_custom_invulnerable", {duration=-1})
-			end)
+				_G.NumDualArena1 = _G.NumDualArena1 - 1
+			end
 		end
 	end
 	

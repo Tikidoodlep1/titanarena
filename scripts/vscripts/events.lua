@@ -862,9 +862,11 @@ function ExitDualWinnerSpecific(WinningDual)
 				for _, hero in ipairs(allheroes) do
 					hero:RemoveModifierByName("modifier_animation_freeze")
 					hero:RemoveModifierByName("modifier_custom_invulnerable")
+					hero:RemoveModifierByName("modifier_truesight_aura")
 					hero:SetBuyBackDisabledByReapersScythe(false)
 					if hero:IsAlive() == false then
 						hero:RespawnUnit()
+						hero:RemoveModifierByName("modifier_truesight_aura")
 					end
 					if hero:GetTeamNumber() == 2 then
 						FindClearSpaceForUnit(hero, Entities:FindByName(nil, "radiant_spawn"):GetAbsOrigin(), true)
