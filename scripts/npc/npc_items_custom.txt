@@ -649,7 +649,7 @@
 	
 		//Item Info
 		//-----------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"99999"
+		"ItemCost"							"0"
 		"ItemQuality"						"artifact"
 		"ItemAliases"						"Scarab Claw"
 		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -692,7 +692,7 @@
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"99999"
+		"ItemCost"							"0"
 		"ItemQuality"						"artifact"
 		"ItemAliases"						"Dragon Scale"
 		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -1906,7 +1906,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"99999"
+		"ItemCost"						"0"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"BKB potion;magic immunity"
@@ -2408,7 +2408,7 @@
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"99999"
+		"ItemCost"							"0"
 		"ItemQuality"						"artifact"
 		"ItemAliases"						"Reset"
 		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -4092,8 +4092,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"						"140053"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"						"140054"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_heart"
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -4116,12 +4117,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"50"
+				"bonus_strength"		"60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"600"
+				"bonus_health"			"700"
 			}
 			"03"
 			{
@@ -4131,7 +4132,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"5.25"
+				"health_regen_rate"		"5.65"
 			}
 			"05"
 			{
@@ -4146,7 +4147,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fixed_health_regen"		"15"
+				"fixed_health_regen"		"17"
 			}
 		}
 	}
@@ -5206,7 +5207,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"1500"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -5215,7 +5216,7 @@
 		"ItemResult"					"item_skadi_2"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_skadi"
+			"01"						"item_ultimate_orb;item_point_booster;item_skadi"
 		}
 	}
 	
@@ -5286,7 +5287,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"1750"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -5295,7 +5296,7 @@
 		"ItemResult"					"item_skadi_3"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_skadi_2"
+			"01"						"item_ultimate_orb;item_point_booster;item_skadi_2"
 		}
 	}
 	

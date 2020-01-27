@@ -46,7 +46,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rocket_damage"				"7 12 17 22 27 40"
+				"rocket_damage"				"7 12 17 22 27 32"
 				"LinkedSpecialBonus"		"special_bonus_unique_gyrocopter_3"
 			}
 		}
