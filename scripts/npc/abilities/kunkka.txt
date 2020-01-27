@@ -178,12 +178,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_distance"			"650 800 950 1100 1200 1275"
+				"cleave_distance"			"650 725 775 825 900 1025"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_bonus"				"25 50 75 100 125 165"
+				"damage_bonus"				"25 50 60 90 115 135"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"05"

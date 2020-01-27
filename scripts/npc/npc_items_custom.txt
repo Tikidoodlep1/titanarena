@@ -540,6 +540,7 @@
 		"ItemPurchasable"				"1"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe"
+
 		
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
@@ -643,6 +644,7 @@
 		"ID"								"14002"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
+		"IsSellable"                     "0"
 		
 	
 		//Item Info
@@ -686,6 +688,7 @@
 		"ID"								"14003"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
+		"IsSellable"                    "0"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
@@ -1899,6 +1902,7 @@
 		"AbilityCastPoint"				"0.0"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityTextureName"            "bkb_potion"
+		"IsSellable"                    "0"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2400,6 +2404,7 @@
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"							"item_datadriven"
+		"IsSellable"                        "0"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
