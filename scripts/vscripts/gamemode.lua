@@ -1281,6 +1281,10 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 end
 end
 
+function barebones:OnPlayerVoted(keys)
+print(keys.vote)
+
+end
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later
 function barebones:InitGameMode()
@@ -1335,6 +1339,7 @@ function barebones:InitGameMode()
 	DebugPrint("[BAREBONES] Done with setting Game Rules.")
 
 	-- Event Hooks / Listeners
+
 	ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(barebones, 'OnPlayerLevelUp'), self)
 	ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(barebones, 'OnAbilityChannelFinished'), self)
 	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap(barebones, 'OnPlayerLearnedAbility'), self)
@@ -1350,7 +1355,7 @@ function barebones:InitGameMode()
 	ListenToGameEvent('dota_player_take_tower_damage', Dynamic_Wrap(barebones, 'OnPlayerTakeTowerDamage'), self)
 	ListenToGameEvent('tree_cut', Dynamic_Wrap(barebones, 'OnTreeCut'), self)
 	ListenToGameEvent('entity_hurt', Dynamic_Wrap(barebones, 'OnEntityHurt'), self)
-
+	CustomGameEventManager:RegisterListener('player_voted', Dynamic_Wrap(barebones, 'OnPlayerVoted'))
 	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(barebones, 'OnAbilityUsed'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(barebones, 'OnGameRulesStateChange'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(barebones, 'OnNPCSpawned'), self)
