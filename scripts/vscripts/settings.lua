@@ -22,7 +22,7 @@ GOLD_TICK_TIME = 1.0					-- How long should we wait in seconds between gold tick
 NORMAL_START_GOLD = 600					-- Starting Gold if picked normally
 RANDOM_START_GOLD = 800					-- Starting Gold if randomed
 
-RECOMMENDED_BUILDS_DISABLED = false		-- Should we disable the recommended item builds for heroes
+RECOMMENDED_BUILDS_DISABLED = true		-- Should we disable the recommended item builds for heroes
 CAMERA_DISTANCE_OVERRIDE = 1134.0		-- How far out should we allow the camera to go? 1134 is the default in Dota.
 
 MINIMAP_ICON_SIZE = 1					-- What icon size should we use for our heroes?
