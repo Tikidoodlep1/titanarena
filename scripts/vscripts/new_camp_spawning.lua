@@ -87,6 +87,58 @@ if _G.radiant5_stacking_can_spawn == true then
 		
 end
 
+if _G.radiant6_stacking_can_spawn == true then
+	_G.radiant6_stacks_cleared = _G.radiant6_stacks_cleared + 1
+	local point = Entities:FindByName(nil,"radiant_stacking_spawn6"):GetAbsOrigin()
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant6_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant6_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant6_stacks_cleared)
+
+		
+end
+
+if _G.radiant7_stacking_can_spawn == true then
+	_G.radiant7_stacks_cleared = _G.radiant7_stacks_cleared + 1
+	local point = Entities:FindByName(nil,"radiant_stacking_spawn7"):GetAbsOrigin()
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant7_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant7_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant7_stacks_cleared)
+
+		
+end
+
+if _G.radiant8_stacking_can_spawn == true then
+	_G.radiant8_stacks_cleared = _G.radiant8_stacks_cleared + 1
+	local point = Entities:FindByName(nil,"radiant_stacking_spawn8"):GetAbsOrigin()
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant8_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant8_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant8_stacks_cleared)
+
+		
+end
+
+if _G.radiant9_stacking_can_spawn == true then
+	_G.radiant9_stacks_cleared = _G.radiant9_stacks_cleared + 1
+	local point = Entities:FindByName(nil,"radiant_stacking_spawn9"):GetAbsOrigin()
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant9_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant9_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.radiant9_stacks_cleared)
+
+		
+end
+
 
 if _G.dire3_stacking_can_spawn == true then
 			_G.dire3_stacks_cleared = _G.dire3_stacks_cleared + 1
@@ -120,6 +172,50 @@ if _G.dire5_stacking_can_spawn == true then
 		unit:CreatureLevelUp(_G.dire5_stacks_cleared)
 				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
 		unit:CreatureLevelUp(_G.dire5_stacks_cleared)
+end
+if _G.dire6_stacking_can_spawn == true then
+			_G.dire6_stacks_cleared = _G.dire6_stacks_cleared + 1
+	local point = Entities:FindByName(nil,"dire_stacking_spawn6"):GetAbsOrigin()
+
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire6_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire6_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire6_stacks_cleared)
+end
+if _G.dire7_stacking_can_spawn == true then
+			_G.dire7_stacks_cleared = _G.dire7_stacks_cleared + 1
+	local point = Entities:FindByName(nil,"dire_stacking_spawn7"):GetAbsOrigin()
+
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire7_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire7_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire7_stacks_cleared)
+end
+if _G.dire8_stacking_can_spawn == true then
+			_G.dire8_stacks_cleared = _G.dire8_stacks_cleared + 1
+	local point = Entities:FindByName(nil,"dire_stacking_spawn8"):GetAbsOrigin()
+
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire8_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire8_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire8_stacks_cleared)
+end
+if _G.dire9_stacking_can_spawn == true then
+			_G.dire9_stacks_cleared = _G.dire9_stacks_cleared + 1
+	local point = Entities:FindByName(nil,"dire_stacking_spawn9"):GetAbsOrigin()
+
+		local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire9_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire9_stacks_cleared)
+				local unit = CreateUnitByName("npc_manual_camp_creep", point, true, nil, nil, 4)
+		unit:CreatureLevelUp(_G.dire9_stacks_cleared)
 end
 end
 end

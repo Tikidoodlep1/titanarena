@@ -57,6 +57,47 @@ function enable_spawning_radiant5(trigger)
 _G.radiant5_stacking_can_spawn = true
 
 end
+
+function disable_spawning_radiant6(trigger)
+_G.radiant6_stacking_can_spawn = false
+
+end
+
+function enable_spawning_radiant6(trigger)
+_G.radiant6_stacking_can_spawn = true
+
+end
+
+function enable_spawning_radiant7(trigger)
+_G.radiant7_stacking_can_spawn = true
+
+end
+
+function disable_spawning_radiant7(trigger)
+_G.radiant7_stacking_can_spawn = false
+
+end
+
+function enable_spawning_radiant8(trigger)
+_G.radiant8_stacking_can_spawn = true
+
+end
+
+function disable_spawning_radiant8(trigger)
+_G.radiant8_stacking_can_spawn = false
+
+end
+
+function enable_spawning_radiant9(trigger)
+_G.radiant9_stacking_can_spawn = true
+
+end
+
+function disable_spawning_radiant9(trigger)
+_G.radiant9_stacking_can_spawn = false
+
+end
+
 function enable_spawning_dire2(trigger)
 _G.dire2_stacking_can_spawn = true
 
@@ -94,6 +135,46 @@ end
 
 function disable_spawning_dire5(trigger)
 _G.dire5_stacking_can_spawn = false
+
+end
+
+function enable_spawning_dire6(trigger)
+_G.dire6_stacking_can_spawn = true
+
+end
+
+function disable_spawning_dire6(trigger)
+_G.dire6_stacking_can_spawn = false
+
+end
+
+function enable_spawning_dire7(trigger)
+_G.dire7_stacking_can_spawn = true
+
+end
+
+function disable_spawning_dire7(trigger)
+_G.dire7_stacking_can_spawn = false
+
+end
+
+function enable_spawning_dire8(trigger)
+_G.dire8_stacking_can_spawn = true
+
+end
+
+function disable_spawning_dire8(trigger)
+_G.dire8_stacking_can_spawn = false
+
+end
+
+function enable_spawning_dire9(trigger)
+_G.dire9_stacking_can_spawn = true
+
+end
+
+function disable_spawning_dire9(trigger)
+_G.dire9_stacking_can_spawn = false
 
 end
 
