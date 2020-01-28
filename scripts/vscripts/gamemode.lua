@@ -56,6 +56,10 @@ end
 ]]
 function barebones:OnFirstPlayerLoaded()
 	DebugPrint("[BAREBONES] First Player has loaded.")
+	_G.vote_40 = 0
+	_G.vote_60 = 0
+	_G.vote_80 = 0
+	_G.vote_100 = 0
 end
 
 --[[
@@ -244,6 +248,11 @@ end
 function barebones:OnGameInProgress()
 		_G.IsDual = false
 	DebugPrint("[BAREBONES] The game has officially begun.")
+	if _G.kills_to_win == 50 then
+	Notifications:TopToAll({text = "The vote did not result in a winner. First team to 50 kills wins!", duration=10.0,style={color="yellow"}})
+	else
+	Notifications:TopToAll({text = "We have a winner! First team to reach ".._G.kills_to_win .. " kills wins!", duration=10.0,style={color="yellow"}})
+	end
 	local players = HeroList:GetAllHeroes()
 	for _, hero in ipairs(players) do
 				if hero:GetTeam() == 2 then
@@ -1283,7 +1292,18 @@ end
 
 function barebones:OnPlayerVoted(keys)
 print(keys.vote)
-
+if keys.vote == 40 then 
+	_G.vote_40 = _G.vote_40 + 1
+end
+if keys.vote == 60 then 
+	_G.vote_60 = _G.vote_60 + 1
+end
+if keys.vote == 80 then 
+	_G.vote_80 = _G.vote_80 + 1
+end
+if keys.vote == 100 then 
+	_G.vote_100 = _G.vote_100 + 1
+end
 end
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later
