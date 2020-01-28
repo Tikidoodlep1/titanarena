@@ -48,10 +48,10 @@ function barebones:OnGameRulesStateChange(keys)
 		 	_G.vote_80 > _G.vote_40 and _G.vote_80 > _G.vote_60 and _G.vote_80 > _G.vote_100 then
 			_G.kills_to_win = 80
 		elseif 
-			_G.vote_610 > _G.vote_40 and _G.vote_100 > _G.vote_60 and _G.vote_100 > _G.vote_80 then
+			_G.vote_100 > _G.vote_40 and _G.vote_100 > _G.vote_60 and _G.vote_100 > _G.vote_80 then
 			_G.kills_to_win = 100
 		else
-			_G.kill_to_win = 50
+			_G.kills_to_win = 50
 		end
 
 
