@@ -39,6 +39,22 @@ function barebones:OnGameRulesStateChange(keys)
 		_G.radiant_can_concede = true
 		_G.dire_can_concede = true
 
+		if _G.vote_40 > _G.vote_60 and _G.vote_40 > _G.vote_80 and _G.vote_40 > _G.vote_100 then
+			_G.kills_to_win = 40
+		elseif
+			_G.vote_60 > _G.vote_40 and _G.vote_60 > _G.vote_80 and _G.vote_60 > _G.vote_100 then
+			_G.kills_to_win = 60
+		elseif
+		 	_G.vote_80 > _G.vote_40 and _G.vote_80 > _G.vote_60 and _G.vote_80 > _G.vote_100 then
+			_G.kills_to_win = 80
+		elseif 
+			_G.vote_610 > _G.vote_40 and _G.vote_100 > _G.vote_60 and _G.vote_100 > _G.vote_80 then
+			_G.kills_to_win = 100
+		else
+			_G.kill_to_win = 50
+		end
+
+
 		Timers:CreateTimer(HERO_SELECTION_TIME+HERO_SELECTION_PENALTY_TIME-1, function()
 			for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 				if PlayerResource:IsValidPlayerID(playerID) then
@@ -411,7 +427,7 @@ if team == 2 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and n
 _G.dire_kills = (_G.dire_kills + 1)
 print("Dire has ".._G.dire_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
-if _G.dire_kills == 50 then
+if _G.dire_kills == _G.kills_to_win then
 	GameRules:SetGameWinner(3)
 	end
 end
@@ -419,7 +435,7 @@ if team == 3 and killed_unit:IsRealHero() and not killed_unit:IsIllusion() and n
 _G.radiant_kills = (_G.radiant_kills + 1)
 print("Radiant has ".._G.radiant_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
-if _G.radiant_kills == 50 then
+if _G.radiant_kills == _G.kills_to_win then
 	GameRules:SetGameWinner(2)
 	end
 end
