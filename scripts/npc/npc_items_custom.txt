@@ -5886,7 +5886,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"26"
+				"bonus_all_stats"		"30"
 			}
 		}
 	}
