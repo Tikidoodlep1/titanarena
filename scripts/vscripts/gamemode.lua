@@ -1291,18 +1291,22 @@ end
 end
 
 function barebones:OnPlayerVoted(keys)
-print(keys.vote)
+PrintTable(keys)
 if keys.vote == 40 then 
 	_G.vote_40 = _G.vote_40 + 1
+	GameRules:SendCustomMessage("<font color='#008000'>" .. keys.player_name.."</font> Has Voted For 40 Kills!", 0, 0)
 end
 if keys.vote == 60 then 
 	_G.vote_60 = _G.vote_60 + 1
+	GameRules:SendCustomMessage("<font color='#008000'>" .. keys.player_name.."</font> Has Voted For 60 Kills!", 0, 0)
 end
 if keys.vote == 80 then 
 	_G.vote_80 = _G.vote_80 + 1
+	GameRules:SendCustomMessage("<font color='#008000'>" .. keys.player_name.."</font> Has Voted For 80 Kills!", 0, 0)
 end
 if keys.vote == 100 then 
 	_G.vote_100 = _G.vote_100 + 1
+	GameRules:SendCustomMessage("<font color='#008000'>" .. keys.player_name.."</font> Has Voted For 100 Kills!", 0, 0)
 end
 end
 -- This function initializes the game mode and is called before anyone loads into the game
