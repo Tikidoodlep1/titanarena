@@ -4527,7 +4527,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"  "40"
+				"bonus_movement_speed"  "45"
 			}
 			"02"
 			{
@@ -5097,9 +5097,9 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
-		"ItemStockMax"					"4"
+		"ItemStockMax"					"10"
 		"ItemStockInitial"				"2"
-		"ItemStockTime"					"135.0"
+		"ItemStockTime"					"120.0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemSupport"					"1"
 		"IsTempestDoubleClonable"		"0"
@@ -5150,7 +5150,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"75"
+		"ItemCost"						"50"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"sentry ward"
@@ -5158,7 +5158,7 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"1"
-		"ItemStockMax"					"10"
+		"ItemStockMax"					"20"
 		"ItemStockInitial"				"3"
 		"ItemStockTime"					"90.0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
@@ -5735,6 +5735,162 @@
 			}
 		}
 	}
+	"item_recipe_vladmir_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140084"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe_vladmir"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"450"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_vladmir_2"
+		"ItemRequirements"
+		{
+			"01"						"item_ring_of_basilius;item_buckler;item_vladmir"
+		}
+	}
+	
+	//=================================================================================================================
+	// Vladimir
+	//=================================================================================================================
+	"item_vladmir_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140085"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"BaseClass"                     "item_vladmir"
+		"AbilityTextureName"                "vlad_2"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2300"
+		"ItemShopTags"					"lifesteal;damage;armor;regen_mana"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"vladmir's offering;vlads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen_aura"		"2.75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_aura"			"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vampiric_aura"			"28"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"	"1200"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"14"
+			}
+		}
+	}
+
+	"item_recipe_vladmir_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140086"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe_vladmir"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1250"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_vladmir_3"
+		"ItemRequirements"
+		{
+			"01"						"item_ring_of_basilius;item_buckler;item_ultimate_orb;item_vladmir_2"
+		}
+	}
+	
+	//=================================================================================================================
+	// Vladimir
+	//=================================================================================================================
+	"item_vladmir_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140087"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"BaseClass"                     "item_vladmir"
+		"AbilityTextureName"                "vlad_3"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2300"
+		"ItemShopTags"					"lifesteal;damage;armor;regen_mana"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"vladmir's offering;vlads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen_aura"		"5.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_aura"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vampiric_aura"			"32"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"	"1200"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"26"
+			}
+		}
+	}
+
   
   
 	
