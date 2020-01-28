@@ -79,7 +79,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"edge_damage"					"120 225 300 450 540 840"
+				"edge_damage"					"120 225 300 450 540 620"
 			}
 			"02"
 			{
@@ -125,7 +125,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"return_damage"				"16 45 70 114 144 232"
+				"return_damage"				"16 45 70 114 144 180"
 				"LinkedSpecialBonus"			"special_bonus_unique_centaur_3"
 			}
 			"02"
@@ -136,12 +136,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_gain_duration"		"20 20 20 30 30 40"
+				"damage_gain_duration"		"20 20 20 30 30 30"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"13 13 13 14 14 15"
+				"max_stacks"				"13 13 13 14 14 14"
 			}
 			"05"
 			{
