@@ -75,7 +75,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_fury_damage"			"70 95 115 140 165 215"
+				"blade_fury_damage"			"70 95 115 125 135 145"
 				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_3"
 			}
 			"04"
@@ -189,7 +189,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"30 40 50 65"
+				"bonus_damage"				"30 40 50 60"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
