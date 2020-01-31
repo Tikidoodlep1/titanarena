@@ -1,0 +1,394 @@
+"DotaAbilities"
+{
+
+	//=================================================================================================================
+	// Spirit Vessel
+	//=================================================================================================================
+	"item_spirit_vessel"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"267"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"950"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0"
+		"AbilitySharedCooldown"			"urn"
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2965"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"sv;spirit vessel"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"UpgradesItems"					"item_spirit_vessel;item_spirit_vessel_2;item_spirit_vessel_3"
+		"ShouldBeSuggested"				"1"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"250 500 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"20 40 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.5 3 4.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"2 5 8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"2 4 6"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1400 1500 1600"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_initial_charge"	"2 3 4"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_additional_charges"	"1 2 2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_heal_amount"		"30 40 50"
+			}			
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_damage_amount"	"25 35 45"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"8.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_reduction_enemy"	"60 65 70"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"enemy_hp_drain"		"4 5 6"
+			}
+		}
+	}
+		"item_recipe_spirit_vessel_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140104"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe_spirit_vessel"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"750"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spirit_vessel_2"
+		"ItemRequirements"
+		{
+			"01"						"item_spirit_vessel;item_vitality_booster;item_wind_lace"
+		}
+	}
+
+		"item_spirit_vessel_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140105"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"                     "item_spirit_vessel"
+		"AbilityTextureName"            "vessel_2"
+
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"950"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0"
+		"AbilitySharedCooldown"			"urn"
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2965"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"sv;spirit vessel"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"UpgradesItems"					"item_spirit_vessel;item_spirit_vessel_2;item_spirit_vessel_3"
+		"ShouldBeSuggested"				"0"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"2"
+		"AbilityTextureName"            "vessel_2"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"250 500 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"20 40 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.5 3 4.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"2 5 8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"2 4 6"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1400 1500 1600"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_initial_charge"	"2 3 4"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_additional_charges"	"1 2 2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_heal_amount"		"30 40 50"
+			}			
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_damage_amount"	"25 35 45"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"8.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_reduction_enemy"	"60 65 70"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"enemy_hp_drain"		"4 5 6"
+			}
+		}
+	}
+
+	"item_recipe_spirit_vessel_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140106"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName"            "item_recipe_spirit_vessel"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"750"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spirit_vessel_3"
+		"ItemRequirements"
+		{
+			"01"						"item_spirit_vessel_2;item_vitality_booster;item_wind_lace"
+		}
+	}
+
+		"item_spirit_vessel_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"140107"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"                     "item_spirit_vessel"
+		"AbilityTextureName"            "vessel_2"
+		"UpgradesItems"					"item_spirit_vessel;item_spirit_vessel_2;item_spirit_vessel_3"
+		"ShouldBeSuggested"				"0"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+		"AbilityTextureName"            "vessel_3"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"950"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7.0"
+		"AbilitySharedCooldown"			"urn"
+
+		// Items
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2965"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"sv;spirit vessel"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"250 500 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"20 40 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.5 3 4.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"2 5 8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"2 4 6"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1400 1500 1600"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_initial_charge"	"2 3 4"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_additional_charges"	"1 2 2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_heal_amount"		"30 40 50"
+			}			
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_damage_amount"	"25 35 45"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"8.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_reduction_enemy"	"60 65 70"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"enemy_hp_drain"		"4 5 6"
+			}
+		}
+	}
+	
+
+}

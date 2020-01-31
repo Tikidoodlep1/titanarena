@@ -1,3 +1,8 @@
+#base "items/mjollnir.txt"
+#base "items/blademail.txt"
+#base "items/spirit_vessel.txt"
+
+
 "DOTAAbilities"
 {
 	//KV CHECKER http://arhowk.github.io/
@@ -2569,7 +2574,8 @@
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
-		{"01"
+		{
+		    "01"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_intellect"		"10 15"
@@ -7975,9 +7981,4 @@
 		}
 	}
 
-
-
-  
-  
-	
 }
