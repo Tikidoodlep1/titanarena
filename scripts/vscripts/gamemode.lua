@@ -17,6 +17,7 @@ require('libraries/playertables')
 require('libraries/selection')
 require('libraries/notifications')
 
+
 -- settings.lua is where you can specify many different properties for your game mode and is one of the core barebones files.
 require('settings')
 -- events.lua is where you can specify the actions to be taken when any event occurs and is one of the core barebones files.
@@ -135,6 +136,29 @@ function barebones:OnAllPlayersLoaded()
 	_G.dire_ancient1_creeps = 0
 	_G.dire_ancient2_creeps = 0
 	_G.level_up = 0
+	_G.open = {}
+	_G.open[0] = false
+	_G.open[1] = false
+	_G.open[2] = false
+	_G.open[3] = false
+	_G.open[4] = false
+	_G.open[5] = false
+	_G.open[6] = false
+	_G.open[7] = false
+	_G.open[8] = false
+	_G.open[9] = false
+	_G.player_currency = {}
+	_G.player_currency[0] = 0
+	_G.player_currency[1] = 0
+	_G.player_currency[2] = 0
+	_G.player_currency[3] = 0
+	_G.player_currency[4] = 0
+	_G.player_currency[5] = 0
+	_G.player_currency[6] = 0
+	_G.player_currency[7] = 0
+	_G.player_currency[8] = 0
+	_G.player_currency[9] = 0
+
 
 	
 end
@@ -153,6 +177,15 @@ function barebones:OnHeroInGame(hero)
 
 	Timers:CreateTimer(0.5, function()
 		local playerID = hero:GetPlayerID()	-- never nil (-1 by default), needs delay 1 or more frames
+
+-- GETS PLAYERS CURRENCY WHEN THEY LOAD IN AND STORES IT FOR THE GAMES DURATION ------------------------------------------
+
+	    
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 		if PlayerResource:IsFakeClient(playerID) then
 			-- This is happening only for bots
@@ -1379,7 +1412,6 @@ function barebones:InitGameMode()
 	ListenToGameEvent('dota_player_take_tower_damage', Dynamic_Wrap(barebones, 'OnPlayerTakeTowerDamage'), self)
 	ListenToGameEvent('tree_cut', Dynamic_Wrap(barebones, 'OnTreeCut'), self)
 	ListenToGameEvent('entity_hurt', Dynamic_Wrap(barebones, 'OnEntityHurt'), self)
-	CustomGameEventManager:RegisterListener('player_voted', Dynamic_Wrap(barebones, 'OnPlayerVoted'))
 	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(barebones, 'OnAbilityUsed'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(barebones, 'OnGameRulesStateChange'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(barebones, 'OnNPCSpawned'), self)
@@ -1395,6 +1427,10 @@ function barebones:InitGameMode()
 	ListenToGameEvent("dota_player_selected_custom_team", Dynamic_Wrap(barebones, 'OnPlayerSelectedCustomTeam'), self)
 	ListenToGameEvent("dota_npc_goal_reached", Dynamic_Wrap(barebones, 'OnNPCGoalReached'), self)
 
+	CustomGameEventManager:RegisterListener('player_voted', Dynamic_Wrap(barebones, 'OnPlayerVoted'))
+	CustomGameEventManager:RegisterListener('player_open_shop', Dynamic_Wrap(barebones, 'OnPlayerOpenShop'))
+	CustomGameEventManager:RegisterListener('player_currency_loaded', Dynamic_Wrap(barebones,'OnPlayerCurrencyLoad'))
+	CustomGameEventManager:RegisterListener('player_purchase_custom_item', Dynamic_Wrap(barebones,'OnPlayerPurshaseCustomItem'))
 	-- Change random seed for math.random function
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
 	math.randomseed(tonumber(timeTxt))
@@ -1455,6 +1491,63 @@ function barebones:InitGameMode()
 	Convars:SetInt('dota_max_physical_items_purchase_limit', 64)
 end
 
+
+function barebones:OnPlayerPurshaseCustomItem(keys)
+PrintTable(keys)
+local particle = keys.item
+
+local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/99B800E146BAB90E5117ABDD2ABB64C4C581C352/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/particles/"..particle..".json" )
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+          print(encoded)
+          if encoded == true and particle == keys.item then
+          		print("player has this particle")
+          end
+    end )
+
+
+
+end
+
+
+
+function barebones:OnPlayerOpenShop(keys)
+	local player = keys.player_id
+if _G.open[player] ~= true then
+CustomUI:DynamicHud_Create(player, "custom_shop", "file://{resources}/layout/custom_game/custom_shop.xml", nil)
+local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/99B800E146BAB90E5117ABDD2ABB64C4C581C352/"..tostring(PlayerResource:GetSteamID(player)).."/currency.json" )
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+          _G.player_currency[player] = encoded.Currency
+          CustomGameEventManager:Send_ServerToAllClients('player_currency_loaded', {
+          	player_currency = _G.player_currency[player]})
+          print(_G.player_currency[player])
+    end )
+_G.open[player] = true	
+
+
+
+
+else
+	CustomUI:DynamicHud_Destroy(player, "custom_shop")
+	_G.open[player] = false
+end
+
+
+
+end
 -- This function is called as the first player loads and sets up the game mode parameters
 function barebones:CaptureGameMode()
 	local gamemode = GameRules:GetGameModeEntity()
