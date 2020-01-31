@@ -158,6 +158,7 @@ function barebones:OnAllPlayersLoaded()
 	_G.player_currency[7] = 0
 	_G.player_currency[8] = 0
 	_G.player_currency[9] = 0
+	_G.key = GetDedicatedServerKeyV2("1.0")
 
 
 	
@@ -1496,7 +1497,7 @@ function barebones:OnPlayerPurshaseCustomItem(keys)
 PrintTable(keys)
 local particle = keys.item
 
-local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/99B800E146BAB90E5117ABDD2ABB64C4C581C352/"..GetDedicatedServerKeyV2("1.0").."/particles/"..particle..".json" )
+local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/particles/"..particle..".json" )
     	request:Send( function( result )
         print( "POST response:\n" )
         for k,v in pairs( result ) do
@@ -1505,8 +1506,7 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
         print( "Done." ) 
         local json = require('decode')
           local encoded = json.decode(result.Body)
-          print(encoded)
-          if encoded == true and particle == keys.item then
+          if encoded and particle == keys.item then
           		print("player has this particle")
           end
     end )
@@ -1521,7 +1521,7 @@ function barebones:OnPlayerOpenShop(keys)
 	local player = keys.player_id
 if _G.open[player] ~= true then
 CustomUI:DynamicHud_Create(player, "custom_shop", "file://{resources}/layout/custom_game/custom_shop.xml", nil)
-local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/99B800E146BAB90E5117ABDD2ABB64C4C581C352/"..tostring(PlayerResource:GetSteamID(player)).."/currency.json" )
+local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(player)).."/currency.json" )
     	request:Send( function( result )
         print( "POST response:\n" )
         for k,v in pairs( result ) do
