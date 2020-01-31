@@ -498,6 +498,13 @@ end
 	
 	function EnterDual()
 	_G.IsDual = true
+	local players = HeroList:GetAllHeroes()
+	for _, player in pairs(players) do
+		if player:IsIllusion() == true then
+			player:ForceKill(false)
+		end
+	end
+	Timers:CreateTimer(1, function()
 		local trigger_in = {}
 		trigger_in[1] = Entities:FindByName(nil, "dual_keepin_trigger")
 		trigger_in[2] = Entities:FindByName(nil, "dual_keepin1_trigger")
@@ -507,12 +514,10 @@ end
 		for _, trigger in pairs(trigger_in) do
 			trigger:Enable()
 		end
-		local players = HeroList:GetAllHeroes()
 		for _, player in ipairs(players) do
         if player:IsAlive() == false then
             player:RespawnUnit()
         end
-		
     end
 	Notifications:TopToAll({text = "THE DUEL HAS BEGUN!", duration=5.0,style={color="red"}})
 	EmitGlobalSound("ui.contract_complete")
@@ -593,9 +598,6 @@ end
 						item_equipped:EndCooldown()
 					end
 				end
-				if hero:IsIllusion() == true then
-					hero:Kill()
-				end
 				hero:SetBuyBackDisabledByReapersScythe(true)
 				if dHeroIncrementer > GetTotalDualPlayers then
 					if hero:GetTeamNumber() == 3 and hero:IsClone() == false and not hero:IsSummoned() and not hero:IsIllusion() then
@@ -674,6 +676,7 @@ end
 			end
 		end)
 		end
+		end)
 		Timers:CreateTimer(2, function()
 			BalanceDuels()
 		end)
@@ -765,7 +768,7 @@ end
 			hero:RemoveModifierByName("modifier_animation_freeze")
 			hero:RemoveModifierByName("modifier_custom_invulnerable")
 			if hero:IsIllusion() == true then
-				hero:Kill()
+				hero:Kill(nil, nil)
 			end
 			if hero:GetTeamNumber() == 2 then
 				if hero:IsAlive() == true then
