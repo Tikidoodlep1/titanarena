@@ -160,7 +160,6 @@ function barebones:OnAllPlayersLoaded()
 	_G.player_currency[9] = 0
 	_G.key = GetDedicatedServerKeyV2("1.0")
 
-
 	
 end
 
