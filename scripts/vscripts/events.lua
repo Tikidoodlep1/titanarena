@@ -429,6 +429,19 @@ _G.dire_kills = (_G.dire_kills + 1)
 print("Dire has ".._G.dire_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
 if _G.dire_kills == _G.kills_to_win then
+	for i = 0, PlayerResource:NumPlayers(), 1 do
+	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
+	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..(_G.player_currency[i] + 20)..'}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+	end)
+end
 	GameRules:SetGameWinner(3)
 	end
 end
@@ -437,8 +450,21 @@ _G.radiant_kills = (_G.radiant_kills + 1)
 print("Radiant has ".._G.radiant_kills .. " kills!")
 --checks to see if a team has hit the minimum number of kills to win
 if _G.radiant_kills == _G.kills_to_win then
-	GameRules:SetGameWinner(2)
-	end
+		for i = 0, PlayerResource:NumPlayers(), 1 do
+	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
+	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..(_G.player_currency[i] + 20)..'}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+	end)
+end
+GameRules:SetGameWinner(2)
+end
 end
 	
 	if killed_unit:IsCreature() then

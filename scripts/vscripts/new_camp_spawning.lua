@@ -240,7 +240,6 @@ for _, camp in pairs(jungle) do
 	end
 	while incamp <= 10 do
 		CreateUnitByName("npc_jungle_creep", camp, true, nil, nil, 4):CreatureLevelUp(_G.jungleforestclearedcamps)
-		print("Spawned Jungle Creep")
 		incamp = incamp + 1
 	end
 end

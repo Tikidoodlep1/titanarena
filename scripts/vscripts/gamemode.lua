@@ -159,6 +159,10 @@ function barebones:OnAllPlayersLoaded()
 	_G.player_currency[8] = 0
 	_G.player_currency[9] = 0
 	_G.key = GetDedicatedServerKeyV2("1.0")
+	_G.player_particle = {}
+for i=0,9, 1 do
+_G.player_particle[i] = nil
+end
 
 	
 end
@@ -179,7 +183,20 @@ function barebones:OnHeroInGame(hero)
 		local playerID = hero:GetPlayerID()	-- never nil (-1 by default), needs delay 1 or more frames
 
 -- GETS PLAYERS CURRENCY WHEN THEY LOAD IN AND STORES IT FOR THE GAMES DURATION ------------------------------------------
-
+local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(playerID))..".json" )
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+          if encoded ~= nil then
+          _G.player_currency[playerID] = encoded.currency.Currency
+          print(_G.player_currency[	playerID])
+      end
+    end )
 	    
 
 ----------------------------------------------------------------------------------------------------------------------------
@@ -215,10 +232,10 @@ function barebones:OnHeroInGame(hero)
 				-- This is happening for players when their primary hero spawns for the first time
 				DebugPrint("[BAREBONES] Hero "..hero:GetUnitName().." spawned in the game for the first time for the player with ID "..playerID)
 				print(PlayerResource:GetSteamID(playerID))
-				if tostring(PlayerResource:GetSteamID(playerID)) == "76561198089219582" then
+				--[[if tostring(PlayerResource:GetSteamID(playerID)) == "76561198089219582" then
 					ParticleManager:CreateParticle("particles/ti9_emblem_effect_super.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 					print("added particle to player")
-				end
+				end--]]
 
 				if tostring(PlayerResource:GetSteamID(playerID)) == "76561198086443781" then
 					ParticleManager:CreateParticle("particles/ti9_emblem_effect_hershey.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
@@ -279,6 +296,20 @@ end
 ]]
 
 function barebones:OnGameInProgress()
+			for i = 0, PlayerResource:NumPlayers(), 1 do
+	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
+	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..tostring(_G.player_currency[i] + 20)..'}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+	end)
+    end
+
 		_G.IsDual = false
 	DebugPrint("[BAREBONES] The game has officially begun.")
 	if _G.kills_to_win == 50 then
@@ -1508,9 +1539,20 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
         print( "Done." ) 
         local json = require('decode')
           local encoded = json.decode(result.Body)
-          if encoded and particle == keys.item then
+          if encoded ~= nil and particle == keys.item then
+          	if encoded then
           		print("player has this particle")
+          		local heroes = HeroList:GetAllHeroes()
+          		for num,hero in pairs(heroes) do
+          			if hero:GetPlayerOwnerID() == keys.player_id then
+          				if _G.player_particle[keys.player_id] ~= nil then
+          					ParticleManager:DestroyParticle(_G.player_particle[keys.player_id], true)
+          				end
+          		_G.player_particle[keys.player_id] = ParticleManager:CreateParticle("particles/"..particle..".vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+          		end
           end
+      end
+      end
     end )
 
 
@@ -1523,7 +1565,7 @@ function barebones:OnPlayerOpenShop(keys)
 	local player = keys.player_id
 if _G.open[player] ~= true then
 CustomUI:DynamicHud_Create(player, "custom_shop", "file://{resources}/layout/custom_game/custom_shop.xml", nil)
-local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(player)).."/currency.json" )
+local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(player))..".json" )
     	request:Send( function( result )
         print( "POST response:\n" )
         for k,v in pairs( result ) do
@@ -1532,10 +1574,15 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
         print( "Done." ) 
         local json = require('decode')
           local encoded = json.decode(result.Body)
-          _G.player_currency[player] = encoded.Currency
+          if encoded ~= nil then
+          _G.player_currency[player] = encoded.currency.Currency
+
+          _G.player_particles[0] = encoded.particles.beta_tester
           CustomGameEventManager:Send_ServerToAllClients('player_currency_loaded', {
-          	player_currency = _G.player_currency[player]})
+          player_currency = _G.player_currency[player] , beta_tester_particle = tostring(encoded.particles.beta_tester)})
           print(_G.player_currency[player])
+          print(_G.player_particles[0])
+      end
     end )
 _G.open[player] = true	
 
