@@ -1465,6 +1465,7 @@ function barebones:InitGameMode()
 	CustomGameEventManager:RegisterListener('player_open_shop', Dynamic_Wrap(barebones, 'OnPlayerOpenShop'))
 	CustomGameEventManager:RegisterListener('player_currency_loaded', Dynamic_Wrap(barebones,'OnPlayerCurrencyLoad'))
 	CustomGameEventManager:RegisterListener('player_purchase_custom_item', Dynamic_Wrap(barebones,'OnPlayerPurshaseCustomItem'))
+	CustomGameEventManager:RegisterListener('player_particles_custom_item', Dynamic_Wrap(barebones,'OnPlayerParticlesLoad'))
 	-- Change random seed for math.random function
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
 	math.randomseed(tonumber(timeTxt))
@@ -1529,7 +1530,7 @@ end
 function barebones:OnPlayerPurshaseCustomItem(keys)
 PrintTable(keys)
 local particle = keys.item
-
+PrintTable(keys)
 local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/particles/"..particle..".json" )
     	request:Send( function( result )
         print( "POST response:\n" )
@@ -1553,12 +1554,39 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           end
       end
       end
-    end )
+          end )
+      if not encoded and _G.player_currency[keys.player_id] >= keys.price then
+      		_G.player_currency[keys.player_id] = _G.player_currency[keys.player_id] - keys.price
 
-
-
+local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/currency/.json" )
+    	request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '.._G.player_currency[keys.player_id]..'}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+end)
+local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/particles/.json" )
+    	request:SetHTTPRequestRawPostBody("application/json", '{"'..particle..'": true}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+end)
+end
 end
 
+function OnPlayerParticlesLoad(keys)
+print("Particles")
+
+end
 
 
 function barebones:OnPlayerOpenShop(keys)
@@ -1574,14 +1602,18 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
         print( "Done." ) 
         local json = require('decode')
           local encoded = json.decode(result.Body)
+          _G.player_particles = {}
           if encoded ~= nil then
           _G.player_currency[player] = encoded.currency.Currency
-
-          _G.player_particles[0] = encoded.particles.beta_tester
           CustomGameEventManager:Send_ServerToAllClients('player_currency_loaded', {
-          player_currency = _G.player_currency[player] , beta_tester_particle = tostring(encoded.particles.beta_tester)})
+          player_currency = _G.player_currency[player]})
+          if encoded.particles ~= nil then
+          _G.player_particles[0] = encoded.particles.beta_tester
+          CustomGameEventManager:Send_ServerToAllClients('player_particles_loaded', {
+          beta_tester_particle = tostring(encoded.particles.beta_tester)})
           print(_G.player_currency[player])
           print(_G.player_particles[0])
+      end
       end
     end )
 _G.open[player] = true	
