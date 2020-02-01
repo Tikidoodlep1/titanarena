@@ -171,6 +171,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"burn_damage"		"26 34 42 50 58 70"
+				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi_4"
 			}		
 
 			"03"
