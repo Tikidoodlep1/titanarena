@@ -15687,7 +15687,7 @@
 			"ApplyModifier"
 			{
 				"Target"	"CASTER"
-				"modifier_damage_out"
+				"ModifierName"	"modifier_damage_out"
 			}
 		}
 		"Modifiers"
