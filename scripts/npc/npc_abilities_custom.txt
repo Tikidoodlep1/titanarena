@@ -15617,7 +15617,7 @@
 			}
 			"FireEffect"
 			{
-				"particles/ramza_air_slash.vpcf"
+				"EffectName"	"particles/ramza_air_slash.vpcf"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_ATTACK2"
@@ -15677,7 +15677,7 @@
 			}
 			"FireEffect"
 			{
-				"particles/ramza_fortified_rush.vpcf"
+				"EffectName" "particles/ramza_fortified_rush.vpcf"
 			}
 			"ApplyModifier"
 			{
