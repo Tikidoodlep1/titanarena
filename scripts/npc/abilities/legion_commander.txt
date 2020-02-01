@@ -123,12 +123,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"65 90 115 140 175 225"
+				"attack_speed"			"65 75 85 95 105 115"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_regen"				"30 40 50 60 70 85"
+				"hp_regen"				"30 35 40 45 55 65"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -157,7 +157,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trigger_chance"			"25"
+				"trigger_chance"			"20"
 				"LinkedSpecialBonus"        "special_bonus_unique_legion_commander_3"																	
 			}
 			"02"
@@ -168,7 +168,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hp_leech_percent"			"55 65 75 85 95 115"
+				"hp_leech_percent"			"35 45 55 65 75 85"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

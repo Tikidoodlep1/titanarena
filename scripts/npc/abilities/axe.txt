@@ -46,7 +46,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"30 33.75 37.5 49 52.5 60"
+				"bonus_armor"			"25 30 33 36 40 45"
 			}
 			"03"
 			{
@@ -120,7 +120,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_second"			"16 24 32 40 48 56"
+				"damage_per_second"			"16 20 24 28 32 36"
 				"LinkedSpecialBonus"		"special_bonus_unique_axe"
 			}
 			"05"
@@ -165,7 +165,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"45 55 65 75 85 100"
+				"damage"				"40 45 50 55 60 65"
 				"LinkedSpecialBonus"		"special_bonus_unique_axe_4"
 			}
 			"02"
@@ -176,12 +176,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trigger_chance"			"16 17 18 19 20 21"
+				"trigger_chance"			"15 16 17 18 19 20"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown"					"0.4 .4 .4 .3 .3 .2"
+				"cooldown"					".5"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

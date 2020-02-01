@@ -18,12 +18,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_dance_crit_chance"	"20 25 30 35 40 45"
+				"blade_dance_crit_chance"	"20 23 26 29 32 35"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_dance_crit_mult"		"180"
+				"blade_dance_crit_mult"		"140"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -64,7 +64,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"blade_fury_damage_tick"	"0.2"
+				"blade_fury_damage_tick"	"0.33"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
@@ -75,7 +75,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"blade_fury_damage"			"70 95 115 125 135 145"
+				"blade_fury_damage"			"70 80 90 100 115 130"
 				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_3"
 			}
 			"04"
