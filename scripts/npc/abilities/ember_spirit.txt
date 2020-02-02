@@ -216,6 +216,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_EmberSpirit.FireRemnant.Cast"
         "HasScepterUpgrade"			"1"
+        "MaxLevel"                                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
