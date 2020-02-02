@@ -1465,7 +1465,7 @@ function barebones:InitGameMode()
 	CustomGameEventManager:RegisterListener('player_open_shop', Dynamic_Wrap(barebones, 'OnPlayerOpenShop'))
 	CustomGameEventManager:RegisterListener('player_currency_loaded', Dynamic_Wrap(barebones,'OnPlayerCurrencyLoad'))
 	CustomGameEventManager:RegisterListener('player_purchase_custom_item', Dynamic_Wrap(barebones,'OnPlayerPurshaseCustomItem'))
-	CustomGameEventManager:RegisterListener('player_particles_custom_item', Dynamic_Wrap(barebones,'OnPlayerParticlesLoad'))
+	CustomGameEventManager:RegisterListener('player_particles_loaded', Dynamic_Wrap(barebones,'OnPlayerParticlesLoad'))
 	-- Change random seed for math.random function
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
 	math.randomseed(tonumber(timeTxt))
@@ -1549,7 +1549,7 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           				if _G.player_particle[keys.player_id] ~= nil then
           					ParticleManager:DestroyParticle(_G.player_particle[keys.player_id], true)
           				end
-          		_G.player_particle[keys.player_id] = ParticleManager:CreateParticle("particles/"..particle..".vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+          		_G.player_particle[keys.player_id] = ParticleManager:CreateParticle("particles/particle_shop/"..particle..".vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
           		end
           end
       end
@@ -1605,12 +1605,10 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           _G.player_particles = {}
           if encoded ~= nil then
           _G.player_currency[player] = encoded.currency.Currency
-          CustomGameEventManager:Send_ServerToAllClients('player_currency_loaded', {
-          player_currency = _G.player_currency[player]})
+          CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(player), 'player_currency_loaded', {player_currency = _G.player_currency[player]})
           if encoded.particles ~= nil then
           _G.player_particles[0] = encoded.particles.beta_tester
-          CustomGameEventManager:Send_ServerToAllClients('player_particles_loaded', {
-          beta_tester_particle = tostring(encoded.particles.beta_tester)})
+          CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(player), 'player_particles_loaded' ,{beta_tester_particle = tostring(encoded.particles.beta_tester)})
           print(_G.player_currency[player])
           print(_G.player_particles[0])
       end
