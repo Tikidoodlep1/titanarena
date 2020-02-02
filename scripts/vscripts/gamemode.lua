@@ -1569,7 +1569,7 @@ local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.fir
         local json = require('decode')
           local encoded = json.decode(result.Body)
 end)
-local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/particles/.json" )
+local request = CreateHTTPRequest( "POST", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/particles.json?x-http-method-override=PATCH" )
     	request:SetHTTPRequestRawPostBody("application/json", '{"'..particle..'": true}')
     	request:Send( function( result )
         print( "POST response:\n" )
@@ -1607,10 +1607,10 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           _G.player_currency[player] = encoded.currency.Currency
           CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(player), 'player_currency_loaded', {player_currency = _G.player_currency[player]})
           if encoded.particles ~= nil then
-          _G.player_particles[0] = encoded.particles.beta_tester
-          CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(player), 'player_particles_loaded' ,{beta_tester_particle = tostring(encoded.particles.beta_tester)})
+          _G.player_particles[player] = encoded.particles
+          CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(player), 'player_particles_loaded' ,{beta_tester_particle = tostring(encoded.particles.beta_tester), flower_trail_particle = tostring(encoded.particles.flower_trail)})
           print(_G.player_currency[player])
-          print(_G.player_particles[0])
+          print(_G.player_particles[player])
       end
       end
     end )
