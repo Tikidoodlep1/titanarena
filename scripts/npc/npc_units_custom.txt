@@ -675,7 +675,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "325"     // Base health.
+    "StatusHealth"        "380"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "200"     // Base mana.
     "StatusManaRegen"     "1"     // Mana regeneration rate.
@@ -775,7 +775,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "330"     // Base health.
+    "StatusHealth"        "375"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -869,12 +869,12 @@
     // Movement
     //----------------------------------------------------------------
     "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
-    "MovementSpeed"       "325"   // Speed
+    "MovementSpeed"       "390"   // Speed
     "MovementTurnRate"      "1.0"   // Turning rate.
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "335"     // Base health.
+    "StatusHealth"        "385"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -970,12 +970,12 @@
     // Movement
     //----------------------------------------------------------------
     "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
-    "MovementSpeed"       "325"   // Speed
+    "MovementSpeed"       "385"   // Speed
     "MovementTurnRate"      "1.0"   // Turning rate.
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "345"     // Base health.
+    "StatusHealth"        "390"     // Base health.
     "StatusHealthRegen"     "5"     // Health regeneration rate.
     "StatusMana"        "50"     // Base mana.
     "StatusManaRegen"     "1"     // Mana regeneration rate.
@@ -1076,7 +1076,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "395"     // Base health.
+    "StatusHealth"        "430"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "200"     // Base mana.
     "StatusManaRegen"     "5"     // Mana regeneration rate.
@@ -1175,7 +1175,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "421"     // Base health.
+    "StatusHealth"        "450"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
