@@ -31,7 +31,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "35"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -132,7 +132,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "0"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "35"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -233,7 +233,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "1"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "35"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -333,7 +333,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "2"     // Physical protection.
-    "MagicalResistance"       "50"     // Magical protection.
+    "MagicalResistance"       "36"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -432,7 +432,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-2"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -533,7 +533,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "0"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -632,7 +632,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-2"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -733,7 +733,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -833,7 +833,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -932,7 +932,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1033,7 +1033,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "50"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1134,7 +1134,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "5"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1233,7 +1233,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "2"     // Physical protection.
-    "MagicalResistance"       "45"     // Magical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1332,7 +1332,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "3"     // Physical protection.
-    "MagicalResistance"       "55"     // Magical protection.
+    "MagicalResistance"       "50"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1434,7 +1434,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "7"     // Physical protection.
-    "MagicalResistance"       "55"     // Magical protection.
+    "MagicalResistance"       "50"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1536,7 +1536,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "5"     // Physical protection.
-    "MagicalResistance"       "55"     // Magical protection.
+    "MagicalResistance"       "50"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1637,7 +1637,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "65"     // Magical protection.
+    "MagicalResistance"       "55"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
