@@ -116,7 +116,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"creep_damage"				"10 18 26 34 42 54"
+				"creep_damage"				"16 20 26 34 44 56"
 			}
 			"02"
 			{

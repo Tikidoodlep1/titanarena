@@ -203,7 +203,7 @@
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"permanent_bonus"		"2"
+				"permanent_bonus"				"2"
 				"LinkedSpecialBonus"			"special_bonus_unique_underlord_3"
 			}
 		}
