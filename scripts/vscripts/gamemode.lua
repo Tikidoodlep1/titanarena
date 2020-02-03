@@ -1546,7 +1546,7 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           end )
       if TableContains(_G.player_particles[keys.player_id], particle) == false and _G.player_currency[keys.player_id] >= keys.price then
       		_G.player_currency[keys.player_id] = _G.player_currency[keys.player_id] - keys.price
-      	end
+
 
 local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/currency/.json" )
     	request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '.._G.player_currency[keys.player_id]..'}')
@@ -1571,7 +1571,7 @@ local request = CreateHTTPRequest( "POST", "https://titan-arena-ec657.firebaseio
           local encoded = json.decode(result.Body)
 end)
 end
-
+end
 function OnPlayerParticlesLoad(keys)
 print("Particles")
 
