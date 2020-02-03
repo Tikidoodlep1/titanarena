@@ -937,7 +937,7 @@ function ExitDualWinnerSpecific(WinningDual)
 					hero:RemoveModifierByName("modifier_custom_invulnerable")
 					hero:RemoveModifierByName("modifier_truesight_aura")
 					hero:SetBuyBackDisabledByReapersScythe(false)
-					if hero:IsAlive() == false then
+					if hero:IsAlive() == false and hero:IsIllusion() == false then
 						hero:RespawnUnit()
 						hero:RemoveModifierByName("modifier_truesight_aura")
 					end

@@ -792,7 +792,7 @@ end
 			hero:RemoveModifierByName("modifier_animation_freeze")
 			hero:RemoveModifierByName("modifier_custom_invulnerable")
 			if hero:GetTeamNumber() == 2 then
-				if hero:IsAlive() == true then
+				if hero:IsAlive() == true and hero:IsIllusion() == false  then
 					hero:Kill(nil, nil)
 					hero:RespawnUnit()
 				else
@@ -802,7 +802,7 @@ end
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				SendToConsole("dota_camera_center")
 			elseif hero:GetTeamNumber() == 3 then
-				if hero:IsAlive() == true then
+				if hero:IsAlive() == true and hero:IsIllusion() == false  then
 					hero:Kill(nil, nil)
 					hero:RespawnUnit()
 				else
