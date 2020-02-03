@@ -1548,15 +1548,17 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           			if hero:GetPlayerOwnerID() == keys.player_id then
           				if _G.player_particle[keys.player_id] ~= nil then
           					ParticleManager:DestroyParticle(_G.player_particle[keys.player_id], true)
+
           				end
-          		_G.player_particle[keys.player_id] = ParticleManager:CreateParticle("particles/particle_shop/"..particle..".vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+          		_G.player_particle[keys.player_id] = ParticleManager:CreateParticle("particles/particle_shop/"..particle..".vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)		
           		end
           end
       end
       end
           end )
-      if not encoded and _G.player_currency[keys.player_id] >= keys.price then
+      if TableContains(_G.player_particles[keys.player_id], particle) == false and _G.player_currency[keys.player_id] >= keys.price then
       		_G.player_currency[keys.player_id] = _G.player_currency[keys.player_id] - keys.price
+      	end
 
 local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(keys.player_id)).."/currency/.json" )
     	request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '.._G.player_currency[keys.player_id]..'}')
@@ -1580,7 +1582,6 @@ local request = CreateHTTPRequest( "POST", "https://titan-arena-ec657.firebaseio
         local json = require('decode')
           local encoded = json.decode(result.Body)
 end)
-end
 end
 
 function OnPlayerParticlesLoad(keys)
@@ -1608,7 +1609,13 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(player), 'player_currency_loaded', {player_currency = _G.player_currency[player]})
           if encoded.particles ~= nil then
           _G.player_particles[player] = encoded.particles
-          CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(player), 'player_particles_loaded' ,{beta_tester_particle = tostring(encoded.particles.beta_tester), flower_trail_particle = tostring(encoded.particles.flower_trail)})
+                    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(player), 'player_particles_loaded' ,{beta_tester_particle = tostring(encoded.particles.beta_tester), 
+          	flower_trail_particle = tostring(encoded.particles.flower_trail), fall_aura_particle = tostring(encoded.particles.fall_aura),
+          	green_speed_particle = tostring(encoded.particles.green_speed),
+          	water_walking_particle = tostring(encoded.particles.water_walking),
+          	green_bird_particle = tostring(encoded.particles.green_bird),
+          	red_bird_particle = tostring(encoded.particles.red_bird),
+          	pink_bird_particle = tostring(encoded.particles.pink_bird)})
           print(_G.player_currency[player])
           print(_G.player_particles[player])
       end
