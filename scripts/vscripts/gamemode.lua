@@ -296,19 +296,7 @@ end
 ]]
 
 function barebones:OnGameInProgress()
-			for i = 0, PlayerResource:NumPlayers(), 1 do
-	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
-	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..tostring(_G.player_currency[i] + 20)..'}')
-    	request:Send( function( result )
-        print( "POST response:\n" )
-        for k,v in pairs( result ) do
-            print( string.format( "%s : %s\n", k, v ) )
-        end
-        print( "Done." ) 
-        local json = require('decode')
-          local encoded = json.decode(result.Body)
-	end)
-    end
+		
 
 		_G.IsDual = false
 	DebugPrint("[BAREBONES] The game has officially begun.")
