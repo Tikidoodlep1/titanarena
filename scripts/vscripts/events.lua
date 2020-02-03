@@ -818,7 +818,7 @@ function ExitDualWinnerSpecific(WinningDual)
 			duals2 = true
 		end
 		if player:IsIllusion() == true then
-			player:Kill(nil, nil)
+			player:ForceKill(false)
 		end
 	end
 	if duals2 == false then

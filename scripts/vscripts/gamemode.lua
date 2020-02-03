@@ -777,6 +777,12 @@ end
 		_G.DualArenavs1[x] = nil
 		_G.DualArenavs2[x] = nil
 	end
+	local players = HeroList:GetAllHeroes()
+	for _, player in pairs(players) do
+		if player:IsIllusion() == true then
+			player:ForceKill(false)
+		end
+	end
 	Timers:CreateTimer(1, function()
 	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
@@ -785,9 +791,6 @@ end
 			hero:RemoveModifierByName("modifier_truesight_aura")
 			hero:RemoveModifierByName("modifier_animation_freeze")
 			hero:RemoveModifierByName("modifier_custom_invulnerable")
-			if hero:IsIllusion() == true then
-				hero:Kill(nil, nil)
-			end
 			if hero:GetTeamNumber() == 2 then
 				if hero:IsAlive() == true then
 					hero:Kill(nil, nil)
