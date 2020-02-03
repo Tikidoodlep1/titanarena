@@ -1267,6 +1267,34 @@ function barebones:OnPlayerChat(keys)
 		
 		Timers:CreateTimer(10, function()
 			if _G.vote_to_concede_radiant == true then
+					for i = 0, PlayerResource:NumPlayers(), 1 do
+		if PlayerResource:GetTeam(i) == 3 then
+	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
+	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..(_G.player_currency[i] + (PlayerResource:GetKills(i)) + (PlayerResource:GetAssists(i)/2) + 20)..'}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+	end)
+    end
+    if PlayerResource:GetTeam(i) == 2 then
+	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
+	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..(_G.player_currency[i] + (PlayerResource:GetKills(i)) + (PlayerResource:GetAssists(i)/2))..'}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+	end)
+    end
+end
 				GameRules:SetGameWinner(3)
 			end
 		end)
@@ -1291,6 +1319,34 @@ end
 		
     Timers:CreateTimer(10, function()
         if _G.vote_to_concede_dire == true then
+        		for i = 0, PlayerResource:NumPlayers(), 1 do
+		if PlayerResource:GetTeam(i) == 3 then
+	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
+	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..(_G.player_currency[i] + (PlayerResource:GetKills(i)) + (PlayerResource:GetAssists(i)/2))..'}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+	end)
+    end
+    if PlayerResource:GetTeam(i) == 2 then
+	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
+	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..(_G.player_currency[i] + (PlayerResource:GetKills(i)) + (PlayerResource:GetAssists(i)/2) + 20)..'}')
+    	request:Send( function( result )
+        print( "POST response:\n" )
+        for k,v in pairs( result ) do
+            print( string.format( "%s : %s\n", k, v ) )
+        end
+        print( "Done." ) 
+        local json = require('decode')
+          local encoded = json.decode(result.Body)
+	end)
+    end
+end
         	GameRules:SetGameWinner(2)
         end
         
