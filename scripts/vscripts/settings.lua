@@ -87,7 +87,7 @@ SKILL_POINTS_AT_EVERY_LEVEL = true		-- Should we allow heroes to gain skill poin
 
 FIXED_RESPAWN_TIME = -1                 -- What time should we use for a fixed respawn timer?  Use -1 to keep the default dota behavior.
 -- NOTE: use FIXED_RESPAWN_TIME if you want the same respawn time on every level.
-MAX_RESPAWN_TIME = 60     				-- Default Dota doesn't have a limit (it can go above 125). Fast game modes should have 20 seconds.
+MAX_RESPAWN_TIME = 40    				-- Default Dota doesn't have a limit (it can go above 125). Fast game modes should have 20 seconds.
 USE_CUSTOM_RESPAWN_TIMES = false		-- Should we use custom respawn times (true) or dota default (false)?
 
 -- Fill this table with respawn times on each level if USE_CUSTOM_RESPAWN_TIMES is true.
@@ -95,38 +95,38 @@ CUSTOM_RESPAWN_TIME = {}
 CUSTOM_RESPAWN_TIME[1] = 5
 CUSTOM_RESPAWN_TIME[2] = 7
 CUSTOM_RESPAWN_TIME[3] = 9
-CUSTOM_RESPAWN_TIME[4] = 13
-CUSTOM_RESPAWN_TIME[5] = 16
-CUSTOM_RESPAWN_TIME[6] = 26
-CUSTOM_RESPAWN_TIME[7] = 28
-CUSTOM_RESPAWN_TIME[8] = 30
-CUSTOM_RESPAWN_TIME[9] = 32
-CUSTOM_RESPAWN_TIME[10] = 34
-CUSTOM_RESPAWN_TIME[11] = 36
-CUSTOM_RESPAWN_TIME[12] = 44
-CUSTOM_RESPAWN_TIME[13] = 46
-CUSTOM_RESPAWN_TIME[14] = 48
-CUSTOM_RESPAWN_TIME[15] = 50
-CUSTOM_RESPAWN_TIME[16] = 52
-CUSTOM_RESPAWN_TIME[17] = 54
-CUSTOM_RESPAWN_TIME[18] = 65
-CUSTOM_RESPAWN_TIME[19] = 70
-CUSTOM_RESPAWN_TIME[20] = 75
-CUSTOM_RESPAWN_TIME[21] = 80
-CUSTOM_RESPAWN_TIME[22] = 85
-CUSTOM_RESPAWN_TIME[23] = 90
-CUSTOM_RESPAWN_TIME[24] = 95
-CUSTOM_RESPAWN_TIME[25] = 100
+CUSTOM_RESPAWN_TIME[4] = 10
+CUSTOM_RESPAWN_TIME[5] = 12
+CUSTOM_RESPAWN_TIME[6] = 16
+CUSTOM_RESPAWN_TIME[7] = 18
+CUSTOM_RESPAWN_TIME[8] = 20
+CUSTOM_RESPAWN_TIME[9] = 22
+CUSTOM_RESPAWN_TIME[10] = 24
+CUSTOM_RESPAWN_TIME[11] = 26
+CUSTOM_RESPAWN_TIME[12] = 28
+CUSTOM_RESPAWN_TIME[13] = 30
+CUSTOM_RESPAWN_TIME[14] = 32
+CUSTOM_RESPAWN_TIME[15] = 34
+CUSTOM_RESPAWN_TIME[16] = 36
+CUSTOM_RESPAWN_TIME[17] = 38
+CUSTOM_RESPAWN_TIME[18] = 40
+CUSTOM_RESPAWN_TIME[19] = 40
+CUSTOM_RESPAWN_TIME[20] = 40
+CUSTOM_RESPAWN_TIME[21] = 40
+CUSTOM_RESPAWN_TIME[22] = 40
+CUSTOM_RESPAWN_TIME[23] = 40
+CUSTOM_RESPAWN_TIME[24] = 40
+CUSTOM_RESPAWN_TIME[25] = 40
 
 if MAX_LEVEL > 25 then
 	for i=26, MAX_LEVEL do
-		CUSTOM_RESPAWN_TIME[i] = CUSTOM_RESPAWN_TIME[i-1] + 5
+		CUSTOM_RESPAWN_TIME[i] = CUSTOM_RESPAWN_TIME[i-1] + 1
 	end
 end
 
-FOUNTAIN_CONSTANT_MANA_REGEN = -1       -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
-FOUNTAIN_PERCENTAGE_MANA_REGEN = -1     -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
-FOUNTAIN_PERCENTAGE_HEALTH_REGEN = -1   -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
+FOUNTAIN_CONSTANT_MANA_REGEN = 20       -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
+FOUNTAIN_PERCENTAGE_MANA_REGEN = 20     -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
+FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 20   -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
 MAXIMUM_ATTACK_SPEED = 700              -- What should we use for the maximum attack speed?
 MINIMUM_ATTACK_SPEED = 30               -- What should we use for the minimum attack speed?
 
@@ -146,7 +146,7 @@ ENABLED_RUNES[DOTA_RUNE_HASTE] = true
 ENABLED_RUNES[DOTA_RUNE_ILLUSION] = false
 ENABLED_RUNES[DOTA_RUNE_INVISIBILITY] = true
 ENABLED_RUNES[DOTA_RUNE_REGENERATION] = true
-ENABLED_RUNES[DOTA_RUNE_ARCANE] = oracle_false_promise	-- BUGGED! NEVER SPAWNS!
+ENABLED_RUNES[DOTA_RUNE_ARCANE] = false	-- BUGGED! NEVER SPAWNS!
 
 MAX_NUMBER_OF_TEAMS = 2                				-- How many potential teams can be in this game mode?
 USE_CUSTOM_TEAM_COLORS = false          			-- Should we use custom team colors?
