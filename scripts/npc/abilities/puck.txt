@@ -101,7 +101,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Puck.Waning_Rift"
-		"MaxLevel"						"6"
+		"MaxLevel"                      "6"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -109,12 +109,12 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 15 14 13 12 11"
+		"AbilityCooldown"				"16 15 14 13 13 13"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100 110 120 130 140 160"
+		"AbilityManaCost"				"100 110 120 130 150 170"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -124,22 +124,23 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"400 400 400 400 400 400"
+				"LinkedSpecialBonus"	"special_bonus_unique_puck_6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"silence_duration"		"2.0 2.5 3.0 3.5 4 4.75"
+				"silence_duration"		"2.0 2.5 3.0 3.5 4.0 4.75"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"70 140 210 280 350 430"
+				"damage"				"70 140 210 280 325 385"
 				"LinkedSpecialBonus"	"special_bonus_unique_puck_4"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_distance"			"350"
+				"max_distance"			"400"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -159,8 +160,8 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
-		"AbilityChannelTime"			"0.75 1.50 2.25 3.25 3.75 4.5"
+		"AbilityCastPoint"				"0 0 0 0 0 0"
+		"AbilityChannelTime"			"0.75 1.50 2.25 3.25 3.75 4.25"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -177,7 +178,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"0.75 1.50 2.25 3.25 4 4.75"
+				"duration"					"0.75 1.50 2.25 3.25 3.75 4.25"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"

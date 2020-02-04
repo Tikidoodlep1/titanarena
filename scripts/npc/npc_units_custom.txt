@@ -15,6 +15,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Minor Ghost"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -31,7 +32,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "35"     // Magical protection.
+    "MagicalResistance"       "25"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -59,8 +60,8 @@
     // Bounty
     //----------------------------------------------------------------
     "BountyXP"          "16"     // Experience earn.
-    "BountyGoldMin"       "11"     // Gold earned min.
-    "BountyGoldMax"       "13"     // Gold earned max.
+    "BountyGoldMin"       "13"     // Gold earned min.
+    "BountyGoldMax"       "15"     // Gold earned max.
 
     // Bounds
     //----------------------------------------------------------------
@@ -116,6 +117,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Forest Troll Berserker"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -132,7 +134,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "0"     // Physical protection.
-    "MagicalResistance"       "35"     // Magical protection.
+    "MagicalResistance"       "25"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -160,8 +162,8 @@
     // Bounty
     //----------------------------------------------------------------
     "BountyXP"          "16"     // Experience earn.
-    "BountyGoldMin"       "11"     // Gold earned min.
-    "BountyGoldMax"       "13"     // Gold earned max.
+    "BountyGoldMin"       "13"     // Gold earned min.
+    "BountyGoldMax"       "15"     // Gold earned max.
 
     // Bounds
     //----------------------------------------------------------------
@@ -217,6 +219,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Frost Kobold"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -233,7 +236,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "1"     // Physical protection.
-    "MagicalResistance"       "35"     // Magical protection.
+    "MagicalResistance"       "25"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -259,8 +262,8 @@
     // Bounty
     //----------------------------------------------------------------
     "BountyXP"          "16"     // Experience earn.
-    "BountyGoldMin"       "11"     // Gold earned min.
-    "BountyGoldMax"       "13"     // Gold earned max.
+    "BountyGoldMin"       "13"     // Gold earned min.
+    "BountyGoldMax"       "15"     // Gold earned max.
 
     // Bounds
     //----------------------------------------------------------------
@@ -317,6 +320,7 @@
     "Level"           "0"
     "UnitLabel"         "Frost Kobold"
     "ModelScale"        "1.3"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -416,6 +420,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Satyr Mage"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -432,7 +437,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-2"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "MagicalResistance"       "30"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -460,8 +465,8 @@
     // Bounty
     //----------------------------------------------------------------
     "BountyXP"          "16"     // Experience earn.
-    "BountyGoldMin"       "11"     // Gold earned min.
-    "BountyGoldMax"       "13"     // Gold earned max.
+    "BountyGoldMin"       "13"     // Gold earned min.
+    "BountyGoldMax"       "15"     // Gold earned max.
 
     // Bounds
     //----------------------------------------------------------------
@@ -533,7 +538,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "0"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "MagicalResistance"       "30"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -616,11 +621,12 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Harpy"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
     
-    "Ability1"          "satyr_b_mana_break"     // Ability 1.
+    "Ability1"          ""     // Ability 1.
     "Ability2"          ""      // Ability 2.
     "Ability3"          ""      // Ability 3.
     "Ability4"          ""      // Ability 4.
@@ -631,8 +637,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "-2"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "ArmorPhysical"       "4"     // Physical protection.
+    "MagicalResistance"       "30"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -661,7 +667,7 @@
     //----------------------------------------------------------------
     "BountyXP"          "26"     // Experience earn.
     "BountyGoldMin"       "15"     // Gold earned min.
-    "BountyGoldMax"       "17"     // Gold earned max.
+    "BountyGoldMax"       "18"     // Gold earned max.
 
     // Bounds
     //----------------------------------------------------------------
@@ -717,6 +723,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Kobold Master"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -732,8 +739,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "ArmorPhysical"       "3"     // Physical protection.
+    "MagicalResistance"       "30"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -817,6 +824,7 @@
     "SoundSet"          "Creep_Good_Melee"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Wildwing Kin"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -832,8 +840,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "ArmorPhysical"       "3"     // Physical protection.
+    "MagicalResistance"       "30"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -916,6 +924,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Frost Gnoll"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -932,7 +941,7 @@
     // Armor
     //----------------------------------------------------------------
     "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "MagicalResistance"       "30"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -961,7 +970,7 @@
     //----------------------------------------------------------------
     "BountyXP"          "26"     // Experience earn.
     "BountyGoldMin"       "15"     // Gold earned min.
-    "BountyGoldMax"       "17"     // Gold earned max.
+    "BountyGoldMax"       "18"     // Gold earned max.
 
     // Bounds
     //----------------------------------------------------------------
@@ -1017,6 +1026,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Greater Ghost"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -1032,8 +1042,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "ArmorPhysical"       "3"     // Physical protection.
+    "MagicalResistance"       "35"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1076,7 +1086,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "430"     // Base health.
+    "StatusHealth"        "475"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "200"     // Base mana.
     "StatusManaRegen"     "5"     // Mana regeneration rate.
@@ -1118,6 +1128,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Eimermole"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -1133,8 +1144,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "5"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "ArmorPhysical"       "7"     // Physical protection.
+    "MagicalResistance"       "35"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1175,7 +1186,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "450"     // Base health.
+    "StatusHealth"        "485"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "0"     // Base mana.
     "StatusManaRegen"     "0"     // Mana regeneration rate.
@@ -1217,6 +1228,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Satyr Punisher"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -1232,8 +1244,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "2"     // Physical protection.
-    "MagicalResistance"       "40"     // Magical protection.
+    "ArmorPhysical"       "7"     // Physical protection.
+    "MagicalResistance"       "35"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1274,7 +1286,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "425"     // Base health.
+    "StatusHealth"        "455"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "50"     // Base mana.
     "StatusManaRegen"     "1"     // Mana regeneration rate.
@@ -1316,6 +1328,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Jungle Bat"
+    "IsNeutralUnitType"         "1"
     
     // Abilities
     //----------------------------------------------------------------
@@ -1331,8 +1344,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "3"     // Physical protection.
-    "MagicalResistance"       "50"     // Magical protection.
+    "ArmorPhysical"       "7"     // Physical protection.
+    "MagicalResistance"       "40"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1375,7 +1388,7 @@
 
     // Status
     //----------------------------------------------------------------
-    "StatusHealth"        "415"     // Base health.
+    "StatusHealth"        "465"     // Base health.
     "StatusHealthRegen"     "7"     // Health regeneration rate.
     "StatusMana"        "100"     // Base mana.
     "StatusManaRegen"     "3"     // Mana regeneration rate.
@@ -1418,7 +1431,7 @@
     "Level"           "0"
     "UnitLabel"         "Dark Frost Troll"
     "IsAncient" 		"1"
-    
+
     // Abilities
     //----------------------------------------------------------------
     
@@ -1433,8 +1446,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "7"     // Physical protection.
-    "MagicalResistance"       "65"     // Magical protection.
+    "ArmorPhysical"       "10"     // Physical protection.
+    "MagicalResistance"       "45"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1535,8 +1548,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "5"     // Physical protection.
-    "MagicalResistance"       "65"     // Magical protection.
+    "ArmorPhysical"       "10"     // Physical protection.
+    "MagicalResistance"       "45"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -1636,8 +1649,8 @@
 
     // Armor
     //----------------------------------------------------------------
-    "ArmorPhysical"       "-1"     // Physical protection.
-    "MagicalResistance"       "65"     // Magical protection.
+    "ArmorPhysical"       "10"     // Physical protection.
+    "MagicalResistance"       "45"     // Magical protection.
 
     // Attack
     //----------------------------------------------------------------
@@ -2189,7 +2202,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           "models/heroes/blood_seeker/blood_seeker.vmdl"  // Model.
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_blood_seeker.vsndevts"
-	"ModelScale"		"3.2"
+	"ModelScale"		"2.3"
     "SoundSet"          "Hero_BloodSeeker"          // Name of sound set.
     "Level"           "1"
     "UnitLabel"         "The Wanderer"
@@ -2638,7 +2651,7 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           	"models/heroes/elder_titan/elder_titan.vmdl"  // Model.
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
-	"ModelScale"		"2"
+	"ModelScale"		"1.3"
     "SoundSet"          "Hero_ElderTitan"          // Name of sound set.
     "Level"           "1"
     "UnitLabel"         "Physical Titan"
@@ -2745,7 +2758,7 @@
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
 	"ModelScale"		"2"
     "SoundSet"          "Hero_ElderTitan"          // Name of sound set.
-    "Level"           "1"
+    "Level"           "1.3"
     "UnitLabel"         "Spiritual Titan"
 	
     // Abilities

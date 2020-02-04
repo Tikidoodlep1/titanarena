@@ -224,7 +224,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -242,18 +242,18 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 80 140 200 260 320"
+				"bonus_gold"			"20 80 140 200 240 300"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"regen"					"3 8 13 18 23 28"
+				"regen"					"3 7 11 15 18 22"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_level"			"4 5 6 7 8 9"
+				"creep_level"			"4 5 6 6 6 6"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
