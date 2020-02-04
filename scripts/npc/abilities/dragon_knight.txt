@@ -30,7 +30,7 @@
 		
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"90 212.5 300 450 525 780"
+		"AbilityDamage"					"90 150 200 300 425 550"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -159,7 +159,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"3 7 11 18 22 36"
+				"bonus_armor"					"3 6 9 12 15 18"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
