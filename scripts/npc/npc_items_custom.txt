@@ -7240,7 +7240,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1250"	
+		"ItemCost"						"1600"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -7249,7 +7249,7 @@
 		"ItemResult"					"item_vladmir_3"
 		"ItemRequirements"
 		{
-			"01"						"item_ring_of_basilius;item_buckler;item_ultimate_orb;item_vladmir_2"
+			"01"						"item_ring_of_basilius;item_ultimate_orb;item_vladmir_2"
 		}
 	}
 	
@@ -7687,6 +7687,7 @@
 		"FightRecapLevel"				"1"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityTextureName"            "diffusal_2"
+		"BaseClass"                     "item_diffusual_blade"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
