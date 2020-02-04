@@ -4386,7 +4386,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"resist_debuff_duration"	"16.0"
+				"resist_debuff_duration"	"16.0 16.0 6.0"
 			}
 			"07"
 			{
