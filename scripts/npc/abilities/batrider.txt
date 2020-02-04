@@ -28,7 +28,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.5"	// Works by boosting damage
+		"AbilityModifierSupportValue"	"0.33"	// Works by boosting damage
 
 
 		// Special

@@ -1,6 +1,7 @@
 #base "items/mjollnir.txt"
 #base "items/blademail.txt"
 #base "items/spirit_vessel.txt"
+#base "items/bloodthorn.txt"
 
 
 "DOTAAbilities"
@@ -283,36 +284,6 @@
 	}
 }
 	
-	
-	"item_recipe_iron_talon"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"238"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"Model"							"models/props_gameplay/recipe.mdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"150"	
-		"ItemShopTags"					""
-		"ItemPurchasable"				"1"
-		"AbilityTextureName"			"item_recipe"
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_iron_talon"
-		"ItemRequirements"
-		{
-			"01"						"item_quelling_blade;item_ring_of_protection"
-		}
-	}
-	
-	"item_iron_talon"
-	{
-		"ItemPurchasable" "1"
-		"ItemCost" "450"
-	}
 	"item_greater_crit"
 	{
 		// General
@@ -7687,7 +7658,7 @@
 		"FightRecapLevel"				"1"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityTextureName"            "diffusal_2"
-		"BaseClass"                     "item_diffusual_blade"
+		"BaseClass"                     "item_diffusal_blade"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -7707,7 +7678,6 @@
 		"ItemPermanent"					"1"
 
 		"UpgradesItems"					"item_diffusal_blade;item_diffusal_blade_2;item_diffusal_blade_3"
-		"UpgradeRecipe"					"item_recipe_diffusal_blade_2"
 		"ShouldBeSuggested"				"1"
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"2"
@@ -7763,6 +7733,7 @@
 			}
 		}
 	}
+
 	"item_recipe_diffusal_blade_3"
 	{
 		// General
