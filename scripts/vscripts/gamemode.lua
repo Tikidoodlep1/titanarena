@@ -519,10 +519,16 @@ end
 	local players = HeroList:GetAllHeroes()
 	for _, player in pairs(players) do
 		if player:IsIllusion() == true then
-			player:ForceKill(false)
+			UTIL_RemoveImmediate(player)
 		end
 	end
 	Timers:CreateTimer(1, function()
+	local players = HeroList:GetAllHeroes()
+	for _, player in pairs(players) do
+		if player:IsIllusion() == true or not player:IsRealHero() then
+			UTIL_RemoveImmediate(player)
+		end
+	end
 		local trigger_in = {}
 		trigger_in[1] = Entities:FindByName(nil, "dual_keepin_trigger")
 		trigger_in[2] = Entities:FindByName(nil, "dual_keepin1_trigger")
@@ -779,11 +785,17 @@ end
 	end
 	local players = HeroList:GetAllHeroes()
 	for _, player in pairs(players) do
-		if player:IsIllusion() == true then
-			player:ForceKill(false)
+		if player:IsIllusion() == true or not player:IsRealHero() then
+			UTIL_RemoveImmediate(player)
 		end
 	end
 	Timers:CreateTimer(1, function()
+	local players = HeroList:GetAllHeroes()
+	for _, player in pairs(players) do
+		if player:IsIllusion() == true or not player:IsRealHero() then
+			UTIL_RemoveImmediate(player)
+		end
+	end
 	GameRules:SetHeroRespawnEnabled(true)
 	local players = HeroList:GetAllHeroes()
 		for _, hero in pairs(players) do
@@ -792,7 +804,7 @@ end
 			hero:RemoveModifierByName("modifier_animation_freeze")
 			hero:RemoveModifierByName("modifier_custom_invulnerable")
 			if hero:GetTeamNumber() == 2 then
-				if hero:IsAlive() == true and hero:IsIllusion() == false  then
+				if hero:IsAlive() == true and hero:IsIllusion() == false then
 					hero:Kill(nil, nil)
 					hero:RespawnUnit()
 				else
@@ -802,7 +814,7 @@ end
 				hero:RemoveModifierByName("modifier_truesight_aura")
 				SendToConsole("dota_camera_center")
 			elseif hero:GetTeamNumber() == 3 then
-				if hero:IsAlive() == true and hero:IsIllusion() == false  then
+				if hero:IsAlive() == true and hero:IsIllusion() == false then
 					hero:Kill(nil, nil)
 					hero:RespawnUnit()
 				else

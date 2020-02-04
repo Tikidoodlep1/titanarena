@@ -817,8 +817,8 @@ function ExitDualWinnerSpecific(WinningDual)
 		if arena2:IsTouching(player) == true then
 			duals2 = true
 		end
-		if player:IsIllusion() == true then
-			player:ForceKill(false)
+		if player:IsIllusion() == true or not player:IsRealHero() then
+			UTIL_RemoveImmediate(player)
 		end
 	end
 	if duals2 == false then
@@ -950,6 +950,12 @@ function ExitDualWinnerSpecific(WinningDual)
 					end
 				end
 			end)
+			local players = HeroList:GetAllHeroes()
+				for _, player in pairs(players) do
+					if player:IsIllusion() == true or not player:IsRealHero() then
+						UTIL_RemoveImmediate(player)
+					end
+				end
 				for x=1, 11 do
 					_G.DualArena1[x] = nil
 					_G.DualArena2[x] = nil
