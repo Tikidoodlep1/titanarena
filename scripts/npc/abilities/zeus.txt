@@ -36,7 +36,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"arc_damage"			"70 95 120 145 170 200"
+				"arc_damage"			"100 110 120 145 170 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_zeus_2"
 			}
 			"02"
@@ -82,7 +82,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"125 200 275 350 475 650"
+		"AbilityDamage"					"125 175 250 300 375 450"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -231,7 +231,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_health_pct"			"6 8 10 12 14 16"
+				"damage_health_pct"			"7 8 9 10 11 12"
 				"LinkedSpecialBonus"		"special_bonus_unique_zeus"
 				"CalculateSpellDamageTooltip"	"0"
 			}
