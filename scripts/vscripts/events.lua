@@ -1250,6 +1250,8 @@ function barebones:OnPlayerChat(keys)
 
 
 	if team_num == 2 then
+		local heroes = HeroList:GetAllHeroes()
+
 		if (text:lower() == "no") and _G.vote_to_concede_radiant == true then
 		_G.vote_to_concede_radiant = false
 		GameRules:SendCustomMessage("<font color='#dc143c'>Vote to surrender has been canceled!</font>", 0, 0)
@@ -1259,6 +1261,12 @@ function barebones:OnPlayerChat(keys)
 		end
 	if (text:lower() == "gg") and _G.radiant_can_concede == true then
 		GameRules:SendCustomMessage("<font color='#dc143c'>Radiant is Voting to Surrender! To cancel the vote type no (Radiant only!)</font>", 0, 0)
+				for num,hero in pairs(heroes) do
+			if hero:GetTeamNumber() == 2 then
+		CustomUI:DynamicHud_Create(hero:GetTeamNumber(), "GG_Called", "file://{resources}/layout/custom_game/gg_called.xml", nil)
+		end
+	end
+
 		_G.vote_to_concede_radiant = true
 		_G.radiant_can_concede = false
 		Timers:CreateTimer(120, function()

@@ -1606,7 +1606,11 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           	water_walking_particle = tostring(encoded.particles.water_walking),
           	green_bird_particle = tostring(encoded.particles.green_bird),
           	red_bird_particle = tostring(encoded.particles.red_bird),
-          	pink_bird_particle = tostring(encoded.particles.pink_bird)})
+          	pink_bird_particle = tostring(encoded.particles.pink_bird),
+          	orbital_aura_particle = tostring(encoded.particles.orbital_aura),
+          	blue_lightning_particle = tostring(encoded.particles.blue_lightning),
+          	red_lightning_particle = tostring(encoded.particles.red_lightning),
+          	gold_lightning_particle = tostring(encoded.particles.gold_lightning)})
           print(_G.player_currency[player])
           print(_G.player_particles[player])
       end
