@@ -2,6 +2,7 @@
 #base "items/blademail.txt"
 #base "items/spirit_vessel.txt"
 #base "items/bloodthorn.txt"
+#base "items/solar_crest.txt"
 
 
 "DOTAAbilities"
