@@ -2756,9 +2756,9 @@
     "BaseClass"         "npc_dota_creature"  // Class of entity of link to.
     "Model"           	"models/heroes/elder_titan/ancestral_spirit.vmdl"  // Model.
 	"GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
-	"ModelScale"		"2"
+	"ModelScale"		"1.3"
     "SoundSet"          "Hero_ElderTitan"          // Name of sound set.
-    "Level"           "1.3"
+    "Level"           "1"
     "UnitLabel"         "Spiritual Titan"
 	
     // Abilities
