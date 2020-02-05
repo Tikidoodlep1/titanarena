@@ -403,12 +403,12 @@
 	"Creature"
                 {
                         //Level Up
-                        "HPGain"                                        "60"
-                        "DamageGain"                            "8"
+                        "HPGain"                                        "55"
+                        "DamageGain"                            "6"
                         "ArmorGain"                                     "1"
                         "MagicResistGain"                       ".35"
-                        "BountyGain"                            "4.5"
-                        "XPGain"                                        "4.5"
+                        "BountyGain"                            "5"
+                        "XPGain"                                        "5"
                 }
 }
 	"npc_easy_satyr_b"
