@@ -3,6 +3,7 @@
 #base "items/spirit_vessel.txt"
 #base "items/bloodthorn.txt"
 #base "items/solar_crest.txt"
+#base "items/monkey_king_bar.txt"
 
 
 "DOTAAbilities"
