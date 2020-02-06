@@ -170,7 +170,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"31.25 50 82.5 120"
+				"damage"				"50 85 100 140"
 				"LinkedSpecialBonus"	"special_bonus_unique_doom_5"				
 			}
 			"03"
