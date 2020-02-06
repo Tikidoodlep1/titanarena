@@ -38,7 +38,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"		"100.0"
+				"damage_per_second"		"115.0"
 			}
 			"02"
 			{
@@ -473,7 +473,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 100 150 200 250 325"
+				"damage"				"90 130 180 220 280 340"
 			}
 		}
 	}

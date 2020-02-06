@@ -65,7 +65,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"scepter_radius"		"700"
-				"RequiresScepter"	"1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -125,7 +124,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 160 220 280 340 620"
+				"damage"			"130 180 240 290 340 390"
 			}
 			"05"
 			{
@@ -156,7 +155,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"creep_damage_pct"		"75"
+				"creep_damage_pct"		"100"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"

@@ -119,6 +119,7 @@
 #base "abilities/winter_wyvern.txt"
 #base "abilities/techies.txt"
 #base "abilities/arc_warden.txt"
+#base "abilities/dazzle.txt"
 
 
 

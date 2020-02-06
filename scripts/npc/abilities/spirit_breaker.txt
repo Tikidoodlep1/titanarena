@@ -51,7 +51,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_radius"			"300"
+				"bash_radius"			"350"
 			}
 			"04"
 			{
