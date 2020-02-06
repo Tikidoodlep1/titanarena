@@ -1,0 +1,153 @@
+"DOTAUNITS"
+{
+
+"npc_dota_creature_ogre_tank_boss"
+	{
+		// Script
+		"vscripts"					"units/ai/ai_ogre_tank_boss.lua"
+
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/creeps/ogre_1/boss_ogre.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Ogre"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"2.1"
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		"IsBossMonster"				"1"
+		"CanBeDominated"            "0"
+
+		"MinimapIcon"				"minimap_roshancamp"
+		"MinimapIconSize"			"300"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"ogre_tank_boss_melee_smash"
+		"Ability2"					"ogre_tank_boss_jump_smash"
+		"Ability3"					"generic_gold_bag_fountain_500"
+		"Ability4"					""
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"27"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"200"
+		"AttackDamageMax"			"225"
+		"AttackRate"				"2.8"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"1200"
+		"AttackRange"				"1"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"100"
+		"HealthBarOffset"			"360"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1000"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"200"
+		"MovementTurnRate"			"0.2"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"6200"
+		"StatusHealthRegen"			"12"
+		"StatusMana"				"1000"
+		"StatusManaRegen"			"5"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"1200"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Basic AI State
+			//------------------------------------------------------------
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
+					"Support"			"0.0"
+				}
+			}
+
+			//Level Up Parameters
+			//------------------------------------------------------------
+			"HPGain"					"800"
+			"DamageGain"				"30"
+			"ArmorGain"					"1"
+			"MagicResistGain"			"5"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"20"
+			
+			"DefaultState"				"Invade"
+			
+			
+			"DisableResistance"			"100.0"
+
+			//------------------------------------------------------------
+			"ItemDrops"
+			{
+				"Trinkets"
+				{
+					"Item"
+					{
+						"1"				"item_yasha"
+						"2"				"item_kaya"
+						"3"				"item_sange"
+					}
+					"Chance"			"100"
+				}
+
+				"Relics"
+				{
+					"Item"
+					{			
+						"1"				"item_bogduggs_baldric"
+						"2"				"item_bogduggs_baldric"
+						"3"				"item_bogduggs_baldric"
+						"4"				"item_bogduggs_baldric"
+						"5"				"item_bogduggs_baldric"
+						"6"				"item_bogduggs_baldric"
+						"7"				"item_bogduggs_cudgel"
+						"8"				"item_bogduggs_cudgel"
+						"9"				"item_bogduggs_cudgel"
+						"10"			"item_bogduggs_lucky_femur"		
+					}
+					"Chance"			"66"
+				}
+			}
+		}
+	}
+	}

@@ -4,6 +4,7 @@
 #base "items/bloodthorn.txt"
 #base "items/solar_crest.txt"
 #base "items/monkey_king_bar.txt"
+#base "items/ogre_boss_drops.txt"
 
 
 "DOTAAbilities"
@@ -8034,5 +8035,219 @@
 			}
 		}
 	}
+
+
+	"item_bogduggs_cudgel"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/bogduggs_cudgel"
+		"ScriptFile"					"items/item_bogduggs_cudgel"
+
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"DungeonItemDef"				"12045"
+		"DungeonAction"					"dungeon_in_game_item_12045"
+		"DungeonCurrencyCost"			"45"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemQuality"					""
+		"ItemStackable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
+		"ItemDisplayOwnership"			"1"
+		"CustomShop"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"required_level"		"13"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"			"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"				"20"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"base_attack_time_penalty_pct"		"50"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"attack_speed_penalty_pct"			"50"
+			}
+			"06"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"damage_radius"							"250"
+			}
+			"07"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"stun_duration"							"1.0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Bogdugg's Baldric
+	//=================================================================================================================
+	"item_bogduggs_baldric"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/bogduggs_baldric"
+		"ScriptFile"					"items/item_bogduggs_baldric"
+
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"DungeonItemDef"				"12046"
+		"DungeonAction"					"dungeon_in_game_item_12046"
+		"DungeonCurrencyCost"			"40"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemQuality"					""
+		"ItemStackable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
+		"ItemDisplayOwnership"			"1"
+		"CustomShop"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"required_level"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"disable_resist_pct"				"50"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"move_speed_penalty"		"30"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Bogdugg's Lucky Femur
+	//=================================================================================================================
+	"item_bogduggs_lucky_femur"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/bogduggs_lucky_femur"
+		"ScriptFile"					"items/item_bogduggs_lucky_femur"
+
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"DungeonItemDef"				"12047"
+		"DungeonAction"					"dungeon_in_game_item_12047"
+		"DungeonCurrencyCost"			"50"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemQuality"					""
+		"ItemStackable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
+		"ItemDisplayOwnership"			"1"
+		"CustomShop"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"required_level"		"12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_mana_penalty"		"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intelligence_penalty"	"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen_sec"		"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"refresh_pct"			"25"
+			}
+		}
+	}
+
 
 }
