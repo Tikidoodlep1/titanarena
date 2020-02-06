@@ -349,7 +349,7 @@ local inflictor = keys.entindex_inflictor
 			damagingAbility = EntIndexToHScript(inflictor)
 		end
 		if Attacker:GetUnitName() == "npc_boss_dragon_knight_1" or Attacker:GetUnitName() == "npc_boss_dragon_knight_2" or Attacker:GetUnitName() == "npc_boss_scarab" or Attacker:GetUnitName() == "npc_boss_wanderer" or Attacker:GetUnitName() == "npc_boss_et_mag" or Attacker:GetUnitName() == "npc_boss_et_phys" then
-		if Victim:HasItemInInventory("item_heart") or Victim:HasItemInInventory("item_blink") then
+		if Victim:HasItemInInventory("item_heart") or Victim:HasItemInInventory("item_blink") or Victim:HasItemInInventory("item_heart_2")  then
 			Victim:FindItemInInventory("item_heart"):StartCooldown(4.45)
 			Victim:FindItemInInventory("item_heart_2"):StartCooldown (4.45)
 			Victim:FindItemInInventory("item_blink"):StartCooldown(4.45)
