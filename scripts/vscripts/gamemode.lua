@@ -159,6 +159,34 @@ function barebones:OnAllPlayersLoaded()
 	_G.player_currency[8] = 0
 	_G.player_currency[9] = 0
 	_G.key = GetDedicatedServerKeyV2("1.0")
+	_G.radiant_easy1_canspawn = true
+	_G.radiant_easy2_canspawn = true
+	_G.radiant_easy3_canspawn = true
+	_G.radiant_easy4_canspawn = true
+	_G.radiant_medium1_canspawn = true
+	_G.radiant_medium2_canspawn = true
+	_G.radiant_medium3_canspawn = true
+	_G.radiant_medium4_canspawn = true
+	_G.radiant_hard1_canspawn = true
+	_G.radiant_hard2_canspawn = true
+	_G.radiant_hard3_canspawn = true
+	_G.radiant_hard4_canspawn = true
+	_G.radiant_ancient1_canspawn = true
+	_G.radiant_ancient2_canspawn = true
+	_G.dire_easy1_canspawn = true
+	_G.dire_easy2_canspawn = true
+	_G.dire_easy3_canspawn = true
+	_G.dire_easy4_canspawn = true
+	_G.dire_medium1_canspawn = true
+	_G.dire_medium2_canspawn = true
+	_G.dire_medium3_canspawn = true
+	_G.dire_medium4_canspawn = true
+	_G.dire_hard1_canspawn = true
+	_G.dire_hard2_canspawn = true
+	_G.dire_hard3_canspawn = true
+	_G.dire_hard4_canspawn = true
+	_G.dire_ancient1_canspawn = true
+	_G.dire_ancient2_canspawn = true
 	_G.player_particle = {}
 for i=0,9, 1 do
 _G.player_particle[i] = nil
@@ -985,104 +1013,104 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for e=1, 7 do
 	local randint = RandomInt(1,5)
 	 if randint == 1 then
-	if _G.radiant_easy1_creeps < 7 then
+	if _G.radiant_easy1_creeps < 7 and _G.radiant_easy1_canspawn == true then
 		CreateUnitByName(e1, loc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy2_creeps < 7 then
+	if _G.radiant_easy2_creeps < 7 and _G.radiant_easy2_canspawn == true then
 		CreateUnitByName(e1, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy3_creeps < 7 then
+	if _G.radiant_easy3_creeps < 7 and _G.radiant_easy3_canspawn == true then
 		CreateUnitByName(e1, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 2 then
-	if _G.radiant_easy1_creeps < 7 then
+	if _G.radiant_easy1_creeps < 7 and _G.radiant_easy1_canspawn == true then
 		CreateUnitByName(e2, loc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy2_creeps < 7 then
+	if _G.radiant_easy2_creeps < 7 and _G.radiant_easy2_canspawn == true then
 		CreateUnitByName(e2, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy3_creeps < 7 then
+	if _G.radiant_easy3_creeps < 7  and _G.radiant_easy3_canspawn == true then
 		CreateUnitByName(e2, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 3 then
-		if _G.radiant_easy1_creeps < 7 then
+		if _G.radiant_easy1_creeps < 7 and _G.radiant_easy1_canspawn == true then
 		CreateUnitByName(e3, loc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy2_creeps < 7 then
+	if _G.radiant_easy2_creeps < 7 and _G.radiant_easy2_canspawn == true then
 		CreateUnitByName(e3, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy3_creeps < 7 then
+	if _G.radiant_easy3_creeps < 7 and _G.radiant_easy3_canspawn == true then
 		CreateUnitByName(e3, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 4 then
-		if _G.radiant_easy1_creeps < 7 then
+		if _G.radiant_easy1_creeps < 7 and _G.radiant_easy1_canspawn == true then
 		CreateUnitByName(e4, loc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy2_creeps < 7 then
+	if _G.radiant_easy2_creeps < 7  and _G.radiant_easy2_canspawn == true then
 		CreateUnitByName(e4, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy3_creeps < 7 then
+	if _G.radiant_easy3_creeps < 7 and _G.radiant_easy3_canspawn == true then
 		CreateUnitByName(e4, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 5 then
-	if _G.radiant_easy1_creeps < 7 then
+	if _G.radiant_easy1_creeps < 7 and _G.radiant_easy1_canspawn == true then
 		CreateUnitByName(e5, loc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy2_creeps < 7 then
+	if _G.radiant_easy2_creeps < 7 and _G.radiant_easy2_canspawn == true then
 		CreateUnitByName(e5, loc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_easy3_creeps < 7 then
+	if _G.radiant_easy3_creeps < 7 and _G.radiant_easy3_canspawn == true then
 		CreateUnitByName(e5, loc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
 	if randint == 1 then
-	if _G.dire_easy2_creeps < 7 then
+	if _G.dire_easy2_creeps < 7 and _G.dire_easy2_canspawn == true then
 		CreateUnitByName(e1, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy1_creeps < 7 then
+	if _G.dire_easy1_creeps < 7 and _G.dire_easy1_canspawn == true then 
 		CreateUnitByName(e1, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy3_creeps < 7 then
+	if _G.dire_easy3_creeps < 7 and _G.dire_easy3_canspawn == true then
 		CreateUnitByName(e1, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 2 then
-		if _G.dire_easy2_creeps < 7 then
+		if _G.dire_easy2_creeps < 7 and _G.dire_easy2_canspawn == true then
 		CreateUnitByName(e2, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy1_creeps < 7 then
+	if _G.dire_easy1_creeps < 7 and _G.dire_easy1_canspawn == true then
 		CreateUnitByName(e2, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy3_creeps < 7 then
+	if _G.dire_easy3_creeps < 7 and _G.dire_easy3_canspawn == true then
 		CreateUnitByName(e2, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	elseif randint == 3 then
-		if _G.dire_easy2_creeps < 7 then
+	elseif randint == 3 and _G.dire_easy2_canspawn == true then
+		if _G.dire_easy2_creeps < 7 and _G.dire_easy2_canspawn == true then
 		CreateUnitByName(e3, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy1_creeps < 7 then
+	if _G.dire_easy1_creeps < 7 and _G.dire_easy1_canspawn then
 		CreateUnitByName(e3, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy3_creeps < 7 then
+	if _G.dire_easy3_creeps < 7 and _G.dire_easy3_canspawn then
 		CreateUnitByName(e3, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 4 then
-		if _G.dire_easy2_creeps < 7 then
+		if _G.dire_easy2_creeps < 7 and _G.dire_easy2_canspawn == true then
 		CreateUnitByName(e4, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy1_creeps < 7 then
+	if _G.dire_easy1_creeps < 7 and _G.dire_easy1_canspawn == true then
 		CreateUnitByName(e4, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy3_creeps < 7 then
+	if _G.dire_easy3_creeps < 7 and _G.dire_easy3_canspawn == true then
 		CreateUnitByName(e4, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 5 then
-		if _G.dire_easy2_creeps < 7 then
+		if _G.dire_easy2_creeps < 7 and _G.dire_easy2_canspawn == true then
 		CreateUnitByName(e5, badloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy1_creeps < 7 then
+	if _G.dire_easy1_creeps < 7 and _G.dire_easy1_canspawn == true then
 		CreateUnitByName(e5, badloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_easy3_creeps < 7 then
+	if _G.dire_easy3_creeps < 7 and _G.dire_easy3_canspawn == true then
 		CreateUnitByName(e5, badloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
@@ -1090,111 +1118,111 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for m=1, 7 do
 	local randint = RandomInt(1,4)
 	if randint == 1 then
-	if _G.radiant_medium1_creeps < 7 then
+	if _G.radiant_medium1_creeps < 7 and _G.radiant_medium1_canspawn == true then
 		CreateUnitByName(m1, mloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium2_creeps < 7 then
+	if _G.radiant_medium2_creeps < 7 and _G.radiant_medium2_canspawn == true then
 		CreateUnitByName(m1, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium3_creeps < 7 then
+	if _G.radiant_medium3_creeps < 7 and _G.radiant_medium3_canspawn == true then
 		CreateUnitByName(m1, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium4_creeps < 7 then
+	if _G.radiant_medium4_creeps < 7 and _G.radiant_medium4_canspawn == true then
 		CreateUnitByName(m1, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 2 then
-	if _G.radiant_medium1_creeps < 7 then
+	if _G.radiant_medium1_creeps < 7 and _G.radiant_medium1_canspawn == true then
 		CreateUnitByName(m2, mloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium2_creeps < 7 then
+	if _G.radiant_medium2_creeps < 7 and _G.radiant_medium2_canspawn == true then
 		CreateUnitByName(m2, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium3_creeps < 7 then
+	if _G.radiant_medium3_creeps < 7 and _G.radiant_medium3_canspawn == true then
 		CreateUnitByName(m2, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium4_creeps < 7 then
+	if _G.radiant_medium4_creeps < 7 and _G.radiant_medium4_canspawn == true then
 		CreateUnitByName(m2, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 3 then
-	if _G.radiant_medium1_creeps < 7 then
+	if _G.radiant_medium1_creeps < 7 and _G.radiant_medium1_canspawn == true then
 		CreateUnitByName(m3, mloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium2_creeps < 7 then
+	if _G.radiant_medium2_creeps < 7 and _G.radiant_medium2_canspawn == true then
 		CreateUnitByName(m3, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium3_creeps < 7 then
+	if _G.radiant_medium3_creeps < 7 and _G.radiant_medium3_canspawn == true then
 		CreateUnitByName(m3, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium4_creeps < 7 then
+	if _G.radiant_medium4_creeps < 7 and _G.radiant_medium4_canspawn == true then
 		CreateUnitByName(m3, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 4 then
-	if _G.radiant_medium1_creeps < 7 then
+	if _G.radiant_medium1_creeps < 7 and _G.radiant_medium1_canspawn == true then
 		CreateUnitByName(m4, mloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium2_creeps < 7 then
+	if _G.radiant_medium2_creeps < 7 and _G.radiant_medium2_canspawn == true then
 		CreateUnitByName(m4, mloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium3_creeps < 7 then
+	if _G.radiant_medium3_creeps < 7 and _G.radiant_medium3_canspawn == true then
 		CreateUnitByName(m4, mloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_medium4_creeps < 7 then
+	if _G.radiant_medium4_creeps < 7 and _G.radiant_medium4_canspawn == true then
 		CreateUnitByName(m4, mloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
 	if randint == 1 then
-		if _G.dire_medium1_creeps < 7 then
+		if _G.dire_medium1_creeps < 7 and _G.dire_medium1_canspawn == true then
 		CreateUnitByName(m1, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium2_creeps < 7 then
+	if _G.dire_medium2_creeps < 7 and _G.dire_medium2_canspawn == true then
 		CreateUnitByName(m1, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium3_creeps < 7 then
+	if _G.dire_medium3_creeps < 7 and _G.dire_medium3_canspawn == true then
 		CreateUnitByName(m1, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium4_creeps < 7 then
+	if _G.dire_medium4_creeps < 7 and _G.dire_medium4_canspawn == true then 
 		CreateUnitByName(m1, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 		
 	elseif randint == 2 then
-		if _G.dire_medium1_creeps < 7 then
+		if _G.dire_medium1_creeps < 7 and _G.dire_medium1_canspawn == true then
 		CreateUnitByName(m2, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium2_creeps < 7 then
+	if _G.dire_medium2_creeps < 7 and _G.dire_medium2_canspawn == true then
 		CreateUnitByName(m2, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium3_creeps < 7 then
+	if _G.dire_medium3_creeps < 7 and _G.dire_medium3_canspawn == true then
 		CreateUnitByName(m2, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium4_creeps < 7 then
+	if _G.dire_medium4_creeps < 7 and _G.dire_medium4_canspawn == true then
 		CreateUnitByName(m2, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 		
 	elseif randint == 3 then
-		if _G.dire_medium1_creeps < 7 then
+		if _G.dire_medium1_creeps < 7 and _G.dire_medium1_canspawn == true then
 		CreateUnitByName(m3, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium2_creeps < 7 then
+	if _G.dire_medium2_creeps < 7 and _G.dire_medium2_canspawn == true then
 		CreateUnitByName(m3, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium3_creeps < 7 then
+	if _G.dire_medium3_creeps < 7 and _G.dire_medium3_canspawn == true then
 		CreateUnitByName(m3, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium4_creeps < 7 then
+	if _G.dire_medium4_creeps < 7 and _G.dire_medium4_canspawn == true then
 		CreateUnitByName(m3, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 		
 	elseif randint == 4 then
-		if _G.dire_medium1_creeps < 7 then
+		if _G.dire_medium1_creeps < 7 and _G.dire_medium1_canspawn == true then
 		CreateUnitByName(m4, mbadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium2_creeps < 7 then
+	if _G.dire_medium2_creeps < 7 and _G.dire_medium2_canspawn == true then
 		CreateUnitByName(m4, mbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium3_creeps < 7 then
+	if _G.dire_medium3_creeps < 7 and _G.dire_medium3_canspawn == true then
 		CreateUnitByName(m4, mbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_medium4_creeps < 7 then
+	if _G.dire_medium4_creeps < 7 and _G.dire_medium4_canspawn == true then
 		CreateUnitByName(m4, mbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 		
@@ -1203,108 +1231,108 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for h=1, 7 do
 	local randint = RandomInt(1,4)
 	 if randint == 1 then
-	 if _G.radiant_hard1_creeps < 7 then
+	 if _G.radiant_hard1_creeps < 7 and _G.radiant_hard1_canspawn == true then
 		CreateUnitByName(h1, hloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard2_creeps < 7 then
+	if _G.radiant_hard2_creeps < 7 and _G.radiant_hard2_canspawn == true then
 		CreateUnitByName(h1, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard3_creeps < 7 then
+	if _G.radiant_hard3_creeps < 7 and _G.radiant_hard3_canspawn == true then
 		CreateUnitByName(h1, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard4_creeps < 7 then
+	if _G.radiant_hard4_creeps < 7 and _G.radiant_hard4_canspawn == true then
 		CreateUnitByName(h1, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 2 then
-		if _G.radiant_hard1_creeps < 7 then
+		if _G.radiant_hard1_creeps < 7 and _G.radiant_hard1_canspawn == true then
 		CreateUnitByName(h2, hloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard2_creeps < 7 then
+	if _G.radiant_hard2_creeps < 7 and _G.radiant_hard2_canspawn == true then
 		CreateUnitByName(h2, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard3_creeps < 7 then
+	if _G.radiant_hard3_creeps < 7 and _G.radiant_hard3_canspawn == true then
 		CreateUnitByName(h2, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard4_creeps < 7 then
+	if _G.radiant_hard4_creeps < 7 and _G.radiant_hard4_canspawn == true then
 		CreateUnitByName(h2, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 3 then
-		if _G.radiant_hard1_creeps < 7 then
+		if _G.radiant_hard1_creeps < 7 and _G.radiant_hard1_canspawn == true then
 		CreateUnitByName(h3, hloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard2_creeps < 7 then
+	if _G.radiant_hard2_creeps < 7 and _G.radiant_hard2_canspawn == true then
 		CreateUnitByName(h3, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard3_creeps < 7 then
+	if _G.radiant_hard3_creeps < 7 and _G.radiant_hard3_canspawn == true then
 		CreateUnitByName(h3, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard4_creeps < 7 then
+	if _G.radiant_hard4_creeps < 7 and _G.radiant_hard4_canspawn == true then
 		CreateUnitByName(h3, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 4 then
-	if _G.radiant_hard1_creeps < 7 then
+	if _G.radiant_hard1_creeps < 7 and _G.radiant_hard1_canspawn == true then
 		CreateUnitByName(h4, hloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard2_creeps < 7 then
+	if _G.radiant_hard2_creeps < 7 and _G.radiant_hard2_canspawn == true then
 		CreateUnitByName(h4, hloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard3_creeps < 7 then
+	if _G.radiant_hard3_creeps < 7 and _G.radiant_hard3_canspawn == true then
 		CreateUnitByName(h4, hloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_hard4_creeps < 7 then
+	if _G.radiant_hard4_creeps < 7 and _G.radiant_hard4_canspawn == true then
 		CreateUnitByName(h4, hloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
 	if randint == 1 then
-		if _G.dire_hard1_creeps < 7 then
+		if _G.dire_hard1_creeps < 7 and _G.dire_hard1_canspawn == true then
 		CreateUnitByName(h1, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard2_creeps < 7 then
+	if _G.dire_hard2_creeps < 7 and _G.dire_hard2_canspawn == true then 
 		CreateUnitByName(h1, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard3_creeps < 7 then
+	if _G.dire_hard3_creeps < 7 and _G.dire_hard3_canspawn == true then
 		CreateUnitByName(h1, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard4_creeps < 7 then
+	if _G.dire_hard4_creeps < 7 and _G.dire_hard4_canspawn == true then
 		CreateUnitByName(h1, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 2 then
-		if _G.dire_hard1_creeps < 7 then
+		if _G.dire_hard1_creeps < 7 and _G.dire_hard1_canspawn == true then
 		CreateUnitByName(h2, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard2_creeps < 7 then
+	if _G.dire_hard2_creeps < 7 and _G.dire_hard2_canspawn == true then
 		CreateUnitByName(h2, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard3_creeps < 7 then
+	if _G.dire_hard3_creeps < 7 and _G.dire_hard3_canspawn == true then
 		CreateUnitByName(h2, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard4_creeps < 7 then
+	if _G.dire_hard4_creeps < 7 and _G.dire_hard4_canspawn == true then
 		CreateUnitByName(h2, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 3 then
-		if _G.dire_hard1_creeps < 7 then
+		if _G.dire_hard1_creeps < 7 and _G.dire_hard1_canspawn == true then
 		CreateUnitByName(h3, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard2_creeps < 7 then
+	if _G.dire_hard2_creeps < 7 and _G.dire_hard2_canspawn == true then
 		CreateUnitByName(h3, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard3_creeps < 7 then
+	if _G.dire_hard3_creeps < 7 and _G.dire_hard3_canspawn == true then
 		CreateUnitByName(h3, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard4_creeps < 7 then
+	if _G.dire_hard4_creeps < 7 and _G.dire_hard4_canspawn == true then
 		CreateUnitByName(h3, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 4 then
-		if _G.dire_hard1_creeps < 7 then
+		if _G.dire_hard1_creeps < 7 and _G.dire_hard1_canspawn == true then
 		CreateUnitByName(h4, hbadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard2_creeps < 7 then
+	if _G.dire_hard2_creeps < 7 and _G.dire_hard2_canspawn == true then
 		CreateUnitByName(h4, hbadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard3_creeps < 7 then
+	if _G.dire_hard3_creeps < 7 and _G.dire_hard3_canspawn == true then
 		CreateUnitByName(h4, hbadloc2, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_hard4_creeps < 7 then
+	if _G.dire_hard4_creeps < 7 and _G.dire_hard4_canspawn == true then
 		CreateUnitByName(h4, hbadloc3, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
@@ -1312,46 +1340,46 @@ local Creatures = Entities:FindAllByClassname("npc_dota_creature")
 	for a=1, 7 do
 	local randint = RandomInt(1,3)
 	 if randint == 1 then
-	 	if _G.radiant_ancient1_creeps < 7 then
+	 	if _G.radiant_ancient1_creeps < 7 and _G.radiant_ancient1_canspawn == true then
 		CreateUnitByName(a1, aloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_ancient2_creeps < 7 then
+	if _G.radiant_ancient2_creeps < 7 and _G.radiant_ancient2_canspawn == true then
 		CreateUnitByName(a1, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 2 then
-		if _G.radiant_ancient1_creeps < 7 then
+		if _G.radiant_ancient1_creeps < 7 and _G.radiant_ancient1_canspawn == true then
 		CreateUnitByName(a2, aloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_ancient2_creeps < 7 then
+	if _G.radiant_ancient2_creeps < 7 and _G.radiant_ancient2_canspawn == true then
 		CreateUnitByName(a2, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 3 then
-		if _G.radiant_ancient1_creeps < 7 then
+		if _G.radiant_ancient1_creeps < 7 and _G.radiant_ancient1_canspawn == true then
 		CreateUnitByName(a3, aloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.radiant_ancient2_creeps < 7 then
+	if _G.radiant_ancient2_creeps < 7 and _G.radiant_ancient2_canspawn == true then
 		CreateUnitByName(a3, aloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
 	if randint == 1 then
-	if _G.dire_ancient1_creeps < 7 then
+	if _G.dire_ancient1_creeps < 7 and _G.dire_ancient1_canspawn == true then
 		CreateUnitByName(a1, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_ancient2_creeps < 7 then
+	if _G.dire_ancient2_creeps < 7 and _G.dire_ancient2_canspawn == true then
 		CreateUnitByName(a1, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 2 then
-		if _G.dire_ancient1_creeps < 7 then
+		if _G.dire_ancient1_creeps < 7 and _G.dire_ancient1_canspawn == true then
 		CreateUnitByName(a2, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_ancient2_creeps < 7 then
+	if _G.dire_ancient2_creeps < 7 and _G.dire_ancient2_canspawn == true then
 		CreateUnitByName(a2, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	elseif randint == 3 then
-		if _G.dire_ancient1_creeps < 7 then
+		if _G.dire_ancient1_creeps < 7 and _G.dire_ancient1_canspawn == true then
 		CreateUnitByName(a3, abadloc, true, nil, nil, 4):CreatureLevelUp(level)
 	end
-	if _G.dire_ancient2_creeps < 7 then
+	if _G.dire_ancient2_creeps < 7 and _G.dire_ancient2_canspawn == true then
 		CreateUnitByName(a3, abadloc1, true, nil, nil, 4):CreatureLevelUp(level)
 	end
 	end
