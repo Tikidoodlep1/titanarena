@@ -1312,6 +1312,9 @@ function barebones:OnPlayerChat(keys)
 			if _G.vote_to_concede_radiant == true then
 					for i = 0, PlayerResource:NumPlayers(), 1 do
 		if PlayerResource:GetTeam(i) == 3 then
+
+	if _G.gems_enabled == true and GameRules:GetDOTATime(false, false) >= 1200 then
+
 	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
 	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..(_G.player_currency[i] + (PlayerResource:GetKills(i)) + (PlayerResource:GetAssists(i)/2) + 20)..'}')
     	request:Send( function( result )
@@ -1337,6 +1340,7 @@ function barebones:OnPlayerChat(keys)
           local encoded = json.decode(result.Body)
 	end)
     end
+end
 end
 				GameRules:SetGameWinner(3)
 			end
@@ -1364,6 +1368,7 @@ end
         if _G.vote_to_concede_dire == true then
         		for i = 0, PlayerResource:NumPlayers(), 1 do
 		if PlayerResource:GetTeam(i) == 3 then
+			if _G.gems_enabled == true and GameRules:GetDOTATime(false, false) >= 1200 then
 	local request = CreateHTTPRequestScriptVM( "PUT", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(i)).."/currency.json" )
 	 request:SetHTTPRequestRawPostBody("application/json", '{"Currency": '..(_G.player_currency[i] + (PlayerResource:GetKills(i)) + (PlayerResource:GetAssists(i)/2))..'}')
     	request:Send( function( result )
@@ -1389,6 +1394,7 @@ end
           local encoded = json.decode(result.Body)
 	end)
     end
+end
 end
         	GameRules:SetGameWinner(2)
         end

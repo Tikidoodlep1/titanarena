@@ -68,6 +68,11 @@ end
   It can be used to initialize non-hero player state or adjust the hero selection (i.e. force random etc)
 ]]
 function barebones:OnAllPlayersLoaded()
+	if (PlayerResource:GetPlayerCountForTeam(2) + PlayerResource:GetPlayerCountForTeam(3)) >= 4 then
+		_G.gems_enabled = true
+	else 
+		_G.gems_enabled = false
+	end
 	DebugPrint("[BAREBONES] All Players have loaded into the game.")
 	_G.radiant_players = 0
 	_G.dire_players = 0
@@ -209,7 +214,6 @@ function barebones:OnHeroInGame(hero)
 
 	Timers:CreateTimer(0.5, function()
 		local playerID = hero:GetPlayerID()	-- never nil (-1 by default), needs delay 1 or more frames
-
 -- GETS PLAYERS CURRENCY WHEN THEY LOAD IN AND STORES IT FOR THE GAMES DURATION ------------------------------------------
 local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.firebaseio.com/".._G.key.."/"..tostring(PlayerResource:GetSteamID(playerID))..".json" )
     	request:Send( function( result )
@@ -224,8 +228,7 @@ local request = CreateHTTPRequestScriptVM( "GET", "https://titan-arena-ec657.fir
           _G.player_currency[playerID] = encoded.currency.Currency
           print(_G.player_currency[	playerID])
       end
-    end )
-	    
+    end )   
 
 ----------------------------------------------------------------------------------------------------------------------------
 
@@ -328,6 +331,9 @@ function barebones:OnGameInProgress()
 
 		_G.IsDual = false
 	DebugPrint("[BAREBONES] The game has officially begun.")
+	if _G.gems_enabled == false then
+		GameRules:SendCustomMessage("<font color='#FF0101'>Gems will not be earned for this game because there is less than 4 players!</font>", 0, 0)
+	end
 	if _G.kills_to_win == 50 then
 	Notifications:TopToAll({text = "The vote did not result in a winner. First team to 50 kills wins!", duration=10.0,style={color="yellow"}})
 	else
