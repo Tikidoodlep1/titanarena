@@ -39,7 +39,7 @@ for i, hero in pairs(_G.DualArena1) do
 	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
-			if arena:IsTouching(hero) == false and _G.IsDual == true then
+			if arena:IsTouching(hero) == false and _G.IsDual == true and not hero:IsTempestDouble() then
 				FindClearSpaceForUnit(trigger.activator, _G.arena1, false)
 			end
 			if _G.IsDual == false then
@@ -55,7 +55,7 @@ for i, hero in pairs(_G.DualArenavs1) do
 	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
-			if arena:IsTouching(hero) == false and _G.IsDual == true then
+			if arena:IsTouching(hero) == false and _G.IsDual == true and not hero:IsTempestDouble() then
 				FindClearSpaceForUnit(trigger.activator, _G.arena1vs, false)
 			end
 			if _G.IsDual == false then
@@ -68,11 +68,11 @@ for i, hero in pairs(_G.DualArenavs1) do
 	end
 end
 for i, hero in pairs(_G.DualArena2) do
-	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
+	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() and then
 	if trigger.activator == hero then
 	print(globalarena2:GetAbsOrigin())
 		Timers:CreateTimer(0.5, function()
-			if arena22:IsTouching(hero) == false and _G.IsDual == true then
+			if arena22:IsTouching(hero) == false and _G.IsDual == true and not hero:IsTempestDouble() then
 				FindClearSpaceForUnit(trigger.activator, globalarena2:GetAbsOrigin(), false)
 			end
 			if _G.IsDual == false then
@@ -88,7 +88,7 @@ for i, hero in pairs(_G.DualArenavs2) do
 	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero then
 		Timers:CreateTimer(0.5, function()
-			if arena22:IsTouching(hero) == false and _G.IsDual == true then
+			if arena22:IsTouching(hero) == false and _G.IsDual == true and not hero:IsTempestDouble() then
 				FindClearSpaceForUnit(trigger.activator, _G.arena2vs, false)
 			end
 			if _G.IsDual == false then
