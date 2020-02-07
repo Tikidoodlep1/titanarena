@@ -32,7 +32,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"27"
-		"MagicalResistance"			"0"
+		"MagicalResistance"			""
 		
 		// Attack
 		//----------------------------------------------------------------
@@ -78,10 +78,9 @@
 
 		// Team
 		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		 "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+    "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
+    "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
 		
 		// Creature Data
 		//----------------------------------------------------------------
