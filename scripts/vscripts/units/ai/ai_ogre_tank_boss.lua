@@ -27,6 +27,18 @@ function OgreTankBossThink()
 		return 1
 	end
 
+		if not thisEntity.bInitialized then
+		thisEntity.vInitialSpawnPos = thisEntity:GetOrigin()
+		thisEntity.bInitialized = true
+	end
+
+		-- Are we too far from our initial spawn position?
+	local fDist = ( thisEntity:GetOrigin() - thisEntity.vInitialSpawnPos ):Length2D()
+	if fDist > 1500 then
+		RetreatHome()
+		return 2.0
+	end
+
 	local closeEnemy = false
 	local enemies = FindUnitsInRadius(thisEntity:GetTeamNumber(),
 									  thisEntity:GetOrigin(),
@@ -54,7 +66,12 @@ function OgreTankBossThink()
 	end
 
 	if #enemies == 0 then
+			local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
+		if distance_from_target >= 400 then
+			thisEntity:SetAggroTarget(nil)
+			
 		print("No nearby enemies")
+	end
 		return 1
 	end
 
@@ -102,4 +119,14 @@ function Smash( enemy )
 	})
 
 	return 3.0 / thisEntity.hasteFactor
+end
+
+function RetreatHome()
+	--print( "OgreTankBoss - RetreatHome()" )
+
+	ExecuteOrderFromTable({
+		UnitIndex = thisEntity:entindex(),
+		OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+		Position = thisEntity.vInitialSpawnPos
+	})
 end
