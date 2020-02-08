@@ -68,7 +68,7 @@ for i, hero in pairs(_G.DualArenavs1) do
 	end
 end
 for i, hero in pairs(_G.DualArena2) do
-	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() and then
+	if PlayerResource:GetConnectionState(hero:GetPlayerID()) == 2 or PlayerResource:IsFakeClient(hero:GetPlayerID()) == true and not hero:IsIllusion() then
 	if trigger.activator == hero then
 	print(globalarena2:GetAbsOrigin())
 		Timers:CreateTimer(0.5, function()
