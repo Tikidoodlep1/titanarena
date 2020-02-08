@@ -18,7 +18,7 @@ function cast()
 	
     if thisEntity:GetAggroTarget() ~= nil then
 		local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
-		local dist = (thisEntity:GetOrigin() - self.vInitialSpawnPos):Length2D
+		local dist = (thisEntity:GetOrigin() - self.vInitialSpawnPos):Length2D()
 		
 		if distance_from_target >= 500 or dist > 500 then
 			thisEntity:Stop()
