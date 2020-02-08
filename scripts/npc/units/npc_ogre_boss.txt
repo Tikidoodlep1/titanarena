@@ -55,8 +55,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"1000"
-		"BountyGoldMin"				"0"
-		"BountyGoldMax"				"0"
+		"BountyGoldMin"				"300"
+		"BountyGoldMax"				"400"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -78,7 +78,7 @@
 
 		// Team
 		//----------------------------------------------------------------
-		 "TeamName"          "DOTA_TEAM_NEUTRALS"      // Team name.
+		 "TeamName"          "DOTA_TEAM_NEUTRALS"  
     "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_HERO"
     "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_HERO"
 		
@@ -102,7 +102,7 @@
 
 			//Level Up Parameters
 			//------------------------------------------------------------
-			"HPGain"					"800"
+			"HPGain"					"400"
 			"DamageGain"				"30"
 			"ArmorGain"					"1"
 			"MagicResistGain"			"5"
