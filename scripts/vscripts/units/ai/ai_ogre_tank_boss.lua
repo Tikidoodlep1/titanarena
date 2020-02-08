@@ -43,7 +43,7 @@ function OgreTankBossThink()
 	local enemies = FindUnitsInRadius(thisEntity:GetTeamNumber(),
 									  thisEntity:GetOrigin(),
 									   nil,
-									   5000,
+									   1000,
 									   DOTA_UNIT_TARGET_TEAM_ENEMY,
 									   DOTA_UNIT_TARGET_HERO,
 									   DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
@@ -66,8 +66,7 @@ function OgreTankBossThink()
 	end
 
 	if #enemies == 0 then
-			local distance_from_target = (thisEntity:GetOrigin() - thisEntity:GetAggroTarget():GetOrigin()):Length2D()
-		if distance_from_target >= 400 then
+		if fDist >= 400 then
 			thisEntity:SetAggroTarget(nil)
 			
 		print("No nearby enemies")
