@@ -544,7 +544,7 @@ end
 		end
 		if radiant_ogre_alive == false then
 			radiant_ogre_level = radiant_ogre_level + 1
-			CreateUnitByName("npc_dota_creature_ogre_tank_boss", radiant_ogre_spawn, true, nil, nil, 3):CreatureLevelUp(radiant_ogre_level)
+			CreateUnitByName("npc_dota_creature_ogre_tank_boss", radiant_ogre_spawn, true, nil, nil, 4):CreatureLevelUp(radiant_ogre_level)
 		end
 			local direogreboss = FindUnitsInRadius(4, dire_ogre_spawn, nil, 2500, 3, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _,ogreboss in pairs(direogreboss) do
@@ -555,7 +555,7 @@ end
 		end
 		if dire_ogre_alive == false then
 			dire_ogre_level = dire_ogre_level + 1
-			CreateUnitByName("npc_dota_creature_ogre_tank_boss", dire_ogre_spawn, true, nil, nil, 2):CreatureLevelUp(dire_ogre_level)
+			CreateUnitByName("npc_dota_creature_ogre_tank_boss", dire_ogre_spawn, true, nil, nil, 4):CreatureLevelUp(dire_ogre_level)
 		end
 		if rreset == false then
 			rad_reset_level = rad_reset_level + 1

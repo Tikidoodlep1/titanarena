@@ -3421,7 +3421,7 @@
     "SoundSet"          "Creep_Good_Range"          // Name of sound set.
     "Level"           "0"
     "UnitLabel"         "Invader"
-	"vscripts"           "boss_bear.lua"
+	"vscripts"           "boss_dog.lua"
     "IsAncient" 		"1"
     
     // Abilities
@@ -3475,7 +3475,7 @@
     // Movement
     //----------------------------------------------------------------
     "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
-    "MovementSpeed"       "350"   // Speed
+    "MovementSpeed"       "320"   // Speed
     "MovementTurnRate"      "1.0"   // Turning rate.
 
     // Status
