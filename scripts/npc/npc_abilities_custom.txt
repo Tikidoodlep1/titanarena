@@ -15789,7 +15789,7 @@
             "01"
             {
                 "var_type"              "FIELD_INTEGER"
-                "impact_radius"         "150"
+                "impact_radius"         "225"
             }
             "02"
             {
@@ -15799,12 +15799,12 @@
             "03"
             {
                 "var_type"              "FIELD_INTEGER"
-                "damage"                "550"
+                "damage"                "575"
             }
             "04"
             {
                 "var_type"              "FIELD_FLOAT"
-                "base_swing_speed"      "1.2"
+                "base_swing_speed"      "1.05"
             }
         }
     }
@@ -15847,22 +15847,22 @@
             "01"
             {
                 "var_type"              "FIELD_INTEGER"
-                "impact_radius"         "230"
+                "impact_radius"         "240"
             }
             "02"
             {
                 "var_type"              "FIELD_FLOAT"
-                "stun_duration"         "3.0"
+                "stun_duration"         "2.5"
             }
             "03"
             {
                 "var_type"              "FIELD_INTEGER"
-                "damage"                "500"
+                "damage"                "550"
             }
             "04"
             {
                 "var_type"              "FIELD_FLOAT"
-                "jump_speed"            "1.9"
+                "jump_speed"            "1.7"
             }
         }
     }
@@ -15921,7 +15921,7 @@
             "04"
             {
                 "var_type"              "FIELD_FLOAT"
-                "base_swing_speed"      "1.2"
+                "base_swing_speed"      "1.05"
             }
         }
     }
@@ -15980,7 +15980,7 @@
             "04"
             {
                 "var_type"              "FIELD_FLOAT"
-                "jump_speed"            "1.6" // regular: 1.8
+                "jump_speed"            "1.45" // regular: 1.8
             }
         }
     }
