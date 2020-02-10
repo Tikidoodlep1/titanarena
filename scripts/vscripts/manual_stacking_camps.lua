@@ -387,7 +387,7 @@ end
 
 function dire_easy2_camp_minus(trigger)
 			if trigger.activator:IsHero() == true then 
-		_G.dire_easy1_canspawn = true
+		_G.dire_easy2_canspawn = true
 	end
 _G.dire_easy2_creeps = _G.dire_easy2_creeps - 1
 print("camp 2 has ".. _G.dire_easy2_creeps)
