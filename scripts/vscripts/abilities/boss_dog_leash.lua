@@ -17,7 +17,7 @@ end
 function dog_leash:OnSpellStart()
 	EmitSoundOn("Hero_Magnataur.Skewer.Cast", self:GetCaster())
 	local dog = self:GetCaster()
-	local dist = (thisEntity:GetOrigin() - self.vInitialSpawnPos):Length2D
+	local dist = (thisEntity:GetOrigin() - self.vInitialSpawnPos):Length2D()
 	dog:SetBaseMoveSpeed(400)
 	local heroes = FindUnitsInRadius(4, dog:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 	dog:MoveToPosition(heroes[0]:GetAbsOrigin())
@@ -35,7 +35,7 @@ function dog_leash:OnSpellStart()
 			local damageTable = {victim = heroes[0], attacker = dog, damage = 300, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NONE, ability = dog:FindAbilityByName("boss_dog_leash")}
 			ApplyDamage(damageTable)
 			dog:SetBaseMoveSpeed(320)
-			dog:MoveToPositionAggressive(heroes[0]:GetAbsOrigin)
+			dog:MoveToPositionAggressive(heroes[0]:GetAbsOrigin())
 			heroes[0]:AddNewModifier(dog, "boss_dog_leash", "modifier_stunned", {duration=2})
 			Timers.removeSelf = true
 		end
