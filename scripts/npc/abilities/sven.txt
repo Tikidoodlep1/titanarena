@@ -209,7 +209,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gods_strength_damage"		"80 120 160 210"		
+				"gods_strength_damage"		"60 80 100 130"		
 			}
 			"02"
 			{

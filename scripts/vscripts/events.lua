@@ -560,29 +560,25 @@ end
 	end
 
 	if killed_unit:GetUnitName() == "npc_boss_dragon_knight_2" then 
-		for _, hero in ipairs(players) do 
-			if hero:GetTeamNumber() == 2 then
-				EmitGlobalSound("ui.contract_assign")
+		if team == 2 then 
 				Notifications:TopToAll({text = "The Radiant has slain the dragon King!", duration=5.0})
-			elseif
-				hero:GetTeamNumber() == 3 then
+				EmitGlobalSound("ui.contract_assign")
+		end
+		if team == 3 then
 				EmitGlobalSound("ui.contract_assign")
 				Notifications:TopToAll({text = "The Dire has slain the dragon King!", duration=5.0})
-			end
 		end
 	end
 
 
 	if killed_unit:GetUnitName() == "npc_boss_scarab" then 
-		for _, hero in ipairs(players) do 
-			if hero:GetTeamNumber() == 2 then
+		if team == 2 then 
 				EmitGlobalSound("ui.contract_assign")
 				Notifications:TopToAll({text = "The Radiant has slain the Scarab King!", duration=5.0})
-			elseif
-				hero:GetTeamNumber() == 3 then
+		end
+		if team == 3 then
 				EmitGlobalSound("ui.contract_assign")
 				Notifications:TopToAll({text = "The Dire has slain the Scarab King!", duration=5.0})
-			end
 		end
 	end
 

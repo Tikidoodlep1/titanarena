@@ -132,6 +132,7 @@
 				"LinkedSpecialBonus"	"special_bonus_unique_enigma_3"
 			}
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -142,6 +143,22 @@
 
 
 		}
+	"Modifiers"
+	{
+		"modifier_check_attacks"
+		{
+			"IsHidden"	"1"
+		
+			"OnAttack"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"eidolons.lua"
+					"Function"		"CheckAttacks"
+				}
+			}
+		}
+	}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 	
