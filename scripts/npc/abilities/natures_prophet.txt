@@ -78,9 +78,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5247"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"5247"	
+		"BaseClass"			"ability_datadriven"													
+// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilitySound"					"Hero_Furion.ForceOfNature"
+		"AbilityTextureName"					"natures_call"
 		"MaxLevel"                                      "6"
 
 		// Stats
@@ -149,6 +152,15 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"     "treants.lua"
+				"Function"          "spawn_treants"
+			}
+
+		}
 	}
 	
 	//=================================================================================================================
@@ -162,12 +174,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Furion.WrathOfNature_Cast"
 		"MaxLevel"                                      "4"
 
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"			"0"
 		
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -207,30 +220,7 @@
 				"var_type"				"FIELD_FLOAT"
 				"jump_delay"			"0.25"
 			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_scepter"		"135 170 205 255"
-				"RequiresScepter"		"1"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_buffer"		"4"
-				"RequiresScepter"		"1"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"treant_large_hp_bonus_tooltip"				"1650"
-				"RequiresScepter"		"1"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"treant_large_damage_bonus_tooltip"		"72 84 96 108 140"
-				"RequiresScepter"		"1"
-			}
+			
 		}
 	}
 }
