@@ -5,6 +5,8 @@
 #base "items/solar_crest.txt"
 #base "items/monkey_king_bar.txt"
 #base "items/ogre_boss_drops.txt"
+#base "items/moms_ring.txt"
+#base "items/serpents_staff.txt"
 
 
 "DOTAAbilities"
@@ -682,7 +684,9 @@
 		"ID"								"14002"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
-		"IsSellable"                     "0"
+		"ItemSellable"                     "0"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 		
 	
 		//Item Info
@@ -726,7 +730,9 @@
 		"ID"								"14003"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
-		"IsSellable"                    "0"
+		"ItemSellable"                    "0"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
@@ -770,6 +776,8 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"            "item_recipe_radiance"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
@@ -2046,7 +2054,7 @@
 		"AbilityCastPoint"				"0.0"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityTextureName"            "bkb_potion"
-		"IsSellable"                    "0"
+		"ItemSellable"                    "0"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2639,11 +2647,13 @@
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
 		"BaseClass"							"item_datadriven"
-		"IsSellable"                        "0"
+		"ItemSellable"                        "0"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 		
 		//Item Info
 		//------------------------------------------------------------------------------------------------------------------
-		"ItemCost"							"0"
+		"ItemCost"							""
 		"ItemQuality"						"artifact"
 		"ItemAliases"						"Reset"
 		"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"

@@ -123,7 +123,7 @@
 				{
 					"Item"
 					{
-						"1"				"item_yasha"
+						"1"				"item_moms_ring_active"
 						"2"				"item_kaya"
 						"3"				"item_sange"
 					}

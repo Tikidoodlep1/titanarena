@@ -1,0 +1,283 @@
+"DOTAABILITIES"
+{
+	
+"item_moms_ring_active"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"140112"  //Valve's version of this item uses the ID "212".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+	"AbilityTextureName"			"moms_ring"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						""
+	"ItemShopTags"					""
+	"ItemQuality"					"rare"
+	"ItemAliases"					"mom;moms ring"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	"ItemPurchasable"				"0"
+	"ItemSellable"                        "0"
+	
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+	"UIPickupSound"					"Item.PickUpRingShop"
+	"UIDropSound"					"Item.DropRingShop"
+	"WorldDropSound"				"Item.DropRingWorld"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"12"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"12"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"12"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intelligence"	"15"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"3"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"			"900"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"aura_mana_regen"		"1.0"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_bonus_armor"		"3"
+		}	
+
+		"09"
+		{
+        	"var_type"                    "FIELD_INTEGER"
+        	"aura_bonus_intelligence"     "5"
+		}	
+
+		"10"
+		{
+        	"var_type"                    "FIELD_INTEGER"
+        	"aura_bonus_strength"     "3"
+
+		}
+	}
+
+	"OnSpellStart"  //Switch to the inactive version of Ring of Aquila.
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/moms_ring.lua"
+			"Function"				"item_moms_ring_on_spell_start"
+		}
+	}
+	
+	
+		"Modifiers"
+	{
+		"modifier_item_ring_of_aquila_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_damage"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+			}
+		}
+		"modifier_item_ring_of_aquila_datadriven_aura_emitter"
+		{
+			"Passive"				"1"
+			"IsHidden"				"1"
+			
+			"Aura" 					"modifier_item_ring_of_aquila_datadriven_aura"
+			"Aura_Radius" 			"%aura_radius"
+			"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"Aura_ApplyToCaster" 	"0"
+		}
+		"modifier_item_ring_of_aquila_datadriven_aura"
+		{
+			"Passive"			"1"
+			"IsHidden"			"0"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE"				"%armor_aura"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%aura_bonus_intelligence"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"        "%aura_bonus_strength"
+				"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"2.5"  //This is hardcoded due to an obscure engine bug.
+			}
+		}
+	}
+}
+
+"item_moms_ring_inactive"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"140113"  //Valve's version of this item uses the ID "212".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+    "Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+	"AbilityTextureName"			"moms_ring_inactive"  //Despite the name, this is the inactive icon.
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						""
+	"ItemShopTags"					""
+	"ItemQuality"					"rare"
+	"ItemAliases"					"roa;ring of aquila"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	"ItemPurchasable"				"0"
+	"ItemSellable"                  "0"
+	
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+	"UIPickupSound"					"Item.PickUpRingShop"
+	"UIDropSound"					"Item.DropRingShop"
+	"WorldDropSound"				"Item.DropRingWorld"
+		
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"16"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"17"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intelligence"	"22"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"5"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"			"900"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"aura_mana_regen"		"1.25"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_bonus_armor"		"5"
+		}	
+		"09"
+		{
+        	"var_type"                    "FIELD_INTEGER"
+        	"aura_bonus_intelligence"     "5"
+
+		}
+		"10"
+		{
+        	"var_type"                    "FIELD_INTEGER"
+        	"aura_bonus_strength"     "3"
+
+		}
+	}
+	
+	"OnSpellStart"  //Switch to the active version of Ring of Aquila.
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/moms_ring.lua"
+			"Function"				"item_moms_ring_inactive_on_spell_start"
+		}
+	}
+	
+"Modifiers"
+	{
+		"modifier_item_ring_of_aquila_inactive_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_damage"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+			}
+		}
+		"modifier_item_ring_of_aquila_inactive_datadriven_aura_emitter"
+		{
+			"Passive"				"1"
+			"IsHidden"				"1"
+			
+			"Aura" 					"modifier_item_ring_of_aquila_inactive_datadriven_aura"
+			"Aura_Radius" 			"%aura_radius"
+			"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" 			"DOTA_UNIT_TARGET_HERO"
+			"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"Aura_ApplyToCaster" 	"1"
+		}
+		"modifier_item_ring_of_aquila_inactive_datadriven_aura"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE"				"%armor_aura"
+				"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"2.5"  //This is hardcoded due to an obscure engine bug.
+			}
+		}
+	}
+}
+
+
+
+
+}
