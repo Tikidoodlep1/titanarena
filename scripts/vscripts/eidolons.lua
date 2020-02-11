@@ -3,6 +3,7 @@ local caster = keys.caster
 local ability = keys.ability
 local target = keys.target
 local abil_level = keys.ability:GetLevel()
+local bonus_range = 200
 local eidolon_hp = ability:GetSpecialValueFor("eidolon_hp_tooltip")
 local eidolon_damage = ability:GetSpecialValueFor("eidolon_dmg_tooltip")
 local point = target:GetAbsOrigin()
@@ -12,9 +13,12 @@ local bonus_dmg = 0
 local eidelons = 3
 local talent_eidelons = caster:FindAbilityByName("special_bonus_unique_enigma")
 local talent_eidelons_lvl = talent_eidelons:GetLevel()
+local talent_range = caster:FindAbilityByName("special_bonus_unique_enigma_4")
+local talent_eidelons_range_lvl = talent_range:GetLevel()
 
 
-if talent_damage_lvl == 1 then
+
+if talent_dmg_lvl == 1 then
 bonus_dmg = 60
 	end
 
@@ -24,26 +28,28 @@ eidelons = eidelons + 7
 end
 
 
+
 target:Kill(ability, caster)
 ability.caster = caster
 for i = 0, eidelons-1, 1 do
 local unit = CreateUnitByName("npc_dota_eidolon", point, true, caster, caster, caster:GetTeamNumber())
 
 unit:SetControllableByPlayer(caster:GetPlayerID(), false)
+if talent_eidelons_range_lvl == 1 then
+ability:ApplyDataDrivenModifier( unit, unit, "modifier_bonus_range_talent", {duration = 50} ) 
+end
 
 
-unit:SetMaxHealth(eidolon_hp)
-unit:SetHealth(unit:GetMaxHealth())
 unit:SetBaseDamageMax(eidolon_damage+bonus_dmg)
 unit:SetBaseDamageMin(eidolon_damage+bonus_dmg)
 -- Adds the green duration circle, and kills the eidelon after the duration ends
 			unit:AddNewModifier(unit, nil, "modifier_kill", {duration = 35})
-			-- Phases the eidelon for a short period so there is no unit collision
-			unit:AddNewModifier(unit, nil, "modifier_phased", {duration = 0.03})
 			-- Applies the modifier to count each eidelon's attacks
 			ability:ApplyDataDrivenModifier( unit, unit, "modifier_check_attacks", {duration = 50} )
 			-- Takes note of the game time, so we know the duration for the split eidelons
 			unit.time = GameRules:GetGameTime()
+			unit:SetMaxHealth(eidolon_hp)
+unit:SetHealth(unit:GetMaxHealth())
 end
 end
 

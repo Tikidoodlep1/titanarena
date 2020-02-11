@@ -157,6 +157,17 @@
 					"Function"		"CheckAttacks"
 				}
 			}
+
+
+		}
+		"modifier_bonus_range_talent"
+		{
+			"Passive" "0"
+			"IsHidden"    "1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"200"
+			}
 		}
 	}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
