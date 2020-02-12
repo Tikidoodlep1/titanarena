@@ -124,8 +124,8 @@
 					"Item"
 					{
 						"1"				"item_moms_ring_active"
-						"2"				"item_kaya"
-						"3"				"item_sange"
+						"2"				"item_serpents_staff"
+						"3"				""
 					}
 					"Chance"			"100"
 				}

@@ -4671,8 +4671,8 @@
 		"ItemCost"						"950"	
 		"ItemShopTags"					""
 		"BaseClass"						"item_datadriven"
-		"ID"							"140108"
-		"AbilityTextureName"			"item_recipe"
+		"ID"							"140151"
+		"AbilityTextureName"			"item_recipe_sheepstick"
 	
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------

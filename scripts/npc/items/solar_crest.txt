@@ -133,7 +133,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"140108"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140308"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -209,7 +209,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"140109"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"140309"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "item_recipe_solar_crest"

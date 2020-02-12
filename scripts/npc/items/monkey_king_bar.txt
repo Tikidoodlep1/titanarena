@@ -102,7 +102,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"								"140109"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                    "item_black_king_bar"
+		"BaseClass"                    "item_monkey_king_bar"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -176,7 +176,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"								"140111"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                    "item_black_king_bar"
+		"BaseClass"                    "item_monkey_king_bar"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
